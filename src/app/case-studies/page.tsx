@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { caseStudies, site } from '@/config/site'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
@@ -28,8 +29,18 @@ export default function CaseStudiesPage() {
         <div className="container-wide space-y-6">
           {caseStudies.map((c) => (
             <Reveal key={c.slug}>
-              <Link href={`/case-studies/${c.slug}`} className="card-feature group block p-8 md:p-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <Link href={`/case-studies/${c.slug}`} className="card-feature group block overflow-hidden !p-0">
+                <div className="relative aspect-[21/9] overflow-hidden">
+                  <Image
+                    src={c.cover}
+                    alt={`${c.client} case study cover`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 80vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/40 to-transparent" />
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start p-8 md:p-10">
                   <div className="lg:col-span-8">
                     <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-3">
                       {c.client} · {c.industry} · {c.city}

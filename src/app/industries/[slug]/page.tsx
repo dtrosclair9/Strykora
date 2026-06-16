@@ -105,7 +105,7 @@ export default async function IndustryPage({ params }: Params) {
   const relatedCases = caseStudies.filter((c) => {
     if (industry.slug === 'roofers-louisiana') return c.slug === 'foret-construction'
     if (industry.slug === 'auto-shops-louisiana') return c.slug === 'elite-custom-automotive'
-    if (industry.slug === 'home-services-louisiana') return c.slug === 'all-out-window-tint'
+    if (industry.slug === 'home-services-louisiana') return c.slug === 'all-out-window-tint' || c.slug === 'hover-septic'
     return false
   })
 

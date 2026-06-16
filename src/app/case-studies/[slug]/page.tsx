@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { caseStudies, site } from '@/config/site'
 import PageHero from '@/components/PageHero'
@@ -49,14 +50,26 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
   },
   'all-out-window-tint': {
     challenge:
-      'Reed runs window tint shops in two Louisiana locations. The old site had one contact form going to one inbox, which meant the Houma team got Gonzales leads and vice versa. Cross-routing was killing conversion.',
+      'Reed runs window tint shops in Gonzales and Baton Rouge. The old Hibu-hosted site had one contact form going to one inbox, which meant the Gonzales team got Baton Rouge leads and vice versa. Cross-routing was killing conversion, and the Baton Rouge market is brutally competitive.',
     approach: [
       'Single Strykora-built site with location-specific landing pages',
       'Contact form that dynamically swaps Formspree endpoints by location selection',
       'Per-location GBP profiles fed by matching site content',
+      'AI-search-ready schema across every page, llms.txt, and structured services entries',
       'Live at all-outwindowtint.com (yes, with the hyphen)',
     ],
-    result: 'Each location now owns its own lead pipeline. Gonzales bookings hit Gonzales. Houma bookings hit Houma. One site, two clean funnels.',
+    result: 'Two months after launch, the Baton Rouge location is ranking #3 in Google AI search results for the market\'s biggest tinting queries. Each location owns its own lead pipeline. Gonzales bookings hit Gonzales. Baton Rouge bookings hit Baton Rouge. One site, two clean funnels.',
+  },
+  'hover-septic': {
+    challenge:
+      'Hover Septic does multi-thousand-dollar septic installations in Thibodaux and the surrounding parishes. They had no website. Every lead came through word-of-mouth and Facebook, with no leverage when a customer Googled them mid-decision.',
+    approach: [
+      'Custom Next.js site targeting the high-ticket "septic installs Thibodaux" search',
+      'Service pages mapped to the actual jobs (new install, replacement, repair, inspection)',
+      'GBP optimization with photos, posts, and services aligned to the on-site copy',
+      'Schema and llms.txt for AI search citation',
+    ],
+    result: 'Hover Septic now ranks #1 organic for "septic installs in Thibodaux LA" — the exact keyword that pays the bills. Each install is a multi-thousand-dollar job, so the site paid for itself within the first month it ranked.',
   },
 }
 
@@ -79,7 +92,23 @@ export default async function CaseStudyPage({ params }: Params) {
         ]}
       />
 
-      <section className="section-padding">
+      <section className="pt-8 md:pt-12">
+        <div className="container-wide">
+          <Reveal className="relative aspect-[21/9] rounded-2xl overflow-hidden border border-border mb-12">
+            <Image
+              src={c.cover}
+              alt={`${c.client} case study cover image`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/20 to-transparent" />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-padding pt-0">
         <div className="container-wide">
           <Reveal className="grid grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border max-w-3xl mb-16">
             {c.metrics.map((m) => (

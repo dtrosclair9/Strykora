@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { services, industries, caseStudies, cities, site, trustStrip } from '@/config/site'
 import HeroVideo from '@/components/HeroVideo'
 import Reveal from '@/components/Reveal'
@@ -200,8 +201,18 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <Reveal className="card-feature p-8 md:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <Reveal className="card-feature overflow-hidden !p-0">
+            <div className="relative aspect-[21/9] overflow-hidden">
+              <Image
+                src={featuredCase.cover}
+                alt={`${featuredCase.client} case study cover image`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/60 to-transparent" />
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start p-8 md:p-12">
               <div className="lg:col-span-7">
                 <p className="text-xs uppercase tracking-[0.18em] text-accent font-mono mb-3">
                   {featuredCase.client} · {featuredCase.industry} · {featuredCase.city}
