@@ -31,23 +31,22 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-bg/80 backdrop-blur-xl border-b border-border'
+        scrolled || menuOpen
+          ? 'bg-bg border-b border-border'
           : 'bg-transparent border-b border-transparent'
       }`}
     >
       <div className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center gap-2.5 shrink-0" aria-label={`${site.name} — home`}>
+          <Link href="/" className="flex items-center shrink-0" aria-label={`${site.name} — home`}>
             <Image
-              src="/images/strykora-icon.png"
-              alt=""
-              width={32}
-              height={32}
-              className="h-8 w-8"
+              src="/images/strykora-lockup.png"
+              alt={`${site.name} — SEO & Web Design Louisiana`}
+              width={1724}
+              height={484}
+              className="h-10 md:h-12 w-auto"
               priority
             />
-            <span className="font-display font-bold text-lg tracking-tight">{site.name}</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
@@ -161,45 +160,51 @@ export default function Header() {
         </div>
 
         {menuOpen && (
-          <nav className="lg:hidden pb-6 pt-2 border-t border-border" aria-label="Mobile navigation">
-            <div className="flex flex-col gap-1 pt-2">
-              <Link href="/" className="px-2 py-3 text-text font-medium">Home</Link>
+          <nav
+            id="mobile-nav"
+            className="lg:hidden fixed inset-x-0 top-16 md:top-20 bottom-0 z-50 bg-[#0A0E1A] overflow-y-auto"
+            aria-label="Mobile navigation"
+          >
+            <div className="container-wide flex flex-col divide-y divide-border pb-10">
+              <Link href="/" className="px-1 py-4 text-text text-lg font-medium">Home</Link>
               <details className="group">
-                <summary className="px-2 py-3 text-text font-medium cursor-pointer flex items-center justify-between">
+                <summary className="px-1 py-4 text-text text-lg font-medium cursor-pointer flex items-center justify-between list-none">
                   Services
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <svg className="w-5 h-5 text-text-dim transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <div className="pl-4 mt-1 mb-2 space-y-1">
+                <div className="pl-4 pb-3 space-y-1">
                   {services.map((s) => (
-                    <Link key={s.slug} href={`/services/${s.slug}`} className="block px-2 py-2 text-sm text-text-muted hover:text-text">
+                    <Link key={s.slug} href={`/services/${s.slug}`} className="block px-2 py-2.5 text-base text-text-muted hover:text-text">
                       {s.title}
                     </Link>
                   ))}
                 </div>
               </details>
               <details className="group">
-                <summary className="px-2 py-3 text-text font-medium cursor-pointer flex items-center justify-between">
+                <summary className="px-1 py-4 text-text text-lg font-medium cursor-pointer flex items-center justify-between list-none">
                   Industries
-                  <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <svg className="w-5 h-5 text-text-dim transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <div className="pl-4 mt-1 mb-2 space-y-1">
+                <div className="pl-4 pb-3 space-y-1">
                   {industries.map((i) => (
-                    <Link key={i.slug} href={`/industries/${i.slug}`} className="block px-2 py-2 text-sm text-text-muted hover:text-text">
+                    <Link key={i.slug} href={`/industries/${i.slug}`} className="block px-2 py-2.5 text-base text-text-muted hover:text-text">
                       {i.title}
                     </Link>
                   ))}
                 </div>
               </details>
-              <Link href="/case-studies" className="px-2 py-3 text-text font-medium">Case Studies</Link>
-              <Link href="/about" className="px-2 py-3 text-text font-medium">About</Link>
-              <Link href="/contact" className="px-2 py-3 text-text font-medium">Contact</Link>
-              <a href={`tel:${site.phoneRaw}`} className="mt-3 btn-primary justify-center">
-                Call {site.phoneDisplay}
-              </a>
+              <Link href="/case-studies" className="px-1 py-4 text-text text-lg font-medium">Case Studies</Link>
+              <Link href="/about" className="px-1 py-4 text-text text-lg font-medium">About</Link>
+              <Link href="/contact" className="px-1 py-4 text-text text-lg font-medium">Contact</Link>
+              <div className="pt-6">
+                <a href={`tel:${site.phoneRaw}`} className="btn-primary w-full justify-center text-base">
+                  Call {site.phoneDisplay}
+                </a>
+              </div>
             </div>
           </nav>
         )}
