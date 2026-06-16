@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <ul className="space-y-3 text-sm text-text-muted">
                   <li>1. You send the form.</li>
                   <li>2. I read it, look at your current site, and write back within 24 hours.</li>
-                  <li>3. If we\'re a fit, I send a fixed-price quote and timeline. No pressure, no auto-billing.</li>
+                  <li>3. If we&apos;re a fit, I send a fixed-price quote and timeline. No pressure, no auto-billing.</li>
                 </ul>
               </div>
             </Reveal>

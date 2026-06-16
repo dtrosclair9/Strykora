@@ -18,7 +18,7 @@ export default function CaseStudiesPage() {
       <PageHero
         eyebrow="Case studies"
         title="The work, with receipts."
-        description="We don\'t fabricate testimonials. Here\'s real Louisiana clients we\'ve shipped for — what we built, what changed, and what it cost."
+        description="We don't fabricate testimonials. Here's real Louisiana clients we've shipped for — what we built, what changed, and what it cost."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/case-studies', label: 'Case Studies' },

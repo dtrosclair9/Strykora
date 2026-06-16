@@ -49,8 +49,8 @@ export default function PrivacyPage() {
           <Reveal>
             <h2 className="text-2xl font-display text-text mb-3">How we use it</h2>
             <p>
-              The information you submit is used to respond to your project inquiry and decide whether we\'re a fit. We don\'t
-              sell, rent, or share your data. We don\'t add you to a marketing list without your permission.
+              The information you submit is used to respond to your project inquiry and decide whether we&apos;re a fit. We don&apos;t
+              sell, rent, or share your data. We don&apos;t add you to a marketing list without your permission.
             </p>
           </Reveal>
 
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-display text-text mb-3">Your rights</h2>
             <p>
               You can ask for a copy of any information we have about you, or ask us to delete it, by emailing{' '}
-              <a href={`mailto:${site.email}`} className="text-accent hover:underline">{site.email}</a>. We\'ll respond within 30 days.
+              <a href={`mailto:${site.email}`} className="text-accent hover:underline">{site.email}</a>. We&apos;ll respond within 30 days.
             </p>
           </Reveal>
 

@@ -18,7 +18,7 @@ export default function IndustriesPage() {
       <PageHero
         eyebrow="Industries"
         title="Built for Louisiana service businesses."
-        description="We don\'t take every client. These are the verticals we know cold — and where our case studies prove the model works."
+        description="We don't take every client. These are the verticals we know cold — and where our case studies prove the model works."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/industries', label: 'Industries' },

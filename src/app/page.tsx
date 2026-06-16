@@ -132,7 +132,7 @@ export default function HomePage() {
               Web design first.<br /> SEO that stacks on top.
             </h2>
             <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Four services, in a sales stack that compounds. We don\'t do content writing, social media, or photography — and we won\'t pretend to.
+              Four services, in a sales stack that compounds. We don&apos;t do content writing, social media, or photography — and we won&apos;t pretend to.
             </p>
           </Reveal>
 
@@ -323,7 +323,7 @@ export default function HomePage() {
                   Stop losing leads to a slow website.
                 </h2>
                 <p className="text-text-muted text-lg max-w-xl mx-auto mb-8">
-                  Tell me about your business in 60 seconds. I\'ll send back a candid take and a fixed-price quote within 24 hours.
+                  Tell me about your business in 60 seconds. I&apos;ll send back a candid take and a fixed-price quote within 24 hours.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
                   <Link href="/contact" className="btn-primary">

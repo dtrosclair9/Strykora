@@ -146,7 +146,7 @@ export default async function IndustryPage({ params }: Params) {
           <section className="section-padding border-t border-border bg-bg-elevated">
             <div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-12">
               <Reveal>
-                <p className="eyebrow mb-4">What\'s broken</p>
+                <p className="eyebrow mb-4">What&apos;s broken</p>
                 <h2 className="text-2xl md:text-3xl font-display text-text mb-6 text-balance">Common pain points.</h2>
                 <ul className="space-y-3">
                   {copy.pain.map((p) => (
