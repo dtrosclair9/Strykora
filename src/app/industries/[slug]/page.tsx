@@ -24,6 +24,29 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 }
 
+const INDUSTRY_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
+  'roofers-louisiana': {
+    src: '/images/hero-industry-roofers.jpg',
+    alt: 'Aerial dusk view of a Louisiana home with a dark metal standing-seam roof, the kind of FORTIFIED roof Strykora\'s roofer clients install.',
+  },
+  'contractors-louisiana': {
+    src: '/images/hero-industry-contractors.jpg',
+    alt: 'Louisiana commercial construction jobsite at dusk with excavator silhouettes, the kind of work Strykora\'s contractor clients run.',
+  },
+  'home-services-louisiana': {
+    src: '/images/hero-industry-home-services.jpg',
+    alt: 'Louisiana suburban home at twilight with warm interior lights, the kind of residential property Strykora\'s home services clients serve.',
+  },
+  'auto-shops-louisiana': {
+    src: '/images/hero-industry-auto-shops.jpg',
+    alt: 'Auto shop service bay with a truck on a lift under dramatic lighting, the kind of shop Strykora\'s auto clients run.',
+  },
+  'commercial-louisiana': {
+    src: '/images/hero-industry-commercial.jpg',
+    alt: 'South Louisiana marine port at dusk with a tugboat moored alongside dock cranes, the kind of operator Strykora\'s commercial clients run.',
+  },
+}
+
 const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: string[]; faqs: { q: string; a: string }[] }> = {
   'roofers-louisiana': {
     intro:
@@ -236,6 +259,8 @@ export default async function IndustryPage({ params }: Params) {
     url: `${site.url}/industries/${industry.slug}`,
   }
 
+  const heroImg = INDUSTRY_HERO_IMAGE[industry.slug]
+
   return (
     <>
       <Schema data={[serviceSchema, ...(copy ? [buildFaqSchema(copy.faqs)] : [])]} />
@@ -243,6 +268,8 @@ export default async function IndustryPage({ params }: Params) {
         eyebrow={industry.title}
         title={industry.headline}
         description={industry.short}
+        bgImage={heroImg?.src}
+        bgImageAlt={heroImg?.alt}
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/industries', label: 'Industries' },

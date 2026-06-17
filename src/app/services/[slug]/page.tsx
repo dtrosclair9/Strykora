@@ -27,6 +27,25 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 }
 
+const SERVICE_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
+  'web-design': {
+    src: '/images/hero-service-web-design.jpg',
+    alt: 'Abstract glowing code editor and UI components on glass, the kind of custom Next.js web design Strykora ships.',
+  },
+  'seo': {
+    src: '/images/hero-service-seo.jpg',
+    alt: 'Abstract glowing ascending line graph and upward arrow, representing local SEO ranking growth for Louisiana businesses.',
+  },
+  'google-business-profile': {
+    src: '/images/hero-service-gbp.jpg',
+    alt: 'Glowing 3D map pin over a digital city grid, representing Google Business Profile optimization for the local pack.',
+  },
+  'google-ads': {
+    src: '/images/hero-service-ads.jpg',
+    alt: 'Light streaks racing toward a target point in deep obsidian space, representing high-intent Google Ads traffic.',
+  },
+}
+
 const SERVICE_PAGE_COPY: Record<string, {
   howWeDoIt: { step: string; title: string; body: string }[]
   faqs: { q: string; a: string }[]
@@ -127,6 +146,8 @@ export default async function ServicePage({ params }: Params) {
     },
   }
 
+  const heroImg = SERVICE_HERO_IMAGE[service.slug]
+
   return (
     <>
       <Schema data={[serviceSchema, ...(copy ? [buildFaqSchema(copy.faqs)] : [])]} />
@@ -134,6 +155,8 @@ export default async function ServicePage({ params }: Params) {
         eyebrow={service.eyebrow}
         title={`${service.title} in Louisiana`}
         description={service.long}
+        bgImage={heroImg?.src}
+        bgImageAlt={heroImg?.alt}
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/services', label: 'Services' },

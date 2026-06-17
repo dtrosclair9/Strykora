@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import Reveal from './Reveal'
 import { Schema, breadcrumbSchema } from './Schema'
@@ -7,17 +8,39 @@ interface PageHeroProps {
   title: string
   description?: string
   breadcrumbs?: { href: string; label: string }[]
+  /** Optional background image. Renders behind the hero text with a left-weighted readability gradient. */
+  bgImage?: string
+  bgImageAlt?: string
 }
 
-export default function PageHero({ eyebrow, title, description, breadcrumbs }: PageHeroProps) {
+export default function PageHero({ eyebrow, title, description, breadcrumbs, bgImage, bgImageAlt }: PageHeroProps) {
   return (
     <>
       {breadcrumbs && breadcrumbs.length > 1 && (
         <Schema data={breadcrumbSchema(breadcrumbs)} />
       )}
       <section className="relative pt-32 md:pt-40 pb-20 md:pb-24 border-b border-border overflow-hidden">
-        <div className="absolute inset-0 grid-pattern opacity-40 mask-fade-bottom" aria-hidden="true" />
-        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-accent/20 blur-3xl opacity-30" aria-hidden="true" />
+        {bgImage ? (
+          <>
+            <Image
+              src={bgImage}
+              alt={bgImageAlt ?? ''}
+              fill
+              className="object-cover -z-10"
+              sizes="100vw"
+              priority
+            />
+            {/* readability overlays */}
+            <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/80 to-bg/40 -z-10" aria-hidden="true" />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent -z-10" aria-hidden="true" />
+            <div className="absolute inset-0 grid-pattern opacity-25 mask-fade-bottom -z-10" aria-hidden="true" />
+          </>
+        ) : (
+          <>
+            <div className="absolute inset-0 grid-pattern opacity-40 mask-fade-bottom" aria-hidden="true" />
+            <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-accent/20 blur-3xl opacity-30" aria-hidden="true" />
+          </>
+        )}
 
         <div className="relative container-wide">
           {breadcrumbs && breadcrumbs.length > 0 && (

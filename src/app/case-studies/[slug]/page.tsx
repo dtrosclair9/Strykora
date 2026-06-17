@@ -31,6 +31,29 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 }
 
+const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string }> = {
+  'foret-construction': {
+    url: 'https://www.foretconstruction.co',
+    screenshot: '/images/case-foret-screenshot.jpg',
+    alt: 'Screenshot of foretconstruction.co, the live Strykora-built Next.js site for Foret Construction & Roofing.',
+  },
+  'elite-custom-automotive': {
+    url: 'https://www.elitecustomauto.co',
+    screenshot: '/images/case-elite-screenshot.jpg',
+    alt: 'Screenshot of elitecustomauto.co, the live Strykora-built Next.js site for Elite Custom Automotive in Lockport, Louisiana.',
+  },
+  'all-out-window-tint': {
+    url: 'https://all-outwindowtint.com',
+    screenshot: '/images/case-allout-screenshot.jpg',
+    alt: 'Screenshot of all-outwindowtint.com, the live Strykora-built Next.js site for All Out Window Tint in Gonzales and Baton Rouge.',
+  },
+  'hover-septic': {
+    url: 'https://www.hoverseptic.com',
+    screenshot: '/images/case-hover-screenshot.jpg',
+    alt: 'Screenshot of hoverseptic.com, the live Strykora-built Next.js site for Hover Septic in Thibodaux, Louisiana.',
+  },
+}
+
 const caseDetails: Record<string, { challenge: string; approach: string[]; result: string; coverAlt: string }> = {
   'foret-construction': {
     challenge:
@@ -182,6 +205,47 @@ export default async function CaseStudyPage({ params }: Params) {
           )}
         </div>
       </section>
+
+      {LIVE_SITES[c.slug] && (
+        <section className="section-padding border-t border-border" aria-labelledby="live-site-heading">
+          <div className="container-wide">
+            <Reveal className="mb-8 max-w-2xl">
+              <p className="eyebrow mb-3">Live site</p>
+              <h2 id="live-site-heading" className="text-display-md font-display text-text text-balance">
+                See the live build.
+              </h2>
+              <p className="mt-4 text-text-muted leading-relaxed">
+                Want to see what Strykora actually ships? This is the live {c.client} site, running on Next.js + Vercel right now.
+              </p>
+            </Reveal>
+            <Reveal>
+              <a
+                href={LIVE_SITES[c.slug].url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block relative aspect-[16/9] rounded-2xl overflow-hidden border border-border hover:border-border-light transition-colors"
+              >
+                <Image
+                  src={LIVE_SITES[c.slug].screenshot}
+                  alt={LIVE_SITES[c.slug].alt}
+                  fill
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-bg via-bg/70 to-transparent flex items-center justify-between">
+                  <p className="font-mono text-sm text-text">{LIVE_SITES[c.slug].url.replace(/^https?:\/\//, '')}</p>
+                  <span className="text-sm text-accent font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Visit site
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       <section className="section-padding border-t border-border bg-bg-elevated">
         <div className="container-wide">
