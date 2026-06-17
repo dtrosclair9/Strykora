@@ -44,14 +44,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
-  const blogPosts: MetadataRoute.Sitemap = [
-    {
-      url: `${base}/blog/why-seo-matters-for-small-businesses-louisiana`,
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
+  const blogPostSlugs = [
+    'why-seo-matters-for-small-businesses-louisiana',
+    'google-may-2026-ai-search-update-louisiana-businesses',
+    'why-your-wix-site-isnt-ranking-louisiana',
   ]
+  const blogPosts: MetadataRoute.Sitemap = blogPostSlugs.map((slug) => ({
+    url: `${base}/blog/${slug}`,
+    lastModified: now,
+    changeFrequency: 'yearly',
+    priority: 0.5,
+  }))
 
   return [
     ...staticPages,
