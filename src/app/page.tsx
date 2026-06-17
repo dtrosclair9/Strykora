@@ -200,12 +200,48 @@ export default function HomePage() {
               Web design first.<br /> SEO that stacks on top.
             </h2>
             <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Four services, four prices on the table up front, no 12-month contracts. Strykora does not do content writing, social media management, or photography. Those get referred out. Honest scope keeps the work sharp.
+              Four core services, plus a fifth nobody else in Louisiana sells: AI Search Optimization. Every price is on the table up front, no 12-month contracts. Strykora does not do content writing, social media management, or photography. Those get referred out. Honest scope keeps the work sharp.
             </p>
           </Reveal>
 
+          {/* Featured: AI Search Optimization (the moat) */}
+          {(() => {
+            const ai = services.find((s) => 'featured' in s && s.featured)
+            if (!ai) return null
+            return (
+              <Reveal className="mb-8">
+                <Link href={`/services/${ai.slug}`} className="block group relative overflow-hidden rounded-2xl border border-accent/40 bg-gradient-to-br from-accent/10 via-bg-elevated to-bg-elevated p-8 md:p-10 hover:border-accent/70 transition-colors">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div className="lg:col-span-8">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent text-[10px] uppercase tracking-[0.18em] font-mono">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                          The Louisiana moat
+                        </span>
+                        <p className="text-[10px] uppercase tracking-[0.18em] text-text-dim font-mono">
+                          {ai.eyebrow}
+                        </p>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-display text-text mb-3 text-balance">{ai.title}</h3>
+                      <p className="text-text-muted leading-relaxed mb-4">{ai.short}</p>
+                      <p className="text-sm text-text-dim font-mono">{ai.priceRange}</p>
+                    </div>
+                    <div className="lg:col-span-4 lg:text-right">
+                      <span className="inline-flex items-center gap-1 text-sm text-accent font-medium group-hover:gap-2 transition-all">
+                        See the playbook
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </Reveal>
+            )
+          })()}
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {services.map((s) => (
+            {services.filter((s) => !('featured' in s && s.featured)).map((s) => (
               <Reveal key={s.slug}>
                 <Link href={`/services/${s.slug}`} className="card-feature block group h-full">
                   <div className="flex items-start justify-between mb-4">

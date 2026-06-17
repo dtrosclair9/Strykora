@@ -8,6 +8,11 @@ const nextConfig = {
       // Old Squarespace URLs that don't have direct equivalents on the new site.
       // All ranking slugs from the prior site are preserved one-to-one in the new app router.
       // Add 301s here only when a previously ranking URL is renamed or removed.
+      {
+        source: '/advertising-thibodaux-la',
+        destination: '/services/google-ads',
+        permanent: true,
+      },
     ]
   },
 }

@@ -44,6 +44,10 @@ const SERVICE_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
     src: '/images/hero-service-ads.jpg',
     alt: 'Light streaks racing toward a target point in deep obsidian space, representing high-intent Google Ads traffic.',
   },
+  'ai-search-optimization': {
+    src: '/images/hero-service-seo.jpg',
+    alt: 'Abstract glowing data graph spiraling upward through deep navy space, representing AI search citation visibility for Louisiana businesses.',
+  },
 }
 
 const SERVICE_PAGE_COPY: Record<string, {
@@ -113,6 +117,23 @@ const SERVICE_PAGE_COPY: Record<string, {
       { q: 'Do you build the landing page?', a: 'Yes. Conversion-tracked landing pages are built in-house on the same custom stack as your main site, with the same speed and SEO standards.' },
       { q: 'How long until ads start producing leads?', a: 'Leads start in week one. The first two weeks are learning and optimization; expect cost per lead to stabilize and trend down in weeks three and four.' },
       { q: 'Can I run ads without SEO?', a: 'Yes, but ads are most efficient when paired with strong SEO. Ads cover the gap while SEO catches up; SEO carries the load once it ranks. Stacking both compounds.' },
+    ],
+  },
+  'ai-search-optimization': {
+    howWeDoIt: [
+      { step: '01', title: 'AI citation audit', body: 'Strykora runs your business through ChatGPT, Perplexity, Google AI Overviews, and Gemini for every commercial-intent query in your market. You get a written report of where you appear, where you do not, and what the AI is citing instead.' },
+      { step: '02', title: 'Entity + schema rebuild', body: 'Every page restructured with the schema, entity associations, and FAQPage markup AI engines pull from. llms.txt written specifically for AI crawler ingestion. Direct-answer copywriting on the pages that matter.' },
+      { step: '03', title: 'GBP rebuild for the AI local pack', body: 'Google Business Profile Services entries rewritten to feed AI Overview citation, not just the classic local pack. The two answer surfaces are now scored differently by Google.' },
+      { step: '04', title: 'Monthly AI citation report', body: 'Tracked appearances across ChatGPT, Perplexity, Gemini, and Google AI Overviews. Which engines name you, for which queries, and what changed since last month.' },
+    ],
+    faqs: [
+      { q: 'What is AI Search Optimization, exactly?', a: 'Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) are the practice of getting your business cited inside AI-generated answers from ChatGPT, Perplexity, Google AI Overviews, Gemini, and Claude. It overlaps with classic SEO but uses different signals: entity structure, schema, FAQPage markup, llms.txt, and direct-answer copy patterns. Most LA agencies do not sell this as a distinct service.' },
+      { q: 'How is this different from your regular SEO retainer?', a: 'Local SEO targets the blue links and the classic local pack. AI Search Optimization targets the citation surface inside the AI answer that now sits above both. The methods overlap, but the deliverables, the tracked KPIs, and the schema work are different. New Strykora SEO clients get the AI Search work bundled in. Standalone audits are for businesses already on someone else\'s SEO retainer who want AI visibility specifically.' },
+      { q: 'Why does this matter right now?', a: 'Ahrefs measured a 58% click-through rate drop on top-ranking pages once an AI Overview is present. Google AI Overviews crossed one billion monthly users in 2025 and AI Mode is now the default for hundreds of millions of searches. Most Louisiana competitors are invisible inside the AI answers their buyers are starting to trust. The window to claim the citation is open and small.' },
+      { q: 'How do you measure success?', a: 'Tracked AI citations: did ChatGPT, Perplexity, Gemini, and Google AI Overviews name your business in response to the commercial-intent queries that pay your bills? Monthly reports show every appearance, every query, every change. Hover Septic, a Strykora client, is currently the #1 recommendation across ChatGPT and Perplexity for "septic installs Thibodaux LA". The screenshots are on the homepage.' },
+      { q: 'How much does the standalone audit cost?', a: 'The audit + 30-day optimization sprint is $1,997 fixed. Includes a written citation report across four AI engines, the schema and entity rebuild, the llms.txt write, GBP Services entry restructure, and a 30-day re-audit. For new Strykora SEO clients, this work is bundled into the $297/month local SEO retainer at no extra cost.' },
+      { q: 'Will my AI citations stick or do they evaporate after the sprint?', a: 'They compound. AI engines re-crawl and re-evaluate citation candidates on a rolling basis. The structural work (schema, entity, llms.txt, FAQPage) is durable. The content work needs ongoing iteration as the engines change their citation criteria, which is why the monthly SEO retainer pays for ongoing maintenance. Standalone audit clients are welcome to renew the sprint quarterly.' },
+      { q: 'Do you work with non-Louisiana clients?', a: 'No. Strykora is Louisiana-only by design. Local market knowledge is half the product.' },
     ],
   },
 }

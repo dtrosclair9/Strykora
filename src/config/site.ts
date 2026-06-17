@@ -157,6 +157,24 @@ export const services = [
     priceRange: 'Management from $500/month, plus your ad spend.',
     priority: 4,
   },
+  {
+    slug: 'ai-search-optimization',
+    title: 'AI Search Optimization',
+    eyebrow: 'Get cited inside the AI answer',
+    short: 'Become the business ChatGPT, Perplexity, and Google AI Overviews recommend by name, not the one buried under the answer.',
+    long: 'Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) are the new top of funnel. Google AI Overviews and AI Mode now reach more than one billion people a month, and Ahrefs measured a 58% click-through rate drop on top-ranking pages once an AI Overview is present. Most Louisiana service businesses are invisible inside ChatGPT, Perplexity, and Gemini answers. Strykora is the only Louisiana studio that sells AI Search Optimization as a dedicated service: a structured-data, entity, and citation-surface program built specifically to get your business named inside the AI answer your future customers are already starting to trust.',
+    bullets: [
+      'AI Overview + ChatGPT + Perplexity citation audit (where you appear, where you don\'t, and why)',
+      'Entity, schema, and FAQPage structure tuned for AI answer extraction',
+      'llms.txt and structured Services entries written for AI crawler ingestion',
+      'Direct-answer copywriting on key service pages (question-led H2s, one-sentence answers)',
+      'GBP Services entries rebuilt to feed AI Overview local pack citation',
+      'Monthly AI citation report: which engines name you, for which queries, and what changed',
+    ],
+    priceRange: 'Bundled into the local SEO retainer, or standalone audit + sprint at $1,997.',
+    priority: 5,
+    featured: true,
+  },
 ] as const
 
 export type Service = (typeof services)[number]
@@ -219,7 +237,8 @@ export const cityServiceCombos = [
   { service: 'web-design', slug: 'web-design-thibodaux-la', cityName: 'Thibodaux', citySlug: 'thibodaux-la', preserved: true },
   { service: 'seo', slug: 'seo-thibodaux-la', cityName: 'Thibodaux', citySlug: 'thibodaux-la', preserved: true },
   { service: 'digital-marketing', slug: 'digital-marketing-thibodaux-la', cityName: 'Thibodaux', citySlug: 'thibodaux-la', preserved: true },
-  { service: 'advertising', slug: 'advertising-thibodaux-la', cityName: 'Thibodaux', citySlug: 'thibodaux-la', preserved: true },
+  // Removed 2026-06-17: /advertising-thibodaux-la — SERP is billboards & outdoor signage, not Google Ads buyer intent.
+  // 301 redirect added in next.config.js. Do not re-add without removing the redirect first.
   { service: 'web-design', slug: 'web-design-houma-la', cityName: 'Houma', citySlug: 'houma-la' },
   { service: 'seo', slug: 'seo-houma-la', cityName: 'Houma', citySlug: 'houma-la' },
   { service: 'web-design', slug: 'web-design-baton-rouge-la', cityName: 'Baton Rouge', citySlug: 'baton-rouge-la' },
