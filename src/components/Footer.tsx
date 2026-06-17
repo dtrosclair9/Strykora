@@ -69,6 +69,7 @@ export default function Footer() {
             <h3 className="eyebrow mb-5">Company</h3>
             <ul className="space-y-3">
               <li><Link href="/case-studies" className="text-sm text-text-muted hover:text-text transition-colors">Case Studies</Link></li>
+              <li><Link href="/reviews" className="text-sm text-text-muted hover:text-text transition-colors">Reviews</Link></li>
               <li><Link href="/industries" className="text-sm text-text-muted hover:text-text transition-colors">Industries</Link></li>
               <li><Link href="/about" className="text-sm text-text-muted hover:text-text transition-colors">About</Link></li>
               <li><Link href="/contact" className="text-sm text-text-muted hover:text-text transition-colors">Contact</Link></li>

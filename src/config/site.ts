@@ -22,7 +22,73 @@ export const site = {
   social: {
     facebook: 'https://www.facebook.com/strykora',
   },
+  gbp: {
+    profile: 'https://share.google/245Rc7R7IT15YNyAl',
+    leaveReview: 'https://g.page/r/CfC86RlwChOQEBM/review',
+  },
   timelineLabel: 'Ships in 1 week',
+} as const
+
+export const reviews = [
+  {
+    author: 'Timothy Caillouet',
+    business: 'TIMCO',
+    rating: 5,
+    date: '2026-06-17',
+    body: 'Dayne Trosclair with Strykora went that extra mile that many talk about but few do. He was very thorough from the jump, ensuring we wouldn\'t be wasting time and effort to attain the website product that I was looking for. You can go get AI or some jabroni off the street to work you up a site, but good luck getting them on the phone or to make edits in a timely manner. Dayne will stay with you step by step throughout the life of the site and I look forward to working with him as my companies grow. If you\'re in the market for an online presence that isn\'t just FB or Insta; take some time and reach out to Dayne at Strykora. 5 star service!',
+    featured: true,
+  },
+  {
+    author: 'Reed Babin',
+    business: 'All Out Window Tint',
+    rating: 5,
+    date: '2026-05-20',
+    body: 'Absolutely blown away by the work Dayne Trosclair at Strykora did for our All-Out website. 10/10 experience from start to finish. The graphics, layout, responsiveness, branding, and overall execution are next level. The site has a clean modern luxury feel and honestly looks like a $10K+ website. Dayne took our vision and elevated it beyond what we imagined. Professional, creative, fast, and detail-oriented the entire way through. If you need a website, branding, SEO, or anything tech related, Strykora is the real deal. Highly recommend.',
+    featured: true,
+  },
+  {
+    author: 'Colin Richard',
+    business: 'Elite Custom Automotive',
+    rating: 5,
+    date: '2026-03-18',
+    body: 'This company is first class! A marketing agency and website developer that actually listens, and brings your ideas to life. Communication was present from the jump, and stayed consistent throughout our entire process. Exceeded our expectations by a mile. Thanks Dayne and team for getting our website active and google listing present!',
+    featured: true,
+  },
+  {
+    author: 'Trey Hover',
+    business: 'Hover Septic',
+    rating: 5,
+    date: '2026-04-01',
+    body: 'Dayne built our website from scratch and handled all the Google stuff too. Honestly didn\'t know much about SEO going in but he walked me through everything and it actually makes sense now. Site looks clean and professional. Would definitely recommend him if you\'re a small business trying to get found online.',
+  },
+  {
+    author: 'Jacob Foret',
+    business: 'Foret Construction',
+    rating: 5,
+    date: '2026-03-25',
+    body: 'Really can\'t say enough with all the help and accomplishments over the past 2 week great company and great people.',
+  },
+  {
+    author: 'Branton Vicknair',
+    business: 'Southdown Renovations',
+    rating: 5,
+    date: '2026-04-22',
+    body: 'Had a great experience working with Dayne. He took the time to actually listen to what we wanted and came back with stuff that looked way better than I pictured. The new logo and website turned out great and he got our Google page looking sharp too. Good dude, does solid work, can\'t recommend him enough.',
+  },
+  {
+    author: 'Matt Glover',
+    business: 'Acadia Pools',
+    rating: 5,
+    date: '2026-04-08',
+    body: 'Dayne with Strykora made the process of getting a website and google presence literally effortless. His attention to detail and his ability to multitask are second to none!',
+  },
+] as const
+
+export type Review = (typeof reviews)[number]
+
+export const reviewStats = {
+  averageRating: 5,
+  reviewCount: reviews.length,
 } as const
 
 export const services = [

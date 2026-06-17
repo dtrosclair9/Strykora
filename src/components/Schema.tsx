@@ -1,4 +1,4 @@
-import { site } from '@/config/site'
+import { site, reviews, reviewStats } from '@/config/site'
 
 interface SchemaProps {
   data: object | object[]
@@ -66,9 +66,28 @@ export const localBusinessSchema = {
     { '@type': 'City', name: 'New Orleans' },
     { '@type': 'City', name: 'Lafayette' },
   ],
-  sameAs: [site.social.facebook],
+  sameAs: [site.social.facebook, site.gbp.profile],
   founder: { '@id': `${site.url}/#dayne` },
   employee: { '@id': `${site.url}/#dayne` },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: reviewStats.averageRating,
+    reviewCount: reviewStats.reviewCount,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  review: reviews.map((r) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: r.author },
+    datePublished: r.date,
+    reviewBody: r.body,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: r.rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+  })),
 }
 
 export const websiteSchema = {

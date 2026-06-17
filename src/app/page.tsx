@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { services, industries, caseStudies, site, trustStrip } from '@/config/site'
+import { services, industries, caseStudies, site, trustStrip, reviewStats } from '@/config/site'
 import HeroVideo from '@/components/HeroVideo'
 import Reveal from '@/components/Reveal'
+import Stars from '@/components/Stars'
+import ReviewsSection from '@/components/ReviewsSection'
 import { Schema, localBusinessSchema, websiteSchema, personSchema, faqSchema as buildFaqSchema } from '@/components/Schema'
 
 export const metadata: Metadata = {
@@ -149,6 +151,19 @@ export default function HomePage() {
                 See the work
               </Link>
             </div>
+            <a
+              href={site.gbp.profile}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-2 text-sm text-text-muted hover:text-text transition-colors group"
+              aria-label={`Strykora has ${reviewStats.reviewCount} Google reviews with a ${reviewStats.averageRating} star average`}
+            >
+              <Stars rating={Math.round(reviewStats.averageRating)} size="sm" />
+              <span className="font-mono">
+                {reviewStats.averageRating.toFixed(1)} · {reviewStats.reviewCount} Google reviews
+              </span>
+              <span className="text-accent group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
           </Reveal>
 
           {/* Trust strip */}
@@ -287,6 +302,14 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      {/* ── REVIEWS ──────────────────────────────────────────────────── */}
+      <ReviewsSection
+        limit={3}
+        featuredOnly
+        heading="Real clients. Real reviews."
+        showSeeAllLink
+      />
 
       {/* ── WHY STRYKORA ─────────────────────────────────────────────── */}
       <section className="section-padding bg-bg-elevated border-y border-border" aria-labelledby="why-heading">

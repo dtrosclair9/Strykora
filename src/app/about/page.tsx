@@ -4,6 +4,7 @@ import { site } from '@/config/site'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import CTA from '@/components/CTA'
+import ReviewsSection from '@/components/ReviewsSection'
 import { Schema, personSchema, faqSchema as buildFaqSchema } from '@/components/Schema'
 
 export const metadata: Metadata = {
@@ -135,6 +136,8 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
+
+      <ReviewsSection heading="What clients say about working with Strykora." eyebrow="Reviews" />
 
       <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="about-faq-heading">
         <div className="container-narrow">
