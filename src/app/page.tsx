@@ -138,7 +138,7 @@ export default function HomePage() {
             </h1>
             <p className="text-lg md:text-xl text-text-muted max-w-2xl text-balance leading-relaxed">
               Stop renting a templated website you&apos;ll never own. Strykora builds you a fast, custom site
-              for about $3,750, ships it in about a week, and ranks you locally — including in ChatGPT
+              starting at $3,750, ships it in about a week, and ranks you locally — including in ChatGPT
               and Google AI Overviews — before your old agency&apos;s next invoice clears.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
