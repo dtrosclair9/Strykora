@@ -279,7 +279,7 @@ export const caseStudies = [
     industry: 'Septic / Home Services',
     city: 'Thibodaux, LA',
     headline: 'From zero digital footprint to #1 organic, and a business model change',
-    blurb: 'Trey had no website and no Google Business Profile when he signed on as Strykora\'s first client — just a Facebook page. Strykora built him a Squarespace site, a brand new GBP, and ranked him #1 organic for "septic installs Thibodaux LA". The impact was so profound that Hover Septic was able to drop low-ticket pumpout work entirely and focus on multi-thousand-dollar installs.',
+    blurb: 'Trey had no website and no Google Business Profile when he signed on with Strykora — just a Facebook page. Strykora built him a website, a brand new GBP, and ranked him #1 organic for "septic installs Thibodaux LA". The impact was so profound that Hover Septic was able to drop low-ticket pumpout work entirely and focus on multi-thousand-dollar installs.',
     metrics: [
       { label: 'Organic rank', value: '#1' },
       { label: 'Service lines dropped', value: 'Pumpouts' },

@@ -50,7 +50,7 @@ const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string 
   'hover-septic': {
     url: 'https://www.hoverseptic.com',
     screenshot: '/images/case-hover-screenshot.jpg',
-    alt: 'Screenshot of hoverseptic.com, the live Strykora-built Squarespace site for Hover Septic in Thibodaux, Louisiana.',
+    alt: 'Screenshot of hoverseptic.com, the live Strykora-built site for Hover Septic in Thibodaux, Louisiana.',
   },
 }
 
@@ -99,9 +99,9 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
   },
   'hover-septic': {
     challenge:
-      'Trey Hover ran Hover Septic out of Thibodaux with zero digital footprint. No website, no Google Business Profile, just a Facebook page. Every install lead came through word-of-mouth, with no leverage when a customer Googled them mid-decision. As Strykora\'s first client, this was a clean-slate build.',
+      'Trey Hover ran Hover Septic out of Thibodaux with zero digital footprint. No website, no Google Business Profile, just a Facebook page. Every install lead came through word-of-mouth, with no leverage when a customer Googled them mid-decision. This was a clean-slate build.',
     approach: [
-      'First-time website built on Squarespace (the platform Strykora was using when Trey signed on; Hover is the only remaining Strykora client still on Squarespace today)',
+      'First-time website built from scratch for Hover Septic',
       'Service pages mapped to the actual jobs Trey does: new install, replacement, repair, inspection',
       'Google Business Profile built from scratch with photos, posts, and Services entries aligned to the on-site copy',
       'On-page SEO and schema targeting the high-ticket "septic installs Thibodaux" search',
@@ -219,7 +219,7 @@ export default async function CaseStudyPage({ params }: Params) {
                 See the live build.
               </h2>
               <p className="mt-4 text-text-muted leading-relaxed">
-                Want to see what Strykora actually ships? This is the live {c.client} site, running on Next.js + Vercel right now.
+                Want to see what Strykora actually ships? This is the live {c.client} site right now.
               </p>
             </Reveal>
             <Reveal>
