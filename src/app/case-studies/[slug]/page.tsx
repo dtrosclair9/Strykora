@@ -18,13 +18,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params
   const c = caseStudies.find((cs) => cs.slug === slug)
   if (!c) return {}
+  const title = `${c.client} Case Study: ${c.industry} in ${c.city.split(',')[0]}`
+  const description = c.blurb.length > 160 ? c.blurb.slice(0, 157) + '...' : c.blurb
   return {
-    title: `${c.client} — Case Study`,
-    description: c.blurb.length > 160 ? c.blurb.slice(0, 157) + '...' : c.blurb,
+    title,
+    description,
     alternates: { canonical: `${site.url}/case-studies/${c.slug}` },
     openGraph: {
-      title: `${c.client} — Case Study`,
-      description: c.blurb.length > 160 ? c.blurb.slice(0, 157) + '...' : c.blurb,
+      title,
+      description,
       url: `${site.url}/case-studies/${c.slug}`,
       images: [c.cover],
     },

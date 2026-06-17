@@ -30,7 +30,7 @@ export default function PrivacyPage() {
           <Reveal>
             <h2 className="text-2xl font-display text-text mb-3">What we collect</h2>
             <p>
-              {site.name} collects only what you give us through the contact form on this site — your name, business name,
+              {site.name} collects only what you give us through the contact form on this site: your name, business name,
               email, phone (optional), service of interest, and project message. We also collect standard server logs
               (IP, browser, page visited, timestamp) that any web host stores automatically for security and analytics.
             </p>

@@ -188,7 +188,7 @@ export default function CityServicePage({ slug }: Props) {
                 {city.name} is in {city.parish}, and the buyers who type &quot;{service.title.toLowerCase()} {city.name}&quot;
                 into Google are ready to spend. The problem: the SERP is crowded with generic agencies, national lead-gen
                 sites, and slow WordPress and Wix builds you&apos;d be paying monthly rent on. Strykora ships a faster,
-                more local, more credible answer — owned outright by you — for <span className="text-text">{service.priceRange}</span>
+                more local, more credible answer, owned outright by you, for <span className="text-text">{service.priceRange}</span>.
               </p>
               <ul className="space-y-3">
                 {service.bullets.map((b) => (

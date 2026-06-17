@@ -5,8 +5,8 @@ import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Notes on web design, local SEO, and the Google AI search shift from a Louisiana operator who ships sites every week.',
+  title: 'Local SEO & Web Design Blog — Louisiana',
+  description: 'Notes on web design, local SEO, and the Google AI search shift from a Louisiana operator who ships sites every week. Plain English, no jargon, no course pitch.',
   alternates: { canonical: `${site.url}/blog` },
 }
 

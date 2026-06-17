@@ -8,7 +8,7 @@ interface RevealProps {
   delay?: number
   y?: number
   duration?: number
-  as?: 'div' | 'section' | 'p' | 'span' | 'ul' | 'ol' | 'header' | 'article' | 'aside'
+  as?: 'div' | 'section' | 'p' | 'span' | 'ul' | 'ol' | 'header' | 'article' | 'aside' | 'h2' | 'h3'
   className?: string
   stagger?: boolean
 }

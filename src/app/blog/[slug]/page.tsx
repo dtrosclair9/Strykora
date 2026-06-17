@@ -127,11 +127,21 @@ export default async function BlogPostPage({ params }: Params) {
 
       <article className="section-padding">
         <div className="container-narrow space-y-6 text-lg text-text-muted leading-relaxed">
-          {post.body.map((p, i) => (
-            <Reveal key={i} as="p">
-              <span dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.+?)\*\*/g, '<strong class="text-text">$1</strong>') }} />
-            </Reveal>
-          ))}
+          {post.body.map((p, i) => {
+            const wholeBold = /^\*\*(.+)\*\*\.?$/.exec(p.trim())
+            if (wholeBold) {
+              return (
+                <Reveal key={i} as="h2" className="text-2xl md:text-3xl font-display text-text mt-4 mb-0 text-balance">
+                  {wholeBold[1].replace(/\.$/, '')}
+                </Reveal>
+              )
+            }
+            return (
+              <Reveal key={i} as="p">
+                <span dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.+?)\*\*/g, '<strong class="text-text">$1</strong>') }} />
+              </Reveal>
+            )
+          })}
         </div>
       </article>
 

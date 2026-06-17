@@ -8,9 +8,9 @@ import CTA from '@/components/CTA'
 import { Schema } from '@/components/Schema'
 
 export const metadata: Metadata = {
-  title: 'Case Studies',
+  title: 'Case Studies — Louisiana Web Design & SEO Wins',
   description:
-    'Real Louisiana businesses Strykora has built sites and SEO for. Roofers, auto shops, window tinters, and septic installers. The work and the numbers behind it.',
+    'Real Louisiana businesses Strykora has built sites and SEO for. Roofers, auto shops, window tinters, and septic installers. The work, the rankings, and the numbers behind each one.',
   alternates: { canonical: `${site.url}/case-studies` },
 }
 

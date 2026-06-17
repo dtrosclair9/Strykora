@@ -7,9 +7,9 @@ import CTA from '@/components/CTA'
 import { Schema } from '@/components/Schema'
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Web Design, SEO & Google Ads — Louisiana Services',
   description:
-    'Four services built to stack: custom web design from $3,750, local SEO from $297/month, Google Business Profile optimization, and Google Ads management.',
+    'Four services built to stack: custom Next.js web design from $3,750, local SEO from $297/month, Google Business Profile optimization, and Google Ads management. Fixed-price, no contracts.',
   alternates: { canonical: `${site.url}/services` },
 }
 
@@ -41,6 +41,16 @@ export default function ServicesPage() {
 
       <section className="section-padding">
         <div className="container-wide">
+          <Reveal className="max-w-3xl mb-12">
+            <p className="eyebrow mb-4">The stack</p>
+            <h2 className="text-display-md font-display text-text text-balance mb-5">
+              Four services. One sequence. Pick where you are.
+            </h2>
+            <p className="text-text-muted text-lg leading-relaxed">
+              A pretty site that nobody finds is a brochure. A #1 ranking for a slow, ugly site sends traffic to the wrong impression. These four services are the order Strykora runs in production. Most clients start with one and add the next when the first one is paying for itself.
+            </p>
+          </Reveal>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {services.map((s) => (
               <Reveal key={s.slug}>
@@ -69,6 +79,56 @@ export default function ServicesPage() {
                       </svg>
                     </span>
                   </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-bg-elevated border-y border-border">
+        <div className="container-wide">
+          <Reveal className="max-w-3xl mb-12">
+            <p className="eyebrow mb-4">Where to start</p>
+            <h2 className="text-display-md font-display text-text text-balance">
+              Not sure which one you need first?
+            </h2>
+            <p className="mt-5 text-text-muted text-lg leading-relaxed">
+              The honest answer depends on what's already broken. Pick the line that sounds like you, and that's the service to lead with.
+            </p>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {[
+              {
+                situation: 'My site looks dated, slow, or is on Wix or Squarespace.',
+                lead: 'Web Design first.',
+                why: 'A new build fixes Core Web Vitals, schema, and conversion before a single SEO dollar is spent. Otherwise you are buying traffic and watching it bounce.',
+                href: '/services/web-design',
+              },
+              {
+                situation: 'Site is fine. I just do not show up on Google in my city.',
+                lead: 'Local SEO first.',
+                why: 'On-page rebuilds, schema, GBP optimization, and monthly content compound for 6 to 12 months. The ranking work outlives any ad spend.',
+                href: '/services/seo',
+              },
+              {
+                situation: 'I need leads this month, not next year.',
+                lead: 'Google Ads first.',
+                why: 'Search ads buy you the top of page 1 today. Strykora runs them with a conversion-tracked landing page so the cost-per-lead is honest.',
+                href: '/services/google-ads',
+              },
+              {
+                situation: 'My Google Business Profile is empty or claimed by a previous agency.',
+                lead: 'GBP Optimization first.',
+                why: 'The local pack drives more calls than the blue links for most service businesses. Strykora rebuilds the profile, posts weekly, and matches it to the on-site copy.',
+                href: '/services/google-business-profile',
+              },
+            ].map((item) => (
+              <Reveal key={item.situation}>
+                <Link href={item.href} className="card-feature group block h-full p-7">
+                  <p className="text-text font-display text-lg mb-3 leading-snug">{item.situation}</p>
+                  <p className="text-accent font-medium mb-3">{item.lead}</p>
+                  <p className="text-text-muted text-sm leading-relaxed">{item.why}</p>
                 </Link>
               </Reveal>
             ))}

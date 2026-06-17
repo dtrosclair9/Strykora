@@ -7,8 +7,8 @@ import CTA from '@/components/CTA'
 import { Schema } from '@/components/Schema'
 
 export const metadata: Metadata = {
-  title: 'Google Reviews',
-  description: `${reviewStats.reviewCount} verified Google reviews of Strykora from real Louisiana business owners. Average rating ${reviewStats.averageRating.toFixed(1)} of 5.`,
+  title: `Google Reviews — ${reviewStats.reviewCount} Verified Louisiana Clients`,
+  description: `${reviewStats.reviewCount} verified Google reviews of Strykora from real, named Louisiana business owners. Average rating ${reviewStats.averageRating.toFixed(1)} of 5. Roofers, auto shops, septic installers, and more.`,
   alternates: { canonical: `${site.url}/reviews` },
 }
 

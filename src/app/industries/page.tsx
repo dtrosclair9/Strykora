@@ -7,9 +7,9 @@ import CTA from '@/components/CTA'
 import { Schema } from '@/components/Schema'
 
 export const metadata: Metadata = {
-  title: 'Industries',
+  title: 'Industries Served — Louisiana Web Design & SEO',
   description:
-    'Websites and SEO for Louisiana roofers, contractors, home service businesses, auto shops, and marine and oil & gas commercial operators.',
+    'Custom websites and local SEO for Louisiana roofers, contractors, home services, auto shops, and commercial marine and oil & gas operators. Five lanes, deep playbooks, live case studies.',
   alternates: { canonical: `${site.url}/industries` },
 }
 
@@ -41,6 +41,16 @@ export default function IndustriesPage() {
 
       <section className="section-padding">
         <div className="container-wide">
+          <Reveal className="max-w-3xl mb-12">
+            <p className="eyebrow mb-4">Why these five</p>
+            <h2 className="text-display-md font-display text-text text-balance mb-5">
+              Picked on purpose. Each one earned a slot.
+            </h2>
+            <p className="text-text-muted text-lg leading-relaxed">
+              The lanes below share three things: a high-ticket transaction (so a small lift in rank pays for the whole site), a buyer who searches before they call, and a competitive set Strykora has already beaten in production. Every vertical on this page has a live, ranking Strykora build behind it, not a deck slide.
+            </p>
+          </Reveal>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {industries.map((i) => (
               <Reveal key={i.slug}>
@@ -57,6 +67,35 @@ export default function IndustriesPage() {
                     </svg>
                   </span>
                 </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-bg-elevated border-y border-border">
+        <div className="container-wide grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <Reveal className="lg:col-span-5">
+            <p className="eyebrow mb-4">Discipline</p>
+            <h2 className="text-display-md font-display text-text text-balance">
+              What Strykora will not take on.
+            </h2>
+            <p className="mt-5 text-text-muted text-lg leading-relaxed">
+              Saying no is the whole reason the case studies work. A vertical only earns a slot once the playbook is repeatable, the buyer journey is understood, and the schema and content patterns are dialed in. Until then, the answer is no, and a referral.
+            </p>
+          </Reveal>
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { title: 'Restaurants and retail', body: 'Foot-traffic businesses ranked by visual social and review velocity. Different game.' },
+              { title: 'Medical and legal', body: 'Regulated copy, HIPAA, compliance review cycles. Specialist territory.' },
+              { title: 'National e-commerce', body: 'Shopify experts and paid-media shops already crush this. Not the Strykora edge.' },
+              { title: 'Out-of-state clients', body: 'Strykora is Louisiana-only. Local market knowledge is half the product.' },
+            ].map((item) => (
+              <Reveal key={item.title}>
+                <div className="card p-6 h-full">
+                  <p className="font-display text-text text-lg mb-2">{item.title}</p>
+                  <p className="text-text-muted text-sm leading-relaxed">{item.body}</p>
+                </div>
               </Reveal>
             ))}
           </div>

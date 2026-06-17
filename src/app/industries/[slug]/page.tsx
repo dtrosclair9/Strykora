@@ -13,12 +13,17 @@ export function generateStaticParams() {
 
 type Params = { params: Promise<{ slug: string }> }
 
+const SEO_TITLE_OVERRIDE: Record<string, string> = {
+  'commercial-louisiana': 'Websites & SEO for Louisiana Commercial Operators',
+}
+
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params
   const industry = industries.find((i) => i.slug === slug)
   if (!industry) return {}
+  const title = SEO_TITLE_OVERRIDE[industry.slug] ?? industry.headline
   return {
-    title: industry.headline,
+    title,
     description: industry.short,
     alternates: { canonical: `${site.url}/industries/${industry.slug}` },
   }
@@ -295,7 +300,9 @@ export default async function IndustryPage({ params }: Params) {
                 <ul className="space-y-3">
                   {copy.pain.map((p) => (
                     <li key={p} className="flex items-start gap-3 text-text-muted">
-                      <span className="text-accent mt-1.5">—</span>
+                      <svg className="w-5 h-5 text-text-dim shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
                       <span className="leading-relaxed">{p}</span>
                     </li>
                   ))}

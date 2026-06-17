@@ -8,8 +8,8 @@ import ReviewsSection from '@/components/ReviewsSection'
 import { Schema, personSchema, faqSchema as buildFaqSchema } from '@/components/Schema'
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: `${site.name} is built and run by ${site.owner} out of ${site.address.city}, Louisiana. One operator, every site built by hand.`,
+  title: 'About Dayne Trosclair, Louisiana Web Designer',
+  description: `${site.name} is built and run by ${site.owner} out of ${site.address.city}, Louisiana. One operator, every site built by hand, every client kept on a first-name basis.`,
   alternates: { canonical: `${site.url}/about` },
 }
 
@@ -92,7 +92,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal as="p" className="text-text">
               You call, I answer. You text a change, it ships the same day. You decide to leave, you take the
-              code, the domain, the analytics, and the GBP with you. That&apos;s the trade — no lock-in, no
+              code, the domain, the analytics, and the GBP with you. That&apos;s the trade. No lock-in, no
               account managers, no nonsense. If that&apos;s the kind of partner you want, we&apos;ll work well together.
             </Reveal>
           </div>
