@@ -44,7 +44,7 @@ const CITY_COPY: Record<string, CityMarketCopy> = {
     faqs: [
       {
         q: 'How competitive is the Houma SEO market?',
-        a: 'Mid-competitive. There are several established Houma service businesses with decent SEO, but most are stuck on slow WordPress builds with thin content. A well-built Next.js site with proper schema and a real GBP overtakes them in 90 to 120 days.',
+        a: 'Mid-competitive. There are several established Houma service businesses with decent SEO, but most are stuck on slow WordPress builds with thin content. A well-built modern site with proper schema and a real GBP overtakes them in 90 to 120 days.',
       },
       {
         q: 'Do I need a separate Houma site or just a Houma page?',
@@ -235,7 +235,7 @@ export default function CityServicePage({ slug }: Props) {
                     <div className="flex justify-between"><dt className="text-text-dim">Parish</dt><dd className="text-text">{city.parish}</dd></div>
                     <div className="flex justify-between"><dt className="text-text-dim">Service</dt><dd className="text-text">{service.title}</dd></div>
                     <div className="flex justify-between"><dt className="text-text-dim">Pricing</dt><dd className="text-text text-right">{service.priceRange}</dd></div>
-                    <div className="flex justify-between"><dt className="text-text-dim">Stack</dt><dd className="text-text">Next.js + Vercel</dd></div>
+                    <div className="flex justify-between"><dt className="text-text-dim">Ownership</dt><dd className="text-text">Yours</dd></div>
                   </dl>
                 </div>
 

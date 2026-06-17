@@ -118,7 +118,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'How long does a Louisiana contractor site take to build?',
-        a: 'Most builds ship live in about a week. The stack is templated (Next.js + Tailwind + Vercel) and you work directly with the builder, no agency handoffs.',
+        a: 'Most builds ship live in about a week. The stack is dialed in and you work directly with the builder, no agency handoffs.',
       },
     ],
   },

@@ -3,7 +3,7 @@ export const site = {
   legalName: 'Strykora',
   tagline: 'Web design + SEO for Louisiana businesses.',
   description:
-    'Custom Next.js websites and local SEO for Louisiana businesses. We build the website, then we make sure Google sends people to it.',
+    'Custom-built websites and local SEO for Louisiana businesses. We build the website, then we make sure Google sends people to it.',
   domain: 'strykora.com',
   url: 'https://www.strykora.com',
   owner: 'Dayne Trosclair',
@@ -95,11 +95,11 @@ export const services = [
   {
     slug: 'web-design',
     title: 'Web Design',
-    eyebrow: 'Custom Next.js builds',
+    eyebrow: 'Custom-built websites',
     short: 'Hand-built sites that load fast, rank well, and convert visitors into customers.',
-    long: 'Strykora builds custom websites on Next.js. No Wix, no Squarespace, no template farms. Every site is engineered for speed, SEO, and conversions from the first commit, and you own the code outright.',
+    long: 'Strykora builds custom websites from scratch on a modern Next.js stack. No Wix, no Squarespace, no template farms. Every site is engineered for speed, SEO, and conversions from the first commit, and you own the code outright.',
     bullets: [
-      'Custom Next.js builds (no page-builder bloat)',
+      'Custom builds (no page-builder bloat)',
       'Mobile-first, designed for every device',
       'Engineered for Core Web Vitals from day one',
       'SEO-ready architecture: schema, semantic HTML, fast hydration',
@@ -251,7 +251,7 @@ export const caseStudies = [
     industry: 'Auto / Lift Kits',
     city: 'Lockport, LA',
     headline: 'From templated stock-photo site to top 3 in Lockport',
-    blurb: 'Elite\'s reputation in Lockport didn\'t match its website. Strykora rebuilt on Next.js with a 3D hero, two distinct conversion paths (performance and repair), nine city pages, and a rebuilt Google Business Profile. Ownership replaces the old rental fee.',
+    blurb: 'Elite\'s reputation in Lockport didn\'t match its website. Strykora rebuilt it from scratch with a 3D hero, two distinct conversion paths (performance and repair), nine city pages, and a rebuilt Google Business Profile. Ownership replaces the old rental fee.',
     metrics: [
       { label: 'Local rank', value: 'Top 3' },
       { label: 'City landing pages', value: '9' },
@@ -265,7 +265,7 @@ export const caseStudies = [
     industry: 'Window Tinting',
     city: 'Gonzales + Baton Rouge, LA',
     headline: 'Dual-location rebuild + franchising angle. Baton Rouge ranks #3 in Google AI search in 2 months',
-    blurb: 'Reed opened Gonzales; Dax came in as co-owner to expand into Baton Rouge. Strykora rebuilt them on Next.js (owned outright, no more monthly rental), captured the dual locations, added a dedicated franchising page, and rebuilt both Google Business Profiles. The brand new Baton Rouge profile ranks #3 in Google AI search for "tint baton rouge" two months after launch.',
+    blurb: 'Reed opened Gonzales; Dax came in as co-owner to expand into Baton Rouge. Strykora rebuilt them from scratch (owned outright, no more monthly rental), captured the dual locations, added a dedicated franchising page, and rebuilt both Google Business Profiles. The brand new Baton Rouge profile ranks #3 in Google AI search for "tint baton rouge" two months after launch.',
     metrics: [
       { label: 'Google AI rank', value: '#3' },
       { label: 'Months to rank', value: '2' },
@@ -293,8 +293,8 @@ export type CaseStudy = (typeof caseStudies)[number]
 
 export const trustStrip = [
   { label: 'Built in', value: 'Thibodaux, LA' },
-  { label: 'Stack', value: 'Next.js + Vercel' },
-  { label: 'Niche', value: 'Local service businesses' },
+  { label: 'Ships in', value: 'About 1 week' },
+  { label: 'Owned by', value: 'You' },
 ] as const
 
 /** Look up the service.slug that a city+service combo actually renders. */

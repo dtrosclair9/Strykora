@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 const SERVICE_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
   'web-design': {
     src: '/images/hero-service-web-design.jpg',
-    alt: 'Abstract glowing code editor and UI components on glass, the kind of custom Next.js web design Strykora ships.',
+    alt: 'Abstract glowing code editor and UI components on glass, the kind of custom-built web design Strykora ships.',
   },
   'seo': {
     src: '/images/hero-service-seo.jpg',
@@ -54,7 +54,7 @@ const SERVICE_PAGE_COPY: Record<string, {
     howWeDoIt: [
       { step: '01', title: 'Brief', body: 'One call to pin down your services, target cities, brand voice, and the highest-ticket keywords worth ranking for.' },
       { step: '02', title: 'Wireframe & content', body: 'Strykora drafts every page (homepage, services, city pages, about, contact) and routes it back to you for sign-off before any code is written.' },
-      { step: '03', title: 'Build', body: 'Custom Next.js + Tailwind site, schema-rich and mobile-first, deployed to a preview URL within days.' },
+      { step: '03', title: 'Build', body: 'Custom-built, schema-rich, mobile-first site, deployed to a preview URL within days.' },
       { step: '04', title: 'Launch', body: 'DNS cutover, sitemap submission, schema validation, and a handoff doc so you own the keys.' },
     ],
     faqs: [
@@ -110,7 +110,7 @@ const SERVICE_PAGE_COPY: Record<string, {
       { q: 'How much should I budget for Google Ads?', a: 'For most South Louisiana service businesses, a $1,500 to $3,000/month ad budget covers a single high-intent service in one to two cities. Strykora will tell you up front if your budget is too low for the keywords you want to target.' },
       { q: 'How is management billed?', a: 'Management starts at $500/month plus your ad spend. The management fee covers build, weekly optimization, landing page work, and reporting. Ad spend goes directly to Google on your credit card.' },
       { q: 'Will I own the account?', a: 'Yes. Strykora builds and manages the account under your Google billing. If you ever leave, the account stays with you.' },
-      { q: 'Do you build the landing page?', a: 'Yes. Conversion-tracked landing pages are built in-house on the same Next.js stack as your main site, with the same speed and SEO standards.' },
+      { q: 'Do you build the landing page?', a: 'Yes. Conversion-tracked landing pages are built in-house on the same custom stack as your main site, with the same speed and SEO standards.' },
       { q: 'How long until ads start producing leads?', a: 'Leads start in week one. The first two weeks are learning and optimization; expect cost per lead to stabilize and trend down in weeks three and four.' },
       { q: 'Can I run ads without SEO?', a: 'Yes, but ads are most efficient when paired with strong SEO. Ads cover the gap while SEO catches up; SEO carries the load once it ranks. Stacking both compounds.' },
     ],

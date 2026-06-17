@@ -11,7 +11,7 @@ import { Schema, localBusinessSchema, websiteSchema, personSchema, faqSchema as 
 export const metadata: Metadata = {
   title: 'Web Design & SEO for Louisiana Businesses',
   description:
-    'Custom Next.js websites and local SEO for Louisiana service businesses. Built in Thibodaux, ships in about a week, you own the code outright.',
+    'Custom-built websites and local SEO for Louisiana service businesses. Built in Thibodaux, ships in about a week, you own the code outright.',
   alternates: { canonical: site.url },
 }
 
@@ -19,7 +19,7 @@ const pillars = [
   {
     label: '01',
     title: 'No-fluff stack',
-    body: 'Custom Next.js, not Wix or Squarespace. Faster, easier to rank, and you own the code outright.',
+    body: 'Hand-built sites on a modern Next.js stack — not Wix or Squarespace. Faster, easier to rank, and you own the code outright.',
   },
   {
     label: '02',
@@ -47,7 +47,7 @@ const processSteps = [
   {
     n: '02',
     title: 'Build',
-    body: 'Custom Next.js site, mobile-first, schema-rich, deployed to a preview URL within days for your sign-off.',
+    body: 'Custom-built site, mobile-first, schema-rich, deployed to a preview URL within days for your sign-off.',
   },
   {
     n: '03',
@@ -64,7 +64,7 @@ const processSteps = [
 const faqs = [
   {
     q: 'How long does a custom website take to build?',
-    a: `Most Strykora websites ship live in about one week. The stack is dialed in (Next.js + Tailwind + Vercel) and you work directly with the builder, so there are no agency handoffs, offshore queues, or design committees slowing the project down.`,
+    a: `Most Strykora websites ship live in about one week. The stack is dialed in and you work directly with the builder, so there are no agency handoffs, offshore queues, or design committees slowing the project down.`,
   },
   {
     q: 'How much does a Strykora website cost?',
@@ -137,7 +137,7 @@ export default function HomePage() {
               Then we make sure <span className="gradient-text">Google sends people to it.</span>
             </h1>
             <p className="text-lg md:text-xl text-text-muted max-w-2xl text-balance leading-relaxed">
-              Custom Next.js sites and local SEO for Louisiana businesses. Built by one operator
+              Custom-built websites and local SEO for Louisiana businesses. Built by one operator
               in Thibodaux. Ships in about a week, owned outright by you.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">

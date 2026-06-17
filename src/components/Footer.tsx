@@ -104,7 +104,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-3 text-xs text-text-dim">
             <p>&copy; {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
             <span className="hidden sm:inline">·</span>
-            <p>Built on Next.js. Hosted on Vercel.</p>
+            <p>Custom-built websites and local SEO for Louisiana businesses.</p>
           </div>
         </div>
       </div>

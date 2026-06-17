@@ -35,17 +35,17 @@ const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string 
   'foret-construction': {
     url: 'https://www.foretconstruction.co',
     screenshot: '/images/case-foret-screenshot.jpg',
-    alt: 'Screenshot of foretconstruction.co, the live Strykora-built Next.js site for Foret Construction & Roofing in Raceland, Louisiana.',
+    alt: 'Screenshot of foretconstruction.co, the live Strykora-built site for Foret Construction & Roofing in Raceland, Louisiana.',
   },
   'elite-custom-automotive': {
     url: 'https://www.elitecustomauto.co',
     screenshot: '/images/case-elite-screenshot.jpg',
-    alt: 'Screenshot of elitecustomauto.co, the live Strykora-built Next.js site for Elite Custom Automotive in Lockport, Louisiana.',
+    alt: 'Screenshot of elitecustomauto.co, the live Strykora-built site for Elite Custom Automotive in Lockport, Louisiana.',
   },
   'all-out-window-tint': {
     url: 'https://all-outwindowtint.com',
     screenshot: '/images/case-allout-screenshot.jpg',
-    alt: 'Screenshot of all-outwindowtint.com, the live Strykora-built Next.js site for All Out Window Tint serving Gonzales and Baton Rouge, Louisiana.',
+    alt: 'Screenshot of all-outwindowtint.com, the live Strykora-built site for All Out Window Tint serving Gonzales and Baton Rouge, Louisiana.',
   },
   'hover-septic': {
     url: 'https://www.hoverseptic.com',
@@ -66,14 +66,14 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Google Business Profile fully rebuilt with photos, weekly posts, and Services entries aligned to the on-site copy',
       'Monthly SEO retainer to compound the rankings',
     ],
-    result: 'Foret now owns the Next.js + SEO stack outright — no more monthly Wix tax — with nine city landing pages targeting roof replacement queries across South Louisiana. The site is fast, schema-rich, and the credentials buyers actually care about are surfaced where they look.',
+    result: 'Foret now owns the new site outright — no more monthly Wix tax — with nine city landing pages targeting roof replacement queries across South Louisiana. The site is fast, schema-rich, and the credentials buyers actually care about are surfaced where they look.',
     coverAlt: 'New metal roof installation at golden hour in South Louisiana, the kind of FORTIFIED-certified work Foret Construction is built around.',
   },
   'elite-custom-automotive': {
     challenge:
       'Colin Richard had built Elite Custom Automotive into a real shop in Lockport, but the website didn\'t show it. The old site was templated, stock-photo heavy, and looked like every other low-budget auto shop site on the SERP. Colin was also paying monthly rental fees to the web provider with no path to ownership. The Google Business Profile had zero photos, zero posts, and no service descriptions — invisible to the local pack.',
     approach: [
-      'Custom Next.js rebuild with a badass 3D hero treatment that finally showcases Elite\'s actual brand',
+      'Custom rebuild from scratch with a badass 3D hero treatment that finally showcases Elite\'s actual brand',
       'Two distinct conversion paths: performance builds (BDS lift kits, Cognito suspension) on one path, day-to-day auto repair on the other',
       'Brand pages for the suspension installers (BDS, Cognito) so buyers searching by manufacturer find Elite first',
       'Nine city pages targeting "[city] auto repair" across South Louisiana',
@@ -87,7 +87,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     challenge:
       'Reed Babin had built All Out Window Tint into a respected Gonzales shop with a decent professional site. When Dax came in as co-owner to expand into Baton Rouge, the existing rental site couldn\'t tell the dual-location story or capture the new market. The old web provider was charging monthly fees with no path to ownership, and the brand new Baton Rouge location had no Google Business Profile at all.',
     approach: [
-      'Custom Next.js rebuild that Reed and Dax own outright — no more monthly platform tax',
+      'Custom rebuild that Reed and Dax own outright — no more monthly platform tax',
       'Dual-location architecture with per-location landing pages and contact forms (Gonzales routes to Reed, Baton Rouge routes to Dax)',
       'Dedicated franchising page targeting future partners, a marketing angle the old rental site could not accommodate',
       'Full Google Business Profile takeover for both locations, including building the Baton Rouge profile from scratch',

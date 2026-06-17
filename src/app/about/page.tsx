@@ -9,7 +9,7 @@ import { Schema, personSchema, faqSchema as buildFaqSchema } from '@/components/
 
 export const metadata: Metadata = {
   title: 'About',
-  description: `${site.name} is built and run by ${site.owner} out of ${site.address.city}, Louisiana. One operator, every site by hand in Next.js.`,
+  description: `${site.name} is built and run by ${site.owner} out of ${site.address.city}, Louisiana. One operator, every site built by hand.`,
   alternates: { canonical: `${site.url}/about` },
 }
 
@@ -81,12 +81,12 @@ export default function AboutPage() {
             </Reveal>
             <Reveal as="p">
               {site.name} is built differently. I take a small number of Louisiana clients each year, build every
-              site by hand in Next.js, and handle the SEO myself. No account managers, no offshore subcontractors,
+              site by hand, and handle the SEO myself. No account managers, no offshore subcontractors,
               no Wix templates with your logo on them.
             </Reveal>
             <Reveal as="p">
-              The stack ({site.name} uses Next.js, Tailwind, and Vercel) is the same stack high-end agencies
-              build on. I run it from {site.address.city} and price it for Louisiana service businesses. You
+              The stack {site.name} builds on is the same one high-end agencies in San Francisco and New
+              York use. I run it from {site.address.city} and price it for Louisiana service businesses. You
               get a real custom build for a small business budget, and you own the code outright.
             </Reveal>
             <Reveal as="p" className="text-text">
@@ -99,7 +99,7 @@ export default function AboutPage() {
       <section className="section-padding border-t border-border bg-bg-elevated">
         <div className="container-wide grid grid-cols-1 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
           {[
-            { label: 'Stack', value: 'Next.js + Vercel' },
+            { label: 'Owned by', value: 'You' },
             { label: 'Based in', value: `${site.address.city}, ${site.address.state}` },
             { label: 'Clients', value: 'Louisiana only' },
             { label: 'Footprint', value: 'One operator' },

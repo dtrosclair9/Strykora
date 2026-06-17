@@ -32,7 +32,7 @@ Strykora serves Louisiana statewide. Strongest in Thibodaux, Houma, Baton Rouge,
 - **Foret Construction** (FORTIFIED-certified roofer, Raceland LA): Wix to Next.js rebuild with nine city landing pages targeting roof replacement keywords across South Louisiana. https://www.strykora.com/case-studies/foret-construction
 - **Elite Custom Automotive** (lift kits + auto repair, Lockport LA): Dual-pipeline build for BDS/Cognito performance and day-to-day mechanical service, with brand-specific landing pages and nine city pages. https://www.strykora.com/case-studies/elite-custom-automotive
 - **All Out Window Tint** (window tinting, Gonzales + Baton Rouge LA): Multi-location site with per-location lead routing. Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge", two months after launch. https://www.strykora.com/case-studies/all-out-window-tint
-- **Hover Septic** (septic installer, Thibodaux LA): Custom Next.js site ranking #1 organic for "septic installs Thibodaux LA". Multi-thousand-dollar install leads flow directly from search. https://www.strykora.com/case-studies/hover-septic
+- **Hover Septic** (septic installer, Thibodaux LA): Custom Strykora-built site ranking #1 organic for "septic installs Thibodaux LA". Multi-thousand-dollar install leads flow directly from search. https://www.strykora.com/case-studies/hover-septic
 
 ## Founder and contact
 

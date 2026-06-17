@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     'local seo thibodaux',
     'roofer web design louisiana',
     'contractor web design louisiana',
-    'next.js web designer louisiana',
+    'custom website builder louisiana',
     'google business profile louisiana',
   ],
   authors: [{ name: site.owner }],
