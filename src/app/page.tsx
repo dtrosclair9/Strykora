@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Fragment } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { services, industries, caseStudies, site, trustStrip, reviewStats } from '@/config/site'
@@ -28,14 +29,25 @@ const pillars = [
   },
   {
     label: '03',
-    title: 'Found before your competitor',
-    body: 'Strykora ranks you for what people in your city actually type into Google — and the buyers who ask ChatGPT, Perplexity, and Google AI Overviews for a recommendation.',
+    title: 'Found in Google AND in ChatGPT',
+    body: 'Strykora ranks you on Google, in Google AI Overviews, and inside the ChatGPT, Perplexity, and Gemini answers your future customers are already starting to trust.',
   },
   {
     label: '04',
     title: 'Real numbers, not vibes',
     body: 'Fixed-price quotes up front. No 12-month contracts. Every month: tracked rankings, booked leads, and what changed. If it isn\'t working, you see it.',
   },
+]
+
+const comparisonRows = [
+  { label: 'Time to launch', them: '2–3 months', us: 'About 1 week' },
+  { label: 'Pricing', them: 'Custom quote, hidden until the sales call', us: 'Published on the site, fixed up front' },
+  { label: 'Who owns the site', them: 'The agency does. Try leaving.', us: 'You do. Day one. Take it with you anywhere.' },
+  { label: 'Contract length', them: '12-month minimum, auto-renew', us: 'Month-to-month, cancel any time' },
+  { label: 'Who you actually talk to', them: 'An account manager, then a junior, then a ticket queue', us: 'Dayne. The person building your site.' },
+  { label: 'AI search optimization', them: 'Add-on, if they offer it at all', us: 'Standard on every build' },
+  { label: 'Response time', them: '3–14 days for a text change', us: 'One business day. Often same day.' },
+  { label: 'Monthly reporting', them: 'A PDF of impressions and "engagement"', us: 'Tracked rankings, AI citations, booked leads' },
 ]
 
 const processSteps = [
@@ -326,14 +338,57 @@ export default function HomePage() {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border border-border">
-            {pillars.map((p) => (
+            {pillars.map((p, i) => (
               <Reveal key={p.label} className="bg-bg-elevated p-8 md:p-10">
                 <p className="font-mono text-xs text-accent">{p.label}</p>
                 <h3 className="text-xl font-display text-text mt-3 mb-2">{p.title}</h3>
                 <p className="text-text-muted leading-relaxed">{p.body}</p>
+                {i === 1 && (
+                  <div className="mt-6 flex items-center gap-3">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden border border-border-light shrink-0">
+                      <Image src="/images/dayne-headshot.jpg" alt={site.owner} fill className="object-cover" sizes="48px" />
+                    </div>
+                    <div className="text-sm">
+                      <p className="text-text font-medium">{site.owner}</p>
+                      <p className="text-text-dim text-xs">Founder · {site.address.city}, {site.address.state}</p>
+                    </div>
+                  </div>
+                )}
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── COMPARISON TABLE ─────────────────────────────────────────── */}
+      <section className="section-padding" aria-labelledby="comparison-heading">
+        <div className="container-wide">
+          <Reveal className="max-w-2xl mb-12">
+            <p className="eyebrow mb-4">Strykora vs. the typical Louisiana agency</p>
+            <h2 id="comparison-heading" className="text-display-md font-display text-text text-balance">
+              The fine print everyone else hides.
+            </h2>
+            <p className="mt-5 text-text-muted text-lg leading-relaxed">
+              Built from real conversations with Louisiana business owners who switched to Strykora from somebody else.
+            </p>
+          </Reveal>
+
+          <Reveal>
+            <div className="card-feature overflow-hidden !p-0">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-border text-sm">
+                <div className="md:col-span-4 bg-bg-elevated p-5 font-mono text-xs uppercase tracking-[0.18em] text-text-dim">What you&apos;re comparing</div>
+                <div className="md:col-span-4 bg-bg-elevated p-5 font-mono text-xs uppercase tracking-[0.18em] text-text-dim">Typical agency</div>
+                <div className="md:col-span-4 bg-bg-elevated p-5 font-mono text-xs uppercase tracking-[0.18em] text-accent">Strykora</div>
+                {comparisonRows.map((row) => (
+                  <Fragment key={row.label}>
+                    <div className="md:col-span-4 bg-bg-elevated p-5 font-medium text-text">{row.label}</div>
+                    <div className="md:col-span-4 bg-bg-elevated p-5 text-text-muted">{row.them}</div>
+                    <div className="md:col-span-4 bg-bg-elevated p-5 text-text">{row.us}</div>
+                  </Fragment>
+                ))}
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
