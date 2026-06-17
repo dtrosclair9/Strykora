@@ -127,11 +127,7 @@ export default function HomePage() {
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative min-h-[100vh] flex items-center pt-24" aria-label="Hero">
-        <HeroVideo
-          src="/videos/hero.mp4"
-          poster="/images/hero-poster.jpg"
-          alt="Strykora hero — cinematic light particles converging on a focal point"
-        />
+        <HeroVideo src="/videos/hero.mp4" poster="/images/hero-poster.jpg" />
 
         <div className="relative z-10 container-wide pb-16 pt-16">
           <Reveal as="div" stagger className="max-w-4xl space-y-6">
