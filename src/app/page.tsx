@@ -35,7 +35,7 @@ const pillars = [
   {
     label: '04',
     title: 'Real numbers, not vibes',
-    body: 'Fixed-price quotes up front. No 12-month contracts. Every month: tracked rankings, booked leads, and what changed. If it isn\'t working, you see it.',
+    body: 'Fixed-price quotes up front. No 12-month contracts. Monthly reports show tracked rankings, booked leads, and what changed. If it isn\'t working, you see it.',
   },
 ]
 
@@ -150,8 +150,8 @@ export default function HomePage() {
             </h1>
             <p className="text-lg md:text-xl text-text-muted max-w-2xl text-balance leading-relaxed">
               Stop renting a templated website you&apos;ll never own. Strykora builds you a fast, custom site
-              starting at $3,750, ships it in about a week, and ranks you locally — including in ChatGPT
-              and Google AI Overviews — before your old agency&apos;s next invoice clears.
+              starting at $3,750, ships it in about a week, and ranks you locally (including in ChatGPT
+              and Google AI Overviews) before your old agency&apos;s next invoice clears.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link href="/contact" className="btn-primary">
@@ -200,7 +200,7 @@ export default function HomePage() {
               Web design first.<br /> SEO that stacks on top.
             </h2>
             <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Four services, four prices on the table up front, no 12-month contracts. Strykora does not do content writing, social media management, or photography — those get referred out. Honest scope keeps the work sharp.
+              Four services, four prices on the table up front, no 12-month contracts. Strykora does not do content writing, social media management, or photography. Those get referred out. Honest scope keeps the work sharp.
             </p>
           </Reveal>
 
@@ -260,6 +260,92 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── REAL AI CITATIONS ────────────────────────────────────────── */}
+      <section className="section-padding bg-bg-elevated border-y border-border" aria-labelledby="ai-proof-heading">
+        <div className="container-wide">
+          <Reveal className="max-w-3xl mb-12">
+            <p className="eyebrow mb-4">Real AI search receipts</p>
+            <h2 id="ai-proof-heading" className="text-display-md font-display text-text text-balance">
+              ChatGPT and Perplexity already recommend Strykora clients.
+            </h2>
+            <p className="mt-5 text-text-muted text-lg leading-relaxed">
+              Most agencies talk about being &quot;ready for AI search.&quot; These are actual answers from Perplexity and ChatGPT, last week, when a customer asked who to call for septic installation in Thibodaux. Hover Septic (a Strykora client) wins three out of three.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <Reveal>
+              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
+                <div className="relative aspect-[1100/2136] bg-white">
+                  <Image
+                    src="/images/ai-citation-perplexity-hover.jpg"
+                    alt="Screenshot of Perplexity recommending Hover Septic Services as the strongest option for a septic installer in Thibodaux, Louisiana."
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <figcaption className="p-6 border-t border-border">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">Perplexity</p>
+                  <p className="text-sm text-text-muted leading-relaxed">
+                    Query: <span className="text-text">&quot;Recommend me the best septic system installer in Thibodaux LA.&quot;</span> Answer leads with Hover Septic.
+                  </p>
+                </figcaption>
+              </figure>
+            </Reveal>
+
+            <Reveal>
+              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
+                <div className="relative aspect-[1100/2136] bg-white">
+                  <Image
+                    src="/images/ai-citation-chatgpt-best-overall.jpg"
+                    alt="Screenshot of ChatGPT crowning Hover Septic Services as 'Best overall' for septic installation in Thibodaux, Louisiana."
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <figcaption className="p-6 border-t border-border">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">ChatGPT</p>
+                  <p className="text-sm text-text-muted leading-relaxed">
+                    Query: <span className="text-text">&quot;Recommend me the best septic installation service Thibodaux LA.&quot;</span> Answer crowns Hover Septic as &quot;Best overall.&quot;
+                  </p>
+                </figcaption>
+              </figure>
+            </Reveal>
+
+            <Reveal>
+              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
+                <div className="relative aspect-[1100/2136] bg-white">
+                  <Image
+                    src="/images/ai-citation-chatgpt-why-hover.jpg"
+                    alt="Screenshot of ChatGPT explaining why Hover Septic is the closest match for septic installation in Thibodaux."
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <figcaption className="p-6 border-t border-border">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">ChatGPT — follow-up</p>
+                  <p className="text-sm text-text-muted leading-relaxed">
+                    <span className="text-text">&quot;Why I&apos;d start with Hover.&quot;</span> The AI explains its own pick, citing the exact positioning Strykora built into the site.
+                  </p>
+                </figcaption>
+              </figure>
+            </Reveal>
+          </div>
+
+          <Reveal className="mt-10 text-center">
+            <Link href="/case-studies/hover-septic" className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:gap-2 transition-all">
+              Read the Hover Septic case study
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
@@ -455,7 +541,7 @@ export default function HomePage() {
                   Your competitor&apos;s site loads in a second.<br/>What does yours do?
                 </h2>
                 <p className="text-text-muted text-lg max-w-xl mx-auto mb-8">
-                  Tell me about your business in 60 seconds. I&apos;ll send back a candid take — including whether Strykora is even the right fit — and a fixed-price quote within one business day. No sales call, no pressure.
+                  Tell me about your business in 60 seconds. I&apos;ll send back a candid take, including whether Strykora is even the right fit, plus a fixed-price quote within one business day. No sales call, no pressure.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
                   <Link href="/contact" className="btn-primary">

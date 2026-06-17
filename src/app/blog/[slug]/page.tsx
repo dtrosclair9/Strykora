@@ -14,7 +14,7 @@ const posts = [
     date: '2026-06-16',
     body: [
       `Most Louisiana small business owners hear "SEO" and picture a guy in a Lafayette office charging $1,500 a month to send a vague monthly report. That is not what SEO is. That is what bad SEO sales is.`,
-      `Local SEO, done right, does one thing: it puts your business in front of the person typing "[your service] near me" or "[your service] in [your city]" into Google or an AI search engine. For a Louisiana roofer, plumber, auto shop, or contractor, that single mechanism is the difference between an empty pipeline and a booked-out month.`,
+      `Local SEO does one thing when it works: it puts your business in front of the person typing "[your service] near me" or "[your service] in [your city]" into Google or an AI search engine. For a Louisiana roofer, plumber, auto shop, or contractor, that single mechanism is the difference between an empty pipeline and a booked-out month.`,
       `Here is what actually moves the needle in 2026:`,
       `1. **A fast website with city-specific pages.** Google ranks pages, not businesses. One generic "Services" page will not rank in Houma and Baton Rouge. You need a page for each city and service combination that matters.`,
       `2. **A fully built-out Google Business Profile.** This is the single biggest local ranking factor. Posts, photos, reviews, and the Services section feed both the map pack and Google AI Overviews.`,

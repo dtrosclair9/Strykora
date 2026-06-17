@@ -57,7 +57,7 @@ const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string 
 const caseDetails: Record<string, { challenge: string; approach: string[]; result: string; coverAlt: string }> = {
   'foret-construction': {
     challenge:
-      'Jacob Foret\'s FORTIFIED-certified roofing operation had a Wix site with decent SEO foundations and working contact popups, but it was templated, leaned on stock photography, and charged Foret a monthly Wix rental fee with no path to ownership. The Google Business Profile had only a couple of photos, no posts, and no service descriptions — invisible to the local pack and to AI Overviews. The bones of an SEO program were there; the foundation was not built to scale.',
+      'Jacob Foret\'s FORTIFIED-certified roofing operation had a Wix site with decent SEO foundations and working contact popups, but it was templated, leaned on stock photography, and charged Foret a monthly Wix rental fee with no path to ownership. The Google Business Profile had only a couple of photos, no posts, and no service descriptions. Invisible to the local pack and to AI Overviews. The bones of an SEO program were there; the foundation was not built to scale.',
     approach: [
       'Wix to Next.js rebuild on the Strykora stack, owned outright by Foret with no more Wix monthly fee',
       'Nine dedicated city landing pages targeting the high-ticket "roof replacement [city] la" search across South Louisiana',
@@ -66,12 +66,12 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Google Business Profile fully rebuilt with photos, weekly posts, and Services entries aligned to the on-site copy',
       'Monthly SEO retainer to compound the rankings',
     ],
-    result: 'Foret now owns the new site outright — no more monthly Wix tax — with nine city landing pages targeting roof replacement queries across South Louisiana. The site is fast, schema-rich, and the credentials buyers actually care about are surfaced where they look.',
+    result: 'Foret now owns the new site outright, no more monthly Wix tax, with nine city landing pages targeting roof replacement queries across South Louisiana. The site is fast, schema-rich, and the credentials buyers actually care about are surfaced where they look.',
     coverAlt: 'New metal roof installation at golden hour in South Louisiana, the kind of FORTIFIED-certified work Foret Construction is built around.',
   },
   'elite-custom-automotive': {
     challenge:
-      'Colin Richard had built Elite Custom Automotive into a real shop in Lockport, but the website didn\'t show it. The old site was templated, stock-photo heavy, and looked like every other low-budget auto shop site on the SERP. Colin was also paying monthly rental fees to the web provider with no path to ownership. The Google Business Profile had zero photos, zero posts, and no service descriptions — invisible to the local pack.',
+      'Colin Richard had built Elite Custom Automotive into a real shop in Lockport, but the website didn\'t show it. The old site was templated, stock-photo heavy, and looked like every other low-budget auto shop site on the SERP. Colin was also paying monthly rental fees to the web provider with no path to ownership. The Google Business Profile had zero photos, zero posts, and no service descriptions. Invisible to the local pack.',
     approach: [
       'Custom rebuild from scratch with a badass 3D hero treatment that finally showcases Elite\'s actual brand',
       'Two distinct conversion paths: performance builds (BDS lift kits, Cognito suspension) on one path, day-to-day auto repair on the other',
@@ -80,21 +80,21 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Google Business Profile fully built out: photos, posts, service descriptions, all aligned to the on-site copy',
       'Lead form that pings Colin\'s phone instead of sitting in a never-checked inbox',
     ],
-    result: 'Elite now ranks top 3 in its niche in Lockport, Louisiana — the local pack position that actually drives booked work. Colin owns the code outright. No more monthly rental fee. Two pipelines (performance and repair) running on one site without the messages stepping on each other.',
+    result: 'Elite now ranks top 3 in its niche in Lockport, Louisiana, the local pack position that actually drives booked work. Colin owns the code outright. No more monthly rental fee. Two pipelines (performance and repair) running on one site without the messages stepping on each other.',
     coverAlt: 'Aggressive mud-terrain tire on a lifted truck, the kind of BDS suspension build Elite Custom Automotive is known for.',
   },
   'all-out-window-tint': {
     challenge:
       'Reed Babin had built All Out Window Tint into a respected Gonzales shop with a decent professional site. When Dax came in as co-owner to expand into Baton Rouge, the existing rental site couldn\'t tell the dual-location story or capture the new market. The old web provider was charging monthly fees with no path to ownership, and the brand new Baton Rouge location had no Google Business Profile at all.',
     approach: [
-      'Custom rebuild that Reed and Dax own outright — no more monthly platform tax',
+      'Custom rebuild that Reed and Dax own outright, no more monthly platform tax',
       'Dual-location architecture with per-location landing pages and contact forms (Gonzales routes to Reed, Baton Rouge routes to Dax)',
       'Dedicated franchising page targeting future partners, a marketing angle the old rental site could not accommodate',
       'Full Google Business Profile takeover for both locations, including building the Baton Rouge profile from scratch',
       'AI-search-ready schema, llms.txt, and structured Services entries on every page',
       'Live at all-outwindowtint.com (yes, with the hyphen)',
     ],
-    result: 'Two months after launch, the Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge" — a market All Out was not ranking in at all before launch. Each location owns its own lead pipeline. Gonzales bookings hit Gonzales. Baton Rouge bookings hit Baton Rouge. The franchising page surfaces new partner inquiries Reed and Dax can vet without ever rebuilding the site.',
+    result: 'Two months after launch, the Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge", a market All Out was not ranking in at all before launch. Each location owns its own lead pipeline. Gonzales bookings hit Gonzales. Baton Rouge bookings hit Baton Rouge. The franchising page surfaces new partner inquiries Reed and Dax can vet without ever rebuilding the site.',
     coverAlt: 'Black luxury car with heavily tinted windows at golden hour, the kind of tint installation All Out Window Tint specializes in.',
   },
   'hover-septic': {
@@ -106,7 +106,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Google Business Profile built from scratch with photos, posts, and Services entries aligned to the on-site copy',
       'On-page SEO and schema targeting the high-ticket "septic installs Thibodaux" search',
     ],
-    result: 'Hover Septic ranks #1 organic for "septic installs in Thibodaux LA" — the exact keyword that pays the bills. The impact was so profound that Trey was able to drop low-ticket pumpout work entirely and focus on multi-thousand-dollar installs. The site rewrote the business model.',
+    result: 'Hover Septic ranks #1 organic for "septic installs in Thibodaux LA", the exact keyword that pays the bills. The impact was so profound that Trey was able to drop low-ticket pumpout work entirely and focus on multi-thousand-dollar installs. The site rewrote the business model.',
     coverAlt: 'Heavy excavator at dusk on a rural Louisiana installation site, the kind of work Hover Septic delivers in Thibodaux and Lafourche Parish.',
   },
 }
