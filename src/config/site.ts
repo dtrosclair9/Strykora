@@ -22,6 +22,7 @@ export const site = {
   social: {
     facebook: 'https://www.facebook.com/strykora',
   },
+  timelineLabel: 'Ships in 1 week',
 } as const
 
 export const services = [
@@ -29,23 +30,24 @@ export const services = [
     slug: 'web-design',
     title: 'Web Design',
     eyebrow: 'Custom Next.js builds',
-    short: 'Hand-built sites that load instantly, rank well, and convert visitors into customers.',
-    long: 'We build custom websites on Next.js — no Wix, no Squarespace, no template farms. Every site is engineered for speed, SEO, and conversions from the first commit. Modern stack, real craft, owned outright by you.',
+    short: 'Hand-built sites that load fast, rank well, and convert visitors into customers.',
+    long: 'Strykora builds custom websites on Next.js. No Wix, no Squarespace, no template farms. Every site is engineered for speed, SEO, and conversions from the first commit, and you own the code outright.',
     bullets: [
       'Custom Next.js builds (no page-builder bloat)',
-      'Mobile-first, perfect on every device',
-      'Lighthouse 95+ performance baseline',
-      'SEO-ready architecture from day one',
-      'Owned outright — no monthly platform tax',
+      'Mobile-first, designed for every device',
+      'Engineered for Core Web Vitals from day one',
+      'SEO-ready architecture: schema, semantic HTML, fast hydration',
+      'Owned outright by you — no monthly platform tax',
     ],
+    priceRange: 'Starting at $3,750, depending on scope.',
     priority: 1,
   },
   {
     slug: 'seo',
     title: 'Local SEO',
     eyebrow: 'Get found on Google',
-    short: 'Rank for the searches that actually drive revenue in your city. No vanity keywords.',
-    long: 'We rank Louisiana businesses for what their customers actually type into Google. Keyword research grounded in local search volume. On-page optimization that compounds. Monthly content and link work that pays for itself.',
+    short: 'Rank for the searches that drive revenue in your city. No vanity keywords.',
+    long: 'Strykora ranks Louisiana businesses for the searches their customers actually type. Keyword research grounded in local search data. On-page optimization that compounds. Monthly content and link work that pays for itself.',
     bullets: [
       'Local keyword research grounded in real search data',
       'On-page SEO + schema for every page',
@@ -53,14 +55,15 @@ export const services = [
       'Transparent reporting (you see every move)',
       'No long-term contracts',
     ],
+    priceRange: 'Retainers from $297/month.',
     priority: 2,
   },
   {
     slug: 'google-business-profile',
     title: 'Google Business Profile',
     eyebrow: 'Own the local pack',
-    short: 'Show up in the map pack for "[your service] near me" — where 80% of local clicks happen.',
-    long: 'Your Google Business Profile is the single biggest local SEO lever. We fully optimize the profile, post weekly, route reviews, and feed the AI-powered local pack the structured data it needs to feature you.',
+    short: 'Show up where local buyers actually click — the map pack and AI Overviews.',
+    long: 'Your Google Business Profile is the single biggest local SEO lever. Strykora fully optimizes the profile, posts weekly, routes review requests, and feeds the AI-powered local pack the structured data it needs to feature you.',
     bullets: [
       'Full profile build-out and category dialing',
       'Weekly posts and photo updates',
@@ -68,6 +71,7 @@ export const services = [
       'Services entries written to feed AI Overviews',
       'Monthly insights report',
     ],
+    priceRange: 'Bundled into the local SEO retainer.',
     priority: 3,
   },
   {
@@ -75,7 +79,7 @@ export const services = [
     title: 'Google Ads',
     eyebrow: 'Paid traffic on tap',
     short: 'Fastest path to leads while your SEO catches up. Lean, profitable campaigns only.',
-    long: 'Google Ads done by a builder who understands the funnel end-to-end. Tight keyword targeting, conversion-tracked landing pages, weekly optimization. No agency markup, no 12-month contract.',
+    long: 'Google Ads run by a builder who understands the full funnel. Tight keyword targeting, conversion-tracked landing pages, weekly optimization, transparent reporting. No agency markup, no twelve-month contract, you keep the account.',
     bullets: [
       'Search campaigns dialed to high-intent keywords',
       'Conversion-tracked landing pages built in-house',
@@ -83,6 +87,7 @@ export const services = [
       'Negative keyword lists built and maintained',
       'You keep the account — no hostage situation',
     ],
+    priceRange: 'Management from $500/month, plus your ad spend.',
     priority: 4,
   },
 ] as const
@@ -102,22 +107,29 @@ export const industries = [
     slug: 'contractors-louisiana',
     title: 'Contractors',
     headline: 'Websites & SEO for Louisiana Contractors',
-    short: 'General contractors, paving, fence, dirt work — built to rank for the trade you actually do.',
+    short: 'General contractors, paving, fence, dirt work, built to rank for the trade you actually do.',
     icon: 'hardhat',
   },
   {
     slug: 'home-services-louisiana',
     title: 'Home Services',
     headline: 'Websites & SEO for Louisiana Home Service Businesses',
-    short: 'Window tint, lawn care, pressure washing, pest control — sites that turn "near me" searches into calls.',
+    short: 'Window tint, lawn care, pressure washing, pest control, sites that turn "near me" searches into calls.',
     icon: 'home',
   },
   {
     slug: 'auto-shops-louisiana',
     title: 'Auto Shops',
     headline: 'Websites & SEO for Louisiana Auto Shops',
-    short: 'Lift kits, repair, detailing, tinting — built to rank for the city and the service.',
+    short: 'Lift kits, repair, detailing, tinting, built to rank for the city and the service.',
     icon: 'wrench',
+  },
+  {
+    slug: 'commercial-louisiana',
+    title: 'Commercial',
+    headline: 'Websites & SEO for Louisiana Marine, Oil & Gas, and Industrial Operators',
+    short: 'B2B sites that win procurement decisions, recruit crew, and surface fleet and equipment credentials where buyers look.',
+    icon: 'anchor',
   },
 ] as const
 
@@ -133,16 +145,20 @@ export const cities = [
 
 export type City = (typeof cities)[number]
 
+// Every entry must map to a real /<slug> route under src/app/<slug>/page.tsx.
+// `service` value is looked up through SERVICE_BY_SLUG in CityServicePage.tsx,
+// which resolves aliases (digital-marketing → seo, advertising → google-ads).
 export const cityServiceCombos = [
   { service: 'web-design', slug: 'web-design-thibodaux-la', cityName: 'Thibodaux', citySlug: 'thibodaux-la', preserved: true },
   { service: 'seo', slug: 'seo-thibodaux-la', cityName: 'Thibodaux', citySlug: 'thibodaux-la', preserved: true },
   { service: 'digital-marketing', slug: 'digital-marketing-thibodaux-la', cityName: 'Thibodaux', citySlug: 'thibodaux-la', preserved: true },
-  { service: 'google-ads', slug: 'advertising-thibodaux-la', cityName: 'Thibodaux', citySlug: 'thibodaux-la', preserved: true },
+  { service: 'advertising', slug: 'advertising-thibodaux-la', cityName: 'Thibodaux', citySlug: 'thibodaux-la', preserved: true },
   { service: 'web-design', slug: 'web-design-houma-la', cityName: 'Houma', citySlug: 'houma-la' },
   { service: 'seo', slug: 'seo-houma-la', cityName: 'Houma', citySlug: 'houma-la' },
   { service: 'web-design', slug: 'web-design-baton-rouge-la', cityName: 'Baton Rouge', citySlug: 'baton-rouge-la' },
   { service: 'seo', slug: 'seo-baton-rouge-la', cityName: 'Baton Rouge', citySlug: 'baton-rouge-la' },
-  { service: 'google-ads', slug: 'digital-marketing-baton-rouge-la', cityName: 'Baton Rouge', citySlug: 'baton-rouge-la' },
+  { service: 'digital-marketing', slug: 'digital-marketing-baton-rouge-la', cityName: 'Baton Rouge', citySlug: 'baton-rouge-la' },
+  { service: 'web-design', slug: 'web-design-new-orleans-la', cityName: 'New Orleans', citySlug: 'new-orleans-la' },
   { service: 'web-design', slug: 'web-design-lafayette-la', cityName: 'Lafayette', citySlug: 'lafayette-la' },
   { service: 'seo', slug: 'seo-lafayette-la', cityName: 'Lafayette', citySlug: 'lafayette-la' },
 ] as const
@@ -154,11 +170,11 @@ export const caseStudies = [
     industry: 'Roofing',
     city: 'Raceland, LA',
     headline: 'FORTIFIED-certified roofer goes from Wix to ranking',
-    blurb: 'Rebuilt a stuck Wix site on Next.js with 9 city landing pages targeting the high-ticket roof replacement keyword across South Louisiana.',
+    blurb: 'Rebuilt a stuck Wix site on Next.js with nine city landing pages targeting the high-ticket roof replacement keyword across South Louisiana.',
     metrics: [
       { label: 'City landing pages', value: '9' },
-      { label: 'Lighthouse score', value: '98' },
       { label: 'Platform', value: 'Wix → Next.js' },
+      { label: 'Live since', value: '2026' },
     ],
     cover: '/images/case-foret.jpg',
     featured: true,
@@ -169,7 +185,7 @@ export const caseStudies = [
     industry: 'Auto / Lift Kits',
     city: 'Lockport, LA',
     headline: 'Lift kit + auto repair shop with a real online presence',
-    blurb: 'Modern rebuild for a BDS suspension installer covering 9 South Louisiana cities, with Cognito-style conversion paths for both lift quotes and repair appointments.',
+    blurb: 'Modern rebuild for a BDS suspension installer covering nine South Louisiana cities, with conversion paths for both lift quotes and repair appointments.',
     metrics: [
       { label: 'City landing pages', value: '9' },
       { label: 'Service paths', value: '2' },
@@ -182,8 +198,8 @@ export const caseStudies = [
     client: 'All Out Window Tint',
     industry: 'Window Tinting',
     city: 'Gonzales + Baton Rouge, LA',
-    headline: 'Baton Rouge location to #3 in Google AI search results, in 2 months',
-    blurb: 'Multi-location build with one contact form swapping endpoints by location. The Baton Rouge shop now ranks #3 in Google AI search results for the market\'s biggest tinting queries, just two months after launch.',
+    headline: 'Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge", in 2 months',
+    blurb: 'Multi-location build with one contact form swapping endpoints by location. The Baton Rouge shop ranks #3 in Google AI search results for "tint baton rouge", two months after launch.',
     metrics: [
       { label: 'Google AI rank', value: '#3' },
       { label: 'Months to rank', value: '2' },
@@ -197,11 +213,11 @@ export const caseStudies = [
     industry: 'Septic / Home Services',
     city: 'Thibodaux, LA',
     headline: '#1 organic for "septic installs Thibodaux LA"',
-    blurb: 'Custom Next.js build for a Thibodaux septic installer, ranking #1 organic for the high-ticket money keyword in the home market. Multi-thousand-dollar jobs flow straight from search.',
+    blurb: 'Custom Next.js build for a Thibodaux septic installer, ranking #1 organic for the high-ticket money keyword in the home market.',
     metrics: [
       { label: 'Organic rank', value: '#1' },
-      { label: 'Market', value: 'Thibodaux, LA' },
-      { label: 'Per-job ticket', value: '$$$$' },
+      { label: 'Market', value: 'Thibodaux' },
+      { label: 'Per-job ticket', value: 'Multi-thousand' },
     ],
     cover: '/images/case-hover.jpg',
   },
@@ -214,3 +230,26 @@ export const trustStrip = [
   { label: 'Stack', value: 'Next.js + Vercel' },
   { label: 'Niche', value: 'Local service businesses' },
 ] as const
+
+/** Look up the service.slug that a city+service combo actually renders. */
+export const SERVICE_BY_COMBO_SLUG: Record<string, string> = {
+  'web-design': 'web-design',
+  seo: 'seo',
+  'digital-marketing': 'seo',
+  advertising: 'google-ads',
+  'google-ads': 'google-ads',
+  'google-business-profile': 'google-business-profile',
+}
+
+/** Get the canonical city+service combo slug for a given service.slug + city.slug, or null if none ships. */
+export function comboSlugFor(serviceSlug: string, citySlug: string): string | null {
+  // Prefer combos whose `service` already matches the canonical service slug.
+  const direct = cityServiceCombos.find(
+    (c) => c.citySlug === citySlug && SERVICE_BY_COMBO_SLUG[c.service] === serviceSlug && c.service === serviceSlug
+  )
+  if (direct) return direct.slug
+  const aliased = cityServiceCombos.find(
+    (c) => c.citySlug === citySlug && SERVICE_BY_COMBO_SLUG[c.service] === serviceSlug
+  )
+  return aliased ? aliased.slug : null
+}

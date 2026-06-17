@@ -4,21 +4,35 @@ import { industries, site } from '@/config/site'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import CTA from '@/components/CTA'
+import { Schema } from '@/components/Schema'
 
 export const metadata: Metadata = {
-  title: 'Industries — Web Design & SEO',
+  title: 'Industries',
   description:
-    'Websites and SEO for Louisiana roofers, contractors, home service businesses, and auto shops. Built by an operator who knows how these businesses run.',
+    'Websites and SEO for Louisiana roofers, contractors, home service businesses, auto shops, and marine and oil & gas commercial operators.',
   alternates: { canonical: `${site.url}/industries` },
+}
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Strykora industries served',
+  itemListElement: industries.map((i, idx) => ({
+    '@type': 'ListItem',
+    position: idx + 1,
+    url: `${site.url}/industries/${i.slug}`,
+    name: i.title,
+  })),
 }
 
 export default function IndustriesPage() {
   return (
     <>
+      <Schema data={itemListSchema} />
       <PageHero
         eyebrow="Industries"
-        title="Built for Louisiana service businesses."
-        description="We don't take every client. These are the verticals we know cold — and where our case studies prove the model works."
+        title="Built for Louisiana service and commercial businesses."
+        description="Strykora doesn't take every client. These are the verticals Strykora knows cold, and where the case studies prove the model works."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/industries', label: 'Industries' },

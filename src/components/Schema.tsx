@@ -15,6 +15,24 @@ export function Schema({ data }: SchemaProps) {
   )
 }
 
+export const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${site.url}/#dayne`,
+  name: site.owner,
+  jobTitle: 'Founder',
+  worksFor: { '@id': `${site.url}/#business` },
+  url: `${site.url}/about`,
+  image: `${site.url}/images/dayne-headshot.jpg`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: site.address.city,
+    addressRegion: site.address.state,
+    addressCountry: 'US',
+  },
+  sameAs: [site.social.facebook],
+}
+
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': ['LocalBusiness', 'ProfessionalService'],
@@ -25,7 +43,7 @@ export const localBusinessSchema = {
   telephone: site.phoneRaw,
   email: site.email,
   image: `${site.url}/images/og-image.jpg`,
-  logo: `${site.url}/images/strykora-logo.png`,
+  logo: `${site.url}/images/strykora-lockup.png`,
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
@@ -49,7 +67,8 @@ export const localBusinessSchema = {
     { '@type': 'City', name: 'Lafayette' },
   ],
   sameAs: [site.social.facebook],
-  founder: { '@type': 'Person', name: site.owner },
+  founder: { '@id': `${site.url}/#dayne` },
+  employee: { '@id': `${site.url}/#dayne` },
 }
 
 export const websiteSchema = {
@@ -64,4 +83,29 @@ export const websiteSchema = {
     target: `${site.url}/blog?q={search_term_string}`,
     'query-input': 'required name=search_term_string',
   },
+}
+
+export function breadcrumbSchema(items: { href: string; label: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.label,
+      item: item.href.startsWith('http') ? item.href : `${site.url}${item.href}`,
+    })),
+  }
+}
+
+export function faqSchema(faqs: { q: string; a: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
 }

@@ -4,39 +4,44 @@ import { site } from '@/config/site'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import CTA from '@/components/CTA'
-import { Schema } from '@/components/Schema'
+import { Schema, personSchema, faqSchema as buildFaqSchema } from '@/components/Schema'
 
 export const metadata: Metadata = {
-  title: `About — ${site.owner}`,
-  description: `${site.name} is built and run by ${site.owner} out of ${site.address.city}, LA. Web design and SEO for Louisiana businesses, no layers between you and the work.`,
+  title: 'About',
+  description: `${site.name} is built and run by ${site.owner} out of ${site.address.city}, Louisiana. One operator, every site by hand in Next.js.`,
   alternates: { canonical: `${site.url}/about` },
 }
 
-const schema = {
+const aboutPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
   url: `${site.url}/about`,
-  mainEntity: {
-    '@type': 'Person',
-    name: site.owner,
-    jobTitle: 'Founder & Lead Developer',
-    worksFor: { '@id': `${site.url}/#business` },
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: site.address.city,
-      addressRegion: site.address.state,
-    },
-  },
+  mainEntity: { '@id': `${site.url}/#dayne` },
 }
+
+const aboutFaqs = [
+  {
+    q: `Who actually builds Strykora websites?`,
+    a: `${site.owner} builds every Strykora website by hand, from the first commit to the last deploy. No subcontractors, no offshore teams, no junior developers handed the project after the sales call.`,
+  },
+  {
+    q: `Does Strykora take clients outside Louisiana?`,
+    a: `No. Strykora is built around the South Louisiana market: the buyers, the search behavior, the seasonal cycle, and the local pack dynamics. Out-of-state inquiries get referred to other operators.`,
+  },
+  {
+    q: `What's Strykora's stack and why?`,
+    a: `Next.js 15, Tailwind CSS, and Vercel hosting. Next.js gives the speed and schema baked in for ranking. Tailwind keeps the design system consistent. Vercel handles deploys and preview URLs. Every Strykora site lives on the same stack agencies in San Francisco and New York use, run from Thibodaux at Louisiana prices.`,
+  },
+]
 
 export default function AboutPage() {
   return (
     <>
-      <Schema data={schema} />
+      <Schema data={[aboutPageSchema, personSchema, buildFaqSchema(aboutFaqs)]} />
       <PageHero
         eyebrow="About"
         title="One operator. South Louisiana. No layers."
-        description={`I'm ${site.owner}. I build the websites and run the SEO for every ${site.name} client out of ${site.address.city}.`}
+        description={`I'm ${site.owner}. I build every ${site.name} website by hand and run the SEO myself, out of ${site.address.city}.`}
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/about', label: 'About' },
@@ -49,7 +54,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-bg-elevated">
               <Image
                 src="/images/dayne-headshot.jpg"
-                alt={`${site.owner}, founder of ${site.name}`}
+                alt={`${site.owner}, founder of ${site.name}, in ${site.address.city}, Louisiana`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -64,9 +69,14 @@ export default function AboutPage() {
 
           <div className="lg:col-span-7 space-y-6 text-lg text-text-muted leading-relaxed">
             <Reveal as="p">
+              I grew up in {site.address.city}, Louisiana. {site.address.parish}, sugar cane, hurricane
+              cycles, oilfield neighbors. I know what a Louisiana service business looks like and what its customers
+              actually search for, because I&apos;ve lived next door to them my whole life.
+            </Reveal>
+            <Reveal as="p">
               Most marketing agencies sell you a sales rep, then hand the actual work to a project manager
-              who hands it to a junior contractor who hands it to a template. By the time your site goes live,
-              nobody on the team has met you and the result looks like every other site they built that month.
+              who hands it to a junior contractor who hands it to a template. By the time the site goes live,
+              nobody on the team has met you and the result looks like every other site they shipped that month.
             </Reveal>
             <Reveal as="p">
               {site.name} is built differently. I take a small number of Louisiana clients each year, build every
@@ -74,9 +84,9 @@ export default function AboutPage() {
               no Wix templates with your logo on them.
             </Reveal>
             <Reveal as="p">
-              The stack I use (Next.js, Tailwind, Vercel) is the same stack agencies in San Francisco and New
-              York charge $30–60K to deploy. I run it from {site.address.city} and price it for Louisiana service
-              businesses. You get an enterprise build for a small business budget, owned outright.
+              The stack ({site.name} uses Next.js, Tailwind, and Vercel) is the same stack high-end agencies
+              build on. I run it from {site.address.city} and price it for Louisiana service businesses. You
+              get a real custom build for a small business budget, and you own the code outright.
             </Reveal>
             <Reveal as="p" className="text-text">
               If you want a partner who picks up the phone and ships fast, we&apos;ll work well together.
@@ -115,14 +125,40 @@ export default function AboutPage() {
               </div>
               <div className="bg-bg-elevated p-6">
                 <p className="font-display text-2xl gradient-text">#3 AI Search</p>
-                <p className="text-sm text-text-muted mt-2">All Out Window Tint, Baton Rouge<br /><span className="text-text-dim">2 months post-launch</span></p>
+                <p className="text-sm text-text-muted mt-2">All Out Window Tint, Baton Rouge<br /><span className="text-text-dim">&quot;tint baton rouge&quot;, 2 months post-launch</span></p>
               </div>
               <div className="bg-bg-elevated p-6">
-                <p className="font-display text-2xl gradient-text">9 Cities</p>
+                <p className="font-display text-2xl gradient-text">9 City Pages</p>
                 <p className="text-sm text-text-muted mt-2">Foret Construction<br /><span className="text-text-dim">FORTIFIED roofer, South LA</span></p>
               </div>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="about-faq-heading">
+        <div className="container-narrow">
+          <Reveal className="mb-10">
+            <p className="eyebrow mb-3">FAQ</p>
+            <h2 id="about-faq-heading" className="text-display-md font-display text-text text-balance">
+              About Strykora.
+            </h2>
+          </Reveal>
+          <div className="space-y-3">
+            {aboutFaqs.map((f) => (
+              <Reveal key={f.q}>
+                <details className="card group">
+                  <summary className="font-medium text-text cursor-pointer flex items-start justify-between gap-4 list-none">
+                    <span>{f.q}</span>
+                    <svg className="w-5 h-5 text-text-dim group-open:rotate-45 transition-transform shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
+                    </svg>
+                  </summary>
+                  <p className="mt-4 text-text-muted leading-relaxed">{f.a}</p>
+                </details>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

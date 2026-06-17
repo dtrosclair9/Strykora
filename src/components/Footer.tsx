@@ -1,5 +1,17 @@
 import Link from 'next/link'
-import { services, cities, site } from '@/config/site'
+import { services, cities, site, comboSlugFor } from '@/config/site'
+import ChamberBadge from './ChamberBadge'
+
+const footerCityLinks = cities
+  .map((c) => {
+    // Prefer the web-design page for each city, fall back to whichever combo exists.
+    const preferred =
+      comboSlugFor('web-design', c.slug) ??
+      comboSlugFor('seo', c.slug) ??
+      comboSlugFor('google-ads', c.slug)
+    return preferred ? { city: c, slug: preferred } : null
+  })
+  .filter((x): x is { city: typeof cities[number]; slug: string } => x !== null)
 
 export default function Footer() {
   return (
@@ -43,10 +55,10 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="eyebrow mb-5">Cities</h3>
             <ul className="space-y-3">
-              {cities.map((c) => (
-                <li key={c.slug}>
-                  <Link href={`/web-design-${c.slug}`} className="text-sm text-text-muted hover:text-text transition-colors">
-                    {c.name}
+              {footerCityLinks.map(({ city, slug }) => (
+                <li key={city.slug}>
+                  <Link href={`/${slug}`} className="text-sm text-text-muted hover:text-text transition-colors">
+                    {city.name}
                   </Link>
                 </li>
               ))}
@@ -57,6 +69,7 @@ export default function Footer() {
             <h3 className="eyebrow mb-5">Company</h3>
             <ul className="space-y-3">
               <li><Link href="/case-studies" className="text-sm text-text-muted hover:text-text transition-colors">Case Studies</Link></li>
+              <li><Link href="/industries" className="text-sm text-text-muted hover:text-text transition-colors">Industries</Link></li>
               <li><Link href="/about" className="text-sm text-text-muted hover:text-text transition-colors">About</Link></li>
               <li><Link href="/contact" className="text-sm text-text-muted hover:text-text transition-colors">Contact</Link></li>
               <li><Link href="/blog" className="text-sm text-text-muted hover:text-text transition-colors">Blog</Link></li>
@@ -85,9 +98,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-text-dim">
-          <p>&copy; {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
-          <p>Built on Next.js. Hosted on Vercel.</p>
+        <div className="border-t border-border mt-14 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <ChamberBadge />
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-xs text-text-dim">
+            <p>&copy; {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
+            <span className="hidden sm:inline">·</span>
+            <p>Built on Next.js. Hosted on Vercel.</p>
+          </div>
         </div>
       </div>
     </footer>

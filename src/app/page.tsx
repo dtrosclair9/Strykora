@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { services, industries, caseStudies, cities, site, trustStrip } from '@/config/site'
+import { services, industries, caseStudies, site, trustStrip } from '@/config/site'
 import HeroVideo from '@/components/HeroVideo'
 import Reveal from '@/components/Reveal'
-import { Schema, localBusinessSchema, websiteSchema } from '@/components/Schema'
+import { Schema, localBusinessSchema, websiteSchema, personSchema, faqSchema as buildFaqSchema } from '@/components/Schema'
 
 export const metadata: Metadata = {
   title: 'Web Design & SEO for Louisiana Businesses',
   description:
-    'We build the website. Then we make sure Google sends people to it. Custom Next.js sites and local SEO for Louisiana businesses, built in Thibodaux.',
+    'Custom Next.js websites and local SEO for Louisiana service businesses. Built in Thibodaux, ships in about a week, you own the code outright.',
   alternates: { canonical: site.url },
 }
 
@@ -17,71 +17,111 @@ const pillars = [
   {
     label: '01',
     title: 'No-fluff stack',
-    body: 'Custom Next.js, not Wix or Squarespace. Faster sites, better SEO, you own the code.',
+    body: 'Custom Next.js, not Wix or Squarespace. Faster, easier to rank, and you own the code outright.',
   },
   {
     label: '02',
     title: 'Local-first SEO',
-    body: 'We rank you for what people in your city actually type, not vanity keywords.',
+    body: 'Strykora ranks you for what people in your city actually type into Google, not vanity keywords.',
   },
   {
     label: '03',
     title: 'Built for AI search',
-    body: 'Schema, llms.txt, structured FAQs — built to get cited by Google AI Overviews and ChatGPT.',
+    body: 'Schema, llms.txt, and structured FAQs on every page, tuned to get cited by Google AI Overviews and ChatGPT.',
   },
   {
     label: '04',
     title: 'One operator, no agency layers',
-    body: 'You work directly with the person building your site. No account manager between you and the work.',
+    body: 'You work directly with the person building your site. No account manager, no offshore handoffs, no design committee.',
   },
 ]
 
 const processSteps = [
-  { n: '01', title: 'Discovery', body: 'We pin down your services, cities, and the highest-ticket keywords worth ranking for.' },
-  { n: '02', title: 'Build', body: 'Custom Next.js site, mobile-first, schema-rich, deployed to a preview URL in days.' },
-  { n: '03', title: 'Rank', body: 'On-page SEO, GBP optimization, and technical foundations, all live before we hand off.' },
-  { n: '04', title: 'Grow', body: 'Monthly SEO retainer or pay-as-you-go ads. Transparent reporting, no lock-in.' },
+  {
+    n: '01',
+    title: 'Discovery',
+    body: 'Strykora pins down your services, cities, and the highest-ticket keywords worth ranking for. One call, written brief, no fluff.',
+  },
+  {
+    n: '02',
+    title: 'Build',
+    body: 'Custom Next.js site, mobile-first, schema-rich, deployed to a preview URL within days for your sign-off.',
+  },
+  {
+    n: '03',
+    title: 'Rank',
+    body: 'On-page SEO, Google Business Profile optimization, and technical foundations all live before launch.',
+  },
+  {
+    n: '04',
+    title: 'Grow',
+    body: 'Monthly SEO retainer or pay-as-you-go ads. Transparent reporting, no long-term lock-in.',
+  },
 ]
 
 const faqs = [
   {
-    q: 'How long does a custom website take?',
-    a: 'Most builds ship live in 14–21 days. We work fast because there\'s one person doing it and the stack (Next.js + Tailwind + Vercel) is dialed in.',
+    q: 'How long does a custom website take to build?',
+    a: `Most Strykora websites ship live in about one week. The stack is dialed in (Next.js + Tailwind + Vercel) and you work directly with the builder, so there are no agency handoffs, offshore queues, or design committees slowing the project down.`,
   },
   {
-    q: 'Why Next.js instead of Wix or Squarespace?',
-    a: 'Next.js sites load in under a second, score 95+ on Lighthouse, and Google ranks them faster. Page builders add bloat that costs you both speed and search rankings. You also own the code outright.',
+    q: 'How much does a Strykora website cost?',
+    a: `Custom websites start at $3,750 one-time, depending on scope and number of pages. Local SEO retainers start at $297/month. Google Ads management starts at $500/month plus your ad spend. Every quote is a fixed price up front, no hourly billing.`,
+  },
+  {
+    q: 'Why Next.js instead of Wix, Squarespace, or WordPress?',
+    a: `Next.js sites are engineered for Core Web Vitals, ship with schema baked in, and stay fast as you add pages. Page builders and WordPress add bloat that costs you both speed and search rankings. You also own the code outright, so you can leave Strykora at any time without rebuilding.`,
   },
   {
     q: 'Do you do SEO without redesigning the site?',
-    a: 'Yes. SEO retainers start at $299/month and work on whatever platform you\'re on. But: if your current site is on Wix or a slow WordPress build, we\'ll be honest that a rebuild gets you further than 6 months of SEO ever will.',
+    a: `Yes. Local SEO retainers start at $297/month and work on whatever platform you are on. That said, if your current site is on Wix or a slow WordPress build, a rebuild usually moves the needle further than six months of SEO on the broken foundation.`,
   },
   {
-    q: 'What cities do you serve?',
-    a: `We\'re built in ${site.address.city} and serve all of Louisiana. Our biggest markets are Thibodaux, Houma, Baton Rouge, New Orleans, and Lafayette — but we ship sites for clients anywhere in the state.`,
+    q: 'What cities and markets do you serve?',
+    a: `Strykora is built in ${site.address.city}, Louisiana and serves the whole state. The strongest markets are Thibodaux, Houma, Baton Rouge, New Orleans, and Lafayette, but Strykora ships sites for clients anywhere in Louisiana.`,
   },
   {
-    q: 'How are you different from EZMarketing or other generalist agencies?',
-    a: 'They\'re wide and shallow — content, social, ads, design, all generic. We\'re narrow and deep: custom web design and local SEO, done by the person who builds your site. No account manager, no template, no platform tax.',
+    q: 'Do you work with clients outside Louisiana?',
+    a: `No. Strykora is built around the South Louisiana market: the buyers, the search behavior, the seasonal cycle, and the local pack dynamics. Out-of-state inquiries get referred to other operators.`,
+  },
+  {
+    q: 'Do you offer content writing, social media, or photography?',
+    a: `No. Strykora is web design and SEO only. For copywriting, social media management, or photo and video, Strykora refers to Louisiana freelancers who specialize. Honest scope keeps quality high.`,
+  },
+  {
+    q: 'How are you different from a generic marketing agency?',
+    a: `Generic agencies are wide and shallow: content, social, ads, design, branding, all average. Strykora is narrow and deep: custom web design and local SEO, done by the person who builds your site. No account manager, no template, no platform tax.`,
+  },
+  {
+    q: 'How do you measure success?',
+    a: `Booked leads, phone calls, form submissions, and tracked ranking positions for the keywords that pay your bills. Every retainer client gets a monthly report that shows what changed, what ranked, and what to do next.`,
+  },
+  {
+    q: 'How fast will you respond to my inquiry?',
+    a: `Strykora responds to every project inquiry within one business day. You will get a candid take on whether Strykora is the right fit and, if so, a fixed-price quote and timeline.`,
   },
 ]
 
-const faqSchema = {
+const featuredCase = caseStudies.find((c) => 'featured' in c && c.featured) ?? caseStudies[0]
+
+const howToSchema = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((f) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  '@type': 'HowTo',
+  name: 'How Strykora builds and ranks a Louisiana small business website',
+  description:
+    'The four-step Strykora process from discovery through ongoing SEO growth for a Louisiana service or commercial business.',
+  step: processSteps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.body,
   })),
 }
-
-const featuredCase = caseStudies.find((c) => 'featured' in c && c.featured) ?? caseStudies[0]
 
 export default function HomePage() {
   return (
     <>
-      <Schema data={[localBusinessSchema, websiteSchema, faqSchema]} />
+      <Schema data={[localBusinessSchema, websiteSchema, personSchema, buildFaqSchema(faqs), howToSchema]} />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative min-h-[100vh] flex items-center pt-24" aria-label="Hero">
@@ -96,7 +136,7 @@ export default function HomePage() {
             </h1>
             <p className="text-lg md:text-xl text-text-muted max-w-2xl text-balance leading-relaxed">
               Custom Next.js sites and local SEO for Louisiana businesses. Built by one operator
-              in Thibodaux. No agency layers, no template farms, no monthly platform tax.
+              in Thibodaux. Ships in about a week, owned outright by you.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link href="/contact" className="btn-primary">
@@ -132,7 +172,7 @@ export default function HomePage() {
               Web design first.<br /> SEO that stacks on top.
             </h2>
             <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Four services, in a sales stack that compounds. We don&apos;t do content writing, social media, or photography — and we won&apos;t pretend to.
+              Four services, in a sales stack that compounds. Strykora does not offer content writing, social media management, or photography, and won&apos;t pretend to.
             </p>
           </Reveal>
 
@@ -151,7 +191,8 @@ export default function HomePage() {
                     </span>
                   </div>
                   <h3 className="text-2xl font-display text-text mb-2">{s.title}</h3>
-                  <p className="text-text-muted leading-relaxed">{s.short}</p>
+                  <p className="text-text-muted leading-relaxed mb-3">{s.short}</p>
+                  <p className="text-sm text-text-dim font-mono">{s.priceRange}</p>
                 </Link>
               </Reveal>
             ))}
@@ -165,11 +206,11 @@ export default function HomePage() {
           <Reveal className="max-w-2xl mb-14">
             <p className="eyebrow mb-4">Industries we serve</p>
             <h2 id="industries-heading" className="text-display-md font-display text-text text-balance">
-              We know how Louisiana service businesses run.
+              Built for Louisiana service and commercial businesses.
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
             {industries.map((i) => (
               <Reveal key={i.slug}>
                 <Link
@@ -205,7 +246,7 @@ export default function HomePage() {
             <div className="relative aspect-[21/9] overflow-hidden">
               <Image
                 src={featuredCase.cover}
-                alt={`${featuredCase.client} case study cover image`}
+                alt={`Custom metal roof installation in ${featuredCase.city}, the kind of work ${featuredCase.client} is built around.`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1280px) 100vw, 1280px"
@@ -234,6 +275,15 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
+          </Reveal>
+
+          <Reveal className="mt-8 text-center">
+            <Link href="/case-studies" className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:gap-2 transition-all">
+              See all case studies
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -323,7 +373,7 @@ export default function HomePage() {
                   Stop losing leads to a slow website.
                 </h2>
                 <p className="text-text-muted text-lg max-w-xl mx-auto mb-8">
-                  Tell me about your business in 60 seconds. I&apos;ll send back a candid take and a fixed-price quote within 24 hours.
+                  Tell me about your business in 60 seconds. I&apos;ll send back a candid take and a fixed-price quote within one business day.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
                   <Link href="/contact" className="btn-primary">

@@ -5,20 +5,42 @@ import { caseStudies, site } from '@/config/site'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import CTA from '@/components/CTA'
+import { Schema } from '@/components/Schema'
 
 export const metadata: Metadata = {
-  title: 'Case Studies — Real Louisiana Builds',
-  description: 'Real Louisiana businesses we\'ve built sites and SEO for. Roofers, auto shops, window tinters — the work and the numbers behind it.',
+  title: 'Case Studies',
+  description:
+    'Real Louisiana businesses Strykora has built sites and SEO for. Roofers, auto shops, window tinters, and septic installers. The work and the numbers behind it.',
   alternates: { canonical: `${site.url}/case-studies` },
+}
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Strykora case studies',
+  itemListElement: caseStudies.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `${site.url}/case-studies/${c.slug}`,
+    name: c.client,
+  })),
+}
+
+const COVER_ALT: Record<string, string> = {
+  'foret-construction': 'New metal roof installation at golden hour, the kind of FORTIFIED-certified work Foret Construction is built around.',
+  'elite-custom-automotive': 'Aggressive mud-terrain tire on a lifted truck, the kind of BDS suspension build Elite Custom Automotive is known for.',
+  'all-out-window-tint': 'Black luxury car with heavily tinted windows at golden hour, the kind of tint installation All Out Window Tint specializes in.',
+  'hover-septic': 'Heavy excavator at dusk on a rural Louisiana installation site, the kind of work Hover Septic delivers in Thibodaux and Lafourche Parish.',
 }
 
 export default function CaseStudiesPage() {
   return (
     <>
+      <Schema data={itemListSchema} />
       <PageHero
         eyebrow="Case studies"
         title="The work, with receipts."
-        description="We don't fabricate testimonials. Here's real Louisiana clients we've shipped for — what we built, what changed, and what it cost."
+        description="Strykora doesn't fabricate testimonials. Real Louisiana clients, what got built, what changed, and what it cost."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/case-studies', label: 'Case Studies' },
@@ -33,7 +55,7 @@ export default function CaseStudiesPage() {
                 <div className="relative aspect-[21/9] overflow-hidden">
                   <Image
                     src={c.cover}
-                    alt={`${c.client} case study cover`}
+                    alt={COVER_ALT[c.slug] ?? `${c.client} project cover`}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 1024px) 100vw, 80vw"

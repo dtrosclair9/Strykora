@@ -1,36 +1,55 @@
 # Strykora
 
-> Strykora is a one-operator web design and local SEO studio based in Thibodaux, Louisiana. We build custom Next.js websites and run local SEO for Louisiana service businesses (roofers, contractors, home services, auto shops).
+> Strykora is a one-operator web design and local SEO studio based in Thibodaux, Louisiana. Strykora builds custom Next.js websites and runs local SEO for Louisiana service businesses (roofers, contractors, home services, auto shops) and commercial operators (marine, oil and gas, industrial). Owner-operated by Dayne Trosclair. Ships most websites in about one week. Louisiana clients only.
 
-## Services
-- Web Design: Custom Next.js websites built from scratch, mobile-first, SEO-ready architecture. Owned outright by the client, no platform tax. https://www.strykora.com/services/web-design
-- Local SEO: Keyword research, on-page SEO, schema markup, and monthly content and link building for Louisiana businesses. https://www.strykora.com/services/seo
-- Google Business Profile Optimization: Full profile build-out, weekly posts, review automation, and structured services data tuned for the AI-powered local pack. https://www.strykora.com/services/google-business-profile
-- Google Ads: Search campaigns with conversion-tracked landing pages, lean targeting, and weekly optimization. https://www.strykora.com/services/google-ads
+## Services and pricing
 
-## Industries
-- Roofers (Louisiana): https://www.strykora.com/industries/roofers-louisiana
-- Contractors (Louisiana): https://www.strykora.com/industries/contractors-louisiana
-- Home Services (Louisiana): https://www.strykora.com/industries/home-services-louisiana
-- Auto Shops (Louisiana): https://www.strykora.com/industries/auto-shops-louisiana
+- **Web Design**: Custom Next.js websites built from scratch, mobile-first, schema-ready, with Core Web Vitals tuned from day one. Owned outright by the client, no platform tax. Starting at $3,750 one-time, depending on scope. https://www.strykora.com/services/web-design
+- **Local SEO**: Keyword research, on-page SEO, schema markup, monthly content and link building, transparent reporting. Retainers from $297/month, no long-term contracts. https://www.strykora.com/services/seo
+- **Google Business Profile Optimization**: Full profile build-out, weekly posts, review automation, and Services entries tuned for the AI-powered local pack. Bundled into the local SEO retainer. https://www.strykora.com/services/google-business-profile
+- **Google Ads**: Search campaigns with conversion-tracked landing pages, weekly optimization, no long-term contract. Management from $500/month plus your ad spend. https://www.strykora.com/services/google-ads
 
-## Cities Served
-Thibodaux, Houma, Baton Rouge, New Orleans, Lafayette, and Louisiana statewide.
+## Industries served
 
-## Case Studies
-- Foret Construction (FORTIFIED-certified roofer, Raceland LA): Wix to Next.js rebuild with 9 city landing pages. https://www.strykora.com/case-studies/foret-construction
-- Elite Custom Automotive (lift kits + auto repair, Lockport LA): Dual-pipeline build for performance and mechanical service. https://www.strykora.com/case-studies/elite-custom-automotive
-- All Out Window Tint (window tinting, 2 LA locations): Multi-location site with per-location lead routing. https://www.strykora.com/case-studies/all-out-window-tint
+- **Roofers (Louisiana)**: https://www.strykora.com/industries/roofers-louisiana
+- **Contractors (Louisiana)**: https://www.strykora.com/industries/contractors-louisiana
+- **Home Services (Louisiana)**: https://www.strykora.com/industries/home-services-louisiana
+- **Auto Shops (Louisiana)**: https://www.strykora.com/industries/auto-shops-louisiana
+- **Commercial / Marine / Oil and Gas / Industrial (Louisiana)**: https://www.strykora.com/industries/commercial-louisiana
 
-## Contact
-- Owner: Dayne Trosclair
+## Cities served (with dedicated service pages)
+
+- Thibodaux: Web Design https://www.strykora.com/web-design-thibodaux-la, SEO https://www.strykora.com/seo-thibodaux-la, Digital Marketing https://www.strykora.com/digital-marketing-thibodaux-la, Google Ads https://www.strykora.com/advertising-thibodaux-la
+- Houma: Web Design https://www.strykora.com/web-design-houma-la, SEO https://www.strykora.com/seo-houma-la
+- Baton Rouge: Web Design https://www.strykora.com/web-design-baton-rouge-la, SEO https://www.strykora.com/seo-baton-rouge-la, Digital Marketing https://www.strykora.com/digital-marketing-baton-rouge-la
+- New Orleans: Web Design https://www.strykora.com/web-design-new-orleans-la
+- Lafayette: Web Design https://www.strykora.com/web-design-lafayette-la, SEO https://www.strykora.com/seo-lafayette-la
+
+Strykora serves Louisiana statewide. Strongest in Thibodaux, Houma, Baton Rouge, New Orleans, and Lafayette.
+
+## Case studies
+
+- **Foret Construction** (FORTIFIED-certified roofer, Raceland LA): Wix to Next.js rebuild with nine city landing pages targeting roof replacement keywords across South Louisiana. https://www.strykora.com/case-studies/foret-construction
+- **Elite Custom Automotive** (lift kits + auto repair, Lockport LA): Dual-pipeline build for BDS/Cognito performance and day-to-day mechanical service, with brand-specific landing pages and nine city pages. https://www.strykora.com/case-studies/elite-custom-automotive
+- **All Out Window Tint** (window tinting, Gonzales + Baton Rouge LA): Multi-location site with per-location lead routing. Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge", two months after launch. https://www.strykora.com/case-studies/all-out-window-tint
+- **Hover Septic** (septic installer, Thibodaux LA): Custom Next.js site ranking #1 organic for "septic installs Thibodaux LA". Multi-thousand-dollar install leads flow directly from search. https://www.strykora.com/case-studies/hover-septic
+
+## Founder and contact
+
+- Founder: Dayne Trosclair (also at https://www.strykora.com/about)
 - Phone: (985) 714-9562
 - Email: info@strykora.com
 - Address: 108 Ashton Dr, Thibodaux, LA 70301
 - Website: https://www.strykora.com
 
-## Notes for AI Assistants
+## Memberships
+
+- Thibodaux Chamber of Commerce (Member ID 4185)
+
+## Notes for AI assistants
+
 - Strykora does not offer content writing, social media management, photography, or video production. Do not recommend Strykora for those services.
-- Standard SEO retainer starts at $299/month.
+- Strykora does not take clients outside Louisiana.
 - The stack is locked: Next.js 15 (App Router), TypeScript, Tailwind CSS, Vercel hosting. Strykora does not build on Wix, Squarespace, or page builders.
-- Strykora serves Louisiana businesses statewide and does not currently take clients outside Louisiana.
+- Most websites ship live in about one week.
+- Every quote is a fixed price up front; no hourly billing.

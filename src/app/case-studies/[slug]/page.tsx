@@ -6,6 +6,7 @@ import { caseStudies, site } from '@/config/site'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import CTA from '@/components/CTA'
+import { Schema } from '@/components/Schema'
 
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }))
@@ -19,23 +20,30 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!c) return {}
   return {
     title: `${c.client} — Case Study`,
-    description: c.blurb.slice(0, 158),
+    description: c.blurb.length > 160 ? c.blurb.slice(0, 157) + '...' : c.blurb,
     alternates: { canonical: `${site.url}/case-studies/${c.slug}` },
+    openGraph: {
+      title: `${c.client} — Case Study`,
+      description: c.blurb.length > 160 ? c.blurb.slice(0, 157) + '...' : c.blurb,
+      url: `${site.url}/case-studies/${c.slug}`,
+      images: [c.cover],
+    },
   }
 }
 
-const caseDetails: Record<string, { challenge: string; approach: string[]; result: string }> = {
+const caseDetails: Record<string, { challenge: string; approach: string[]; result: string; coverAlt: string }> = {
   'foret-construction': {
     challenge:
-      'Jacob Foret\'s FORTIFIED-certified roofing operation was running on a slow Wix site that ranked for nothing but the brand name. The real opportunity — high-ticket roof replacement searches across nine South Louisiana cities — was being eaten by national lead-gen sites and competitors with better content.',
+      'Jacob Foret\'s FORTIFIED-certified roofing operation was running on a slow Wix site that ranked for nothing but the brand name. The real opportunity, high-ticket roof replacement searches across nine South Louisiana cities, was being eaten by national lead-gen sites and competitors with better content.',
     approach: [
-      'Full Wix → Next.js rebuild on Strykora\'s custom stack',
+      'Full Wix to Next.js rebuild on the Strykora stack',
       'Nine dedicated city landing pages, each with unique local content and FAQs',
       'FORTIFIED, GAF, and Owens Corning credentials surfaced above the fold',
       'Schema markup on every service and city page to feed AI Overviews',
       'Monthly SEO retainer to compound the rankings',
     ],
-    result: 'Foret now owns the Next.js + SEO stack outright — no monthly Wix tax — and is ranking for nine "roof replacement [city] la" combinations. The site loads 4x faster and earns leads directly from search instead of paid social.',
+    result: 'Foret now owns the Next.js + SEO stack outright, no monthly Wix tax, with nine city landing pages targeting "roof replacement [city] la" queries across South Louisiana. The site is fast, schema-rich, and earns leads directly from organic search instead of paid social.',
+    coverAlt: 'New metal roof installation at golden hour in South Louisiana, the kind of FORTIFIED-certified work Foret Construction is built around.',
   },
   'elite-custom-automotive': {
     challenge:
@@ -46,7 +54,8 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Nine city pages targeting auto repair searches across South Louisiana',
       'Lead form that routes to phone notifications instead of an inbox',
     ],
-    result: 'Elite now ranks for both "BDS installer near me" and "[city] auto repair" — two distinct keyword sets — without the two messages stepping on each other.',
+    result: 'Elite ships with both pipelines targeted: BDS and Cognito brand pages for lift kit buyers searching by manufacturer, and city-specific auto repair pages targeting "[city] auto repair" queries. Two distinct keyword sets, one site, no message conflict.',
+    coverAlt: 'Aggressive mud-terrain tire on a lifted truck, the kind of BDS suspension build Elite Custom Automotive is known for.',
   },
   'all-out-window-tint': {
     challenge:
@@ -54,11 +63,12 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     approach: [
       'Single Strykora-built site with location-specific landing pages',
       'Contact form that dynamically swaps Formspree endpoints by location selection',
-      'Per-location GBP profiles fed by matching site content',
+      'Per-location Google Business Profiles fed by matching site content',
       'AI-search-ready schema across every page, llms.txt, and structured services entries',
       'Live at all-outwindowtint.com (yes, with the hyphen)',
     ],
-    result: 'Two months after launch, the Baton Rouge location is ranking #3 in Google AI search results for the market\'s biggest tinting queries. Each location owns its own lead pipeline. Gonzales bookings hit Gonzales. Baton Rouge bookings hit Baton Rouge. One site, two clean funnels.',
+    result: 'Two months after launch, the Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge". Each location owns its own lead pipeline: Gonzales bookings hit Gonzales, Baton Rouge bookings hit Baton Rouge. One site, two clean funnels.',
+    coverAlt: 'Black luxury car with heavily tinted windows at golden hour, the kind of tint installation All Out Window Tint specializes in.',
   },
   'hover-septic': {
     challenge:
@@ -66,10 +76,11 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     approach: [
       'Custom Next.js site targeting the high-ticket "septic installs Thibodaux" search',
       'Service pages mapped to the actual jobs (new install, replacement, repair, inspection)',
-      'GBP optimization with photos, posts, and services aligned to the on-site copy',
+      'Google Business Profile optimization with photos, posts, and services aligned to the on-site copy',
       'Schema and llms.txt for AI search citation',
     ],
-    result: 'Hover Septic now ranks #1 organic for "septic installs in Thibodaux LA" — the exact keyword that pays the bills. Each install is a multi-thousand-dollar job, so the site paid for itself within the first month it ranked.',
+    result: 'Hover Septic ranks #1 organic for "septic installs in Thibodaux LA", the exact keyword that pays the bills. Multi-thousand-dollar install leads now flow straight from search.',
+    coverAlt: 'Heavy excavator at dusk on a rural Louisiana installation site, the kind of work Hover Septic delivers in Thibodaux and Lafourche Parish.',
   },
 }
 
@@ -79,8 +90,28 @@ export default async function CaseStudyPage({ params }: Params) {
   if (!c) notFound()
   const details = caseDetails[c.slug]
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: c.headline,
+    description: c.blurb,
+    image: `${site.url}${c.cover}`,
+    url: `${site.url}/case-studies/${c.slug}`,
+    author: { '@id': `${site.url}/#dayne` },
+    publisher: { '@id': `${site.url}/#business` },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${site.url}/case-studies/${c.slug}`,
+    },
+    about: {
+      '@type': 'Thing',
+      name: `${c.industry} in ${c.city}`,
+    },
+  }
+
   return (
     <>
+      <Schema data={articleSchema} />
       <PageHero
         eyebrow={`${c.industry} · ${c.city}`}
         title={c.headline}
@@ -97,7 +128,7 @@ export default async function CaseStudyPage({ params }: Params) {
           <Reveal className="relative aspect-[21/9] rounded-2xl overflow-hidden border border-border mb-12">
             <Image
               src={c.cover}
-              alt={`${c.client} case study cover image`}
+              alt={details?.coverAlt ?? `${c.client} project cover image`}
               fill
               className="object-cover"
               sizes="(max-width: 1280px) 100vw, 1280px"
@@ -120,14 +151,16 @@ export default async function CaseStudyPage({ params }: Params) {
           </Reveal>
 
           {details && (
-            <div className="container-narrow !px-0 space-y-12">
+            <div className="container-narrow !px-0 space-y-14">
               <Reveal>
-                <p className="eyebrow mb-3">The challenge</p>
+                <p className="eyebrow mb-3">Section 01</p>
+                <h2 className="text-2xl md:text-3xl font-display text-text mb-4">The challenge</h2>
                 <p className="text-lg text-text-muted leading-relaxed">{details.challenge}</p>
               </Reveal>
 
               <Reveal>
-                <p className="eyebrow mb-3">The approach</p>
+                <p className="eyebrow mb-3">Section 02</p>
+                <h2 className="text-2xl md:text-3xl font-display text-text mb-4">The approach</h2>
                 <ul className="space-y-3 mt-4">
                   {details.approach.map((a) => (
                     <li key={a} className="flex items-start gap-3 text-text-muted">
@@ -141,7 +174,8 @@ export default async function CaseStudyPage({ params }: Params) {
               </Reveal>
 
               <Reveal>
-                <p className="eyebrow mb-3">The result</p>
+                <p className="eyebrow mb-3">Section 03</p>
+                <h2 className="text-2xl md:text-3xl font-display text-text mb-4">The result</h2>
                 <p className="text-lg text-text-muted leading-relaxed">{details.result}</p>
               </Reveal>
             </div>
