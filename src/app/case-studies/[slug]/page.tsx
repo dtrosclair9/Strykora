@@ -35,7 +35,7 @@ const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string 
   'foret-construction': {
     url: 'https://www.foretconstruction.co',
     screenshot: '/images/case-foret-screenshot.jpg',
-    alt: 'Screenshot of foretconstruction.co, the live Strykora-built Next.js site for Foret Construction & Roofing.',
+    alt: 'Screenshot of foretconstruction.co, the live Strykora-built Next.js site for Foret Construction & Roofing in Raceland, Louisiana.',
   },
   'elite-custom-automotive': {
     url: 'https://www.elitecustomauto.co',
@@ -45,64 +45,68 @@ const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string 
   'all-out-window-tint': {
     url: 'https://all-outwindowtint.com',
     screenshot: '/images/case-allout-screenshot.jpg',
-    alt: 'Screenshot of all-outwindowtint.com, the live Strykora-built Next.js site for All Out Window Tint in Gonzales and Baton Rouge.',
+    alt: 'Screenshot of all-outwindowtint.com, the live Strykora-built Next.js site for All Out Window Tint serving Gonzales and Baton Rouge, Louisiana.',
   },
   'hover-septic': {
     url: 'https://www.hoverseptic.com',
     screenshot: '/images/case-hover-screenshot.jpg',
-    alt: 'Screenshot of hoverseptic.com, the live Strykora-built Next.js site for Hover Septic in Thibodaux, Louisiana.',
+    alt: 'Screenshot of hoverseptic.com, the live Strykora-built Squarespace site for Hover Septic in Thibodaux, Louisiana.',
   },
 }
 
 const caseDetails: Record<string, { challenge: string; approach: string[]; result: string; coverAlt: string }> = {
   'foret-construction': {
     challenge:
-      'Jacob Foret\'s FORTIFIED-certified roofing operation was running on a slow Wix site that ranked for nothing but the brand name. The real opportunity, high-ticket roof replacement searches across nine South Louisiana cities, was being eaten by national lead-gen sites and competitors with better content.',
+      'Jacob Foret\'s FORTIFIED-certified roofing operation had a Wix site with decent SEO foundations and working contact popups, but it was templated, leaned on stock photography, and charged Foret a monthly Wix rental fee with no path to ownership. The Google Business Profile had only a couple of photos, no posts, and no service descriptions — invisible to the local pack and to AI Overviews. The bones of an SEO program were there; the foundation was not built to scale.',
     approach: [
-      'Full Wix to Next.js rebuild on the Strykora stack',
-      'Nine dedicated city landing pages, each with unique local content and FAQs',
-      'FORTIFIED, GAF, and Owens Corning credentials surfaced above the fold',
-      'Schema markup on every service and city page to feed AI Overviews',
+      'Wix to Next.js rebuild on the Strykora stack, owned outright by Foret with no more Wix monthly fee',
+      'Nine dedicated city landing pages targeting the high-ticket "roof replacement [city] la" search across South Louisiana',
+      'FORTIFIED, GAF, and Owens Corning credentials surfaced above the fold where storm-season buyers look',
+      'Schema markup and llms.txt on every service and city page to feed Google AI Overviews and ChatGPT citation',
+      'Google Business Profile fully rebuilt with photos, weekly posts, and Services entries aligned to the on-site copy',
       'Monthly SEO retainer to compound the rankings',
     ],
-    result: 'Foret now owns the Next.js + SEO stack outright, no monthly Wix tax, with nine city landing pages targeting "roof replacement [city] la" queries across South Louisiana. The site is fast, schema-rich, and earns leads directly from organic search instead of paid social.',
+    result: 'Foret now owns the Next.js + SEO stack outright — no more monthly Wix tax — with nine city landing pages targeting roof replacement queries across South Louisiana. The site is fast, schema-rich, and the credentials buyers actually care about are surfaced where they look.',
     coverAlt: 'New metal roof installation at golden hour in South Louisiana, the kind of FORTIFIED-certified work Foret Construction is built around.',
   },
   'elite-custom-automotive': {
     challenge:
-      'Colin Richard runs both performance builds (BDS lift kits, Cognito suspension) and bread-and-butter auto repair out of Lockport. One business, two completely different customer journeys, and a website that did neither justice.',
+      'Colin Richard had built Elite Custom Automotive into a real shop in Lockport, but the website didn\'t show it. The old site was templated, stock-photo heavy, and looked like every other low-budget auto shop site on the SERP. Colin was also paying monthly rental fees to the web provider with no path to ownership. The Google Business Profile had zero photos, zero posts, and no service descriptions — invisible to the local pack.',
     approach: [
-      'Two distinct conversion paths on one Strykora-built Next.js site',
-      'Brand pages for the suspension installers (BDS, Cognito) that buyers search by name',
-      'Nine city pages targeting auto repair searches across South Louisiana',
-      'Lead form that routes to phone notifications instead of an inbox',
+      'Custom Next.js rebuild with a badass 3D hero treatment that finally showcases Elite\'s actual brand',
+      'Two distinct conversion paths: performance builds (BDS lift kits, Cognito suspension) on one path, day-to-day auto repair on the other',
+      'Brand pages for the suspension installers (BDS, Cognito) so buyers searching by manufacturer find Elite first',
+      'Nine city pages targeting "[city] auto repair" across South Louisiana',
+      'Google Business Profile fully built out: photos, posts, service descriptions, all aligned to the on-site copy',
+      'Lead form that pings Colin\'s phone instead of sitting in a never-checked inbox',
     ],
-    result: 'Elite ships with both pipelines targeted: BDS and Cognito brand pages for lift kit buyers searching by manufacturer, and city-specific auto repair pages targeting "[city] auto repair" queries. Two distinct keyword sets, one site, no message conflict.',
+    result: 'Elite now ranks top 3 in its niche in Lockport, Louisiana — the local pack position that actually drives booked work. Colin owns the code outright. No more monthly rental fee. Two pipelines (performance and repair) running on one site without the messages stepping on each other.',
     coverAlt: 'Aggressive mud-terrain tire on a lifted truck, the kind of BDS suspension build Elite Custom Automotive is known for.',
   },
   'all-out-window-tint': {
     challenge:
-      'Reed runs window tint shops in Gonzales and Baton Rouge. The old Hibu-hosted site had one contact form going to one inbox, which meant the Gonzales team got Baton Rouge leads and vice versa. Cross-routing was killing conversion, and the Baton Rouge market is brutally competitive.',
+      'Reed Babin had built All Out Window Tint into a respected Gonzales shop with a decent professional site. When Dax came in as co-owner to expand into Baton Rouge, the existing rental site couldn\'t tell the dual-location story or capture the new market. The old web provider was charging monthly fees with no path to ownership, and the brand new Baton Rouge location had no Google Business Profile at all.',
     approach: [
-      'Single Strykora-built site with location-specific landing pages',
-      'Contact form that dynamically swaps Formspree endpoints by location selection',
-      'Per-location Google Business Profiles fed by matching site content',
-      'AI-search-ready schema across every page, llms.txt, and structured services entries',
+      'Custom Next.js rebuild that Reed and Dax own outright — no more monthly platform tax',
+      'Dual-location architecture with per-location landing pages and contact forms (Gonzales routes to Reed, Baton Rouge routes to Dax)',
+      'Dedicated franchising page targeting future partners, a marketing angle the old rental site could not accommodate',
+      'Full Google Business Profile takeover for both locations, including building the Baton Rouge profile from scratch',
+      'AI-search-ready schema, llms.txt, and structured Services entries on every page',
       'Live at all-outwindowtint.com (yes, with the hyphen)',
     ],
-    result: 'Two months after launch, the Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge". Each location owns its own lead pipeline: Gonzales bookings hit Gonzales, Baton Rouge bookings hit Baton Rouge. One site, two clean funnels.',
+    result: 'Two months after launch, the Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge" — a market All Out was not ranking in at all before launch. Each location owns its own lead pipeline. Gonzales bookings hit Gonzales. Baton Rouge bookings hit Baton Rouge. The franchising page surfaces new partner inquiries Reed and Dax can vet without ever rebuilding the site.',
     coverAlt: 'Black luxury car with heavily tinted windows at golden hour, the kind of tint installation All Out Window Tint specializes in.',
   },
   'hover-septic': {
     challenge:
-      'Hover Septic does multi-thousand-dollar septic installations in Thibodaux and the surrounding parishes. They had no website. Every lead came through word-of-mouth and Facebook, with no leverage when a customer Googled them mid-decision.',
+      'Trey Hover ran Hover Septic out of Thibodaux with zero digital footprint. No website, no Google Business Profile, just a Facebook page. Every install lead came through word-of-mouth, with no leverage when a customer Googled them mid-decision. As Strykora\'s first client, this was a clean-slate build.',
     approach: [
-      'Custom Next.js site targeting the high-ticket "septic installs Thibodaux" search',
-      'Service pages mapped to the actual jobs (new install, replacement, repair, inspection)',
-      'Google Business Profile optimization with photos, posts, and services aligned to the on-site copy',
-      'Schema and llms.txt for AI search citation',
+      'First-time website built on Squarespace (the platform Strykora was using when Trey signed on; Hover is the only remaining Strykora client still on Squarespace today)',
+      'Service pages mapped to the actual jobs Trey does: new install, replacement, repair, inspection',
+      'Google Business Profile built from scratch with photos, posts, and Services entries aligned to the on-site copy',
+      'On-page SEO and schema targeting the high-ticket "septic installs Thibodaux" search',
     ],
-    result: 'Hover Septic ranks #1 organic for "septic installs in Thibodaux LA", the exact keyword that pays the bills. Multi-thousand-dollar install leads now flow straight from search.',
+    result: 'Hover Septic ranks #1 organic for "septic installs in Thibodaux LA" — the exact keyword that pays the bills. The impact was so profound that Trey was able to drop low-ticket pumpout work entirely and focus on multi-thousand-dollar installs. The site rewrote the business model.',
     coverAlt: 'Heavy excavator at dusk on a rural Louisiana installation site, the kind of work Hover Septic delivers in Thibodaux and Lafourche Parish.',
   },
 }
