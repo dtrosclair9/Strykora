@@ -32,7 +32,7 @@ export default function IndustriesPage() {
       <PageHero
         eyebrow="Industries"
         title="Built for Louisiana service and commercial businesses."
-        description="Strykora doesn't take every client. These are the verticals Strykora knows cold, and where the case studies prove the model works."
+        description="Generic agencies sell the same package to a roofer, a SaaS startup, and a law firm. Strykora picks lanes and goes deep. These are the verticals Strykora knows cold, and where the case studies prove the model works."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/industries', label: 'Industries' },

@@ -18,23 +18,23 @@ export const metadata: Metadata = {
 const pillars = [
   {
     label: '01',
-    title: 'No-fluff stack',
-    body: 'Hand-built sites on a modern Next.js stack — not Wix or Squarespace. Faster, easier to rank, and you own the code outright.',
+    title: 'You own everything, day one',
+    body: 'The site, the code, the domain, the Google Business Profile, the analytics. No monthly platform tax. No agency holding your accounts hostage when you leave.',
   },
   {
     label: '02',
-    title: 'Local-first SEO',
-    body: 'Strykora ranks you for what people in your city actually type into Google, not vanity keywords.',
+    title: 'You call, Dayne answers',
+    body: 'No account managers, no offshore handoffs, no tickets. The person building your site is the same person who responds within one business day.',
   },
   {
     label: '03',
-    title: 'Built for AI search',
-    body: 'Schema, llms.txt, and structured FAQs on every page, tuned to get cited by Google AI Overviews and ChatGPT.',
+    title: 'Found before your competitor',
+    body: 'Strykora ranks you for what people in your city actually type into Google — and the buyers who ask ChatGPT, Perplexity, and Google AI Overviews for a recommendation.',
   },
   {
     label: '04',
-    title: 'One operator, no agency layers',
-    body: 'You work directly with the person building your site. No account manager, no offshore handoffs, no design committee.',
+    title: 'Real numbers, not vibes',
+    body: 'Fixed-price quotes up front. No 12-month contracts. Every month: tracked rankings, booked leads, and what changed. If it isn\'t working, you see it.',
   },
 ]
 
@@ -137,8 +137,9 @@ export default function HomePage() {
               Then we make sure <span className="gradient-text">Google sends people to it.</span>
             </h1>
             <p className="text-lg md:text-xl text-text-muted max-w-2xl text-balance leading-relaxed">
-              Custom-built websites and local SEO for Louisiana businesses. Built by one operator
-              in Thibodaux. Ships in about a week, owned outright by you.
+              Stop renting a templated website you&apos;ll never own. Strykora builds you a fast, custom site
+              for about $3,750, ships it in about a week, and ranks you locally — including in ChatGPT
+              and Google AI Overviews — before your old agency&apos;s next invoice clears.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link href="/contact" className="btn-primary">
@@ -187,7 +188,7 @@ export default function HomePage() {
               Web design first.<br /> SEO that stacks on top.
             </h2>
             <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Four services, in a sales stack that compounds. Strykora does not offer content writing, social media management, or photography, and won&apos;t pretend to.
+              Four services, four prices on the table up front, no 12-month contracts. Strykora does not do content writing, social media management, or photography — those get referred out. Honest scope keeps the work sharp.
             </p>
           </Reveal>
 
@@ -223,6 +224,9 @@ export default function HomePage() {
             <h2 id="industries-heading" className="text-display-md font-display text-text text-balance">
               Built for Louisiana service and commercial businesses.
             </h2>
+            <p className="mt-5 text-text-muted text-lg leading-relaxed">
+              Strykora is not a generic marketing agency. Strykora builds for the specific verticals where local search and AI Overviews actually decide who gets the call.
+            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
@@ -317,7 +321,7 @@ export default function HomePage() {
           <Reveal className="max-w-2xl mb-16">
             <p className="eyebrow mb-4">Why {site.name}</p>
             <h2 id="why-heading" className="text-display-md font-display text-text text-balance">
-              Built like a craftsman, priced like a partner.
+              Everything your last agency told you didn&apos;t come standard.
             </h2>
           </Reveal>
 
@@ -393,10 +397,10 @@ export default function HomePage() {
               <div className="grid-pattern p-12 md:p-20 text-center">
                 <p className="eyebrow mb-4">Ready when you are</p>
                 <h2 id="cta-heading" className="text-display-md font-display text-text mb-6 text-balance max-w-3xl mx-auto">
-                  Stop losing leads to a slow website.
+                  Your competitor&apos;s site loads in a second.<br/>What does yours do?
                 </h2>
                 <p className="text-text-muted text-lg max-w-xl mx-auto mb-8">
-                  Tell me about your business in 60 seconds. I&apos;ll send back a candid take and a fixed-price quote within one business day.
+                  Tell me about your business in 60 seconds. I&apos;ll send back a candid take — including whether Strykora is even the right fit — and a fixed-price quote within one business day. No sales call, no pressure.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
                   <Link href="/contact" className="btn-primary">

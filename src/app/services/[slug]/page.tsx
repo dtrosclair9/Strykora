@@ -188,7 +188,7 @@ export default async function ServicePage({ params }: Params) {
                 <p className="eyebrow mb-3">Pricing</p>
                 <p className="font-display text-2xl text-text mb-2">{service.priceRange}</p>
                 <p className="text-text-muted text-sm leading-relaxed mb-6">
-                  Every quote is a fixed price up front. No hourly billing, no surprise invoices.
+                  Fixed price up front. No hourly billing. No 12-month contract. No monthly platform tax stacked on top.
                 </p>
 
                 {availableCityLinks.length > 0 && (

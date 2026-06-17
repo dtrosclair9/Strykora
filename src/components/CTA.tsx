@@ -8,8 +8,8 @@ interface CTAProps {
 }
 
 export default function CTA({
-  heading = 'Stop losing leads to a slow website.',
-  body = `Tell me about your business in 60 seconds. I'll send back a candid take and a fixed-price quote within 24 hours.`,
+  heading = `Stop renting a website you'll never own.`,
+  body = `Tell me about your business in 60 seconds. I'll send back a candid take — including whether Strykora is the right fit — and a fixed-price quote within one business day. No sales call, no pressure.`,
 }: CTAProps) {
   return (
     <section className="section-padding" aria-label="Call to action">

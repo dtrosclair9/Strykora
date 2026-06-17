@@ -25,7 +25,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Tell me about your project."
-        description="A short note is all I need to send back a candid take and a fixed-price quote. I respond within 24 hours."
+        description="A short note is all I need to send back a candid take — including whether Strykora is the right fit — plus a fixed-price quote. One business day, no sales call, no pressure."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/contact', label: 'Contact' },

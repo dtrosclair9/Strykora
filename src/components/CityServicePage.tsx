@@ -185,10 +185,10 @@ export default function CityServicePage({ slug }: Props) {
                 Why hire Strykora for {service.title.toLowerCase()} in {city.name}?
               </h2>
               <p className="text-text-muted leading-relaxed mb-6">
-                {city.name} is in {city.parish}, and the buyers who type &quot;{service.title.toLowerCase()} {city.name}&quot; into Google
-                are ready to spend. The problem: the SERP is crowded with generic agencies, national lead-gen sites,
-                and slow WordPress builds. Strykora ships a faster, more local, more credible answer, with pricing
-                that starts at <span className="text-text">{service.priceRange}</span>
+                {city.name} is in {city.parish}, and the buyers who type &quot;{service.title.toLowerCase()} {city.name}&quot;
+                into Google are ready to spend. The problem: the SERP is crowded with generic agencies, national lead-gen
+                sites, and slow WordPress and Wix builds you&apos;d be paying monthly rent on. Strykora ships a faster,
+                more local, more credible answer — owned outright by you — for <span className="text-text">{service.priceRange}</span>
               </p>
               <ul className="space-y-3">
                 {service.bullets.map((b) => (

@@ -78,6 +78,7 @@ export default function AboutPage() {
               Most marketing agencies sell you a sales rep, then hand the actual work to a project manager
               who hands it to a junior contractor who hands it to a template. By the time the site goes live,
               nobody on the team has met you and the result looks like every other site they shipped that month.
+              And every text change after launch is a ticket and a two-week wait.
             </Reveal>
             <Reveal as="p">
               {site.name} is built differently. I take a small number of Louisiana clients each year, build every
@@ -90,7 +91,9 @@ export default function AboutPage() {
               get a real custom build for a small business budget, and you own the code outright.
             </Reveal>
             <Reveal as="p" className="text-text">
-              If you want a partner who picks up the phone and ships fast, we&apos;ll work well together.
+              You call, I answer. You text a change, it ships the same day. You decide to leave, you take the
+              code, the domain, the analytics, and the GBP with you. That&apos;s the trade — no lock-in, no
+              account managers, no nonsense. If that&apos;s the kind of partner you want, we&apos;ll work well together.
             </Reveal>
           </div>
         </div>
