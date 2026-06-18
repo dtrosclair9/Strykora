@@ -33,6 +33,70 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 }
 
+interface CitationShot {
+  src: string
+  engine: string
+  alt: string
+  caption: string
+  highlight: string
+}
+
+const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: CitationShot[] }> = {
+  'hover-septic': {
+    heading: 'Three AI engines. One client. All recommend Hover by name.',
+    intro: 'When a real customer asks any of the major AI assistants for the best septic installer in Thibodaux, Hover Septic wins. These screenshots were captured in June 2026.',
+    shots: [
+      {
+        src: '/images/ai-citation-perplexity-hover.jpg',
+        engine: 'Perplexity',
+        caption: '"Recommend me the best septic system installer in Thibodaux LA."',
+        highlight: 'Answer leads with: "the strongest option I found is Hover Septic Services."',
+        alt: 'Screenshot of Perplexity recommending Hover Septic Services as the strongest option for a septic installer in Thibodaux, Louisiana.',
+      },
+      {
+        src: '/images/ai-citation-chatgpt-best-overall.jpg',
+        engine: 'ChatGPT',
+        caption: '"Recommend me the best septic installation service Thibodaux LA."',
+        highlight: 'Answer crowns Hover Septic Services as "Best overall."',
+        alt: 'Screenshot of ChatGPT crowning Hover Septic Services as Best overall for septic installation in Thibodaux, Louisiana.',
+      },
+      {
+        src: '/images/ai-citation-chatgpt-why-hover.jpg',
+        engine: 'ChatGPT (follow-up)',
+        caption: '"Why I\'d start with Hover."',
+        highlight: 'The AI explains its own pick, citing the exact positioning Strykora built into the site.',
+        alt: 'Screenshot of ChatGPT explaining why Hover Septic is the closest match for septic installation in Thibodaux.',
+      },
+    ],
+  },
+  'elite-custom-automotive': {
+    heading: 'Perplexity recommends Elite by name. Twice.',
+    intro: 'When a real customer asked Perplexity for the best lift kit installer in Lockport, the answer named Elite Custom Automotive twice in the same response — once as the best match, once as the practical pick.',
+    shots: [
+      {
+        src: '/images/ai-citation-perplexity-elite.jpg',
+        engine: 'Perplexity',
+        caption: '"Recommend me the best auto shop in Lockport that does lift kits."',
+        highlight: '"The best match I found in Lockport is Elite Custom Automotive." Three supporting bullet points follow. Lower in the answer: "For a lift kit, I\'d start with Elite Custom Automotive."',
+        alt: 'Screenshot of Perplexity recommending Elite Custom Automotive as the best lift kit installer in Lockport, Louisiana.',
+      },
+    ],
+  },
+  'all-out-window-tint': {
+    heading: 'ChatGPT lists All Out in its top picks for Baton Rouge.',
+    intro: 'When a real customer asked ChatGPT for the best window tinting shop in Baton Rouge, All-Out Window Tint made the "My pick" list as the quality option with broader services. Captured roughly two months after the Baton Rouge location launched from scratch.',
+    shots: [
+      {
+        src: '/images/ai-citation-chatgpt-allout.jpg',
+        engine: 'ChatGPT',
+        caption: '"Best window tinting shop in Baton Rouge."',
+        highlight: 'All-Out Window Tint is named alongside Auto Evolution and Signature Rides, described as "a quality shop with more services" beyond tint (ceramic, carbon, PPF, wraps).',
+        alt: 'Screenshot of ChatGPT naming All-Out Window Tint in its top picks for window tinting in Baton Rouge, Louisiana.',
+      },
+    ],
+  },
+}
+
 const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string }> = {
   'foret-construction': {
     url: 'https://www.foretconstruction.co',
@@ -211,6 +275,58 @@ export default async function CaseStudyPage({ params }: Params) {
           )}
         </div>
       </section>
+
+      {AI_CITATIONS[c.slug] && (
+        <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="ai-citation-heading">
+          <div className="container-wide">
+            <Reveal className="mb-10 max-w-3xl">
+              <p className="eyebrow mb-3">AI search receipts</p>
+              <h2 id="ai-citation-heading" className="text-display-md font-display text-text text-balance">
+                {AI_CITATIONS[c.slug].heading}
+              </h2>
+              <p className="mt-4 text-text-muted text-lg leading-relaxed">
+                {AI_CITATIONS[c.slug].intro}
+              </p>
+            </Reveal>
+            <div className={`grid grid-cols-1 gap-5 ${
+              AI_CITATIONS[c.slug].shots.length >= 3 ? 'md:grid-cols-3' :
+              AI_CITATIONS[c.slug].shots.length === 2 ? 'md:grid-cols-2' :
+              'max-w-md'
+            }`}>
+              {AI_CITATIONS[c.slug].shots.map((shot) => (
+                <Reveal key={shot.src}>
+                  <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
+                    <div className="relative aspect-[1100/2136] bg-white">
+                      <Image
+                        src={shot.src}
+                        alt={shot.alt}
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                    <figcaption className="p-6 border-t border-border">
+                      <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">{shot.engine}</p>
+                      <p className="text-sm text-text-muted leading-relaxed mb-2">
+                        <span className="text-text-dim">Query:</span> {shot.caption}
+                      </p>
+                      <p className="text-sm text-text leading-relaxed">{shot.highlight}</p>
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal className="mt-10 text-center">
+              <Link href="/services/ai-search-optimization" className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:gap-2 transition-all">
+                See how Strykora ranks clients inside AI answers
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {LIVE_SITES[c.slug] && (
         <section className="section-padding border-t border-border" aria-labelledby="live-site-heading">

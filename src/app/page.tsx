@@ -305,14 +305,23 @@ export default function HomePage() {
           <Reveal className="max-w-3xl mb-12">
             <p className="eyebrow mb-4">Real AI search receipts</p>
             <h2 id="ai-proof-heading" className="text-display-md font-display text-text text-balance">
-              ChatGPT and Perplexity already recommend Strykora clients.
+              Four clients. Multiple AI engines. Real screenshots.
             </h2>
             <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Most agencies talk about being &quot;ready for AI search.&quot; These are actual answers from Perplexity and ChatGPT, last week, when a customer asked who to call for septic installation in Thibodaux. Hover Septic (a Strykora client) wins three out of three.
+              Most agencies talk about being &quot;ready for AI search.&quot; These are actual answers from ChatGPT and Perplexity, captured in the last few weeks, when real customers asked who to call. Strykora clients win across four different verticals.
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Row 1: Hover Septic — same query, three engines, all #1 (depth) */}
+          <Reveal className="mb-4">
+            <div className="flex items-baseline justify-between flex-wrap gap-3 mb-4">
+              <p className="eyebrow">Depth: one client, three engines</p>
+              <Link href="/case-studies/hover-septic" className="text-sm text-accent hover:underline">
+                Hover Septic case study →
+              </Link>
+            </div>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
             <Reveal>
               <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
                 <div className="relative aspect-[1100/2136] bg-white">
@@ -325,7 +334,7 @@ export default function HomePage() {
                   />
                 </div>
                 <figcaption className="p-6 border-t border-border">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">Perplexity</p>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">Perplexity · Hover Septic</p>
                   <p className="text-sm text-text-muted leading-relaxed">
                     Query: <span className="text-text">&quot;Recommend me the best septic system installer in Thibodaux LA.&quot;</span> Answer leads with Hover Septic.
                   </p>
@@ -345,7 +354,7 @@ export default function HomePage() {
                   />
                 </div>
                 <figcaption className="p-6 border-t border-border">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">ChatGPT</p>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">ChatGPT · Hover Septic</p>
                   <p className="text-sm text-text-muted leading-relaxed">
                     Query: <span className="text-text">&quot;Recommend me the best septic installation service Thibodaux LA.&quot;</span> Answer crowns Hover Septic as &quot;Best overall.&quot;
                   </p>
@@ -365,7 +374,7 @@ export default function HomePage() {
                   />
                 </div>
                 <figcaption className="p-6 border-t border-border">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">ChatGPT — follow-up</p>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">ChatGPT follow-up · Hover</p>
                   <p className="text-sm text-text-muted leading-relaxed">
                     <span className="text-text">&quot;Why I&apos;d start with Hover.&quot;</span> The AI explains its own pick, citing the exact positioning Strykora built into the site.
                   </p>
@@ -374,9 +383,81 @@ export default function HomePage() {
             </Reveal>
           </div>
 
-          <Reveal className="mt-10 text-center">
-            <Link href="/case-studies/hover-septic" className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:gap-2 transition-all">
-              Read the Hover Septic case study
+          {/* Row 2: Three more clients, three different verticals, three different cities (breadth) */}
+          <Reveal className="mb-4">
+            <p className="eyebrow">Breadth: three more clients, three verticals, three cities</p>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <Reveal>
+              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
+                <div className="relative aspect-[1100/2136] bg-white">
+                  <Image
+                    src="/images/ai-citation-perplexity-elite.jpg"
+                    alt="Screenshot of Perplexity recommending Elite Custom Automotive as the best lift kit installer in Lockport, Louisiana."
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <figcaption className="p-6 border-t border-border">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">Perplexity · Elite Custom Automotive</p>
+                  <p className="text-sm text-text-muted leading-relaxed">
+                    Query: <span className="text-text">&quot;Recommend me the best auto shop in Lockport that does lift kits.&quot;</span> Answer: &quot;The best match I found in Lockport is Elite Custom Automotive.&quot;
+                  </p>
+                  <Link href="/case-studies/elite-custom-automotive" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
+                    Read the case study →
+                  </Link>
+                </figcaption>
+              </figure>
+            </Reveal>
+
+            <Reveal>
+              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
+                <div className="relative aspect-[1100/2136] bg-white">
+                  <Image
+                    src="/images/ai-citation-perplexity-acadia.jpg"
+                    alt="Screenshot of Perplexity recommending Acadia Pools as a strong local option for a pool builder in Thibodaux, Louisiana."
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <figcaption className="p-6 border-t border-border">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">Perplexity · Acadia Pools</p>
+                  <p className="text-sm text-text-muted leading-relaxed">
+                    Query: <span className="text-text">&quot;Recommend me a pool builder in Thibodaux LA.&quot;</span> Answer leads with: &quot;A strong local option in Thibodaux is Acadia Pools.&quot;
+                  </p>
+                </figcaption>
+              </figure>
+            </Reveal>
+
+            <Reveal>
+              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
+                <div className="relative aspect-[1100/2136] bg-white">
+                  <Image
+                    src="/images/ai-citation-chatgpt-allout.jpg"
+                    alt="Screenshot of ChatGPT naming All-Out Window Tint in its top picks for window tinting in Baton Rouge, Louisiana."
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <figcaption className="p-6 border-t border-border">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">ChatGPT · All Out Window Tint</p>
+                  <p className="text-sm text-text-muted leading-relaxed">
+                    Query: <span className="text-text">&quot;Best window tinting shop in Baton Rouge.&quot;</span> ChatGPT&apos;s &quot;My pick&quot; list names All-Out Window Tint as &quot;a quality shop with more services.&quot;
+                  </p>
+                  <Link href="/case-studies/all-out-window-tint" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
+                    Read the case study →
+                  </Link>
+                </figcaption>
+              </figure>
+            </Reveal>
+          </div>
+
+          <Reveal className="mt-12 text-center">
+            <Link href="/services/ai-search-optimization" className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:gap-2 transition-all">
+              See how Strykora ranks clients inside AI answers
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
