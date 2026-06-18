@@ -45,8 +45,8 @@ const SERVICE_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
     alt: 'Light streaks racing toward a target point in deep obsidian space, representing high-intent Google Ads traffic.',
   },
   'ai-search-optimization': {
-    src: '/images/hero-service-seo.jpg',
-    alt: 'Abstract glowing data graph spiraling upward through deep navy space, representing AI search citation visibility for Louisiana businesses.',
+    src: '/images/hero-service-ai-search.jpg',
+    alt: 'Glowing electric blue glass quotation mark icon floating in deep navy space surrounded by a constellation of satellite nodes connected by geometric threads, representing AI search citation for Louisiana businesses inside ChatGPT and Perplexity answers.',
   },
 }
 

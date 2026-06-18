@@ -475,7 +475,7 @@ export default function HomePage() {
           <Reveal>
             <p className="eyebrow mb-4">Recent work</p>
             <h2 id="case-heading" className="text-display-md font-display text-text mb-14 text-balance">
-              From stuck on Wix to ranking in {featuredCase.city.split(',')[0]}.
+              The proof Strykora&apos;s AI search playbook actually works.
             </h2>
           </Reveal>
 
@@ -483,7 +483,7 @@ export default function HomePage() {
             <div className="relative aspect-[21/9] overflow-hidden">
               <Image
                 src={featuredCase.cover}
-                alt={`Custom metal roof installation in ${featuredCase.city}, the kind of work ${featuredCase.client} is built around.`}
+                alt={`Cover image for the ${featuredCase.client} Strykora case study in ${featuredCase.city}.`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1280px) 100vw, 1280px"

@@ -251,6 +251,21 @@ export const cityServiceCombos = [
 
 export const caseStudies = [
   {
+    slug: 'hover-septic',
+    client: 'Hover Septic',
+    industry: 'Septic / Home Services',
+    city: 'Thibodaux, LA',
+    headline: 'From zero digital footprint to #1 organic, and a business model change',
+    blurb: 'Trey had no website and no Google Business Profile when he signed on with Strykora, just a Facebook page. Strykora built him a website, a brand new GBP, and ranked him #1 organic for "septic installs Thibodaux LA". The impact was so profound that Hover Septic was able to drop low-ticket pumpout work entirely and focus on multi-thousand-dollar installs. Today both ChatGPT and Perplexity name Hover Septic first when asked for a Thibodaux septic installer.',
+    metrics: [
+      { label: 'Avg local rank', value: '1.00' },
+      { label: 'AI engines citing', value: 'ChatGPT + Perplexity' },
+      { label: 'Per-job ticket', value: 'Multi-thousand' },
+    ],
+    cover: '/images/case-hover.jpg',
+    featured: true,
+  },
+  {
     slug: 'foret-construction',
     client: 'Foret Construction',
     industry: 'Roofing',
@@ -263,19 +278,18 @@ export const caseStudies = [
       { label: 'Live since', value: '2026' },
     ],
     cover: '/images/case-foret.jpg',
-    featured: true,
   },
   {
     slug: 'elite-custom-automotive',
     client: 'Elite Custom Automotive',
     industry: 'Auto / Lift Kits',
     city: 'Lockport, LA',
-    headline: 'From templated stock-photo site to top 3 in Lockport',
+    headline: 'From templated stock-photo site to #1 in Lockport',
     blurb: 'Elite\'s reputation in Lockport didn\'t match its website. Strykora rebuilt it from scratch with a 3D hero, two distinct conversion paths (performance and repair), nine city pages, and a rebuilt Google Business Profile. Ownership replaces the old rental fee.',
     metrics: [
-      { label: 'Local rank', value: 'Top 3' },
+      { label: 'Avg local rank', value: '1.22' },
+      { label: 'AI engine citing', value: 'Perplexity' },
       { label: 'City landing pages', value: '9' },
-      { label: 'Service paths', value: '2' },
     ],
     cover: '/images/case-elite.jpg',
   },
@@ -292,20 +306,6 @@ export const caseStudies = [
       { label: 'Locations', value: '2' },
     ],
     cover: '/images/case-allout.jpg',
-  },
-  {
-    slug: 'hover-septic',
-    client: 'Hover Septic',
-    industry: 'Septic / Home Services',
-    city: 'Thibodaux, LA',
-    headline: 'From zero digital footprint to #1 organic, and a business model change',
-    blurb: 'Trey had no website and no Google Business Profile when he signed on with Strykora, just a Facebook page. Strykora built him a website, a brand new GBP, and ranked him #1 organic for "septic installs Thibodaux LA". The impact was so profound that Hover Septic was able to drop low-ticket pumpout work entirely and focus on multi-thousand-dollar installs.',
-    metrics: [
-      { label: 'Organic rank', value: '#1' },
-      { label: 'Service lines dropped', value: 'Pumpouts' },
-      { label: 'Per-job ticket', value: 'Multi-thousand' },
-    ],
-    cover: '/images/case-hover.jpg',
   },
   {
     slug: 'acadia-pools',
