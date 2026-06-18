@@ -95,6 +95,19 @@ const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: Cita
       },
     ],
   },
+  'acadia-pools': {
+    heading: 'Perplexity names Acadia Pools first when asked for a Thibodaux pool builder.',
+    intro: 'When a real customer asked Perplexity for a pool builder in Thibodaux, Acadia Pools was the first option named in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity even extracted Matt Glover\'s phone number directly into the answer text.',
+    shots: [
+      {
+        src: '/images/ai-citation-perplexity-acadia.jpg',
+        engine: 'Perplexity',
+        caption: '"Recommend me a pool builder in Thibodaux LA."',
+        highlight: '"A strong local option in Thibodaux is Acadia Pools. They describe themselves as a custom gunite pool and spa builder in Thibodaux and list a local phone number, (985) 413-2954, along with free site visits and estimates."',
+        alt: 'Screenshot of Perplexity recommending Acadia Pools as a strong local option for a pool builder in Thibodaux, Louisiana.',
+      },
+    ],
+  },
 }
 
 const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string }> = {
@@ -117,6 +130,11 @@ const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string 
     url: 'https://www.hoverseptic.com',
     screenshot: '/images/case-hover-screenshot.jpg',
     alt: 'Screenshot of hoverseptic.com, the live Strykora-built site for Hover Septic in Thibodaux, Louisiana.',
+  },
+  'acadia-pools': {
+    url: 'https://www.acadiapools.com',
+    screenshot: '/images/case-acadia-screenshot.jpg',
+    alt: 'Screenshot of acadiapools.com, the live Strykora-built site for Acadia Pools in Thibodaux, Louisiana.',
   },
 }
 
@@ -174,6 +192,20 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     ],
     result: 'Hover Septic ranks #1 organic for "septic installs in Thibodaux LA", the exact keyword that pays the bills. The impact was so profound that Trey was able to drop low-ticket pumpout work entirely and focus on multi-thousand-dollar installs. The site rewrote the business model.',
     coverAlt: 'Heavy excavator at dusk on a rural Louisiana installation site, the kind of work Hover Septic delivers in Thibodaux and Lafourche Parish.',
+  },
+  'acadia-pools': {
+    challenge:
+      'Matt Glover built Acadia Pools into Thibodaux\'s premier custom gunite pool operation by hand, the same way he runs crab traps on weekends. Cajun, born and raised in Thibodaux, People\'s Choice Award winner. The web presence didn\'t match the craft. Matt needed a site that told the story honestly, ranked for Thibodaux and Lafourche Parish pool buyers, and stayed in his hands instead of a platform vendor\'s.',
+    approach: [
+      'Custom Next.js build at acadiapools.com, owned outright by Matt, no monthly platform tax',
+      'Six service pages mapped to what Acadia actually does: custom gunite pools, renovation, water features, outdoor living, turf installation, pool maintenance',
+      'Owner story written in Matt\'s actual voice (Cajun lifestyle, born and raised, crab traps and cooking) instead of generic "trusted local builder" agency boilerplate',
+      'Google Business Profile rebuilt with photos, services, and post cadence aligned to the on-site copy',
+      'Schema, llms.txt, and direct-answer copy patterns tuned for AI Overview and Perplexity citation on Thibodaux pool builder queries',
+      'Trust signals surfaced: licensed and insured, open 7 days a week, People\'s Choice Award, free consultations',
+    ],
+    result: 'When a real customer asks Perplexity for a pool builder in Thibodaux, Acadia Pools is the first option named in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity pulls Matt\'s phone number ((985) 413-2954) and the "custom gunite pool and spa builder" positioning directly out of the schema and copy Strykora built. The AI citation arrived within months of launch.',
+    coverAlt: 'Hero of the live Strykora-built acadiapools.com site for Acadia Pools in Thibodaux, Louisiana.',
   },
 }
 

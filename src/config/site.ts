@@ -307,6 +307,20 @@ export const caseStudies = [
     ],
     cover: '/images/case-hover.jpg',
   },
+  {
+    slug: 'acadia-pools',
+    client: 'Acadia Pools',
+    industry: 'Pool Builder',
+    city: 'Thibodaux, LA',
+    headline: 'Thibodaux gunite pool builder gets named first by Perplexity',
+    blurb: 'Matt Glover\'s custom gunite pool operation needed a website that matched the craft. Strykora built a custom Next.js site at acadiapools.com, rebuilt the Google Business Profile, and tuned the schema and copy for AI search citation. Two months later, when a real customer asks Perplexity for a pool builder in Thibodaux, Acadia Pools is the first option named in the answer.',
+    metrics: [
+      { label: 'Perplexity rank', value: '#1' },
+      { label: 'Service lines', value: '6' },
+      { label: 'Parish', value: 'Lafourche' },
+    ],
+    cover: '/images/case-acadia.jpg',
+  },
 ] as const
 
 export type CaseStudy = (typeof caseStudies)[number]

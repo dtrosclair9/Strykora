@@ -427,6 +427,9 @@ export default function HomePage() {
                   <p className="text-sm text-text-muted leading-relaxed">
                     Query: <span className="text-text">&quot;Recommend me a pool builder in Thibodaux LA.&quot;</span> Answer leads with: &quot;A strong local option in Thibodaux is Acadia Pools.&quot;
                   </p>
+                  <Link href="/case-studies/acadia-pools" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
+                    Read the case study →
+                  </Link>
                 </figcaption>
               </figure>
             </Reveal>
