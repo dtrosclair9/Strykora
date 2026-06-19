@@ -9,7 +9,7 @@ import { Schema } from '@/components/Schema'
 export const metadata: Metadata = {
   title: 'Web Design, SEO, Google Ads & AI Search — Louisiana',
   description:
-    'Five services built to stack: custom Next.js web design from $3,750, local SEO from $297/month, Google Business Profile, Google Ads management, plus AI Search Optimization for ChatGPT and Google AI Overview citation.',
+    'Five services built to stack: custom web design from $3,750, local SEO from $297/month, Google Business Profile, Google Ads management, plus AI Search Optimization (GEO + AEO) so ChatGPT and Google\'s AI answer recommend you by name.',
   alternates: { canonical: `${site.url}/services` },
 }
 
@@ -147,31 +147,31 @@ export default function ServicesPage() {
               {
                 situation: 'My site looks dated, slow, or is on Wix or Squarespace.',
                 lead: 'Web Design first.',
-                why: 'A new build fixes Core Web Vitals, schema, and conversion before a single SEO dollar is spent. Otherwise you are buying traffic and watching it bounce.',
+                why: 'A new site fixes the speed, search rankings, and lead-tracking before you spend a dollar on SEO. Otherwise you are paying for traffic that lands on a site that scares it away.',
                 href: '/services/web-design',
               },
               {
-                situation: 'Site is fine. I just do not show up on Google in my city.',
+                situation: 'My site is fine. I just do not show up on Google in my city.',
                 lead: 'Local SEO first.',
-                why: 'On-page rebuilds, schema, GBP optimization, and monthly content compound for 6 to 12 months. The ranking work outlives any ad spend.',
+                why: 'Page updates, your Google Business Profile, and monthly content compound for six to twelve months. The ranking work outlives any ad budget you stop paying.',
                 href: '/services/seo',
               },
               {
                 situation: 'I need leads this month, not next year.',
                 lead: 'Google Ads first.',
-                why: 'Search ads buy you the top of page 1 today. Strykora runs them with a conversion-tracked landing page so the cost-per-lead is honest.',
+                why: 'Paid search buys you the top of page one today. Strykora runs the ads with a landing page that tracks which clicks turn into actual phone calls, so you see your real cost per lead.',
                 href: '/services/google-ads',
               },
               {
-                situation: 'My Google Business Profile is empty or claimed by a previous agency.',
-                lead: 'GBP Optimization first.',
-                why: 'The local pack drives more calls than the blue links for most service businesses. Strykora rebuilds the profile, posts weekly, and matches it to the on-site copy.',
+                situation: 'My Google Business Profile is empty or stuck with my last agency.',
+                lead: 'Google Business Profile first.',
+                why: 'The map results drive more calls than the regular Google results for most service businesses. Strykora rebuilds the profile, posts weekly, and lines it up with the rest of your site.',
                 href: '/services/google-business-profile',
               },
               {
-                situation: 'My SEO is fine but ChatGPT and Google AI Overviews never name me.',
+                situation: 'My SEO is fine but ChatGPT and Google\'s AI answer never name me.',
                 lead: 'AI Search Optimization first.',
-                why: 'The AI answers above the blue links are eating organic click-through. Strykora rebuilds your schema, entity, llms.txt, and direct-answer copy so ChatGPT, Perplexity, and Google AI Overview cite your business by name.',
+                why: 'The AI answers above the regular Google results are eating clicks. Strykora rewrites your key pages and the behind-the-scenes code (schema and llms.txt) so ChatGPT, Perplexity, and Google\'s AI answer name your business directly.',
                 href: '/services/ai-search-optimization',
               },
             ].map((item) => (

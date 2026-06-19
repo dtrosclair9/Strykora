@@ -113,7 +113,7 @@ export default function ContactPage() {
                   <li><span className="text-text">No sales call.</span> Email first. If you want a call after, we book one.</li>
                   <li><span className="text-text">No auto-billing</span> for design work. One fixed price, half up front, half at launch.</li>
                   <li><span className="text-text">No long contracts</span> on the SEO retainer. Month to month, cancel anytime.</li>
-                  <li><span className="text-text">No reselling</span> Wix, Squarespace, GoDaddy, or any builder. Strykora builds Next.js or it doesn&apos;t take the job.</li>
+                  <li><span className="text-text">No reselling</span> Wix, Squarespace, GoDaddy, or any other page-builder service. Strykora builds it custom or it does not take the job.</li>
                 </ul>
               </div>
             </Reveal>

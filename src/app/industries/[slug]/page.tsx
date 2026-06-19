@@ -65,7 +65,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       'A dedicated roof replacement and storm damage page in every city you serve.',
       'Your credentials (FORTIFIED, GAF, manufacturer certifications, insurance carriers) surfaced where buyers look.',
       'Google Business Profile optimized for the local pack on "[city] roofer" searches.',
-      'Schema markup and llms.txt so AI Overviews and ChatGPT cite your business when buyers ask for a Louisiana roofer.',
+      'The behind-the-scenes code AI search engines look for, so Google\'s AI answer and ChatGPT name your business when buyers ask for a Louisiana roofer.',
     ],
     faqs: [
       {
@@ -100,7 +100,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
     ],
     outcomes: [
       'Specific service pages (concrete driveway, board fence, land clearing, demolition) per city you serve.',
-      'Project photo galleries with rich alt text and ImageObject schema.',
+      'Project photo galleries with descriptive labels Google can read, so your work shows up in image search too.',
       'Quote forms that route straight to your phone, no portal login.',
       'A site fast enough to load on a job-site phone with bad signal.',
     ],
@@ -138,7 +138,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
     outcomes: [
       'One page per service per city. Each ranks independently in local search.',
       'Reviews surfaced in the hero, not buried in the footer.',
-      'GBP and on-site schema aligned to feed the AI local pack.',
+      'Your Google Business Profile and your site lined up so Google\'s AI answer can recommend you in the map results.',
       'Per-location lead routing if you run multiple shops.',
     ],
     faqs: [
@@ -213,7 +213,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       'A site that names every service line clearly: towing, transport, offshore support, vessel ops, industrial services.',
       'Fleet and equipment pages with specs and credentials surfaced for procurement review.',
       'A recruiting-ready careers section with role-specific landing pages for mariners, deckhands, and operators.',
-      'Schema and structured services data tuned for AI-driven RFQ research and ChatGPT citation.',
+      'The behind-the-scenes code AI search engines look for, so ChatGPT can pull your services and credentials directly when a procurement person searches.',
     ],
     faqs: [
       {

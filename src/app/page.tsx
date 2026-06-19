@@ -47,7 +47,7 @@ const comparisonRows = [
   { label: 'Who you actually talk to', them: 'An account manager, then a junior, then a ticket queue', us: 'Dayne. The person building your site.' },
   { label: 'AI search optimization', them: 'Add-on, if they offer it at all', us: 'Standard on every build' },
   { label: 'Response time', them: '3–14 days for a text change', us: 'One business day. Often same day.' },
-  { label: 'Monthly reporting', them: 'A PDF of impressions and "engagement"', us: 'Tracked rankings, AI citations, booked leads' },
+  { label: 'Monthly reporting', them: 'A PDF of impressions and "engagement"', us: 'Tracked rankings, AI mentions of your business, and booked leads' },
 ]
 
 const processSteps = [
@@ -83,8 +83,8 @@ const faqs = [
     a: `Custom websites start at $3,750 one-time, depending on scope and number of pages. Local SEO retainers start at $297/month. Google Ads management starts at $500/month plus your ad spend. Every quote is a fixed price up front, no hourly billing.`,
   },
   {
-    q: 'Why Next.js instead of Wix, Squarespace, or WordPress?',
-    a: `Next.js sites are engineered for Core Web Vitals, ship with schema baked in, and stay fast as you add pages. Page builders and WordPress add bloat that costs you both speed and search rankings. You also own the code outright, so you can leave Strykora at any time without rebuilding.`,
+    q: 'Why custom-built instead of Wix, Squarespace, or WordPress?',
+    a: `Custom-built sites (Strykora uses Next.js, a popular professional framework) load faster, stay fast as you add pages, and come with the behind-the-scenes code Google reads to understand who you are. Page builders and templated WordPress sites add bloat that slows the site down and hurts your search rankings. You also own everything outright, so you can leave Strykora at any time without rebuilding from scratch.`,
   },
   {
     q: 'Do you do SEO without redesigning the site?',
@@ -200,7 +200,7 @@ export default function HomePage() {
               Web design first.<br /> SEO that stacks on top.
             </h2>
             <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Four core services, plus a fifth nobody else in Louisiana sells: AI Search Optimization. Every price is on the table up front, no 12-month contracts. Strykora does not do content writing, social media management, or photography. Those get referred out. Honest scope keeps the work sharp.
+              Four core services, plus a fifth nobody else in Louisiana sells: AI Search Optimization. Every price is on the table up front, no 12-month contracts. Strykora does not do content writing, social media, or photography. Those get referred out. Sticking to what we are great at keeps the work sharp.
             </p>
           </Reveal>
 

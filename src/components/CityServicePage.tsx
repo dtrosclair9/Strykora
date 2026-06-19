@@ -44,7 +44,7 @@ const CITY_COPY: Record<string, CityMarketCopy> = {
     faqs: [
       {
         q: 'How competitive is the Houma SEO market?',
-        a: 'Mid-competitive. There are several established Houma service businesses with decent SEO, but most are stuck on slow WordPress builds with thin content. A well-built modern site with proper schema and a real GBP overtakes them in 90 to 120 days.',
+        a: 'Mid-competitive. Several established Houma service businesses rank decent on Google, but most are stuck on slow WordPress sites with thin content. A faster, custom-built site with a properly set up Google Business Profile usually overtakes them in 90 to 120 days.',
       },
       {
         q: 'Do I need a separate Houma site or just a Houma page?',
@@ -92,7 +92,7 @@ const CITY_COPY: Record<string, CityMarketCopy> = {
       },
       {
         q: 'How competitive is New Orleans for local service SEO?',
-        a: 'High. Established New Orleans service businesses have been investing in SEO for years. Strykora\'s play is to outrank them on speed (Core Web Vitals), schema (AI Overview citation), and depth (more pages, more FAQs, more localized content).',
+        a: 'High. Established New Orleans service businesses have been investing in SEO for years. Strykora wins by being faster than them on a phone, set up so Google\'s AI answer can pull from your site, and having more depth (more pages, more FAQs, more New Orleans-specific content).',
       },
       {
         q: 'How long until I see leads from New Orleans SEO?',

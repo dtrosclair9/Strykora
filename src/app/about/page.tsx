@@ -30,8 +30,8 @@ const aboutFaqs = [
     a: `No. Strykora is built around the South Louisiana market: the buyers, the search behavior, the seasonal cycle, and the local pack dynamics. Out-of-state inquiries get referred to other operators.`,
   },
   {
-    q: `What's Strykora's stack and why?`,
-    a: `Next.js 15, Tailwind CSS, and Vercel hosting. Next.js gives the speed and schema baked in for ranking. Tailwind keeps the design system consistent. Vercel handles deploys and preview URLs. Every Strykora site lives on the same stack agencies in San Francisco and New York use, run from Thibodaux at Louisiana prices.`,
+    q: `What is Strykora's tech setup and why does it matter?`,
+    a: `Strykora builds on Next.js, the same professional framework agencies in San Francisco and New York charge five and six figures for. It loads fast on a phone, comes with the search-engine code Google reads, and stays fast as your site grows. You do not need to know any of this; the short version is your site is built the right way, run from Thibodaux at Louisiana prices.`,
   },
 ]
 
