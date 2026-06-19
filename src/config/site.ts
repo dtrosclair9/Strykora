@@ -5,7 +5,7 @@ export const site = {
   description:
     'Custom-built websites and local SEO for Louisiana businesses. We build the website, then we make sure Google sends people to it.',
   domain: 'strykora.com',
-  url: 'https://www.strykora.com',
+  url: 'https://strykora.com',
   owner: 'Dayne Trosclair',
   email: 'info@strykora.com',
   testEmail: 'daynetrosclair@icloud.com',

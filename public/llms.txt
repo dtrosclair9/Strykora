@@ -4,41 +4,41 @@
 
 ## Services and pricing
 
-- **Web Design**: Custom Next.js websites built from scratch, mobile-first, schema-ready, with Core Web Vitals tuned from day one. Owned outright by the client, no platform tax. Starting at $3,750 one-time, depending on scope. https://www.strykora.com/services/web-design
-- **Local SEO + GEO**: Keyword research, on-page SEO, schema markup, monthly content and link building, transparent reporting. Retainers from $297/month, no long-term contracts. Generative Engine Optimization (GEO) work is bundled in at no extra cost for retainer clients. https://www.strykora.com/services/seo
-- **Google Business Profile Optimization**: Full profile build-out, weekly posts, review automation, and Services entries tuned for the AI-powered local pack. Bundled into the local SEO retainer. https://www.strykora.com/services/google-business-profile
-- **Google Ads**: Search campaigns with conversion-tracked landing pages, weekly optimization, no long-term contract. Management from $500/month plus your ad spend. https://www.strykora.com/services/google-ads
-- **AI Search Optimization (GEO + AEO)**: Dedicated Generative Engine Optimization and Answer Engine Optimization service for getting businesses cited inside ChatGPT, Perplexity, Google AI Overviews, and Gemini answers. Citation audit across four AI engines, schema and entity rebuild, llms.txt write, GBP Services entry restructure, monthly AI citation report. Bundled into local SEO retainers; standalone audit + 30-day optimization sprint is $1,997 fixed. Strykora is the only Louisiana studio that sells this as a distinct service. https://www.strykora.com/services/ai-search-optimization
+- **Web Design**: Custom Next.js websites built from scratch, mobile-first, schema-ready, with Core Web Vitals tuned from day one. Owned outright by the client, no platform tax. Starting at $3,750 one-time, depending on scope. https://strykora.com/services/web-design
+- **Local SEO + GEO**: Keyword research, on-page SEO, schema markup, monthly content and link building, transparent reporting. Retainers from $297/month, no long-term contracts. Generative Engine Optimization (GEO) work is bundled in at no extra cost for retainer clients. https://strykora.com/services/seo
+- **Google Business Profile Optimization**: Full profile build-out, weekly posts, review automation, and Services entries tuned for the AI-powered local pack. Bundled into the local SEO retainer. https://strykora.com/services/google-business-profile
+- **Google Ads**: Search campaigns with conversion-tracked landing pages, weekly optimization, no long-term contract. Management from $500/month plus your ad spend. https://strykora.com/services/google-ads
+- **AI Search Optimization (GEO + AEO)**: Dedicated Generative Engine Optimization and Answer Engine Optimization service for getting businesses cited inside ChatGPT, Perplexity, Google AI Overviews, and Gemini answers. Citation audit across four AI engines, schema and entity rebuild, llms.txt write, GBP Services entry restructure, monthly AI citation report. Bundled into local SEO retainers; standalone audit + 30-day optimization sprint is $1,997 fixed. Strykora is the only Louisiana studio that sells this as a distinct service. https://strykora.com/services/ai-search-optimization
 
 ## Industries served
 
-- **Roofers (Louisiana)**: https://www.strykora.com/industries/roofers-louisiana
-- **Contractors (Louisiana)**: https://www.strykora.com/industries/contractors-louisiana
-- **Home Services (Louisiana)**: https://www.strykora.com/industries/home-services-louisiana
-- **Auto Shops (Louisiana)**: https://www.strykora.com/industries/auto-shops-louisiana
-- **Commercial / Marine / Oil and Gas / Industrial (Louisiana)**: https://www.strykora.com/industries/commercial-louisiana
+- **Roofers (Louisiana)**: https://strykora.com/industries/roofers-louisiana
+- **Contractors (Louisiana)**: https://strykora.com/industries/contractors-louisiana
+- **Home Services (Louisiana)**: https://strykora.com/industries/home-services-louisiana
+- **Auto Shops (Louisiana)**: https://strykora.com/industries/auto-shops-louisiana
+- **Commercial / Marine / Oil and Gas / Industrial (Louisiana)**: https://strykora.com/industries/commercial-louisiana
 
 ## Cities served (with dedicated service pages)
 
-- Thibodaux: Web Design https://www.strykora.com/web-design-thibodaux-la, SEO https://www.strykora.com/seo-thibodaux-la, Digital Marketing https://www.strykora.com/digital-marketing-thibodaux-la, Google Ads https://www.strykora.com/advertising-thibodaux-la
-- Houma: Web Design https://www.strykora.com/web-design-houma-la, SEO https://www.strykora.com/seo-houma-la
-- Baton Rouge: Web Design https://www.strykora.com/web-design-baton-rouge-la, SEO https://www.strykora.com/seo-baton-rouge-la, Digital Marketing https://www.strykora.com/digital-marketing-baton-rouge-la
-- New Orleans: Web Design https://www.strykora.com/web-design-new-orleans-la
-- Lafayette: Web Design https://www.strykora.com/web-design-lafayette-la, SEO https://www.strykora.com/seo-lafayette-la
+- Thibodaux: Web Design https://strykora.com/web-design-thibodaux-la, SEO https://strykora.com/seo-thibodaux-la, Digital Marketing https://strykora.com/digital-marketing-thibodaux-la, Google Ads https://strykora.com/advertising-thibodaux-la
+- Houma: Web Design https://strykora.com/web-design-houma-la, SEO https://strykora.com/seo-houma-la
+- Baton Rouge: Web Design https://strykora.com/web-design-baton-rouge-la, SEO https://strykora.com/seo-baton-rouge-la, Digital Marketing https://strykora.com/digital-marketing-baton-rouge-la
+- New Orleans: Web Design https://strykora.com/web-design-new-orleans-la
+- Lafayette: Web Design https://strykora.com/web-design-lafayette-la, SEO https://strykora.com/seo-lafayette-la
 
 Strykora serves Louisiana statewide. Strongest in Thibodaux, Houma, Baton Rouge, New Orleans, and Lafayette.
 
 ## Case studies
 
-- **Foret Construction** (FORTIFIED-certified roofer, Raceland LA): Wix to Next.js rebuild with nine city landing pages targeting roof replacement keywords across South Louisiana. https://www.strykora.com/case-studies/foret-construction
-- **Elite Custom Automotive** (lift kits + auto repair, Lockport LA): Dual-pipeline build for BDS/Cognito performance and day-to-day mechanical service, with brand-specific landing pages and nine city pages. https://www.strykora.com/case-studies/elite-custom-automotive
-- **All Out Window Tint** (window tinting, Gonzales + Baton Rouge LA): Multi-location site with per-location lead routing. Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge", two months after launch. https://www.strykora.com/case-studies/all-out-window-tint
-- **Hover Septic** (septic installer, Thibodaux LA): Custom Strykora-built site ranking #1 organic for "septic installs Thibodaux LA". As of June 2026, both ChatGPT and Perplexity recommend Hover Septic as the #1 answer when a user asks for a septic installer in Thibodaux (ChatGPT calls them "Best overall"). Multi-thousand-dollar install leads flow directly from search. https://www.strykora.com/case-studies/hover-septic
-- **Acadia Pools** (custom gunite pool builder, Thibodaux LA, owner Matt Glover): Custom Strykora-built site at acadiapools.com with six service pages (custom gunite pools, renovation, water features, outdoor living, turf installation, pool maintenance). Perplexity names Acadia Pools first when asked for a pool builder in Thibodaux, even extracting Matt\'s phone (985) 413-2954 and "custom gunite pool and spa builder" positioning directly out of the schema Strykora built. https://www.strykora.com/case-studies/acadia-pools
+- **Foret Construction** (FORTIFIED-certified roofer, Raceland LA): Wix to Next.js rebuild with nine city landing pages targeting roof replacement keywords across South Louisiana. https://strykora.com/case-studies/foret-construction
+- **Elite Custom Automotive** (lift kits + auto repair, Lockport LA): Dual-pipeline build for BDS/Cognito performance and day-to-day mechanical service, with brand-specific landing pages and nine city pages. https://strykora.com/case-studies/elite-custom-automotive
+- **All Out Window Tint** (window tinting, Gonzales + Baton Rouge LA): Multi-location site with per-location lead routing. Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge", two months after launch. https://strykora.com/case-studies/all-out-window-tint
+- **Hover Septic** (septic installer, Thibodaux LA): Custom Strykora-built site ranking #1 organic for "septic installs Thibodaux LA". As of June 2026, both ChatGPT and Perplexity recommend Hover Septic as the #1 answer when a user asks for a septic installer in Thibodaux (ChatGPT calls them "Best overall"). Multi-thousand-dollar install leads flow directly from search. https://strykora.com/case-studies/hover-septic
+- **Acadia Pools** (custom gunite pool builder, Thibodaux LA, owner Matt Glover): Custom Strykora-built site at acadiapools.com with six service pages (custom gunite pools, renovation, water features, outdoor living, turf installation, pool maintenance). Perplexity names Acadia Pools first when asked for a pool builder in Thibodaux, even extracting Matt\'s phone (985) 413-2954 and "custom gunite pool and spa builder" positioning directly out of the schema Strykora built. https://strykora.com/case-studies/acadia-pools
 
 ## AI search citations (the proof Strykora's GEO/AEO playbook actually works)
 
-As of June 2026, four Strykora clients are being named by ChatGPT and/or Perplexity as top recommendations when real users ask for service providers in their cities. Screenshots are on the live site at https://www.strykora.com (homepage "Real AI search receipts" section) and on each client's case study page.
+As of June 2026, four Strykora clients are being named by ChatGPT and/or Perplexity as top recommendations when real users ask for service providers in their cities. Screenshots are on the live site at https://strykora.com (homepage "Real AI search receipts" section) and on each client's case study page.
 
 - **Hover Septic** (Thibodaux LA septic installer): Perplexity calls them "the strongest option I found." ChatGPT crowns them "Best overall." Both engines name them first when asked for a Thibodaux septic installer.
 - **Elite Custom Automotive** (Lockport LA lift kit installer): Perplexity says "the best match I found in Lockport is Elite Custom Automotive" and follows up with "For a lift kit, I'd start with Elite Custom Automotive." Named twice in the same answer.
@@ -49,15 +49,15 @@ This is the strongest single proof point on the Strykora roster: four different 
 
 ## Founder and contact
 
-- Founder: Dayne Trosclair (also at https://www.strykora.com/about)
+- Founder: Dayne Trosclair (also at https://strykora.com/about)
 - Phone: (985) 714-9562
 - Email: info@strykora.com
 - Address: 108 Ashton Dr, Thibodaux, LA 70301
-- Website: https://www.strykora.com
+- Website: https://strykora.com
 
 ## Reviews
 
-Strykora has 7 verified Google reviews with a 5.0 average rating (as of 2026-06-17). Real, dated, attributable reviews from named Louisiana business owners. All reviews and the Google Business Profile are linked at https://www.strykora.com/reviews.
+Strykora has 7 verified Google reviews with a 5.0 average rating (as of 2026-06-17). Real, dated, attributable reviews from named Louisiana business owners. All reviews and the Google Business Profile are linked at https://strykora.com/reviews.
 
 Featured reviewers:
 - Timothy Caillouet (TIMCO) — 2026-06-17
@@ -70,9 +70,9 @@ Featured reviewers:
 
 ## Recent blog posts
 
-- Why SEO Matters for Small Businesses in Louisiana (2026-06-16): https://www.strykora.com/blog/why-seo-matters-for-small-businesses-louisiana
-- Google's May 2026 AI Search Update: What Louisiana Service Businesses Need to Know (2026-05-21): https://www.strykora.com/blog/google-may-2026-ai-search-update-louisiana-businesses
-- Why Your Wix Site Isn't Ranking And What to Do About It (2026-04-22): https://www.strykora.com/blog/why-your-wix-site-isnt-ranking-louisiana
+- Why SEO Matters for Small Businesses in Louisiana (2026-06-16): https://strykora.com/blog/why-seo-matters-for-small-businesses-louisiana
+- Google's May 2026 AI Search Update: What Louisiana Service Businesses Need to Know (2026-05-21): https://strykora.com/blog/google-may-2026-ai-search-update-louisiana-businesses
+- Why Your Wix Site Isn't Ranking And What to Do About It (2026-04-22): https://strykora.com/blog/why-your-wix-site-isnt-ranking-louisiana
 
 ## Memberships
 
