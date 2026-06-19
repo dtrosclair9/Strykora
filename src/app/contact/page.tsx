@@ -26,7 +26,7 @@ const contactFaqs = [
   },
   {
     q: "I'm outside Louisiana. Will you still take the project?",
-    a: 'No. Strykora is a Louisiana-only studio on purpose. Local market knowledge is half the product. Out-of-state clients get a polite no.',
+    a: 'Strykora is built around the Louisiana market, which is where the case studies live and where the local SEO work goes deepest. But web design, Google Ads, and AI search optimization are location-agnostic, so out-of-state inquiries are welcome. Send the form anyway and we will see if it is a fit.',
   },
 ]
 

@@ -133,7 +133,6 @@ const SERVICE_PAGE_COPY: Record<string, {
       { q: 'How do you know it worked?', a: 'Every month Strykora asks the AI assistants the same questions your customers ask, takes screenshots, and shows you when the AI named you. Hover Septic, a Strykora client, is the #1 recommendation across ChatGPT and Perplexity for "septic installs Thibodaux LA" right now. The screenshots are on the homepage.' },
       { q: 'How much is the standalone audit?', a: 'A fixed $1,997 for the written audit plus 30 days of optimization. Includes the report across four AI engines, the rewrites on your key pages, the schema and llms.txt setup, the Google Business Profile services rebuild, and a 30-day re-check to confirm it worked. New Strykora Local SEO clients get all of this bundled into the $297-a-month retainer at no extra cost.' },
       { q: 'Will the AI keep naming me after the 30 days end?', a: 'The structural work (schema, llms.txt, the FAQ blocks, the Business Profile rebuild) keeps working. The content side needs ongoing tune-ups because the AI engines change their rules, which is why the monthly Local SEO retainer covers ongoing maintenance. Standalone-audit clients are welcome to re-run the sprint every quarter.' },
-      { q: 'Do you take clients outside Louisiana?', a: 'No. Strykora is Louisiana-only on purpose. Knowing the local market is half the job.' },
     ],
   },
 }

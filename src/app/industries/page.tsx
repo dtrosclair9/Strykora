@@ -91,7 +91,7 @@ export default function IndustriesPage() {
               { title: 'Restaurants and retail', body: 'Foot-traffic businesses ranked by visual social and review velocity. Different game.' },
               { title: 'Medical and legal', body: 'Regulated copy, HIPAA, compliance review cycles. Specialist territory.' },
               { title: 'National e-commerce', body: 'Shopify experts and paid-media shops already crush this. Not the Strykora edge.' },
-              { title: 'Out-of-state clients', body: 'Strykora is Louisiana-only. Local market knowledge is half the product.' },
+              { title: 'Guaranteed-ranking SEO', body: 'No reputable SEO operator promises specific Google rankings. Strykora reports what changed, not what is promised.' },
             ].map((item) => (
               <Reveal key={item.title}>
                 <div className="card p-6 h-full">

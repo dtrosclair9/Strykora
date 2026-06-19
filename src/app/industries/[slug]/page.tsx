@@ -70,7 +70,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
     faqs: [
       {
         q: 'Do you work with roofing companies outside Louisiana?',
-        a: 'Louisiana only. Strykora is built around the geography, storm season, and insurance dynamics of South Louisiana roofing.',
+        a: 'Strykora is built around South Louisiana roofing: storm seasons, FORTIFIED certifications, the insurance-carrier dynamics. That depth is the wedge for the case study work. Roofers in similar storm markets (Mississippi Gulf Coast, Alabama, East Texas) are welcome to inquire. Just ask.',
       },
       {
         q: 'How long until I see leads?',
@@ -218,7 +218,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
     faqs: [
       {
         q: 'Do you work with marine and oil & gas operators outside Louisiana?',
-        a: 'Louisiana-headquartered operators only. Strykora is built around the South Louisiana market, the buyers, the procurement networks, and the Gulf Coast service cycle.',
+        a: 'Strykora is built around the South Louisiana commercial market: the buyers, the procurement networks, the Gulf Coast service cycle. For Gulf-Coast-adjacent operators outside Louisiana (Mississippi, Alabama, East Texas), the work translates cleanly. Ask and we will see if it is a fit.',
       },
       {
         q: 'Can you build under NDA?',

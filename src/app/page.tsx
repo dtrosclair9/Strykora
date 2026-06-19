@@ -96,7 +96,7 @@ const faqs = [
   },
   {
     q: 'Do you work with clients outside Louisiana?',
-    a: `No. Strykora is built around the South Louisiana market: the buyers, the search behavior, the seasonal cycle, and the local pack dynamics. Out-of-state inquiries get referred to other operators.`,
+    a: `Strykora is built around the Louisiana market: the buyers, the search behavior, the seasonal cycles, and the map-results dynamics. That depth is the wedge for the case study work. But web design, Google Ads, and AI search optimization are location-agnostic, so out-of-state inquiries are welcome. Just ask.`,
   },
   {
     q: 'Do you offer content writing, social media, or photography?',
