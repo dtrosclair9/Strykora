@@ -70,15 +70,10 @@ export default function AboutPage() {
 
           <div className="lg:col-span-7 space-y-6 text-lg text-text-muted leading-relaxed">
             <Reveal as="p">
-              I grew up in {site.address.city}, Louisiana. {site.address.parish}, sugar cane, hurricane
-              cycles, oilfield neighbors. I know what a Louisiana service business looks like and what its customers
-              actually search for, because I&apos;ve lived next door to them my whole life.
+              I&apos;m from {site.address.city}. I&apos;ve worked next to Louisiana service business owners my whole life, so I know how they think and what their customers actually search for.
             </Reveal>
             <Reveal as="p">
-              Most marketing agencies sell you a sales rep, then hand the actual work to a project manager
-              who hands it to a junior contractor who hands it to a template. By the time the site goes live,
-              nobody on the team has met you and the result looks like every other site they shipped that month.
-              And every text change after launch is a ticket and a two-week wait.
+              Most agencies sell you a sales rep, then hand the real work to a junior. You never talk to whoever built your site. Every text change after launch becomes a two-week ticket.
             </Reveal>
             <Reveal as="p">
               {site.name} is built differently. I take a small number of Louisiana clients each year, build every

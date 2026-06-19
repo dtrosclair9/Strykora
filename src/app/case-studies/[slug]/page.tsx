@@ -195,14 +195,14 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
   },
   'acadia-pools': {
     challenge:
-      'Matt Glover built Acadia Pools into Thibodaux\'s premier custom gunite pool operation by hand, the same way he runs crab traps on weekends. Cajun, born and raised in Thibodaux, People\'s Choice Award winner. The web presence didn\'t match the craft. Matt needed a site that told the story honestly, ranked for Thibodaux and Lafourche Parish pool buyers, and stayed in his hands instead of a platform vendor\'s.',
+      'Matt Glover builds custom gunite pools in Thibodaux. Real builder, real reputation, real customers. But Matt did not have a website at all when he came to Strykora. The reputation was there locally. The web presence was zero. Every install lead came through word-of-mouth, which meant Matt was leaving money on the table any time a customer Googled "pool builder Thibodaux" mid-decision.',
     approach: [
       'Custom-built site at acadiapools.com, owned outright by Matt, no monthly platform fee',
       'Six service pages mapped to what Acadia actually does: custom gunite pools, renovation, water features, outdoor living, turf installation, pool maintenance',
-      'Owner story written in Matt\'s actual voice (Cajun lifestyle, born and raised, crab traps and cooking) instead of generic "trusted local builder" agency boilerplate',
-      'Google Business Profile rebuilt with photos, services, and post cadence aligned to the on-site copy',
+      'Owner story written in Matt\'s voice, not generic "trusted local builder" agency boilerplate',
+      'Google Business Profile rebuilt with photos, services, and a regular post schedule lined up with the on-site copy',
       'The behind-the-scenes code AI search engines look for (schema and llms.txt) plus page copy written so AI can quote it directly, all tuned for Thibodaux pool builder searches',
-      'Trust signals surfaced: licensed and insured, open 7 days a week, People\'s Choice Award, free consultations',
+      'Trust signals surfaced where buyers look: licensed and insured, open seven days a week, People\'s Choice Award, free consultations',
     ],
     result: 'When a real customer asks Perplexity for a pool builder in Thibodaux, Acadia Pools is the first name in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity pulls Matt\'s phone number ((985) 413-2954) and the "custom gunite pool and spa builder" wording directly from the page copy Strykora built. The AI started naming Acadia within months of launch.',
     coverAlt: 'Hero of the live Strykora-built acadiapools.com site for Acadia Pools in Thibodaux, Louisiana.',

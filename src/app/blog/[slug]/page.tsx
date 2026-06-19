@@ -6,6 +6,21 @@ import Reveal from '@/components/Reveal'
 import CTA from '@/components/CTA'
 import { Schema } from '@/components/Schema'
 
+const POST_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
+  'why-seo-matters-for-small-businesses-louisiana': {
+    src: '/images/hero-blog-seo.jpg',
+    alt: 'A small-town Louisiana service-business storefront at dusk with a glowing electric blue map-pin floating above it like a signal beacon, representing local SEO visibility.',
+  },
+  'google-may-2026-ai-search-update-louisiana-businesses': {
+    src: '/images/hero-blog-ai-update.jpg',
+    alt: 'A glowing electric blue answer bubble rising above a deep ocean of dim text fragments, particles streaming upward, representing the AI search answer that now sits above Google\'s regular results.',
+  },
+  'why-your-wix-site-isnt-ranking-louisiana': {
+    src: '/images/hero-blog-wix.jpg',
+    alt: 'A glowing wireframe website block disintegrating into electric blue and violet particles in deep navy space, representing a templated site falling apart.',
+  },
+}
+
 const posts = [
   {
     slug: 'why-seo-matters-for-small-businesses-louisiana',
@@ -118,6 +133,8 @@ export default async function BlogPostPage({ params }: Params) {
         eyebrow={new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
         title={post.title}
         description={post.description}
+        bgImage={POST_HERO_IMAGE[post.slug]?.src}
+        bgImageAlt={POST_HERO_IMAGE[post.slug]?.alt}
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/blog', label: 'Blog' },

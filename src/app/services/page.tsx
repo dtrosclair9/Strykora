@@ -32,7 +32,9 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Built to stack."
-        description="Four services. Web design leads, SEO compounds on top of it, Google Business Profile grabs the local pack, ads fill the gap while SEO catches up."
+        description="Four services. Web design leads, SEO compounds on top of it, Google Business Profile grabs the map results, ads fill the gap while SEO is still building."
+        bgImage="/images/hero-services-index.jpg"
+        bgImageAlt="Glowing translucent service cards stacking upward in deep navy space, each card brighter than the one below, representing how Strykora's four services build on each other."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/services', label: 'Services' },
