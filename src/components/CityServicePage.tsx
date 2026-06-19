@@ -15,6 +15,25 @@ interface CityMarketCopy {
   faqs: { q: string; a: string }[]
 }
 
+/**
+ * Per-combo hero description. Each entry is the city + service combination's unique angle,
+ * so no two city pages read with the same templated copy above the fold.
+ * Fallback (if a combo is missing here) is the generic service.short.
+ */
+const COMBO_HERO_DESCRIPTION: Record<string, string> = {
+  'web-design-thibodaux-la': 'Thibodaux runs on word-of-mouth and proof of work. When a referral lands on your website, it has to look as legit as the recommendation. Strykora builds Thibodaux service businesses custom sites that match the work, load fast on a phone, and are owned outright by you.',
+  'seo-thibodaux-la': 'Thibodaux is a smaller, denser market: fewer competitors, faster rankings, but the keyword volume per page is lower. Strykora wins by ranking you for every search a Lafourche Parish buyer might type, instead of fighting for one big keyword.',
+  'digital-marketing-thibodaux-la': 'Most Thibodaux service businesses rely on Facebook for their marketing. Strykora runs your whole digital footprint instead: website, Google, ads, AI search. One operator answers the phone, not an account rep.',
+  'web-design-houma-la': 'Houma buyers respond to local proof: a Terrebonne address, recent project photos along the bayou, and a phone that gets answered. Strykora builds Houma service businesses sites that load fast in the field and put the local proof above the fold.',
+  'seo-houma-la': 'Houma\'s SEO market is mid-competitive: several established shops with decent rankings, most stuck on slow WordPress sites with thin content. Strykora wins by being faster, more local, and set up so Google\'s AI answer can pull your services and credentials directly.',
+  'web-design-baton-rouge-la': 'Baton Rouge buyers expect a polished website. A 2018 WordPress site with a stock-photo hero does not convert in this market the way it might in a smaller town. Strykora builds Baton Rouge service businesses custom sites that match what state-capital buyers expect.',
+  'seo-baton-rouge-la': 'Baton Rouge is a competitive SEO market with deep keyword volume and established competitors who have been at it for years. Strykora targets the long-tail city + service + niche combinations the bigger agencies overlook, plus the AI search angle most of them are still ignoring.',
+  'digital-marketing-baton-rouge-la': 'Baton Rouge buyers run their decisions through more options before calling. Strykora runs your full digital stack (website, SEO, Google Business Profile, ads, AI search) tuned for a market where both polish and proof matter.',
+  'web-design-new-orleans-la': 'New Orleans buyers compare more options before they call. Reviews, photos, and recent work matter more here than in any other Louisiana market. Strykora builds New Orleans service businesses sites that surface the proof above the fold instead of burying it in a portfolio page.',
+  'web-design-lafayette-la': 'Lafayette buyers are loyal to local brands and skeptical of out-of-region operators. Strykora builds Lafayette service businesses custom sites that name Lafayette Parish, mention the Acadiana oilfield cycle, and show local proof. Built by a Louisiana operator who knows the geography.',
+  'seo-lafayette-la': 'Lafayette has less keyword volume than Baton Rouge but less competition too. Strykora wins niche city + service combinations fast across Acadiana (Lafayette, Crowley, Breaux Bridge) while the broader terms compound over six to twelve months.',
+}
+
 const CITY_COPY: Record<string, CityMarketCopy> = {
   'thibodaux-la': {
     marketContext:
@@ -170,7 +189,7 @@ export default function CityServicePage({ slug }: Props) {
       <PageHero
         eyebrow={`${city.name}, ${city.state}`}
         title={title}
-        description={`${service.long} Built for ${city.name} businesses by an operator in ${site.address.city}.`}
+        description={COMBO_HERO_DESCRIPTION[slug] ?? `${service.short} Built for ${city.name} businesses by an operator in ${site.address.city}.`}
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: `/${slug}`, label: title },
@@ -184,12 +203,18 @@ export default function CityServicePage({ slug }: Props) {
               <h2 className="text-display-md font-display text-text mb-6 text-balance">
                 Why hire Strykora for {service.title.toLowerCase()} in {city.name}?
               </h2>
-              <p className="text-text-muted leading-relaxed mb-6">
-                {city.name} is in {city.parish}, and the buyers who type &quot;{service.title.toLowerCase()} {city.name}&quot;
-                into Google are ready to spend. The problem: the SERP is crowded with generic agencies, national lead-gen
-                sites, and slow WordPress and Wix builds you&apos;d be paying monthly rent on. Strykora ships a faster,
-                more local, more credible answer, owned outright by you, for <span className="text-text">{service.priceRange}</span>.
-              </p>
+              {cityCopy ? (
+                <>
+                  <p className="text-text-muted leading-relaxed mb-4">{cityCopy.marketContext}</p>
+                  <p className="text-text-muted leading-relaxed mb-6">
+                    {cityCopy.buyerSnapshot} Strykora ships a faster, more local, more credible answer, owned outright by you, for <span className="text-text">{service.priceRange}</span>
+                  </p>
+                </>
+              ) : (
+                <p className="text-text-muted leading-relaxed mb-6">
+                  Strykora ships a faster, more local, more credible {service.title.toLowerCase()} answer for {city.name} buyers, owned outright by you, for <span className="text-text">{service.priceRange}</span>
+                </p>
+              )}
               <ul className="space-y-3">
                 {service.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-3 text-text-muted">
@@ -201,14 +226,6 @@ export default function CityServicePage({ slug }: Props) {
                 ))}
               </ul>
             </Reveal>
-
-            {cityCopy && (
-              <Reveal>
-                <h2 className="text-2xl md:text-3xl font-display text-text mb-4">The {city.name} market.</h2>
-                <p className="text-text-muted leading-relaxed mb-4">{cityCopy.marketContext}</p>
-                <p className="text-text-muted leading-relaxed">{cityCopy.buyerSnapshot}</p>
-              </Reveal>
-            )}
 
             <Reveal>
               <h2 className="text-2xl md:text-3xl font-display text-text mb-4">Industries Strykora serves in {city.name}.</h2>
