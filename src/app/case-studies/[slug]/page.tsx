@@ -204,7 +204,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'The behind-the-scenes code AI search engines look for (schema and llms.txt) plus page copy written so AI can quote it directly, all tuned for Thibodaux pool builder searches',
       'Trust signals surfaced where buyers look: licensed and insured, open seven days a week, People\'s Choice Award, free consultations',
     ],
-    result: 'When a real customer asks Perplexity for a pool builder in Thibodaux, Acadia Pools is the first name in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity pulls Matt\'s phone number ((985) 413-2954) and the "custom gunite pool and spa builder" wording directly from the page copy Strykora built. The AI started naming Acadia within months of launch.',
+    result: 'When a real customer asks Perplexity for a pool builder in Thibodaux, Acadia Pools is the first name in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity pulls Matt\'s phone number (985) 413-2954 and the "custom gunite pool and spa builder" wording directly from the page copy Strykora built. The AI started naming Acadia within months of launch.',
     coverAlt: 'Hero of the live Strykora-built acadiapools.com site for Acadia Pools in Thibodaux, Louisiana.',
   },
 }
