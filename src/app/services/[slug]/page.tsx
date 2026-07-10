@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { services, site, cities, comboSlugFor } from '@/config/site'
+import { services, site, cities, comboSlugFor, ogImage } from '@/config/site'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import CTA from '@/components/CTA'
@@ -18,12 +18,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const service = services.find((s) => s.slug === slug)
   if (!service) return {}
   const title = `${service.title} in Louisiana`
-  const description = service.short.length > 160 ? service.short.slice(0, 157) + '...' : service.short
+  const description = service.metaDescription
   return {
     title,
     description,
     alternates: { canonical: `${site.url}/services/${service.slug}` },
-    openGraph: { title, description, url: `${site.url}/services/${service.slug}` },
+    openGraph: { title, description, url: `${site.url}/services/${service.slug}`, images: [ogImage] },
   }
 }
 
@@ -99,7 +99,7 @@ const SERVICE_PAGE_COPY: Record<string, {
       { q: 'Can I get just Google Business Profile help without the SEO retainer?', a: 'No. Profile work and SEO are the same job done two places, so they are bundled into the monthly Local SEO retainer. Strykora does not sell the Google Business Profile as a standalone monthly service.' },
       { q: 'Will you respond to my reviews?', a: 'Strykora drafts the response for every review and sends it to you to approve. Your brand voice stays consistent and no review slips through unanswered.' },
       { q: 'What if I have more than one location?', a: 'Each location gets its own profile with shared brand assets and location-specific content. All Out Window Tint runs two locations this way (Gonzales and Baton Rouge), each with its own lead routing.' },
-      { q: 'How does the Google Business Profile help with the AI answer at the top of Google?', a: 'Google\'s AI answer pulls heavily from your Business Profile when picking who to recommend. Done right, your services list, posts, and photos feed straight into whether the AI names you.' },
+      { q: 'How does the Google Business Profile help with the AI answer at the top of Google?', a: 'Google\'s AI answer pulls heavily from your Business Profile when picking who to recommend. Built out fully, your services list, posts, and photos feed straight into whether the AI names you.' },
       { q: 'How quickly will my map ranking move?', a: 'Profiles with weekly posts, fresh photos, and a steady stream of new reviews usually start moving up the map results in 30 to 60 days.' },
     ],
   },
