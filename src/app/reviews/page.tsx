@@ -4,7 +4,6 @@ import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import Stars from '@/components/Stars'
 import CTA from '@/components/CTA'
-import { Schema } from '@/components/Schema'
 
 export const metadata: Metadata = {
   title: `Google Reviews — ${reviewStats.reviewCount} Verified Louisiana Clients`,
@@ -12,33 +11,13 @@ export const metadata: Metadata = {
   alternates: { canonical: `${site.url}/reviews` },
 }
 
-const itemListSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Strykora Google reviews',
-  itemListElement: reviews.map((r, i) => ({
-    '@type': 'ListItem',
-    position: i + 1,
-    item: {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: r.author },
-      datePublished: r.date,
-      reviewBody: r.body,
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: r.rating,
-        bestRating: 5,
-        worstRating: 1,
-      },
-      itemReviewed: { '@id': `${site.url}/#business` },
-    },
-  })),
-}
+// No Review/ItemList-of-Review schema here: reviews about Strykora on Strykora's
+// own site are self-serving (Google Dec 2025 policy) — ineligible for stars and a
+// manual-action risk. The real reviews stay as on-page cards below.
 
 export default function ReviewsPage() {
   return (
     <>
-      <Schema data={itemListSchema} />
       <PageHero
         eyebrow="Reviews"
         title={`${reviewStats.reviewCount} clients. ${reviewStats.averageRating.toFixed(1)} stars.`}

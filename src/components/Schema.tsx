@@ -1,4 +1,4 @@
-import { site, reviews, reviewStats } from '@/config/site'
+import { site } from '@/config/site'
 
 interface SchemaProps {
   data: object | object[]
@@ -69,25 +69,11 @@ export const localBusinessSchema = {
   sameAs: [site.social.facebook, site.gbp.profile],
   founder: { '@id': `${site.url}/#dayne` },
   employee: { '@id': `${site.url}/#dayne` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: reviewStats.averageRating,
-    reviewCount: reviewStats.reviewCount,
-    bestRating: 5,
-    worstRating: 1,
-  },
-  review: reviews.map((r) => ({
-    '@type': 'Review',
-    author: { '@type': 'Person', name: r.author },
-    datePublished: r.date,
-    reviewBody: r.body,
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: r.rating,
-      bestRating: 5,
-      worstRating: 1,
-    },
-  })),
+  // NOTE: no aggregateRating/review here. Google's Dec 2025 policy makes
+  // self-serving review markup (reviews about your own business, on your own
+  // LocalBusiness/Organization schema) ineligible for star snippets and a
+  // possible manual-action risk. Real reviews stay in the on-page /reviews
+  // section; they are just not marked up as self-referential review schema.
 }
 
 export const websiteSchema = {
