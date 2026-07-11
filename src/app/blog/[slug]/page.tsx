@@ -25,7 +25,7 @@ const posts = [
   {
     slug: 'why-seo-matters-for-small-businesses-louisiana',
     title: 'Why SEO Matters for Small Businesses in Louisiana',
-    description: 'A practical look at what local SEO actually moves the needle for Louisiana service businesses in the AI-search era.',
+    description: "A practical look at what local SEO actually moves the needle for Louisiana service businesses in the AI-search era, when Google's answer sits above the results.",
     date: '2026-06-16',
     body: [
       `Most Louisiana small business owners hear "SEO" and picture a guy in a Lafayette office charging $1,500 a month to send a vague monthly report. That is not what SEO is. That is what bad SEO sales is.`,
@@ -41,7 +41,7 @@ const posts = [
   {
     slug: 'google-may-2026-ai-search-update-louisiana-businesses',
     title: 'Google\'s May 2026 AI Search Update: What Louisiana Service Businesses Need to Know',
-    description: 'The May 21, 2026 Google core update reshaped how local search works. Here is the plain-English version for Louisiana service businesses.',
+    description: 'The May 21, 2026 Google core update reshaped how local search works. Here is the plain-English version, and what it means for Louisiana service businesses.',
     date: '2026-05-21',
     body: [
       `Google rolled out a core algorithm update on May 21, 2026 that is the biggest shift in how local search works since the original Pigeon update over a decade ago. For Louisiana service businesses, the practical changes matter. Here is the plain-English version.`,

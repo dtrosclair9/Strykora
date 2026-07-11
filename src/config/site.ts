@@ -91,12 +91,23 @@ export const reviewStats = {
   reviewCount: reviews.length,
 } as const
 
+// Shared OG image. Next.js does NOT merge openGraph.images from the parent
+// layout when a page sets its own openGraph, so every generateMetadata/metadata
+// that defines openGraph must spread this in explicitly or it renders imageless.
+export const ogImage = {
+  url: '/images/og-image.jpg',
+  width: 1200,
+  height: 630,
+  alt: site.name,
+} as const
+
 export const services = [
   {
     slug: 'web-design',
     title: 'Web Design',
     eyebrow: 'Custom-built websites',
     short: 'Stop renting a template. Start owning a fast, custom site that actually looks like your business.',
+    metaDescription: 'Custom Louisiana web design you own outright, no Wix, no templates. Fast, mobile-first sites built to rank on Google and turn visitors into phone calls.',
     long: 'Strykora builds websites from scratch. No Wix, no Squarespace, no templates, no stock photos that make you look like every other shop in town. Every site is built to load fast, show up on Google, and turn visitors into phone calls from day one. You own the site, the domain name, and every file. If you ever leave, you take it all with you.',
     bullets: [
       'Custom design, not picked from a template marketplace',
@@ -113,6 +124,7 @@ export const services = [
     title: 'Local SEO',
     eyebrow: 'Found in Google AND in ChatGPT',
     short: 'Show up for the searches that pay your bills, on Google, on the AI answer at the top of Google, and inside ChatGPT and Perplexity.',
+    metaDescription: "Local SEO for Louisiana businesses that ranks you on Google and inside ChatGPT, Perplexity, and Google's AI answer. Month-to-month, no 12-month lock-in.",
     long: 'Plain SEO is not enough anymore. When Google shows an AI answer above the search results, clicks on the regular results drop 58%. And most Louisiana service businesses are completely invisible inside ChatGPT and Perplexity. Strykora runs Local SEO and Generative Engine Optimization (GEO, the industry term for ranking inside AI answers) as one service, so you show up in three places at once: the regular Google results, the AI answer at the top, and the AI assistants your future customers are starting to ask for recommendations.',
     bullets: [
       'Real keyword research using actual Louisiana search data, not guesses',
@@ -130,6 +142,7 @@ export const services = [
     title: 'Google Business Profile',
     eyebrow: 'Own the map results',
     short: 'Most local businesses are losing the map results to a competitor with a better Google Business Profile. Strykora flips that.',
+    metaDescription: 'Google Business Profile management for Louisiana businesses. We rebuild your profile, post weekly, and win the map results so customers find you first.',
     long: 'Your Google Business Profile (the listing with your reviews and the map) is the single biggest thing that gets you found locally. It is also where Google\'s AI answers pull from when they recommend a business by name. Strykora rebuilds the whole profile, posts every week, asks your happy customers for reviews, writes responses for you to approve, and lists your services the way Google reads them, so you show up first instead of the shop down the road.',
     bullets: [
       'Full profile rebuild: categories, hours, services, photos',
@@ -146,6 +159,7 @@ export const services = [
     title: 'Google Ads',
     eyebrow: 'Paid leads on tap',
     short: 'Leads in week one, while SEO is still building in the background. No 12-month lock-in.',
+    metaDescription: 'Google Ads management for Louisiana businesses. Leads in week one while SEO builds, the account stays in your name, no markup on ad spend, no lock-in.',
     long: 'Google Ads run by the same person who builds your website, so the ads and the landing page actually work together. Tight keyword targeting, landing pages that track which clicks turn into phone calls, weekly tune-ups, plain-English reporting. No markup on your ad spend. No 12-month contract. The Google Ads account stays in your name from day one. If you ever leave, the campaigns and the history stay with you.',
     bullets: [
       'Search ads targeted at the exact phrases your buyers type, no money wasted on bad clicks',
@@ -162,6 +176,7 @@ export const services = [
     title: 'AI Search Optimization',
     eyebrow: 'Get named inside the AI answer',
     short: 'Be the business ChatGPT, Perplexity, and Google\'s AI answer recommend by name, not the one buried below the answer.',
+    metaDescription: "AI Search Optimization for Louisiana businesses. Get named by ChatGPT, Perplexity, and Google's AI answer instead of buried below it, with a monthly report.",
     long: 'When a customer asks ChatGPT, Perplexity, or Google\'s new AI answer for the best [your service] in [your city], the AI usually names one or two businesses. Most Louisiana service businesses are not one of those names. Strykora is the only Louisiana studio that sells AI Search Optimization (the industry calls it Generative Engine Optimization, or GEO, and Answer Engine Optimization, or AEO) as its own service. We audit where you show up today across four AI engines, rewrite your pages so the AI can quote you directly, set up the behind-the-scenes files (schema and llms.txt) that AI search engines look for, and send you a monthly report on which AI assistants are naming you. Google\'s AI answer reaches over a billion people a month, and when it shows up, clicks on the regular search results drop 58%. Being the business named inside that answer matters in a way it did not a year ago.',
     bullets: [
       'A written audit of where you show up today across ChatGPT, Perplexity, Google\'s AI answer, and Gemini',
@@ -185,6 +200,7 @@ export const industries = [
     title: 'Roofers',
     headline: 'Websites & SEO for Louisiana Roofers',
     short: 'Storm-season ready sites that rank for roof replacement in your city.',
+    metaDescription: "Websites and SEO for Louisiana roofers. Storm-season-ready sites that rank for roof replacement in your city and get you named in Google's AI answers.",
     icon: 'roof',
     flagship: true,
   },
@@ -193,6 +209,7 @@ export const industries = [
     title: 'Contractors',
     headline: 'Websites & SEO for Louisiana Contractors',
     short: 'General contractors, paving, fence, dirt work, built to rank for the trade you actually do.',
+    metaDescription: 'Websites and SEO for Louisiana contractors. Paving, fence, dirt work, and GC sites built to rank for the trade you actually do in the cities you serve.',
     icon: 'hardhat',
   },
   {
@@ -200,6 +217,7 @@ export const industries = [
     title: 'Home Services',
     headline: 'Websites & SEO for Louisiana Home Service Businesses',
     short: 'Window tint, lawn care, pressure washing, pest control, sites that turn "near me" searches into calls.',
+    metaDescription: 'Websites and SEO for Louisiana home service pros. Window tint, lawn care, pressure washing, and pest control sites that turn near-me searches into calls.',
     icon: 'home',
   },
   {
@@ -207,6 +225,7 @@ export const industries = [
     title: 'Auto Shops',
     headline: 'Websites & SEO for Louisiana Auto Shops',
     short: 'Lift kits, repair, detailing, tinting, built to rank for the city and the service.',
+    metaDescription: 'Websites and SEO for Louisiana auto shops. Lift kits, repair, detailing, and tinting sites built to rank for your city and the service customers search.',
     icon: 'wrench',
   },
   {
@@ -214,6 +233,7 @@ export const industries = [
     title: 'Commercial',
     headline: 'Websites & SEO for Louisiana Marine, Oil & Gas, and Industrial Operators',
     short: 'B2B sites that win procurement decisions, recruit crew, and surface fleet and equipment credentials where buyers look.',
+    metaDescription: 'Websites and SEO for Louisiana marine, oil and gas, and industrial operators. B2B sites that win procurement, recruit crew, and surface your credentials.',
     icon: 'anchor',
   },
 ] as const
@@ -285,7 +305,7 @@ export const caseStudies = [
     industry: 'Auto / Lift Kits',
     city: 'Lockport, LA',
     headline: 'From templated stock-photo site to #1 in Lockport',
-    blurb: 'Elite\'s reputation in Lockport didn\'t match its website. Strykora rebuilt it from scratch with a 3D hero, two distinct conversion paths (performance and repair), nine city pages, and a rebuilt Google Business Profile. Ownership replaces the old rental fee.',
+    blurb: 'Elite\'s Lockport reputation didn\'t match its website. Strykora rebuilt it with a 3D hero, nine city pages, and a new Google Business Profile it owns outright.',
     metrics: [
       { label: 'Avg local rank', value: '1.22' },
       { label: 'AI engine citing', value: 'Perplexity' },

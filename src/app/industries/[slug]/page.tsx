@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { industries, services, caseStudies, site } from '@/config/site'
+import { industries, services, caseStudies, site, ogImage } from '@/config/site'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import CTA from '@/components/CTA'
@@ -22,10 +22,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const industry = industries.find((i) => i.slug === slug)
   if (!industry) return {}
   const title = SEO_TITLE_OVERRIDE[industry.slug] ?? industry.headline
+  const description = industry.metaDescription
   return {
     title,
-    description: industry.short,
+    description,
     alternates: { canonical: `${site.url}/industries/${industry.slug}` },
+    openGraph: { title, description, url: `${site.url}/industries/${industry.slug}`, images: [ogImage] },
   }
 }
 

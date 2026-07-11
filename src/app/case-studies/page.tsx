@@ -10,7 +10,7 @@ import { Schema } from '@/components/Schema'
 export const metadata: Metadata = {
   title: 'Case Studies — Louisiana Web Design & SEO Wins',
   description:
-    'Real Louisiana businesses Strykora has built sites and SEO for. Roofers, auto shops, window tinters, and septic installers. The work, the rankings, and the numbers behind each one.',
+    'Real Louisiana businesses Strykora built sites and SEO for: roofers, auto shops, and window tinters. The work, the rankings, and the numbers behind each.',
   alternates: { canonical: `${site.url}/case-studies` },
 }
 

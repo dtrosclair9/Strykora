@@ -9,7 +9,7 @@ import { Schema } from '@/components/Schema'
 export const metadata: Metadata = {
   title: 'Industries Served — Louisiana Web Design & SEO',
   description:
-    'Custom websites and local SEO for Louisiana roofers, contractors, home services, auto shops, and commercial marine and oil & gas operators. Five lanes, deep playbooks, live case studies.',
+    'Custom websites and local SEO for Louisiana roofers, contractors, home services, auto shops, and commercial marine and oil and gas operators. Five lanes.',
   alternates: { canonical: `${site.url}/industries` },
 }
 

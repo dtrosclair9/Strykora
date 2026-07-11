@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { services, cities, cityServiceCombos, site, industries, SERVICE_BY_COMBO_SLUG } from '@/config/site'
+import { services, cities, cityServiceCombos, site, industries, SERVICE_BY_COMBO_SLUG, ogImage } from '@/config/site'
 import PageHero from './PageHero'
 import Reveal from './Reveal'
 import CTA from './CTA'
@@ -32,6 +32,24 @@ const COMBO_HERO_DESCRIPTION: Record<string, string> = {
   'web-design-new-orleans-la': 'New Orleans buyers compare more options before they call. Reviews, photos, and recent work matter more here than in any other Louisiana market. Strykora builds New Orleans service businesses sites that surface the proof above the fold instead of burying it in a portfolio page.',
   'web-design-lafayette-la': 'Lafayette buyers are loyal to local brands and skeptical of out-of-region operators. Strykora builds Lafayette service businesses custom sites that name Lafayette Parish, mention the Acadiana oilfield cycle, and show local proof. Built by a Louisiana operator who knows the geography.',
   'seo-lafayette-la': 'Lafayette has less keyword volume than Baton Rouge but less competition too. Strykora wins niche city + service combinations fast across Acadiana (Lafayette, Crowley, Breaux Bridge) while the broader terms compound over six to twelve months.',
+}
+
+/**
+ * Per-combo meta description (150-160 chars), keyword-led and city-specific.
+ * Falls back to a generated string if a combo is missing.
+ */
+const COMBO_META_DESCRIPTION: Record<string, string> = {
+  'web-design-thibodaux-la': 'Web design in Thibodaux, LA for service businesses. Custom, fast, mobile-first sites you own outright, built to match the work and turn referrals into calls.',
+  'seo-thibodaux-la': "Local SEO in Thibodaux, LA. Rank across Lafourche Parish on Google and inside ChatGPT and Google's AI answer, in a smaller market where rankings come faster.",
+  'digital-marketing-thibodaux-la': 'Digital marketing in Thibodaux, LA. Website, Google, ads, and AI search run by one Louisiana operator, not an account rep. Month-to-month, no lock-in.',
+  'web-design-houma-la': 'Web design in Houma, LA for service businesses. Fast, custom, mobile-first sites that put your Terrebonne Parish local proof above the fold and get calls.',
+  'seo-houma-la': "Local SEO in Houma, LA. Outrank the slow WordPress shops across Terrebonne Parish on Google and inside Google's AI answer, with faster, more local pages.",
+  'web-design-baton-rouge-la': 'Web design in Baton Rouge, LA for service businesses. Polished custom sites that convert state-capital buyers, load fast on a phone, and are owned by you.',
+  'seo-baton-rouge-la': 'Local SEO in Baton Rouge, LA. Win the long-tail city and service searches the big agencies overlook, plus the AI search angle most of them still ignore.',
+  'digital-marketing-baton-rouge-la': 'Digital marketing in Baton Rouge, LA. Website, SEO, Google Business Profile, ads, and AI search run as one stack for a market where polish and proof matter.',
+  'web-design-new-orleans-la': 'Web design in New Orleans, LA for service businesses. Custom sites that surface reviews, photos, and recent work above the fold so buyers call you first.',
+  'web-design-lafayette-la': 'Web design in Lafayette, LA for service businesses. Custom Acadiana sites that name Lafayette Parish, show local proof, and are built by a Louisiana operator.',
+  'seo-lafayette-la': 'Local SEO in Lafayette, LA. Win niche city and service searches fast across Acadiana while broader terms compound, on Google and inside AI answers.',
 }
 
 const CITY_COPY: Record<string, CityMarketCopy> = {
@@ -343,11 +361,13 @@ export function buildMetadata(slug: string) {
   const city = cities.find((c) => c.slug === combo.citySlug)
   if (!service || !city) return {}
   const title = `${service.title} in ${city.name}, ${city.state}`
-  const description = `${service.title} for ${city.name}, ${city.state} businesses. ${service.short.slice(0, 110)}`
+  const description =
+    COMBO_META_DESCRIPTION[slug] ??
+    `${service.title} in ${city.name}, ${city.state} for service businesses. ${service.short.slice(0, 100)}`
   return {
     title,
     description,
     alternates: { canonical: `${site.url}/${slug}` },
-    openGraph: { title, description, url: `${site.url}/${slug}` },
+    openGraph: { title, description, url: `${site.url}/${slug}`, images: [ogImage] },
   }
 }

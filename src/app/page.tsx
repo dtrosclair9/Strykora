@@ -12,7 +12,7 @@ import { Schema, localBusinessSchema, websiteSchema, personSchema, faqSchema as 
 export const metadata: Metadata = {
   title: 'Web Design & SEO for Louisiana Businesses',
   description:
-    'Custom-built websites and local SEO for Louisiana service businesses. Built in Thibodaux, ships in about a week, you own the code outright.',
+    'Custom-built websites and local SEO for Louisiana service businesses. Built in Thibodaux, ranks on Google and inside ChatGPT, and you own the code outright.',
   alternates: { canonical: site.url },
 }
 

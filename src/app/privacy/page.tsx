@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: `Privacy policy for ${site.name} — what we collect, what we don\'t, and how we use it.`,
+  description: `Privacy policy for ${site.name}, the Louisiana web design and SEO studio: what we collect through the contact form and analytics, what we don't, and how we use it.`,
   alternates: { canonical: `${site.url}/privacy` },
   robots: { index: true, follow: false },
 }

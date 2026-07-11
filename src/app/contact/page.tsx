@@ -7,7 +7,7 @@ import { Schema } from '@/components/Schema'
 
 export const metadata: Metadata = {
   title: 'Contact Strykora — Start a Louisiana Web Project',
-  description: `Start a web design or local SEO project with ${site.name} in ${site.address.city}, LA. Dayne replies personally within one business day with a candid take and a fixed-price quote. No sales call.`,
+  description: `Start a web design or local SEO project with ${site.name} in ${site.address.city}, LA. Dayne replies personally within one business day with a fixed-price quote. No sales call.`,
   alternates: { canonical: `${site.url}/contact` },
 }
 

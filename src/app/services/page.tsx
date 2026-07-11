@@ -9,7 +9,7 @@ import { Schema } from '@/components/Schema'
 export const metadata: Metadata = {
   title: 'Web Design, SEO, Google Ads & AI Search — Louisiana',
   description:
-    'Five services built to stack: custom web design from $3,750, local SEO from $297/month, Google Business Profile, Google Ads management, plus AI Search Optimization (GEO + AEO) so ChatGPT and Google\'s AI answer recommend you by name.',
+    'Five services built to stack: custom web design from $3,750, local SEO from $297/month, Google Business Profile, Google Ads, and AI Search Optimization.',
   alternates: { canonical: `${site.url}/services` },
 }
 
