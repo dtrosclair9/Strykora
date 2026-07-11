@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { services, industries, site } from '@/config/site'
 
@@ -39,13 +38,13 @@ export default function Header() {
       <div className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center shrink-0" aria-label={`${site.name} — home`}>
-            <Image
-              src="/images/strykora-lockup.png"
+            {/* eslint-disable-next-line @next/next/no-img-element -- SVG logo served as-is, not optimized */}
+            <img
+              src="/images/strykora-lockup.svg"
               alt={`${site.name} — SEO & Web Design Louisiana`}
               width={1724}
               height={484}
               className="h-10 md:h-12 w-auto"
-              priority
             />
           </Link>
 
