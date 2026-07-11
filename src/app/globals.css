@@ -48,7 +48,7 @@
     @apply card hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1;
   }
   .gradient-text {
-    @apply bg-gradient-to-r from-accent via-accent-light to-accent-violet bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent-dark via-accent to-accent-light bg-clip-text text-transparent;
   }
   .gradient-border {
     background: linear-gradient(135deg, rgba(59,130,246,0.4), rgba(139,92,246,0.4));

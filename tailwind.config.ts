@@ -23,7 +23,6 @@ const config: Config = {
           DEFAULT: '#3B82F6',
           light: '#60A5FA',
           dark: '#2563EB',
-          violet: '#8B5CF6',
         },
         text: {
           DEFAULT: '#F8FAFC',
