@@ -12,7 +12,7 @@ const SIZES = {
 
 export default function Stars({ rating, size = 'md', className = '' }: StarsProps) {
   return (
-    <div className={`inline-flex items-center gap-0.5 ${className}`} aria-label={`${rating} out of 5 stars`}>
+    <div className={`inline-flex items-center gap-0.5 ${className}`} role="img" aria-label={`${rating} out of 5 stars`}>
       {[1, 2, 3, 4, 5].map((n) => (
         <svg
           key={n}

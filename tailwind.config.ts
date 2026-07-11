@@ -23,11 +23,12 @@ const config: Config = {
           DEFAULT: '#3B82F6',
           light: '#60A5FA',
           dark: '#2563EB',
+          darker: '#1D4ED8',
         },
         text: {
           DEFAULT: '#F8FAFC',
           muted: '#94A3B8',
-          dim: '#64748B',
+          dim: '#7A8AA0',
         },
         border: {
           DEFAULT: '#1E293B',
