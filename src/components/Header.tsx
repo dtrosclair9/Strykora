@@ -42,8 +42,8 @@ export default function Header() {
             <img
               src="/images/strykora-lockup.svg"
               alt={`${site.name} — SEO & Web Design Louisiana`}
-              width={1724}
-              height={484}
+              width={792}
+              height={209}
               className="h-10 md:h-12 w-auto"
             />
           </Link>
