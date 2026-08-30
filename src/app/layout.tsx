@@ -6,6 +6,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SmoothScroll from '@/components/SmoothScroll'
+import MetaPixel from '@/components/MetaPixel'
 import { site } from '@/config/site'
 
 const inter = Inter({
@@ -98,6 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <Analytics />
         <SpeedInsights />
+        <MetaPixel />
       </body>
     </html>
   )

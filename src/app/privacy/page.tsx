@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: false },
 }
 
-const updated = 'June 16, 2026'
+const updated = 'August 30, 2026'
 
 export default function PrivacyPage() {
   return (
@@ -30,9 +30,10 @@ export default function PrivacyPage() {
           <Reveal>
             <h2 className="text-2xl font-display text-text mb-3">What we collect</h2>
             <p>
-              {site.name} collects only what you give us through the contact form on this site: your name, business name,
-              email, phone (optional), service of interest, and project message. We also collect standard server logs
-              (IP, browser, page visited, timestamp) that any web host stores automatically for security and analytics.
+              {site.name} collects only what you give us through the contact form or the free-audit form on this site:
+              your name, business name, email, phone, service of interest, your current website address, and your project
+              message. We also collect standard server logs (IP, browser, page visited, timestamp) that any web host
+              stores automatically for security and analytics.
             </p>
           </Reveal>
 
@@ -43,6 +44,7 @@ export default function PrivacyPage() {
               <li><strong className="text-text">Vercel</strong>: hosts the site; stores standard request logs.</li>
               <li><strong className="text-text">Google Fonts</strong>: serves the typography used across the site.</li>
               <li><strong className="text-text">Google Analytics / Search Console</strong> (if enabled): anonymized traffic and search performance data.</li>
+              <li><strong className="text-text">Meta Pixel</strong> (Facebook and Instagram): records that a page was viewed and that an audit request was completed, so we can tell whether our Facebook ads are working. Meta may match that activity to your Facebook or Instagram account under its own privacy policy. You can limit this in your Facebook ad settings or with a browser tracker blocker; the site works either way.</li>
             </ul>
           </Reveal>
 
@@ -57,8 +59,9 @@ export default function PrivacyPage() {
           <Reveal>
             <h2 className="text-2xl font-display text-text mb-3">Cookies & tracking</h2>
             <p>
-              The site uses minimal first-party cookies for routing and analytics. We do not run advertising trackers,
-              session recorders, or chat widgets. If you have your browser set to block cookies, the site still works.
+              The site uses minimal first-party cookies for routing and analytics, plus the Meta Pixel described above,
+              which sets a Meta cookie to measure our Facebook and Instagram ads. We do not run session recorders or
+              chat widgets. If you have your browser set to block cookies or trackers, the site still works.
             </p>
           </Reveal>
 

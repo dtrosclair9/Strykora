@@ -27,6 +27,8 @@ export const site = {
     leaveReview: 'https://g.page/r/CfC86RlwChOQEBM/review',
   },
   timelineLabel: 'Ships in 1 week',
+  /** Meta Pixel / dataset id (Events Manager). Public by nature; fires PageView site-wide and Lead on /free-audit/thanks. */
+  metaPixelId: '1366734111941394',
 } as const
 
 export const reviews = [
