@@ -28,6 +28,16 @@ const nextConfig = {
         destination: '/services/google-ads',
         permanent: true,
       },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy',
+        destination: '/privacy',
+        permanent: true,
+      },
     ]
   },
 }
