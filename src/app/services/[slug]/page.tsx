@@ -50,6 +50,18 @@ const SERVICE_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
   },
 }
 
+const SERVICE_RELATED_POSTS: Record<string, { slug: string; title: string }[]> = {
+  'web-design': [
+    { slug: 'why-your-wix-site-isnt-ranking-louisiana', title: 'Why Your Wix Site Isn\'t Ranking (And What to Do About It)' },
+  ],
+  'seo': [
+    { slug: 'why-seo-matters-for-small-businesses-louisiana', title: 'Why SEO Matters for Small Businesses in Louisiana' },
+  ],
+  'ai-search-optimization': [
+    { slug: 'google-may-2026-ai-search-update-louisiana-businesses', title: 'Google\'s May 2026 AI Search Update: What Louisiana Service Businesses Need to Know' },
+  ],
+}
+
 const SERVICE_PAGE_COPY: Record<string, {
   howWeDoIt: { step: string; title: string; body: string }[]
   faqs: { q: string; a: string }[]
@@ -281,6 +293,27 @@ export default async function ServicePage({ params }: Params) {
                     </summary>
                     <p className="mt-4 text-text-muted leading-relaxed">{f.a}</p>
                   </details>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {SERVICE_RELATED_POSTS[service.slug] && (
+        <section className="section-padding border-t border-border" aria-labelledby="reading-heading">
+          <div className="container-wide">
+            <Reveal className="mb-10">
+              <p className="eyebrow mb-3">From the blog</p>
+              <h2 id="reading-heading" className="text-display-md font-display text-text">Related reading.</h2>
+            </Reveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {SERVICE_RELATED_POSTS[service.slug].map((p) => (
+                <Reveal key={p.slug}>
+                  <Link href={`/blog/${p.slug}`} className="card-feature group block h-full">
+                    <h3 className="text-lg font-display text-text mb-2">{p.title}</h3>
+                    <p className="text-sm text-text-muted leading-relaxed">Read the post &rarr;</p>
+                  </Link>
                 </Reveal>
               ))}
             </div>

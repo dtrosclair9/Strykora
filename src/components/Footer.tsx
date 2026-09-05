@@ -49,6 +49,11 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/services" className="text-sm text-text-muted hover:text-text transition-colors">
+                  All services
+                </Link>
+              </li>
             </ul>
           </div>
 

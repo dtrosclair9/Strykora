@@ -71,6 +71,12 @@ export default function Header() {
               {openDropdown === 'services' && (
                 <div className="absolute top-full left-0 pt-2 w-72">
                   <div className="bg-bg-elevated border border-border rounded-xl p-2 shadow-2xl shadow-black/40">
+                    <Link
+                      href="/services"
+                      className="block px-4 py-3 rounded-lg hover:bg-bg-card transition-colors border-b border-border mb-1"
+                    >
+                      <span className="font-medium text-text">All services</span>
+                    </Link>
                     {services.map((s) => (
                       <Link
                         key={s.slug}
@@ -174,6 +180,9 @@ export default function Header() {
                   </svg>
                 </summary>
                 <div className="pl-4 pb-3 space-y-1">
+                  <Link href="/services" className="block px-2 py-2.5 text-base text-text-muted hover:text-text">
+                    All services
+                  </Link>
                   {services.map((s) => (
                     <Link key={s.slug} href={`/services/${s.slug}`} className="block px-2 py-2.5 text-base text-text-muted hover:text-text">
                       {s.title}
