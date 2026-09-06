@@ -34,7 +34,7 @@ export default function IndustriesPage() {
         title="Built for Louisiana service and commercial businesses."
         description="Generic agencies sell the same package to a roofer, a SaaS startup, and a law firm. Strykora picks lanes and goes deep. These are the verticals Strykora knows cold, and where the case studies prove the model works."
         bgImage="/images/hero-industries-index.jpg"
-        bgImageAlt="Layered South Louisiana industry silhouettes at dusk: residential rooftop in front, commercial construction crane mid-frame, marine port and refinery silhouettes on the horizon, all under a deep navy sky."
+        bgImageAlt="Excavator working at the water's edge on a South Louisiana marine job site, photographed by a Strykora client."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/industries', label: 'Industries' },

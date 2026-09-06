@@ -34,23 +34,23 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 const INDUSTRY_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
   'roofers-louisiana': {
     src: '/images/hero-industry-roofers.jpg',
-    alt: 'Aerial dusk view of a Louisiana home with a dark metal standing-seam roof, the kind of FORTIFIED roof Strykora\'s roofer clients install.',
+    alt: 'Aerial photo of a new architectural shingle roof installed by a Strykora roofing client in Raceland, Louisiana.',
   },
   'contractors-louisiana': {
     src: '/images/hero-industry-contractors.jpg',
-    alt: 'Louisiana commercial construction jobsite at dusk with excavator silhouettes, the kind of work Strykora\'s contractor clients run.',
+    alt: 'Wood framing going up on a pool house build by a Strykora contractor client in South Louisiana.',
   },
   'home-services-louisiana': {
     src: '/images/hero-industry-home-services.jpg',
-    alt: 'Louisiana suburban home at twilight with warm interior lights, the kind of residential property Strykora\'s home services clients serve.',
+    alt: 'Zero-turn mower parked in front of a Louisiana home on a job by a Strykora land management client.',
   },
   'auto-shops-louisiana': {
     src: '/images/hero-industry-auto-shops.jpg',
-    alt: 'Auto shop service bay with a truck on a lift under dramatic lighting, the kind of shop Strykora\'s auto clients run.',
+    alt: 'Lifted black Ford F-250 Super Duty built by Strykora client Elite Custom Automotive in Lockport, Louisiana.',
   },
   'commercial-louisiana': {
     src: '/images/hero-industry-commercial.jpg',
-    alt: 'South Louisiana marine port at dusk with a tugboat moored alongside dock cranes, the kind of operator Strykora\'s commercial clients run.',
+    alt: 'Tugboat working the Intracoastal Waterway, photographed by Strykora marine client Melancon Marine in South Louisiana.',
   },
 }
 
