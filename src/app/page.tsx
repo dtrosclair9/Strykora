@@ -213,15 +213,7 @@ export default function HomePage() {
                 <Link href={`/services/${ai.slug}`} className="block group relative overflow-hidden rounded-2xl border border-accent/40 bg-gradient-to-br from-accent/10 via-bg-elevated to-bg-elevated p-8 md:p-10 hover:border-accent/70 transition-colors">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     <div className="lg:col-span-8">
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent text-[10px] uppercase tracking-[0.18em] font-mono">
-                          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                          The Louisiana moat
-                        </span>
-                        <p className="text-[10px] uppercase tracking-[0.18em] text-text-dim font-mono">
-                          {ai.eyebrow}
-                        </p>
-                      </div>
+                      <p className="eyebrow mb-4">The Louisiana moat</p>
                       <h3 className="text-2xl md:text-3xl font-display text-text mb-3 text-balance">{ai.title}</h3>
                       <p className="text-text-muted leading-relaxed mb-4">{ai.short}</p>
                       <p className="text-sm text-text-dim font-mono">{ai.priceRange}</p>

@@ -27,11 +27,11 @@ const itemListSchema = {
 }
 
 const COVER_ALT: Record<string, string> = {
-  'foret-construction': 'New metal roof installation at golden hour, the kind of FORTIFIED-certified work Foret Construction is built around.',
-  'elite-custom-automotive': 'Aggressive mud-terrain tire on a lifted truck, the kind of BDS suspension build Elite Custom Automotive is known for.',
-  'all-out-window-tint': 'Black luxury car with heavily tinted windows at golden hour, the kind of tint installation All Out Window Tint specializes in.',
-  'hover-septic': 'Heavy excavator at dusk on a rural Louisiana installation site, the kind of work Hover Septic delivers in Thibodaux and Lafourche Parish.',
-  'acadia-pools': 'Hero of the live acadiapools.com site, the Strykora-built home for Matt Glover\'s custom gunite pool operation in Thibodaux, Louisiana.',
+  'foret-construction': 'Aerial photo of a completed shingle roof replacement by Foret Construction in Raceland, Louisiana.',
+  'elite-custom-automotive': 'Lifted red GMC built by Elite Custom Automotive, photographed outside their Lockport shop.',
+  'all-out-window-tint': 'Orange Corvette with the doors up, photographed inside the All Out Window Tint shop.',
+  'hover-septic': 'Screenshot of hoverseptic.com, the Strykora-built website for Hover Septic in Thibodaux, Louisiana.',
+  'acadia-pools': 'Completed inground pool and patio built by Acadia Pools in Thibodaux, Louisiana.',
 }
 
 export default function CaseStudiesPage() {

@@ -151,7 +151,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Monthly Local SEO retainer to keep the rankings growing',
     ],
     result: 'Foret now owns the new site outright, no more monthly Wix bill, with nine city landing pages targeting roof replacement searches across South Louisiana. The site is fast, set up for both Google and AI search, and the credentials buyers actually care about are surfaced where they look.',
-    coverAlt: 'New metal roof installation at golden hour in South Louisiana, the kind of FORTIFIED-certified work Foret Construction is built around.',
+    coverAlt: 'Aerial photo of a completed shingle roof replacement by Foret Construction in Raceland, Louisiana.',
   },
   'elite-custom-automotive': {
     challenge:
@@ -165,7 +165,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Lead form that pings Colin\'s phone instead of sitting in a never-checked inbox',
     ],
     result: 'Elite now ranks top 3 in its niche in Lockport, Louisiana, the local pack position that actually drives booked work. Colin owns the code outright. No more monthly rental fee. Two pipelines (performance and repair) running on one site without the messages stepping on each other.',
-    coverAlt: 'Aggressive mud-terrain tire on a lifted truck, the kind of BDS suspension build Elite Custom Automotive is known for.',
+    coverAlt: 'Lifted red GMC built by Elite Custom Automotive, photographed outside their Lockport shop.',
   },
   'all-out-window-tint': {
     challenge:
@@ -179,7 +179,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Live at all-outwindowtint.com (yes, with the hyphen)',
     ],
     result: 'Two months after launch, the Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge", a market All Out was not ranking in at all before launch. Each location owns its own lead pipeline. Gonzales bookings hit Gonzales. Baton Rouge bookings hit Baton Rouge. The franchising page surfaces new partner inquiries Reed and Dax can vet without ever rebuilding the site.',
-    coverAlt: 'Black luxury car with heavily tinted windows at golden hour, the kind of tint installation All Out Window Tint specializes in.',
+    coverAlt: 'Orange Corvette with the doors up, photographed inside the All Out Window Tint shop.',
   },
   'hover-septic': {
     challenge:
@@ -191,7 +191,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'On-page SEO and the behind-the-scenes code Google reads, all targeting the high-ticket "septic installs Thibodaux" search',
     ],
     result: 'Hover Septic ranks #1 organic for "septic installs in Thibodaux LA", the exact keyword that pays the bills. The impact was so profound that Trey was able to drop low-ticket pumpout work entirely and focus on multi-thousand-dollar installs. The site rewrote the business model.',
-    coverAlt: 'Heavy excavator at dusk on a rural Louisiana installation site, the kind of work Hover Septic delivers in Thibodaux and Lafourche Parish.',
+    coverAlt: 'Screenshot of hoverseptic.com, the Strykora-built website for Hover Septic in Thibodaux, Louisiana.',
   },
   'acadia-pools': {
     challenge:
@@ -205,7 +205,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Trust signals surfaced where buyers look: licensed and insured, open seven days a week, People\'s Choice Award, free consultations',
     ],
     result: 'When a real customer asks Perplexity for a pool builder in Thibodaux, Acadia Pools is the first name in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity pulls Matt\'s phone number (985) 413-2954 and the "custom gunite pool and spa builder" wording directly from the page copy Strykora built. The AI started naming Acadia within months of launch.',
-    coverAlt: 'Hero of the live Strykora-built acadiapools.com site for Acadia Pools in Thibodaux, Louisiana.',
+    coverAlt: 'Completed inground pool and patio built by Acadia Pools in Thibodaux, Louisiana.',
   },
 }
 
