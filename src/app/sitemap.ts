@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const blogPostSlugs = [
+    'why-chatgpt-recommends-your-competitor-louisiana',
     'why-seo-matters-for-small-businesses-louisiana',
     'google-may-2026-ai-search-update-louisiana-businesses',
     'why-your-wix-site-isnt-ranking-louisiana',

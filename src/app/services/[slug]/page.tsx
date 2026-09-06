@@ -58,6 +58,7 @@ const SERVICE_RELATED_POSTS: Record<string, { slug: string; title: string }[]> =
     { slug: 'why-seo-matters-for-small-businesses-louisiana', title: 'Why SEO Matters for Small Businesses in Louisiana' },
   ],
   'ai-search-optimization': [
+    { slug: 'why-chatgpt-recommends-your-competitor-louisiana', title: 'Why ChatGPT Recommends Your Competitor Instead of You' },
     { slug: 'google-may-2026-ai-search-update-louisiana-businesses', title: 'Google\'s May 2026 AI Search Update: What Louisiana Service Businesses Need to Know' },
   ],
 }

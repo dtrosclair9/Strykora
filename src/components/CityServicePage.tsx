@@ -52,6 +52,56 @@ const COMBO_META_DESCRIPTION: Record<string, string> = {
   'seo-lafayette-la': 'Local SEO in Lafayette, LA. Win niche city and service searches fast across Acadiana while broader terms compound, on Google and inside AI answers.',
 }
 
+/**
+ * Per-combo long-form sections rendered between the main grid and the FAQ block.
+ * Only combos that need extra depth get an entry; everything else renders unchanged.
+ */
+const COMBO_DEEP_DIVE: Record<string, { heading: string; paragraphs: string[] }[]> = {
+  'web-design-baton-rouge-la': [
+    {
+      heading: 'What web design costs in Baton Rouge.',
+      paragraphs: [
+        'Strykora builds custom websites starting at $3,750, one time, and you own every file when it is done. Around Baton Rouge you will see quotes from a few hundred dollars for a template reskin up to five figures from the bigger downtown agencies. Most of that price gap has nothing to do with how the site looks. It comes down to what is underneath: page speed, schema markup, city pages, and whether anyone actually built the thing to rank.',
+        'Be careful with the monthly bundle deals where the website is "free" and you pay a couple hundred a month forever. Read the fine print on who owns the site. In most of those arrangements, cancel the payment and the website disappears with it.',
+      ],
+    },
+    {
+      heading: 'Custom code or WordPress?',
+      paragraphs: [
+        'Most Baton Rouge web design companies build on WordPress, and plenty of decent sites run on it. Strykora builds custom-coded sites on Next.js instead. The difference shows up after launch. WordPress sites carry a stack of plugins that need updating and patching for security holes. A custom-coded site has none of that maintenance overhead, and it loads faster than page-builder output on the same hosting.',
+        'If you already have a WordPress site that ranks, keep it and put the budget into SEO. If you are starting over anyway, there is no reason to inherit the maintenance.',
+      ],
+    },
+    {
+      heading: 'Already building for the Baton Rouge metro.',
+      paragraphs: [
+        'Strykora client All Out Window Tint runs locations in Gonzales and Baton Rouge, and ChatGPT has recommended them for tint work in the area. That build is documented in the case studies, screenshots included.',
+        'Strykora is based in Thibodaux, about an hour from Baton Rouge, and works with metro clients over calls and shared page drafts. Two current clients are in the Baton Rouge metro already.',
+      ],
+    },
+  ],
+}
+
+/**
+ * Per-combo FAQs shown ahead of the shared city FAQs and included in FAQPage schema.
+ */
+const COMBO_EXTRA_FAQS: Record<string, { q: string; a: string }[]> = {
+  'web-design-baton-rouge-la': [
+    {
+      q: 'How much does web design cost in Baton Rouge?',
+      a: 'Strykora custom builds start at $3,750 one time, including copywriting, SEO structure, schema markup, and mobile testing. The site is yours when it is done. Ongoing SEO is optional at $297 a month.',
+    },
+    {
+      q: 'Do you build WordPress sites?',
+      a: 'No. Every Strykora site is custom-coded on Next.js. It loads faster than WordPress, has no plugins to maintain, and gives Google and the AI engines a cleaner page to read.',
+    },
+    {
+      q: 'Can you meet in person in Baton Rouge?',
+      a: 'Strykora is in Thibodaux, about an hour out. Most projects run entirely over phone calls and emailed drafts, and that has worked for our existing Baton Rouge metro clients. If a project needs a face-to-face, ask. It is about an hour of driving, so a sit-down is doable when it matters.',
+    },
+  ],
+}
+
 const CITY_COPY: Record<string, CityMarketCopy> = {
   'thibodaux-la': {
     marketContext:
@@ -97,7 +147,7 @@ const CITY_COPY: Record<string, CityMarketCopy> = {
     marketContext:
       'Baton Rouge is the state capital and Louisiana\'s second-largest market. The economy runs on state government, LSU, the petrochemical corridor along the Mississippi River, and a sprawling residential service market across East Baton Rouge, Ascension, and Livingston Parishes. SEO competition is real here, but the buyer volume is real too.',
     buyerSnapshot:
-      'Baton Rouge buyers expect a polished website. A 2018 WordPress site with a stock-photo hero does not convert in this market the way it might in a smaller town.',
+      'Buyers here check the website before they call, and they have plenty of alternatives if what they find looks dated.',
     faqs: [
       {
         q: 'How long does it take to rank in Baton Rouge?',
@@ -197,8 +247,9 @@ export default function CityServicePage({ slug }: Props) {
       },
     },
   ]
-  if (cityCopy) {
-    schemas.push(buildFaqSchema(cityCopy.faqs))
+  const pageFaqs = [...(COMBO_EXTRA_FAQS[slug] ?? []), ...(cityCopy?.faqs ?? [])]
+  if (pageFaqs.length > 0) {
+    schemas.push(buildFaqSchema(pageFaqs))
   }
 
   return (
@@ -225,12 +276,12 @@ export default function CityServicePage({ slug }: Props) {
                 <>
                   <p className="text-text-muted leading-relaxed mb-4">{cityCopy.marketContext}</p>
                   <p className="text-text-muted leading-relaxed mb-6">
-                    {cityCopy.buyerSnapshot} Strykora ships a faster, more local, more credible answer, owned outright by you, for <span className="text-text">{service.priceRange}</span>
+                    {cityCopy.buyerSnapshot} Strykora ships a faster, more local, more credible answer, owned outright by you. <span className="text-text">{service.priceRange}</span>
                   </p>
                 </>
               ) : (
                 <p className="text-text-muted leading-relaxed mb-6">
-                  Strykora ships a faster, more local, more credible {service.title.toLowerCase()} answer for {city.name} buyers, owned outright by you, for <span className="text-text">{service.priceRange}</span>
+                  Strykora ships a faster, more local, more credible {service.title.toLowerCase()} answer for {city.name} buyers, owned outright by you. <span className="text-text">{service.priceRange}</span>
                 </p>
               )}
               <ul className="space-y-3">
@@ -297,7 +348,24 @@ export default function CityServicePage({ slug }: Props) {
         </div>
       </section>
 
-      {cityCopy && (
+      {COMBO_DEEP_DIVE[slug] && (
+        <section className="section-padding border-t border-border" aria-label={`More about ${service.title.toLowerCase()} in ${city.name}`}>
+          <div className="container-narrow space-y-12">
+            {COMBO_DEEP_DIVE[slug].map((sec) => (
+              <Reveal key={sec.heading}>
+                <h2 className="text-2xl md:text-3xl font-display text-text mb-4 text-balance">{sec.heading}</h2>
+                <div className="space-y-4">
+                  {sec.paragraphs.map((p) => (
+                    <p key={p.slice(0, 32)} className="text-text-muted leading-relaxed">{p}</p>
+                  ))}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {pageFaqs.length > 0 && (
         <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="city-faq-heading">
           <div className="container-narrow">
             <Reveal className="mb-10">
@@ -307,7 +375,7 @@ export default function CityServicePage({ slug }: Props) {
               </h2>
             </Reveal>
             <div className="space-y-3">
-              {cityCopy.faqs.map((f) => (
+              {pageFaqs.map((f) => (
                 <Reveal key={f.q}>
                   <details className="card group">
                     <summary className="font-medium text-text cursor-pointer flex items-start justify-between gap-4 list-none">

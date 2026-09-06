@@ -13,6 +13,12 @@ export const metadata: Metadata = {
 // Posts mirror the body source of truth in src/app/blog/[slug]/page.tsx
 const posts = [
   {
+    slug: 'why-chatgpt-recommends-your-competitor-louisiana',
+    title: 'Why ChatGPT Recommends Your Competitor Instead of You',
+    excerpt: 'Ask ChatGPT for a contractor and it hands back a name or two. How those picks get made, and how a Louisiana business gets on the list.',
+    date: '2026-09-06',
+  },
+  {
     slug: 'why-seo-matters-for-small-businesses-louisiana',
     title: 'Why SEO Matters for Small Businesses in Louisiana',
     excerpt: 'A practical look at what local SEO actually moves the needle for Louisiana service businesses in the AI-search era.',
