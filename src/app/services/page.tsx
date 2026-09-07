@@ -58,7 +58,7 @@ export default function ServicesPage() {
             if (!ai) return null
             return (
               <Reveal className="mb-8">
-                <Link href={`/services/${ai.slug}`} className="block group relative overflow-hidden rounded-2xl border border-accent/40 bg-gradient-to-br from-accent/10 via-bg-elevated to-bg-elevated p-8 md:p-10 hover:border-accent/70 transition-colors">
+                <Link href={`/services/${ai.slug}`} className="block group relative overflow-hidden rounded-2xl border border-border bg-bg-elevated p-8 md:p-10 hover:border-accent/50 transition-colors">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     <div className="lg:col-span-8">
                       <p className="eyebrow mb-4">The Louisiana moat</p>
@@ -94,9 +94,7 @@ export default function ServicesPage() {
             {services.filter((s) => !('featured' in s && s.featured)).map((s) => (
               <Reveal key={s.slug}>
                 <Link href={`/services/${s.slug}`} className="card-feature group block h-full p-8">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-text-dim font-mono mb-3">
-                    0{s.priority} · {s.eyebrow}
-                  </p>
+                  <p className="text-xs text-text-dim mb-3">{s.eyebrow}</p>
                   <h2 className="text-2xl md:text-3xl font-display text-text mb-3 text-balance">{s.title}</h2>
                   <p className="text-text-muted leading-relaxed mb-5">{s.long}</p>
                   <ul className="space-y-2 mb-6">

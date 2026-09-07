@@ -146,7 +146,7 @@ export default function HomePage() {
             <p className="eyebrow">{site.address.city}, {site.address.state} · Web design + SEO</p>
             <h1 className="text-display-lg font-display text-text text-balance leading-[1.02]">
               We build the website.<br />
-              Then we make sure <span className="gradient-text">Google sends people to it.</span>
+              Then we make sure <span className="gradient-text">Google sends people to&nbsp;it.</span>
             </h1>
             <p className="text-lg md:text-xl text-text-muted max-w-2xl text-balance leading-relaxed">
               Stop renting a templated website you&apos;ll never own. Strykora builds you a fast, custom site
@@ -172,10 +172,9 @@ export default function HomePage() {
               aria-label={`Strykora has ${reviewStats.reviewCount} Google reviews with a ${reviewStats.averageRating} star average`}
             >
               <Stars rating={Math.round(reviewStats.averageRating)} size="sm" />
-              <span className="font-mono">
+              <span>
                 {reviewStats.averageRating.toFixed(1)} · {reviewStats.reviewCount} Google reviews
               </span>
-              <span className="text-accent group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
           </Reveal>
 
@@ -210,13 +209,13 @@ export default function HomePage() {
             if (!ai) return null
             return (
               <Reveal className="mb-8">
-                <Link href={`/services/${ai.slug}`} className="block group relative overflow-hidden rounded-2xl border border-accent/40 bg-gradient-to-br from-accent/10 via-bg-elevated to-bg-elevated p-8 md:p-10 hover:border-accent/70 transition-colors">
+                <Link href={`/services/${ai.slug}`} className="block group relative overflow-hidden rounded-2xl border border-border bg-bg-elevated p-8 md:p-10 hover:border-accent/50 transition-colors">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     <div className="lg:col-span-8">
                       <p className="eyebrow mb-4">The Louisiana moat</p>
                       <h3 className="text-2xl md:text-3xl font-display text-text mb-3 text-balance">{ai.title}</h3>
                       <p className="text-text-muted leading-relaxed mb-4">{ai.short}</p>
-                      <p className="text-sm text-text-dim font-mono">{ai.priceRange}</p>
+                      <p className="text-sm text-text-dim">{ai.priceRange}</p>
                     </div>
                     <div className="lg:col-span-4 lg:text-right">
                       <span className="inline-flex items-center gap-1 text-sm text-accent font-medium group-hover:gap-2 transition-all">
@@ -237,9 +236,7 @@ export default function HomePage() {
               <Reveal key={s.slug}>
                 <Link href={`/services/${s.slug}`} className="card-feature block group h-full">
                   <div className="flex items-start justify-between mb-4">
-                    <p className="text-[10px] uppercase tracking-[0.18em] text-text-dim font-mono">
-                      0{s.priority} / {s.eyebrow}
-                    </p>
+                    <p className="text-xs text-text-dim">{s.eyebrow}</p>
                     <span className="text-text-dim group-hover:text-accent transition-colors">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -248,7 +245,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-2xl font-display text-text mb-2">{s.title}</h3>
                   <p className="text-text-muted leading-relaxed mb-3">{s.short}</p>
-                  <p className="text-sm text-text-dim font-mono">{s.priceRange}</p>
+                  <p className="text-sm text-text-dim">{s.priceRange}</p>
                 </Link>
               </Reveal>
             ))}
@@ -309,7 +306,7 @@ export default function HomePage() {
             <div className="flex items-baseline justify-between flex-wrap gap-3 mb-4">
               <p className="eyebrow">Depth: one client, three engines</p>
               <Link href="/case-studies/hover-septic" className="text-sm text-accent hover:underline">
-                Hover Septic case study →
+                See the Hover Septic case study
               </Link>
             </div>
           </Reveal>
@@ -326,7 +323,7 @@ export default function HomePage() {
                   />
                 </div>
                 <figcaption className="p-6 border-t border-border">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">Perplexity · Hover Septic</p>
+                  <p className="text-xs text-accent mb-2">Perplexity · Hover Septic</p>
                   <p className="text-sm text-text-muted leading-relaxed">
                     Query: <span className="text-text">&quot;Recommend me the best septic system installer in Thibodaux LA.&quot;</span> Answer leads with Hover Septic.
                   </p>
@@ -346,7 +343,7 @@ export default function HomePage() {
                   />
                 </div>
                 <figcaption className="p-6 border-t border-border">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">ChatGPT · Hover Septic</p>
+                  <p className="text-xs text-accent mb-2">ChatGPT · Hover Septic</p>
                   <p className="text-sm text-text-muted leading-relaxed">
                     Query: <span className="text-text">&quot;Recommend me the best septic installation service Thibodaux LA.&quot;</span> Answer crowns Hover Septic as &quot;Best overall.&quot;
                   </p>
@@ -366,7 +363,7 @@ export default function HomePage() {
                   />
                 </div>
                 <figcaption className="p-6 border-t border-border">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">ChatGPT follow-up · Hover</p>
+                  <p className="text-xs text-accent mb-2">ChatGPT follow-up · Hover</p>
                   <p className="text-sm text-text-muted leading-relaxed">
                     <span className="text-text">&quot;Why I&apos;d start with Hover.&quot;</span> The AI explains its own pick, citing the exact positioning Strykora built into the site.
                   </p>
@@ -392,12 +389,12 @@ export default function HomePage() {
                   />
                 </div>
                 <figcaption className="p-6 border-t border-border">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">Perplexity · Elite Custom Automotive</p>
+                  <p className="text-xs text-accent mb-2">Perplexity · Elite Custom Automotive</p>
                   <p className="text-sm text-text-muted leading-relaxed">
                     Query: <span className="text-text">&quot;Recommend me the best auto shop in Lockport that does lift kits.&quot;</span> Answer: &quot;The best match I found in Lockport is Elite Custom Automotive.&quot;
                   </p>
                   <Link href="/case-studies/elite-custom-automotive" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
-                    Read the case study →
+                    Read the case study
                   </Link>
                 </figcaption>
               </figure>
@@ -415,12 +412,12 @@ export default function HomePage() {
                   />
                 </div>
                 <figcaption className="p-6 border-t border-border">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">Perplexity · Acadia Pools</p>
+                  <p className="text-xs text-accent mb-2">Perplexity · Acadia Pools</p>
                   <p className="text-sm text-text-muted leading-relaxed">
                     Query: <span className="text-text">&quot;Recommend me a pool builder in Thibodaux LA.&quot;</span> Answer leads with: &quot;A strong local option in Thibodaux is Acadia Pools.&quot;
                   </p>
                   <Link href="/case-studies/acadia-pools" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
-                    Read the case study →
+                    Read the case study
                   </Link>
                 </figcaption>
               </figure>
@@ -438,12 +435,12 @@ export default function HomePage() {
                   />
                 </div>
                 <figcaption className="p-6 border-t border-border">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">ChatGPT · All Out Window Tint</p>
+                  <p className="text-xs text-accent mb-2">ChatGPT · All Out Window Tint</p>
                   <p className="text-sm text-text-muted leading-relaxed">
                     Query: <span className="text-text">&quot;Best window tinting shop in Baton Rouge.&quot;</span> ChatGPT&apos;s &quot;My pick&quot; list names All-Out Window Tint as &quot;a quality shop with more services.&quot;
                   </p>
                   <Link href="/case-studies/all-out-window-tint" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
-                    Read the case study →
+                    Read the case study
                   </Link>
                 </figcaption>
               </figure>

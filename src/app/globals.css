@@ -53,7 +53,7 @@
     @apply max-w-4xl mx-auto px-6 lg:px-8;
   }
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+    @apply text-sm font-medium text-accent;
   }
   .card {
     @apply bg-bg-elevated border border-border rounded-xl p-6 transition-all duration-300 hover:border-border-light hover:bg-bg-card;
@@ -62,7 +62,7 @@
     @apply card hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1;
   }
   .gradient-text {
-    @apply bg-gradient-to-r from-accent-dark via-accent to-accent-light bg-clip-text text-transparent;
+    @apply text-accent;
   }
   .gradient-border {
     background: linear-gradient(135deg, rgba(59,130,246,0.4), rgba(139,92,246,0.4));

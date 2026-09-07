@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import { Inter, Source_Serif_4, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
@@ -15,8 +15,9 @@ const inter = Inter({
   display: 'swap',
 })
 
-const display = Space_Grotesk({
+const display = Source_Serif_4({
   subsets: ['latin'],
+  weight: '600',
   variable: '--font-display',
   display: 'swap',
 })

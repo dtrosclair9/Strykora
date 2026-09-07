@@ -399,7 +399,6 @@ export default async function IndustryPage({ params }: Params) {
             {services.map((s) => (
               <Reveal key={s.slug}>
                 <Link href={`/services/${s.slug}`} className="card-feature h-full block">
-                  <p className="font-mono text-xs text-accent mb-3">0{s.priority}</p>
                   <h3 className="text-lg font-display text-text mb-2">{s.title}</h3>
                   <p className="text-sm text-text-muted leading-relaxed">{s.short}</p>
                 </Link>

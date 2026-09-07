@@ -45,7 +45,7 @@ export default function ReviewsSection({
               rel="noopener noreferrer"
               className="text-sm text-accent hover:underline"
             >
-              View on Google →
+              View on Google
             </a>
           </div>
         </Reveal>

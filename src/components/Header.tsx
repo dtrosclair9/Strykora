@@ -83,10 +83,7 @@ export default function Header() {
                         href={`/services/${s.slug}`}
                         className="block px-4 py-3 rounded-lg hover:bg-bg-card transition-colors"
                       >
-                        <div className="flex items-baseline justify-between">
-                          <span className="font-medium text-text">{s.title}</span>
-                          <span className="text-[10px] uppercase tracking-wider text-text-dim">0{s.priority}</span>
-                        </div>
+                        <div className="font-medium text-text">{s.title}</div>
                         <p className="text-xs text-text-muted mt-0.5 leading-relaxed">{s.eyebrow}</p>
                       </Link>
                     ))}

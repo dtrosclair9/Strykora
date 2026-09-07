@@ -313,7 +313,7 @@ export default async function ServicePage({ params }: Params) {
                 <Reveal key={p.slug}>
                   <Link href={`/blog/${p.slug}`} className="card-feature group block h-full">
                     <h3 className="text-lg font-display text-text mb-2">{p.title}</h3>
-                    <p className="text-sm text-text-muted leading-relaxed">Read the post &rarr;</p>
+                    <p className="text-sm text-text-muted leading-relaxed">Read the post</p>
                   </Link>
                 </Reveal>
               ))}
@@ -332,7 +332,6 @@ export default async function ServicePage({ params }: Params) {
             {others.map((o) => (
               <Reveal key={o.slug}>
                 <Link href={`/services/${o.slug}`} className="card-feature group block h-full">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-text-dim font-mono mb-3">0{o.priority}</p>
                   <h3 className="text-lg font-display text-text mb-2">{o.title}</h3>
                   <p className="text-sm text-text-muted leading-relaxed">{o.short}</p>
                 </Link>
