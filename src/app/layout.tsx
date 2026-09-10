@@ -3,9 +3,6 @@ import { Inter, Source_Serif_4, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import SmoothScroll from '@/components/SmoothScroll'
 import MetaPixel from '@/components/MetaPixel'
 import { site } from '@/config/site'
 
@@ -92,12 +89,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${display.variable} ${mono.variable}`}>
+      {/* Chrome (Header/Footer/SmoothScroll) lives in the (site) and (funnel)
+          route-group layouts so ad landing pages can ship without nav or the
+          street address. Only global concerns stay here. */}
       <body className="font-sans">
-        <a href="#main" className="skip-link">Skip to main content</a>
-        <SmoothScroll />
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
+        {children}
         <Analytics />
         <SpeedInsights />
         <MetaPixel />

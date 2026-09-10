@@ -6,15 +6,11 @@ import { useRouter } from 'next/navigation'
 type FormState = 'idle' | 'loading' | 'error'
 
 /**
- * Same Formspree form as the contact page, on purpose. Formspree's spam filter
- * scores each endpoint on the shape of what it usually receives, so this form
- * sends the exact same field names (name, business, email, phone, service, message)
- * with the audit-specific answers folded into `service` and `message`.
+ * Posts to /api/lead, which sends the branded instant reply to the lead and a
+ * notification to Dayne via Resend, falling back to the existing Formspree form
+ * server-side if Resend is unavailable, so a paid lead is never dropped.
  */
-const FORMSPREE_ID = 'mzdqwwed'
-const SERVICE_LABEL = 'Free website + AI search audit'
-
-export default function AuditForm() {
+export default function AuditForm({ niche = 'general' }: { niche?: string }) {
   const router = useRouter()
   const [status, setStatus] = useState<FormState>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -26,16 +22,27 @@ export default function AuditForm() {
 
     const form = e.currentTarget
     const data = new FormData(form)
-    const website = String(data.get('website') ?? '').trim()
-    data.delete('website')
-    data.set('service', SERVICE_LABEL)
-    data.set('message', `Free audit request. Current website: ${website || 'none yet'}`)
+    const utm: Record<string, string> = {}
+    try {
+      new URLSearchParams(window.location.search).forEach((v, k) => {
+        if (k.startsWith('utm_')) utm[k] = v.slice(0, 200)
+      })
+    } catch {}
 
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch('/api/lead', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: String(data.get('name') ?? '').trim(),
+          business: String(data.get('business') ?? '').trim(),
+          phone: String(data.get('phone') ?? '').trim(),
+          email: String(data.get('email') ?? '').trim(),
+          website: String(data.get('website') ?? '').trim(),
+          niche,
+          utm,
+          page: window.location.pathname,
+        }),
       })
 
       if (res.ok) {
@@ -44,7 +51,7 @@ export default function AuditForm() {
         return
       }
       const json = await res.json().catch(() => null)
-      setErrorMessage(json?.errors?.[0]?.message ?? 'Something went wrong. Please try again.')
+      setErrorMessage(json?.error ?? 'Something went wrong. Please try again, or call instead.')
       setStatus('error')
     } catch {
       setErrorMessage('Network error. Please check your connection and try again.')
