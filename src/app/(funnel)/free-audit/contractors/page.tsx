@@ -3,9 +3,9 @@ import { site } from '@/config/site'
 import FunnelAuditPage from '@/components/FunnelAuditPage'
 
 export const metadata: Metadata = {
-  title: 'Free Website & AI-Search Audit for Louisiana Contractors',
+  title: 'Free Homepage Rebuild for Contractors',
   description:
-    'Word of mouth built your business. Find out what the next customer sees when they look you up, and the three fixes that matter. Free, one business day.',
+    'Send your website and I\'ll rebuild your homepage for free so you can see it before you decide anything. Custom builds start at $3,750 and you own every file.',
   alternates: { canonical: `${site.url}/free-audit` },
   robots: { index: false, follow: true },
 }
@@ -15,10 +15,10 @@ export default function ContractorsAuditPage() {
     <FunnelAuditPage
       config={{
         niche: 'contractors',
-        eyebrow: 'Free audit · Louisiana contractors',
-        h1: 'Free website and AI-search audit for Louisiana contractors.',
+        eyebrow: 'Free homepage rebuild · for contractors',
+        h1: "I'll rebuild your contracting homepage for free.",
         lede:
-          'Word of mouth built your business, and Google cannot see any of it. Within one business day, Dayne sends back what somebody vetting you online actually finds, whether Google and ChatGPT name your company for the trade you do in the cities you work, and the three fixes that matter.',
+          'If the person who built your website stopped answering tomorrow, could you keep it running? A lot of owners find out too late that they do not have the files. Send me your website address and I\'ll rebuild your homepage for free so you can see it. I\'m Dayne, I build these out of Thibodaux, Louisiana, and one of mine, Foret Construction & Roofing, came off a rented template site. Jacob owns every file of what replaced it.',
         reviewAuthors: ['Branton Vicknair', 'Jacob Foret'],
         winSlugs: ['foret-construction', 'acadia-pools'],
       }}

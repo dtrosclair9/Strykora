@@ -18,41 +18,49 @@ export interface FunnelConfig {
 const deliverables = [
   {
     label: '01',
-    title: 'Your site, on a phone',
-    body: 'How it loads, what it looks like, and the exact spot where a customer gives up and taps the next result. Most owners have never watched their own site the way a stranger on a phone does.',
+    title: 'Your homepage, rebuilt',
+    body: 'Not a report about your website. The page itself, built for your business, on a private link you can open on your phone. Most owners have never seen what their company could look like online without paying for it first.',
   },
   {
     label: '02',
-    title: 'Can they find you?',
-    body: "Whether you show up on Google, in the AI answer at the top of Google, and inside ChatGPT for your main service in your city. Either your business gets named, or a competitor's does.",
+    title: 'Try to hire yourself',
+    body: 'Open it and see whether you can find the work you do, see a job you actually finished, and get to the phone number without hunting for it. That is how a customer judges you, and it is how you should judge the page.',
   },
   {
     label: '03',
-    title: 'The three fixes',
-    body: 'The three changes that would actually move the needle, in plain English, with a fixed price if you want Strykora to do them. The list is yours either way. Take it to anyone you like.',
+    title: 'Built to be found',
+    body: 'Set up so Google and ChatGPT can read your pages and quote them: real structure, plain answers to the questions people ask, and the data those systems look for. You will see it in the page, not in a promise.',
   },
 ]
 
 const faqs = [
   {
-    q: 'Is the audit actually free?',
-    a: 'Yes. There is no invoice and no card. You get the written reply whether or not you ever hire Strykora. Some people take the list to a friend who builds websites, and that is fine.',
+    q: 'What is the catch on the free homepage?',
+    a: 'There is no card and no invoice. Dayne builds it because showing you the work beats describing it, and because most owners have never seen their business presented properly. If you look at it and want nothing else, that is the end of it and you are out nothing.',
   },
   {
-    q: 'What does the real work cost?',
-    a: 'Custom builds start at $3,750, one fixed price, half up front and half at launch, and you own the site outright. The audit tells you whether the work is even worth doing before money comes up.',
+    q: 'What does the full site cost?',
+    a: 'Custom builds start at $3,750. The exact number depends on how many pages you need, and you get a written scope with a fixed total before you pay anything. A $500 deposit starts the build and the balance is due when you have seen the finished site and approved it.',
   },
   {
-    q: 'How long does the audit take?',
-    a: 'You get the reply within one business day. Dayne reads every form personally and writes each audit by hand, so it is specific to your business and your city, not a report spat out by software.',
+    q: 'What if I do not like the finished site?',
+    a: 'Before you approve it by email, you can cancel by email and get back every build payment you have made, without giving a reason. Not replying does not count as approving. Your existing domain and materials stay yours either way.',
+  },
+  {
+    q: 'Do I really own it?',
+    a: 'Once it is paid for, the source files and images go into a repository you control, and you can take them to any developer you like. Hosting and domain renewal are still ongoing costs, billed by those providers, and the scope lists what they are before you pay.',
   },
   {
     q: 'Will you call me?',
-    a: 'Only if you ask. The audit arrives by email. If you want to talk after reading it, the number is at the bottom of the reply, and you can also call any time.',
+    a: 'Only if you ask. Everything happens by email. The phone field on the form is optional and Dayne uses it only if you say you would rather talk.',
   },
   {
-    q: 'What happens after I read it?',
-    a: 'Nothing, unless you want it to. If the fixes make sense, Strykora sends a fixed price, a one-page scope, and a launch date. No auto-billing, no long contract.',
+    q: 'What if my website is old, or I do not have one?',
+    a: 'Send whatever exists, including a Google Business Profile or a Facebook page. Dayne looks at what is there and asks you to confirm anything he cannot tell from the outside before building.',
+  },
+  {
+    q: 'How long does the rebuilt homepage take?',
+    a: 'Within three business days of the details being confirmed. The full site takes a few days once you have sent photos and the information about your work, since that part depends on you more than on Dayne.',
   },
 ]
 
@@ -77,7 +85,7 @@ export default function FunnelAuditPage({ config }: { config: FunnelConfig }) {
             <h1 className="text-display-lg font-display text-text text-balance leading-[1.05]">{config.h1}</h1>
             <p className="text-lg md:text-xl text-text-muted text-balance leading-relaxed max-w-2xl">{config.lede}</p>
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-sm">
-              {['No card, no invoice', 'No sales call', 'Reply within one business day'].map((item) => (
+              {['No card, no invoice', 'No sales call', 'Yours to keep either way'].map((item) => (
                 <li key={item} className="flex items-center gap-2 text-text">
                   <span className="inline-flex w-5 h-5 items-center justify-center rounded-full bg-accent/15 text-accent shrink-0" aria-hidden="true">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -89,15 +97,16 @@ export default function FunnelAuditPage({ config }: { config: FunnelConfig }) {
               ))}
             </ul>
             <p className="text-sm text-text-muted border-l-2 border-accent pl-4">
-              Straight about the money: if you want the fixes done, builds start at <strong className="text-text">$3,750</strong> and
-              you own the site outright. The audit costs nothing either way.
+              Straight about the money: if you want the rest of the site, custom builds start at{' '}
+              <strong className="text-text">$3,750</strong>, a $500 deposit starts it, and every file is yours once it is
+              paid for. The rebuilt homepage costs nothing either way.
             </p>
           </Reveal>
 
           <Reveal className="lg:col-span-5 order-1 lg:order-2">
             <div className="card p-6 md:p-8" id="audit-form">
-              <p className="eyebrow mb-2">Request the audit</p>
-              <h2 className="text-2xl font-display text-text mb-5">Five fields. One business day.</h2>
+              <p className="eyebrow mb-2">Get your homepage rebuilt</p>
+              <h2 className="text-2xl font-display text-text mb-5">Your website and your email.</h2>
               <AuditForm niche={config.niche} />
             </div>
           </Reveal>
@@ -131,7 +140,7 @@ export default function FunnelAuditPage({ config }: { config: FunnelConfig }) {
       <section className="section-padding bg-bg-elevated border-y border-border" aria-labelledby="proof-heading">
         <div className="container-wide">
           <Reveal className="max-w-2xl mb-12">
-            <p className="eyebrow mb-3">Real Louisiana businesses</p>
+            <p className="eyebrow mb-3">Real businesses, real names</p>
             <h2 id="proof-heading" className="text-display-md font-display text-text text-balance">
               What happened after the first email.
             </h2>
@@ -192,20 +201,21 @@ export default function FunnelAuditPage({ config }: { config: FunnelConfig }) {
       </section>
 
       {/* Closing CTA back to the form */}
-      <section className="section-padding pt-0" aria-label="Request the audit">
+      <section className="section-padding pt-0" aria-label="Get your homepage rebuilt">
         <div className="container-wide">
           <Reveal>
             <div className="relative gradient-border">
               <div className="grid-pattern p-12 md:p-20 text-center">
                 <p className="eyebrow mb-4">Takes about a minute</p>
                 <h2 className="text-display-md font-display text-text mb-6 text-balance max-w-3xl mx-auto">
-                  Find out what your website is costing you.
+                  See your homepage rebuilt before you decide anything.
                 </h2>
                 <p className="text-text-muted text-lg max-w-xl mx-auto mb-8">
-                  Five fields, one business day, and a list you can act on with or without Strykora.
+                  Send your website and your email. You get a private link to look at, and you are not on the hook for
+                  anything.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
-                  <a href="#audit-form" className="btn-primary">Request the free audit</a>
+                  <a href="#audit-form" className="btn-primary">Rebuild my homepage free</a>
                   <a href={`tel:${site.phoneRaw}`} className="btn-secondary">Call {site.phoneDisplay}</a>
                 </div>
               </div>

@@ -72,32 +72,44 @@ export default function AuditForm({ niche = 'general' }: { niche?: string }) {
       </div>
 
       <div>
-        <label htmlFor="audit-business" className="block text-sm font-medium text-text mb-2">
-          Business name <span className="text-accent" aria-hidden="true">*</span>
+        <label htmlFor="audit-website" className="block text-sm font-medium text-text mb-2">
+          Your website <span className="text-accent" aria-hidden="true">*</span>
         </label>
-        <input id="audit-business" name="business" type="text" required autoComplete="organization" className={inputClass} placeholder="What's on the truck" />
+        <input
+          id="audit-website"
+          name="website"
+          type="text"
+          required
+          inputMode="url"
+          autoComplete="url"
+          className={inputClass}
+          placeholder="yourbusiness.com, or your Facebook or Google page"
+        />
+        <p className="mt-2 text-xs text-text-dim">
+          This is what gets rebuilt. If you do not have a website, send whichever page you do have.
+        </p>
+      </div>
+
+      <div>
+        <label htmlFor="audit-email" className="block text-sm font-medium text-text mb-2">
+          Email <span className="text-accent" aria-hidden="true">*</span>
+        </label>
+        <input id="audit-email" name="email" type="email" required autoComplete="email" className={inputClass} placeholder="you@business.com" />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="audit-phone" className="block text-sm font-medium text-text mb-2">
-            Phone <span className="text-accent" aria-hidden="true">*</span>
+          <label htmlFor="audit-business" className="block text-sm font-medium text-text mb-2">
+            Business name
           </label>
-          <input id="audit-phone" name="phone" type="tel" required autoComplete="tel" className={inputClass} placeholder="(985) 555-0100" />
+          <input id="audit-business" name="business" type="text" autoComplete="organization" className={inputClass} placeholder="What's on the truck" />
         </div>
         <div>
-          <label htmlFor="audit-email" className="block text-sm font-medium text-text mb-2">
-            Email <span className="text-accent" aria-hidden="true">*</span>
+          <label htmlFor="audit-phone" className="block text-sm font-medium text-text mb-2">
+            Phone <span className="text-text-dim font-normal">(optional)</span>
           </label>
-          <input id="audit-email" name="email" type="email" required autoComplete="email" className={inputClass} placeholder="you@business.com" />
+          <input id="audit-phone" name="phone" type="tel" autoComplete="tel" className={inputClass} placeholder="Only if you'd rather talk" />
         </div>
-      </div>
-
-      <div>
-        <label htmlFor="audit-website" className="block text-sm font-medium text-text mb-2">
-          Current website
-        </label>
-        <input id="audit-website" name="website" type="text" inputMode="url" autoComplete="url" className={inputClass} placeholder="yourbusiness.com, or leave blank if you don't have one" />
       </div>
 
       {status === 'error' && (
