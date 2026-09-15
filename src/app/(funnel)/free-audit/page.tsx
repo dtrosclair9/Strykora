@@ -39,12 +39,7 @@ const offerSchema = {
   name: 'Free homepage rebuild',
   serviceType: 'Website design',
   provider: { '@id': `${site.url}/#business` },
-  areaServed: [
-    { '@type': 'State', name: 'Louisiana' },
-    { '@type': 'State', name: 'Mississippi' },
-    { '@type': 'State', name: 'Alabama' },
-    { '@type': 'State', name: 'Texas' },
-  ],
+  areaServed: { '@type': 'Country', name: 'United States' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: `${site.url}/free-audit` },
   description,
 }

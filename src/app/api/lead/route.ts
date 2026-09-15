@@ -29,6 +29,31 @@ type LeadPayload = {
 
 const clean = (v: unknown) => String(v ?? '').trim().slice(0, MAX)
 
+/**
+ * Where the lead is, from Vercel's edge geo headers. The Meta ads run across
+ * Louisiana, Mississippi, Alabama and Texas, and Texas holds roughly 9x
+ * Louisiana's roofing establishments, so it will likely take most of the
+ * delivery. Without per-lead location we cannot tell a Texas-volume result from
+ * a Texas-quality one, and the whole four-state decision becomes unreadable.
+ *
+ * Zero friction by design: no extra form field, so it costs no conversion rate.
+ * Directional only — VPNs and mobile carriers misattribute some share.
+ */
+function leadLocation(req: Request) {
+  const h = req.headers
+  const region = h.get('x-vercel-ip-country-region') || ''
+  const city = h.get('x-vercel-ip-city') || ''
+  const country = h.get('x-vercel-ip-country') || ''
+  const decoded = city ? decodeURIComponent(city) : ''
+  const label = [decoded, region].filter(Boolean).join(', ') || 'unknown'
+  return {
+    region: region || 'unknown',
+    city: decoded || 'unknown',
+    country: country || 'unknown',
+    label: country && country !== 'US' ? `${label} (${country})` : label,
+  }
+}
+
 function esc(s: string) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 }
@@ -56,7 +81,7 @@ function replyHtml(firstName: string, business: string) {
   </table></td></tr></table></body></html>`
 }
 
-function notifyHtml(lead: Required<Pick<LeadPayload, 'name' | 'business' | 'phone' | 'email'>> & { website: string; niche: string; page: string; utmLine: string }) {
+function notifyHtml(lead: Required<Pick<LeadPayload, 'name' | 'business' | 'phone' | 'email'>> & { website: string; niche: string; page: string; utmLine: string; geo: string }) {
   const row = (k: string, v: string) =>
     `<tr><td style="padding:6px 12px 6px 0;font:600 12px Helvetica,Arial,sans-serif;color:#8a93a6;text-transform:uppercase;letter-spacing:.06em;vertical-align:top">${k}</td><td style="padding:6px 0;font:14px/1.5 Helvetica,Arial,sans-serif;color:#1c2230">${v}</td></tr>`
   return `<!doctype html><html><body style="margin:0;padding:16px;background:#ffffff">
@@ -67,6 +92,7 @@ function notifyHtml(lead: Required<Pick<LeadPayload, 'name' | 'business' | 'phon
     ${row('Website', `<a href="${esc(lead.website)}">${esc(lead.website)}</a>`)}
     ${row('Email', `<a href="mailto:${esc(lead.email)}">${esc(lead.email)}</a>`)}
     ${row('Phone', lead.phone ? `<a href="tel:${esc(lead.phone)}">${esc(lead.phone)}</a>` : 'not given — email only, do not cold call')}
+    ${row('Location', esc(lead.geo))}
     ${row('Niche page', esc(lead.niche) + ' (' + esc(lead.page) + ')')}
     ${row('Source', esc(lead.utmLine || 'no utm (direct or organic)'))}
   </table>
@@ -74,7 +100,7 @@ function notifyHtml(lead: Required<Pick<LeadPayload, 'name' | 'business' | 'phon
   </body></html>`
 }
 
-async function sendViaResend(lead: { name: string; business: string; phone: string; email: string; website: string; niche: string; page: string; utmLine: string }) {
+async function sendViaResend(lead: { name: string; business: string; phone: string; email: string; website: string; niche: string; page: string; utmLine: string; geo: string }) {
   const { Resend } = await import('resend')
   const resend = new Resend(process.env.RESEND_API_KEY)
   const from = process.env.LEAD_FROM_EMAIL || `Dayne at Strykora <dayne@${site.domain}>`
@@ -86,7 +112,7 @@ async function sendViaResend(lead: { name: string; business: string; phone: stri
     from,
     to: notifyTo,
     replyTo: lead.email,
-    subject: `Homepage rebuild request: ${lead.business || lead.website} (${lead.niche})`,
+    subject: `Homepage rebuild request: ${lead.business || lead.website} — ${lead.geo}`,
     html: notifyHtml(lead),
   })
   if (notify.error) throw new Error(notify.error.message)
@@ -106,7 +132,7 @@ async function sendViaResend(lead: { name: string; business: string; phone: stri
   }
 }
 
-async function sendViaFormspree(lead: { name: string; business: string; phone: string; email: string; website: string; niche: string; utmLine: string }) {
+async function sendViaFormspree(lead: { name: string; business: string; phone: string; email: string; website: string; niche: string; utmLine: string; geo: string }) {
   // Same field schema as the contact form. Never include dollar amounts here:
   // Formspree's spam filter has junked "$N,NNN" payloads before.
   const body = new URLSearchParams({
@@ -115,7 +141,7 @@ async function sendViaFormspree(lead: { name: string; business: string; phone: s
     email: lead.email,
     phone: lead.phone,
     service: 'Free homepage rebuild',
-    message: `Free homepage rebuild request (${lead.niche}). Site to rebuild: ${lead.website}. Phone: ${lead.phone || 'not given, email only'}. Source: ${lead.utmLine || 'none'}`,
+    message: `Free homepage rebuild request (${lead.niche}). Location: ${lead.geo}. Site to rebuild: ${lead.website}. Phone: ${lead.phone || 'not given, email only'}. Source: ${lead.utmLine || 'none'}`,
   })
   const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
     method: 'POST',
@@ -141,6 +167,7 @@ export async function POST(req: Request) {
     website: clean(payload.website),
     niche: clean(payload.niche) || 'general',
     page: clean(payload.page),
+    geo: leadLocation(req).label,
     utmLine: Object.entries(payload.utm ?? {})
       .filter(([k]) => k.startsWith('utm_'))
       .map(([k, v]) => `${k}=${clean(v)}`)
