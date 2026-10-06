@@ -12,7 +12,7 @@ declare global {
 }
 
 /** Paths that count as a lead. The thanks page is only reachable after a successful form post. */
-const LEAD_PATHS = new Set(['/free-audit/thanks'])
+const LEAD_PATHS = new Set(['/free-audit/thanks', '/9-questions/thanks'])
 
 const PIXEL_ID = site.metaPixelId
 

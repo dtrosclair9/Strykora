@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     q: 'Will you call me?',
-    a: 'Only if you ask. Everything happens by email. The phone field on the form is optional and Dayne uses it only if you say you would rather talk.',
+    a: 'Once, after your rebuilt homepage is already built and in your hands. It runs about fifteen minutes and it is a walkthrough of what changed and why, not a pitch. Dayne also looks up your domain and hosting beforehand and tells you straight whose name they are in, which takes him two minutes and is worth knowing either way. If you would rather skip it, say so in your reply and he will not call.',
   },
   {
     q: 'What if my website is old, or I do not have one?',
@@ -85,7 +85,7 @@ export default function FunnelAuditPage({ config }: { config: FunnelConfig }) {
             <h1 className="text-display-lg font-display text-text text-balance leading-[1.05]">{config.h1}</h1>
             <p className="text-lg md:text-xl text-text-muted text-balance leading-relaxed max-w-2xl">{config.lede}</p>
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-sm">
-              {['No card, no invoice', 'No sales call', 'Yours to keep either way'].map((item) => (
+              {['No card, no invoice', 'Nothing to sign', 'Yours to keep either way'].map((item) => (
                 <li key={item} className="flex items-center gap-2 text-text">
                   <span className="inline-flex w-5 h-5 items-center justify-center rounded-full bg-accent/15 text-accent shrink-0" aria-hidden="true">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -119,7 +119,7 @@ export default function FunnelAuditPage({ config }: { config: FunnelConfig }) {
           <Reveal className="max-w-2xl mb-12">
             <p className="eyebrow mb-3">What you get</p>
             <h2 id="deliverables-heading" className="text-display-md font-display text-text text-balance">
-              What is in the audit?
+              What you get, and what it costs you.
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

@@ -106,9 +106,9 @@ export default function AuditForm({ niche = 'general' }: { niche?: string }) {
         </div>
         <div>
           <label htmlFor="audit-phone" className="block text-sm font-medium text-text mb-2">
-            Phone <span className="text-text-dim font-normal">(optional)</span>
+            Phone <span className="text-accent" aria-hidden="true">*</span>
           </label>
-          <input id="audit-phone" name="phone" type="tel" autoComplete="tel" className={inputClass} placeholder="Only if you'd rather talk" />
+          <input id="audit-phone" name="phone" type="tel" required autoComplete="tel" className={inputClass} placeholder="For the walkthrough" />
         </div>
       </div>
 
@@ -123,11 +123,12 @@ export default function AuditForm({ niche = 'general' }: { niche?: string }) {
         disabled={status === 'loading'}
         className="w-full btn-primary justify-center disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {status === 'loading' ? 'Sending...' : 'Send me the free audit'}
+        {status === 'loading' ? 'Sending...' : 'Rebuild my homepage'}
       </button>
 
       <p id="audit-form-note" className="text-xs text-text-dim leading-relaxed text-center">
-        No card, no sales call. The audit comes by email within one business day.
+        No card. Your rebuilt homepage arrives on a private link within three business days of the details being
+        confirmed, and it is yours to keep either way.
       </p>
     </form>
   )
