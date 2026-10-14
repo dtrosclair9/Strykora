@@ -294,10 +294,10 @@ export default function HomePage() {
           <Reveal className="max-w-3xl mb-12">
             <p className="eyebrow mb-4">Real AI search receipts</p>
             <h2 id="ai-proof-heading" className="text-display-md font-display text-text text-balance">
-              Four clients. Multiple AI engines. Real screenshots.
+              Five clients. Multiple AI engines. Real screenshots.
             </h2>
             <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Most agencies talk about being &quot;ready for AI search.&quot; These are actual answers from ChatGPT and Perplexity, captured in the last few weeks, when real customers asked who to call. Strykora clients win across four different verticals.
+              Most agencies talk about being &quot;ready for AI search.&quot; These are actual answers from ChatGPT and Perplexity, captured between June and October 2026, when real customers asked who to call. Strykora clients win across five different verticals.
             </p>
           </Reveal>
 
@@ -374,9 +374,32 @@ export default function HomePage() {
 
           {/* Row 2: Three more clients, three different verticals, three different cities (breadth) */}
           <Reveal className="mb-4">
-            <p className="eyebrow">Breadth: three more clients, three verticals, three cities</p>
+            <p className="eyebrow">Breadth: four more clients, four verticals, four cities</p>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <Reveal>
+              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
+                <div className="relative aspect-[1100/2136] bg-white">
+                  <Image
+                    src="/images/ai-citation-chatgpt-foret-raceland.jpg"
+                    alt="Screenshot of ChatGPT naming Foret Construction and Roofing its top local pick for the best roofing company in Raceland, Louisiana."
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+                <figcaption className="p-6 border-t border-border">
+                  <p className="text-xs text-accent mb-2">ChatGPT · Foret Construction &amp; Roofing</p>
+                  <p className="text-sm text-text-muted leading-relaxed">
+                    Query: <span className="text-text">&quot;Best roofing company in Raceland.&quot;</span> Answer: &quot;My top local pick would be Foret Construction &amp; Roofing LLC.&quot; Captured October 2026.
+                  </p>
+                  <Link href="/case-studies/foret-construction" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
+                    Read the case study
+                  </Link>
+                </figcaption>
+              </figure>
+            </Reveal>
+
             <Reveal>
               <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
                 <div className="relative aspect-[1100/2136] bg-white">

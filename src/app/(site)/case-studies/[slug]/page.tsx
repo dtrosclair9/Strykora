@@ -108,6 +108,19 @@ const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: Cita
       },
     ],
   },
+  'foret-construction': {
+    heading: 'ChatGPT names Foret its top roofing pick in Raceland.',
+    intro: 'When asked for the best roofing company in Raceland, ChatGPT leads with Foret Construction & Roofing, pulls in its Google rating, address and phone number, and calls out its FORTIFIED roofing. Captured October 14, 2026.',
+    shots: [
+      {
+        src: '/images/ai-citation-chatgpt-foret-raceland.jpg',
+        engine: 'ChatGPT',
+        caption: '"Best roofing company in Raceland."',
+        highlight: '"For Raceland, Louisiana, my top local pick would be Foret Construction & Roofing LLC, based on its local presence, customer feedback, and roofing services."',
+        alt: 'Screenshot of ChatGPT naming Foret Construction and Roofing its top local pick for the best roofing company in Raceland, Louisiana.',
+      },
+    ],
+  },
 }
 
 const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string }> = {
