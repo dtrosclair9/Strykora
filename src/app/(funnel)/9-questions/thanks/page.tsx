@@ -4,8 +4,8 @@ import { site } from '@/config/site'
 import Reveal from '@/components/Reveal'
 
 export const metadata: Metadata = {
-  title: 'The 9 questions are on the way',
-  description: `Your copy of the 9 questions is on its way from ${site.name}. Here is what happens next.`,
+  title: 'Your copy of the 9 questions',
+  description: `Download the 9 questions to ask a web company before you pay them, from ${site.name}. Here is what happens next.`,
   alternates: { canonical: `${site.url}/9-questions/thanks` },
   robots: { index: false, follow: false },
 }
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 const steps = [
   {
     n: '1',
-    title: 'Check your inbox in about a minute',
-    body: 'It comes from Dayne, not from a no-reply address. If it is not there, look in spam and promotions, then call and it gets resent.',
+    title: 'A copy is on its way to your inbox',
+    body: 'It comes from Dayne, not from a no-reply address. If it does not turn up, look in spam and promotions. You do not have to wait on it either way, the download is right above.',
   },
   {
     n: '2',
@@ -34,13 +34,30 @@ export default function NineQuestionsThanksPage() {
       <div className="absolute inset-0 grid-pattern opacity-40 mask-fade-bottom" aria-hidden="true" />
       <div className="relative container-wide max-w-3xl">
         <Reveal as="div" stagger className="space-y-5">
-          <p className="eyebrow">On the way</p>
+          <p className="eyebrow">Ready</p>
           <h1 className="text-display-lg font-display text-text text-balance leading-[1.02]">
-            Got it. Check your email in a minute.
+            Got it. Here are the 9 questions.
           </h1>
           <p className="text-lg md:text-xl text-text-muted leading-relaxed">
-            Here is exactly what happens from here.
+            Open it now, or keep the copy that is on its way to your inbox.
           </p>
+        </Reveal>
+
+        {/*
+          The guide is served here directly, not gated behind email delivery.
+          The page promises it in a minute, and a lead who gave their address and
+          got nothing is the exact failure this whole funnel exists to avoid.
+        */}
+        <Reveal className="mt-9">
+          <a
+            href="/9-questions-strykora.pdf"
+            className="btn-primary"
+            target="_blank"
+            rel="noopener"
+            download
+          >
+            Download the 9 questions (PDF)
+          </a>
         </Reveal>
 
         <ol className="mt-12 space-y-4">
