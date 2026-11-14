@@ -19,6 +19,11 @@ const config: Config = {
           light: '#2A3D63',
           dark: '#131E35',
         },
+        // Third brand color (Gators orange, 2026-11-14): conversion CTAs only. Navy text on it = 5.46:1.
+        gators: {
+          DEFAULT: '#FA4616',
+          light: '#FF6A3D',
+        },
         accent: {
           DEFAULT: '#3B82F6',
           light: '#60A5FA',

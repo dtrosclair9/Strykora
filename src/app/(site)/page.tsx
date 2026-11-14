@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { services, industries, caseStudies, site, trustStrip, reviewStats } from '@/config/site'
-import HeroVideo from '@/components/HeroVideo'
+import HeroBackdrop from '@/components/HeroBackdrop'
 import Reveal from '@/components/Reveal'
 import Stars from '@/components/Stars'
 import ReviewsSection from '@/components/ReviewsSection'
@@ -138,32 +138,50 @@ export default function HomePage() {
       <Schema data={[localBusinessSchema, websiteSchema, personSchema, buildFaqSchema(faqs), howToSchema]} />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[100vh] flex items-center pt-24" aria-label="Hero">
-        <HeroVideo src="/videos/hero.mp4" poster="/images/hero-poster.jpg" />
+      <section className="hero-static" aria-label="Hero">
+        <HeroBackdrop />
 
-        <div className="relative z-10 container-wide pb-16 pt-16">
-          <Reveal as="div" stagger className="max-w-4xl space-y-6">
-            <p className="eyebrow">{site.address.city}, {site.address.state} · Web design + SEO</p>
+        <div className="hero-static__content container-wide w-full">
+          <div className="hero-static__copy space-y-6">
+            <p className="eyebrow">
+              {site.address.city}, {site.address.state} · Web design + SEO
+            </p>
+
             <h1 className="text-display-lg font-display text-text text-balance leading-[1.02]">
               We build the website.<br />
               Then we make sure <span className="gradient-text">Google sends people to&nbsp;it.</span>
             </h1>
+
             <p className="text-lg md:text-xl text-text-muted max-w-2xl text-balance leading-relaxed">
               Stop renting a templated website you&apos;ll never own. Strykora builds you a fast, custom site
               starting at $3,750, ships it in about a week, and ranks you locally (including in ChatGPT
               and Google AI Overviews) before your old agency&apos;s next invoice clears.
             </p>
+
             <div className="flex flex-wrap gap-3 pt-2">
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-conversion">
                 Start a project
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
                 </svg>
               </Link>
+
               <Link href="/case-studies" className="btn-secondary">
                 See the work
               </Link>
             </div>
+
             <a
               href={site.gbp.profile}
               target="_blank"
@@ -176,17 +194,20 @@ export default function HomePage() {
                 {reviewStats.averageRating.toFixed(1)} · {reviewStats.reviewCount} Google reviews
               </span>
             </a>
-          </Reveal>
+          </div>
 
-          {/* Trust strip */}
-          <Reveal as="div" className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border max-w-3xl" stagger>
+          <div className="hero-static__trust">
             {trustStrip.map((t) => (
-              <div key={t.label} className="bg-bg-elevated/80 backdrop-blur p-5">
-                <p className="text-[10px] uppercase tracking-[0.18em] text-text-dim">{t.label}</p>
-                <p className="mt-1 font-medium text-text">{t.value}</p>
+              <div key={t.label}>
+                <p className="text-[10px] uppercase tracking-[0.18em] text-text-dim">
+                  {t.label}
+                </p>
+                <p className="mt-1 text-sm md:text-base font-medium text-text">
+                  {t.value}
+                </p>
               </div>
             ))}
-          </Reveal>
+          </div>
         </div>
       </section>
 
@@ -668,7 +689,7 @@ export default function HomePage() {
           <Reveal>
             <div className="relative gradient-border">
               <div className="grid-pattern p-12 md:p-20 text-center">
-                <p className="eyebrow mb-4">Ready when you are</p>
+                <p className="eyebrow mb-4 text-accent-light">Ready when you are</p>
                 <h2 id="cta-heading" className="text-display-md font-display text-text mb-6 text-balance max-w-3xl mx-auto">
                   Your competitor&apos;s site loads in a second.<br/>What does yours do?
                 </h2>
@@ -676,7 +697,7 @@ export default function HomePage() {
                   Tell me about your business in 60 seconds. I&apos;ll send back a candid take, including whether Strykora is even the right fit, plus a fixed-price quote within one business day. No sales call, no pressure.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
-                  <Link href="/contact" className="btn-primary">
+                  <Link href="/contact" className="btn-conversion">
                     Start a project
                   </Link>
                   <a href={`tel:${site.phoneRaw}`} className="btn-secondary">
