@@ -5,7 +5,7 @@ import { Schema, faqSchema } from '@/components/Schema'
 
 const title = 'Free Homepage Rebuild for Trade Businesses'
 const description =
-  "Send your website and Dayne rebuilds your homepage for free, on a private link, so you can see it before deciding anything. Custom builds start at $3,750 and you own every file. No sales call."
+  "Send your website and Dayne rebuilds your homepage for free on a private link, so you can see it before deciding anything. You own every file. No sales call."
 
 export const metadata: Metadata = {
   title,

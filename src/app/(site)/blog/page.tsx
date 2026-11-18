@@ -46,7 +46,7 @@ export default function BlogPage() {
     <>
       <PageHero
         eyebrow="Blog"
-        title="Notes from the build."
+        title="Local SEO and web design notes for Louisiana businesses."
         description="Honest takes on web design, local SEO, and the Google AI search shift, written by someone who ships sites every week, not someone selling a course."
         bgImage="/images/hero-blog-index.jpg"
         bgImageAlt="Open editorial notebook on a deep navy walnut desk with electric blue rim light from above, premium editorial photography."

@@ -88,7 +88,7 @@ const SERVICE_PAGE_COPY: Record<string, {
     howWeDoIt: [
       { step: '01', title: 'Audit', body: 'Strykora checks where you rank now, what your Google Business Profile looks like, what other sites link to you, and what is broken under the hood. You get the report whether or not we work together.' },
       { step: '02', title: 'Map every job to every city', body: 'Every service in every city that matters for your business gets matched to the exact words people actually type into Google. Real search data, not guesses.' },
-      { step: '03', title: 'Fix the site', body: 'Strykora updates your page titles, search-engine code (called schema), internal links, and adds FAQ sections that compound over time. Most of this happens in the first 30 days.' },
+      { step: '03', title: 'Fix the site', body: 'Strykora fixes your page titles, headings, internal links and site speed, and rewrites thin pages so each one answers what a buyer asks before calling. Most of this happens in the first 30 days.' },
       { step: '04', title: 'Monthly retainer', body: 'New content, new links, weekly Google Business Profile posts, and a plain-English report every month. You see every move in a shared dashboard.' },
     ],
     faqs: [
@@ -105,15 +105,15 @@ const SERVICE_PAGE_COPY: Record<string, {
     howWeDoIt: [
       { step: '01', title: 'Clean up what is wrong', body: 'Strykora fixes incorrect business categories, mismatched addresses or phone numbers, and old duplicate listings on Google that are dragging your map ranking down.' },
       { step: '02', title: 'Build the profile out', body: 'Every service, every photo, every section gets written for both the map results and Google\'s AI answer. The profile looks legit because it is.' },
-      { step: '03', title: 'Weekly activity', body: 'Posts, photos, review request follow-ups, and answering questions on your profile every week. An active profile is the single biggest signal Google uses to rank you locally.' },
+      { step: '03', title: 'Weekly activity', body: 'Posts, photos, review request follow-ups, and answering questions on your profile every week. Recent reviews move the map ranking. Posts and photos mostly help the people deciding whether to call.' },
       { step: '04', title: 'Monthly report', body: 'Plain-English numbers every month: views, calls, direction requests, what people searched to find you, and how your ranking moved.' },
     ],
     faqs: [
       { q: 'Can I get just Google Business Profile help without the SEO retainer?', a: 'No. Profile work and SEO are the same job done two places, so they are bundled into the monthly Local SEO retainer. Strykora does not sell the Google Business Profile as a standalone monthly service.' },
       { q: 'Will you respond to my reviews?', a: 'Strykora drafts the response for every review and sends it to you to approve. Your brand voice stays consistent and no review slips through unanswered.' },
       { q: 'What if I have more than one location?', a: 'Each location gets its own profile with shared brand assets and location-specific content. All Out Window Tint runs two locations this way (Gonzales and Baton Rouge), each with its own lead routing.' },
-      { q: 'How does the Google Business Profile help with the AI answer at the top of Google?', a: 'Google\'s AI answer pulls heavily from your Business Profile when picking who to recommend. Built out fully, your services list, posts, and photos feed straight into whether the AI names you.' },
-      { q: 'How quickly will my map ranking move?', a: 'Profiles with weekly posts, fresh photos, and a steady stream of new reviews usually start moving up the map results in 30 to 60 days.' },
+      { q: 'How does the Google Business Profile help with the AI answer at the top of Google?', a: 'Google says its AI answer uses Business Profiles when it recommends a local business. A profile with the right category, a complete services list, accurate hours, and recent reviews gives it accurate facts to work from.' },
+      { q: 'How quickly will my map ranking move?', a: 'Profiles with the right category, complete details, and a steady stream of new reviews usually start moving up the map results in 30 to 60 days. How close you are to the person searching still matters, and no profile work changes that.' },
     ],
   },
   'google-ads': {
@@ -135,19 +135,24 @@ const SERVICE_PAGE_COPY: Record<string, {
   'ai-search-optimization': {
     howWeDoIt: [
       { step: '01', title: 'Where do you show up now?', body: 'Strykora asks ChatGPT, Perplexity, Gemini, and Google\'s AI answer the same questions your future customers ask. You get a plain-English report of where you appear, where you do not, and what the AI is recommending instead. No guessing.' },
-      { step: '02', title: 'Rewrite the site so AI can quote it', body: 'Strykora rewrites your key service pages to answer the exact questions buyers ask. Then we add the behind-the-scenes code (the industry calls it schema and llms.txt) that AI search engines look for when picking who to recommend. You never see it; the AI does.' },
+      { step: '02', title: 'Rewrite the site so AI can quote it', body: 'Strykora rewrites your key service pages to answer the exact questions buyers ask, in plain sentences an AI can quote: what you do, where, what it costs to think about, how long it takes. AI tools read the visible page, so that is where the work goes.' },
       { step: '03', title: 'Rebuild the Google profile to match', body: 'Strykora rebuilds your Google Business Profile services list so it lines up with the on-site copy. Google\'s AI answer pulls from your Business Profile, so the two have to tell the same story.' },
       { step: '04', title: 'Monthly proof', body: 'Every month you get a report showing which AI assistants named you, for which searches, and what changed since last month. If the AI stops citing you, we see it before you do.' },
     ],
     faqs: [
       { q: 'What is AI Search Optimization in plain English?', a: 'It is the work of getting your business named inside the answers that ChatGPT, Perplexity, Google\'s AI answer, and Gemini give people who ask for a recommendation. The industry calls this Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Different names, same outcome: when a customer asks an AI assistant who they should call, the AI says your name.' },
       { q: 'How is this different from your regular SEO?', a: 'Regular SEO gets you ranked in the blue links and the map results below them. AI Search Optimization gets you named in the AI answer that now sits above both. The two overlap, and Strykora bundles AI Search Optimization into the monthly Local SEO retainer at no extra cost. The standalone audit is for businesses who already have someone else doing their regular SEO and just want help showing up in AI answers.' },
-      { q: 'Why does this matter right now?', a: 'When Google shows an AI answer above the regular search results, clicks on the regular results drop 58%. Google\'s AI answer reaches over a billion people a month. And almost no Louisiana competitor is set up to show up there yet. The opening is real and the window is small.' },
+      { q: 'Why does this matter right now?', a: 'More people now ask an AI who to call. For searches like "roofer near me," Google still mostly shows the map results, so the Business Profile matters most there. AI answers show up most on question searches, like how much a new roof costs or whether gunite beats fiberglass. Being the business those answers cite puts you in front of buyers before they ever search for a company.' },
       { q: 'How do you know it worked?', a: 'Every month Strykora asks the AI assistants the same questions your customers ask, takes screenshots, and shows you when the AI named you. Hover Septic, a Strykora client, is the #1 recommendation across ChatGPT and Perplexity for "septic installs Thibodaux LA" right now. The screenshots are on the homepage.' },
-      { q: 'How much is the standalone audit?', a: 'A fixed $1,997 for the written audit plus 30 days of optimization. Includes the report across four AI engines, the rewrites on your key pages, the schema and llms.txt setup, the Google Business Profile services rebuild, and a 30-day re-check to confirm it worked. New Strykora Local SEO clients get all of this bundled into the $297-a-month retainer at no extra cost.' },
-      { q: 'Will the AI keep naming me after the 30 days end?', a: 'The structural work (schema, llms.txt, the FAQ blocks, the Business Profile rebuild) keeps working. The content side needs ongoing tune-ups because the AI engines change their rules, which is why the monthly Local SEO retainer covers ongoing maintenance. Standalone-audit clients are welcome to re-run the sprint every quarter.' },
+      { q: 'How much is the standalone audit?', a: 'A fixed $1,997 for the written audit plus 30 days of optimization. Includes the report across four AI engines, the rewrites on your key pages, the list of local sites and directories you are missing from, the Google Business Profile services rebuild, and a 30-day re-check to confirm it worked. New Strykora Local SEO clients get all of this bundled into the $297-a-month retainer at no extra cost.' },
+      { q: 'Will the AI keep naming me after the 30 days end?', a: 'The rewritten pages and the Business Profile rebuild keep working. The AI tools change how they answer, new competitors show up, and reviews age, so it needs ongoing attention, which is why the monthly Local SEO retainer covers it. Standalone-audit clients are welcome to re-run the sprint every quarter.' },
     ],
   },
+}
+
+/** "Local SEO" -> "local SEO", "Google Ads" stays "Google Ads": lowercase ordinary words, keep acronyms and brand names. */
+function midSentence(title: string) {
+  return title.split(' ').map((w) => (w === w.toUpperCase() || ['Google', 'Business', 'Profile', 'Ads', 'AI'].includes(w) ? w : w.toLowerCase())).join(' ')
 }
 
 export default async function ServicePage({ params }: Params) {
@@ -187,7 +192,8 @@ export default async function ServicePage({ params }: Params) {
       <PageHero
         eyebrow={service.eyebrow}
         title={`${service.title} in Louisiana`}
-        description={service.long}
+        description={service.short}
+        actions
         bgImage={heroImg?.src}
         bgImageAlt={heroImg?.alt}
         breadcrumbs={[
@@ -201,7 +207,8 @@ export default async function ServicePage({ params }: Params) {
         <div className="container-wide grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7">
             <Reveal>
-              <h2 className="text-display-md font-display text-text mb-6 text-balance">What you get</h2>
+              <p className="text-text-muted text-lg leading-relaxed mb-10">{service.long}</p>
+              <h2 className="text-display-md font-display text-text mb-6 text-balance">What {midSentence(service.title)} from Strykora includes</h2>
               <ul className="space-y-4">
                 {service.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-3 text-text-muted">

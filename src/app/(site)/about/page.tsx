@@ -135,7 +135,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ReviewsSection heading="What clients say about working with Strykora." eyebrow="Reviews" />
+      {/* Two reviews plus a link: the full list lives on /reviews, and repeating it here made the two pages 91% identical (audit 2026-11-18). */}
+      <ReviewsSection limit={2} featuredOnly heading="What clients say about working with Strykora." eyebrow="Reviews" showSeeAllLink />
 
       <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="about-faq-heading">
         <div className="container-narrow">

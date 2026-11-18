@@ -84,7 +84,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'Can you build during hurricane season?',
-        a: 'Yes. Strykora can ship a new roofer site in about a week, which means you can be live and ranking before the next named storm rolls into the Gulf.',
+        a: 'Yes. Tell Strykora your deadline on the first call and the build gets scheduled around it. If you want to be found when storm calls spike, start early, because rankings take longer than a launch.',
       },
       {
         q: 'What does a Louisiana roofer site cost?',
@@ -125,7 +125,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'How long does a Louisiana contractor site take to build?',
-        a: 'Most builds ship live in about a week. The stack is dialed in and you work directly with the builder, no agency handoffs.',
+        a: 'Most builds go live about a week after the build starts. The stack is dialed in and you work directly with the builder, no agency handoffs.',
       },
     ],
   },
@@ -236,7 +236,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'How long does a commercial operator site take to build?',
-        a: 'Most builds ship live in about a week, with optional confidential pre-launch staging for procurement review and client sign-off.',
+        a: 'Most builds go live about a week after the build starts, with optional confidential pre-launch staging for procurement review and client sign-off.',
       },
     ],
   },
@@ -408,7 +408,7 @@ export default async function IndustryPage({ params }: Params) {
         </div>
       </section>
 
-      <CTA heading={`Ready to outrank the other ${industry.title.toLowerCase()} in your city?`} />
+      <CTA heading={`Ready to outrank the ${industry.slug.startsWith('commercial') ? 'other commercial businesses' : `other ${industry.title.toLowerCase()}`} in your city?`} />
     </>
   )
 }

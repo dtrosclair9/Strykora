@@ -10,7 +10,9 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: `${site.url}/9-questions/roofers` },
+  // Ad landing variant: the copy matches /9-questions, so Google indexes only the parent.
+  alternates: { canonical: `${site.url}/9-questions` },
+  robots: { index: false, follow: true },
   openGraph: {
     title,
     description,

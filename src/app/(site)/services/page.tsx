@@ -31,7 +31,7 @@ export default function ServicesPage() {
       <Schema data={itemListSchema} />
       <PageHero
         eyebrow="Services"
-        title="Built to stack."
+        title="Web design, SEO and Google Ads for Louisiana businesses."
         description="Four services. Web design leads, SEO compounds on top of it, Google Business Profile grabs the map results, ads fill the gap while SEO is still building."
         bgImage="/images/hero-services-index.jpg"
         bgImageAlt="Glowing translucent service cards stacking upward in deep navy space, each card brighter than the one below, representing how Strykora's four services build on each other."
@@ -157,13 +157,13 @@ export default function ServicesPage() {
               {
                 situation: 'My Google Business Profile is empty or stuck with my last agency.',
                 lead: 'Google Business Profile first.',
-                why: 'The map results drive more calls than the regular Google results for most service businesses. Strykora rebuilds the profile, posts weekly, and lines it up with the rest of your site.',
+                why: 'The map results drive more calls than the regular Google results for most service businesses. Strykora rebuilds the profile, keeps the reviews coming, and lines it up with the rest of your site.',
                 href: '/services/google-business-profile',
               },
               {
                 situation: 'My SEO is fine but ChatGPT and Google\'s AI answer never name me.',
                 lead: 'AI Search Optimization first.',
-                why: 'The AI answers above the regular Google results are eating clicks. Strykora rewrites your key pages and the behind-the-scenes code (schema and llms.txt) so ChatGPT, Perplexity, and Google\'s AI answer name your business directly.',
+                why: 'AI tools recommend businesses from what they can read about you: your pages, your Business Profile, your reviews, and other sites that mention you. Strykora finds where you are missing and fixes those places first.',
                 href: '/services/ai-search-optimization',
               },
             ].map((item) => (

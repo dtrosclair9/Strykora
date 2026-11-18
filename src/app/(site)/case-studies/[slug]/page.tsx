@@ -14,12 +14,21 @@ export function generateStaticParams() {
 
 type Params = { params: Promise<{ slug: string }> }
 
+/** Cut a blurb to 160 characters at the last full sentence, else the last whole word, so meta descriptions never end mid-word. */
+function trimDescription(text: string, max = 160): string {
+  if (text.length <= max) return text
+  const cut = text.slice(0, max)
+  const sentence = cut.lastIndexOf('. ')
+  if (sentence > 90) return cut.slice(0, sentence + 1)
+  return cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:]$/, '') + '.'
+}
+
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params
   const c = caseStudies.find((cs) => cs.slug === slug)
   if (!c) return {}
-  const title = `${c.client} Case Study: ${c.industry} in ${c.city.split(',')[0]}`
-  const description = c.blurb.length > 160 ? c.blurb.slice(0, 157) + '...' : c.blurb
+  const title = `${c.client}: ${c.industry} Case Study`
+  const description = trimDescription(c.blurb)
   return {
     title,
     description,
@@ -43,8 +52,8 @@ interface CitationShot {
 
 const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: CitationShot[] }> = {
   'hover-septic': {
-    heading: 'Three AI engines. One client. All recommend Hover by name.',
-    intro: 'When a real customer asks any of the major AI assistants for the best septic installer in Thibodaux, Hover Septic wins. These screenshots were captured in June 2026.',
+    heading: 'ChatGPT and Perplexity both recommend Hover by name.',
+    intro: 'When we asked ChatGPT and Perplexity for the best septic installer in Thibodaux, both put Hover Septic first. These screenshots were captured in June 2026. AI answers change over time, so we re-check them every month.',
     shots: [
       {
         src: '/images/ai-citation-perplexity-hover.jpg',
@@ -159,7 +168,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Wix site retired. Rebuilt as a custom site Foret owns outright, no more monthly Wix bill',
       'Nine city landing pages targeting "roof replacement [city] la" searches across South Louisiana',
       'FORTIFIED, GAF, and Owens Corning credentials moved above the fold where storm-season buyers actually look',
-      'The behind-the-scenes code (schema and llms.txt) on every page, so Google\'s AI answer and ChatGPT can recommend Foret by name',
+      'Every service and city page written to answer what storm-season buyers ask, in plain sentences Google\'s AI answer and ChatGPT can quote',
       'Google Business Profile fully rebuilt with photos, weekly posts, and a services list that matches the site',
       'Monthly Local SEO retainer to keep the rankings growing',
     ],
@@ -214,8 +223,8 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Six service pages mapped to what Acadia actually does: custom gunite pools, renovation, water features, outdoor living, turf installation, pool maintenance',
       'Owner story written in Matt\'s voice, not generic "trusted local builder" agency boilerplate',
       'Google Business Profile rebuilt with photos, services, and a regular post schedule lined up with the on-site copy',
-      'The behind-the-scenes code AI search engines look for (schema and llms.txt) plus page copy written so AI can quote it directly, all tuned for Thibodaux pool builder searches',
-      'Trust signals surfaced where buyers look: licensed and insured, open seven days a week, People\'s Choice Award, free consultations',
+      'Page copy that answers what pool buyers ask (cost, timeline, gunite vs fiberglass) in plain sentences AI tools can quote, aimed at Thibodaux pool builder searches',
+      'Trust signals surfaced where buyers look: insured, People\'s Choice Award, free quotes',
     ],
     result: 'When a real customer asks Perplexity for a pool builder in Thibodaux, Acadia Pools is the first name in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity pulls Matt\'s phone number (985) 413-2954 and the "custom gunite pool and spa builder" wording directly from the page copy Strykora built. The AI started naming Acadia within months of launch.',
     coverAlt: 'Completed inground pool and patio built by Acadia Pools in Thibodaux, Louisiana.',

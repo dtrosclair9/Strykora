@@ -14,8 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
     { url: `${base}/free-audit`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/9-questions`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/9-questions/roofers`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/9-questions/contractors`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/reviews`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },

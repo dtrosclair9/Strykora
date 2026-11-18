@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Reveal from './Reveal'
 import { Schema, breadcrumbSchema } from './Schema'
+import { site } from '@/config/site'
 
 interface PageHeroProps {
   eyebrow?: string
@@ -11,9 +12,11 @@ interface PageHeroProps {
   /** Optional background image. Renders behind the hero text with a left-weighted readability gradient. */
   bgImage?: string
   bgImageAlt?: string
+  /** Show "Start a project" and tap-to-call under the description, so the first phone screen has a next step. */
+  actions?: boolean
 }
 
-export default function PageHero({ eyebrow, title, description, breadcrumbs, bgImage, bgImageAlt }: PageHeroProps) {
+export default function PageHero({ eyebrow, title, description, breadcrumbs, bgImage, bgImageAlt, actions }: PageHeroProps) {
   return (
     <>
       {breadcrumbs && breadcrumbs.length > 1 && (
@@ -58,6 +61,12 @@ export default function PageHero({ eyebrow, title, description, breadcrumbs, bgI
             <h1 className="text-display-lg font-display text-text text-balance leading-[1.02]">{title}</h1>
             {description && (
               <p className="text-lg md:text-xl text-text-muted text-balance leading-relaxed max-w-3xl">{description}</p>
+            )}
+            {actions && (
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Link href="/contact" className="btn-conversion">Start a project</Link>
+                <a href={`tel:${site.phoneRaw}`} className="btn-secondary">Call {site.phoneDisplay}</a>
+              </div>
             )}
           </Reveal>
         </div>

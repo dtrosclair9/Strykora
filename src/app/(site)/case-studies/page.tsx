@@ -40,7 +40,7 @@ export default function CaseStudiesPage() {
       <Schema data={itemListSchema} />
       <PageHero
         eyebrow="Case studies"
-        title="The work, with receipts."
+        title="Louisiana web design and SEO case studies."
         description="Strykora doesn't fabricate testimonials. Real Louisiana clients, what got built, what changed, and what it cost."
         breadcrumbs={[
           { href: '/', label: 'Home' },

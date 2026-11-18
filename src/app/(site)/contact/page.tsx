@@ -6,7 +6,7 @@ import ContactForm from '@/components/ContactForm'
 import { Schema } from '@/components/Schema'
 
 export const metadata: Metadata = {
-  title: 'Contact Strykora — Start a Louisiana Web Project',
+  title: 'Contact: Start a Louisiana Web Design or SEO Project',
   description: `Start a web design or local SEO project with ${site.name} in ${site.address.city}, LA. Dayne replies personally within one business day with a fixed-price quote. No sales call.`,
   alternates: { canonical: `${site.url}/contact` },
 }
@@ -18,7 +18,7 @@ const contactFaqs = [
   },
   {
     q: 'How fast can you actually start?',
-    a: 'Most builds kick off within 7 to 10 days of the deposit. A full website typically goes live inside two to three weeks. Tight deadlines get answered honestly before any money changes hands.',
+    a: 'Most builds kick off within 7 to 10 days of the deposit. A full website typically goes live inside two to three weeks of the deposit, which is about a week of build time once it starts. Tight deadlines get answered honestly before any money changes hands.',
   },
   {
     q: 'Do you do free audits?',
@@ -126,7 +126,7 @@ export default function ContactPage() {
           <Reveal className="lg:col-span-5">
             <p className="eyebrow mb-4">Before you write</p>
             <h2 className="text-display-md font-display text-text text-balance">
-              The five things I&apos;ll ask anyway.
+              Six things I&apos;ll ask anyway.
             </h2>
             <p className="mt-5 text-text-muted text-lg leading-relaxed">
               Save us a round of email. If you can include any of these in the first message, the response you get back will be specific instead of generic.

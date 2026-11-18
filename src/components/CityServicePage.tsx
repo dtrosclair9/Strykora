@@ -115,10 +115,11 @@ const COMBO_BULLETS: Record<string, string[]> = {
     'Month to month, with no 12-month commitment and no fee for leaving early',
   ],
 }
+COMBO_BULLETS['digital-marketing-baton-rouge-la'] = COMBO_BULLETS['digital-marketing-thibodaux-la']
 /** Pages that state prices once, in "What it costs" and the cost FAQ, instead of in every box (Dayne 2026-11-17: trim). */
 const PRICE_ONCE = new Set(['digital-marketing-thibodaux-la'])
 /** These combos carry their own FAQs; the shared city FAQs are about local SEO and would duplicate the SEO page. */
-const SKIP_CITY_FAQS = new Set(['digital-marketing-thibodaux-la'])
+const SKIP_CITY_FAQS = new Set(['digital-marketing-thibodaux-la', 'digital-marketing-baton-rouge-la'])
 
 /**
  * Per-combo FAQs shown ahead of the shared city FAQs and included in FAQPage schema.
@@ -138,6 +139,20 @@ const COMBO_EXTRA_FAQS: Record<string, { q: string; a: string }[]> = {
       a: 'No. SEO and Google Ads are month to month, and there is no fee if you stop. Your website is a one-time project, and it is yours when it is done.',
     },
   ],
+  'digital-marketing-baton-rouge-la': [
+    {
+      q: 'What does a digital marketing agency in Baton Rouge do for a service business?',
+      a: 'At Strykora it means your website, local SEO, your Google Business Profile and Google Ads, all run by the person who builds the site. It does not include managing Facebook or Instagram, photo shoots or video.',
+    },
+    {
+      q: 'Is one agency for everything better than separate vendors?',
+      a: 'Usually, for a service business. The ads send people to pages built to turn them into calls, and the SEO work happens on the same site. With separate vendors, nobody owns the whole picture when the leads slow down.',
+    },
+    {
+      q: 'Do I have to sign a contract?',
+      a: 'No. SEO and Google Ads run month to month with no fee to stop. The website is a one-time project, and it is yours when it is done.',
+    },
+  ],
   'web-design-baton-rouge-la': [
     {
       q: 'How much does web design cost in Baton Rouge?',
@@ -150,6 +165,69 @@ const COMBO_EXTRA_FAQS: Record<string, { q: string; a: string }[]> = {
     {
       q: 'Can you meet in person in Baton Rouge?',
       a: 'Strykora is in Thibodaux, about an hour out. Most projects run entirely over phone calls and emailed drafts, and that has worked for our existing Baton Rouge metro clients. If a project needs a face-to-face, ask. It is about an hour of driving, so a sit-down is doable when it matters.',
+    },
+  ],
+}
+
+/**
+ * City FAQs for the web design pages. CITY_COPY faqs are about ranking, so they stay on the SEO pages;
+ * without this split each city's design and SEO pages repeated the same answers (audit 2026-11-18).
+ */
+const WEB_DESIGN_CITY_FAQS: Record<string, { q: string; a: string }[]> = {
+  'thibodaux-la': [
+    {
+      q: 'Do I need a website if most of my work comes from referrals?',
+      a: 'Yes, because the person who got the referral looks you up before calling. In a word-of-mouth town, the website backs up what the neighbor said: photos of real jobs, the towns you cover, and a phone number that is easy to tap.',
+    },
+    {
+      q: 'Can the site show my work around Lafourche Parish?',
+      a: 'Yes. Each service you want calls for gets its own page, and the gallery says where each job was done, so a buyer in Raceland, Lockport or Cut Off can see work near them.',
+    },
+    {
+      q: 'What do you need from me to build the site?',
+      a: 'Your logo if you have one, your list of services and the towns you work, photos of real jobs, and about an hour on the phone. Strykora writes the copy and sends you drafts to approve.',
+    },
+  ],
+  'houma-la': [
+    {
+      q: 'What should a Houma service business website show first?',
+      a: 'That you work in Terrebonne Parish: the towns you cover, like Bayou Blue, Gray and Chauvin, recent job photos, and a phone number at the top. Buyers here want to know you are local before they read anything else.',
+    },
+    {
+      q: 'Will my site load on a weak phone signal?',
+      a: 'Strykora builds lightweight sites that load the main content first, which matters down the bayou where the signal drops. Every site gets checked on a phone before it goes live.',
+    },
+    {
+      q: 'Should storm work get its own page?',
+      a: 'If you do storm work, like roof tarping, generator installs or debris cleanup, yes. People search for those jobs by name right after a storm, and a page for each one is how you show up.',
+    },
+  ],
+  'new-orleans-la': [
+    {
+      q: 'Can a Thibodaux company build a site for a New Orleans business?',
+      a: 'Yes. Most of the work runs over calls and shared drafts, and Strykora is about an hour from the city. What matters more is that the site is written about the parishes you serve, Orleans, Jefferson or St. Tammany, and shows your New Orleans jobs.',
+    },
+    {
+      q: 'What makes a New Orleans service website get calls?',
+      a: 'Buyers here compare several options before they call, so reviews, photos of recent jobs, and the neighborhoods you serve need to sit near the top. A site that hides that on a portfolio page loses to one that shows it right away.',
+    },
+    {
+      q: 'Should Metairie, Kenner or the Northshore get their own pages?',
+      a: 'If you actually take work there, yes. A page for each area you serve, written about that area, does better than one page that lists every town.',
+    },
+  ],
+  'lafayette-la': [
+    {
+      q: 'Will a site built in Thibodaux feel local to Lafayette buyers?',
+      a: 'It should, because it is written about Acadiana: the parishes and towns you cover and your own job photos. The copy is written for your market, not pulled from a template.',
+    },
+    {
+      q: 'What should a Lafayette service website include?',
+      a: 'A page for each main service, the towns you cover such as Broussard, Youngsville, Scott or Carencro, real job photos, and a phone number that is easy to tap. That is what buyers here look for before they call.',
+    },
+    {
+      q: 'Is my old site worth keeping?',
+      a: 'If it loads fast, ranks for something, and you can update it, maybe. If it is a slow template you rent month to month, a rebuild you own is usually the better spend.',
     },
   ],
 }
@@ -183,7 +261,7 @@ const CITY_COPY: Record<string, CityMarketCopy> = {
     faqs: [
       {
         q: 'How competitive is the Houma SEO market?',
-        a: 'Mid-competitive. Several established Houma service businesses rank decent on Google, but most are stuck on slow WordPress sites with thin content. A faster, custom-built site with a properly set up Google Business Profile usually overtakes them in 90 to 120 days.',
+        a: 'Mid-competitive. Several established Houma service businesses rank decent on Google, but most are stuck on slow WordPress sites with thin content. A faster site with more useful pages and a properly set up Google Business Profile can overtake them. How long that takes depends on your trade and how far behind you start.',
       },
       {
         q: 'Do I need a separate Houma site or just a Houma page?',
@@ -298,7 +376,11 @@ export default function CityServicePage({ slug }: Props) {
       },
     },
   ]
-  const pageFaqs = [...(COMBO_EXTRA_FAQS[slug] ?? []), ...(SKIP_CITY_FAQS.has(slug) ? [] : cityCopy?.faqs ?? [])]
+  const isWebDesign = combo.service === 'web-design'
+  const cityFaqs = isWebDesign ? WEB_DESIGN_CITY_FAQS[city.slug] ?? [] : cityCopy?.faqs ?? []
+  // Baton Rouge web design carries its own three FAQs; adding the city ones would repeat the SEO page.
+  const sharedCityFaqs = SKIP_CITY_FAQS.has(slug) || (isWebDesign && COMBO_EXTRA_FAQS[slug]) ? [] : cityFaqs
+  const pageFaqs = [...(COMBO_EXTRA_FAQS[slug] ?? []), ...sharedCityFaqs]
   if (pageFaqs.length > 0) {
     schemas.push(buildFaqSchema(pageFaqs))
   }
@@ -310,6 +392,7 @@ export default function CityServicePage({ slug }: Props) {
         eyebrow={`${city.name}, ${city.state}`}
         title={title}
         description={COMBO_HERO_DESCRIPTION[slug] ?? `${service.short} Built for ${city.name} businesses by an operator in ${site.address.city}.`}
+        actions
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: `/${slug}`, label: title },
@@ -327,7 +410,7 @@ export default function CityServicePage({ slug }: Props) {
                 <>
                   <p className="text-text-muted leading-relaxed mb-4">{cityCopy.marketContext}</p>
                   <p className="text-text-muted leading-relaxed mb-6">
-                    {cityCopy.buyerSnapshot} Strykora builds that website for you, and you own it outright.{!PRICE_ONCE.has(slug) && <> <span className="text-text">{service.priceRange}</span></>}
+                    {cityCopy.buyerSnapshot} {LEAD_IN[combo.service] ?? LEAD_IN['web-design']}{!PRICE_ONCE.has(slug) && <> <span className="text-text">{service.priceRange}</span></>}
                   </p>
                 </>
               ) : (
@@ -479,8 +562,19 @@ export default function CityServicePage({ slug }: Props) {
 const COMBO_LABEL: Record<string, { title: string; phrase: string }> = {
   'digital-marketing': { title: 'Digital Marketing Agency', phrase: 'digital marketing' },
 }
+/** Lowercase for mid-sentence use, but keep acronyms: "Local SEO" -> "local SEO", not "local seo". */
+function midSentence(title: string) {
+  return title.split(' ').map((w) => (w === w.toUpperCase() ? w : w.toLowerCase())).join(' ')
+}
 function comboLabel(comboService: string, serviceTitle: string) {
-  return COMBO_LABEL[comboService] ?? { title: serviceTitle, phrase: serviceTitle.toLowerCase() }
+  return COMBO_LABEL[comboService] ?? { title: serviceTitle, phrase: midSentence(serviceTitle) }
+}
+
+/** Sentence after the city's buyer snapshot, matched to what the page sells. */
+const LEAD_IN: Record<string, string> = {
+  'web-design': 'Strykora builds that website for you, and you own it outright.',
+  seo: 'Strykora\'s job is to make sure your business is the one they find, in the map results and the listings below them.',
+  'digital-marketing': 'Strykora builds the website and runs the search work that sends people to it.',
 }
 
 export function buildMetadata(slug: string) {

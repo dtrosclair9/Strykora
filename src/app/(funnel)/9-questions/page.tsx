@@ -5,7 +5,7 @@ import { Schema } from '@/components/Schema'
 
 const title = '9 Questions To Ask A Web Company Before You Pay Them'
 const description =
-  'A free checklist for contractors. Nine questions that tell you who owns your website, your domain and your hosting, and what a straight answer to each one sounds like. No card.'
+  'A free checklist for trade businesses: nine questions that show who owns your website, domain and hosting, and what a straight answer sounds like.'
 
 export const metadata: Metadata = {
   title,

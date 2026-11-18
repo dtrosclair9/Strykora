@@ -31,7 +31,7 @@ export default function IndustriesPage() {
       <Schema data={itemListSchema} />
       <PageHero
         eyebrow="Industries"
-        title="Built for Louisiana service and commercial businesses."
+        title="Web design and SEO for Louisiana service and commercial businesses."
         description="Generic agencies sell the same package to a roofer, a SaaS startup, and a law firm. Strykora picks lanes and goes deep. These are the verticals Strykora knows cold, and where the case studies prove the model works."
         bgImage="/images/hero-industries-index.jpg"
         bgImageAlt="Excavator working at the water's edge on a South Louisiana marine job site, photographed by a Strykora client."

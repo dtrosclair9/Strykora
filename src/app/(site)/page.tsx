@@ -76,7 +76,7 @@ const processSteps = [
 const faqs = [
   {
     q: 'How long does a custom website take to build?',
-    a: `Most Strykora websites ship live in about one week. The stack is dialed in and you work directly with the builder, so there are no agency handoffs, offshore queues, or design committees slowing the project down.`,
+    a: `Most Strykora websites go live about a week after the build starts. The stack is dialed in and you work directly with the builder, so there are no agency handoffs, offshore queues, or design committees slowing the project down.`,
   },
   {
     q: 'How much does a Strykora website cost?',
@@ -148,14 +148,13 @@ export default function HomePage() {
             </p>
 
             <h1 className="text-display-lg font-display text-text text-balance leading-[1.02]">
-              We build the website.<br />
-              Then we make sure <span className="gradient-text">Google sends people to&nbsp;it.</span>
+              Louisiana web design, built so <span className="gradient-text">Google sends people to&nbsp;it.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-text-muted max-w-2xl text-balance leading-relaxed">
               Stop renting a templated website you&apos;ll never own. Strykora builds you a fast, custom site
-              starting at $3,750, ships it in about a week, and ranks you locally (including in ChatGPT
-              and Google AI Overviews) before your old agency&apos;s next invoice clears.
+              starting at $3,750 that you own outright, then does the local SEO that gets it found in Google,
+              in the map results, and in AI answers like ChatGPT.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
@@ -177,7 +176,11 @@ export default function HomePage() {
                 </svg>
               </Link>
 
-              <Link href="/case-studies" className="btn-secondary">
+              <a href={`tel:${site.phoneRaw}`} className="btn-secondary">
+                Call {site.phoneDisplay}
+              </a>
+
+              <Link href="/case-studies" className="btn-secondary hidden sm:inline-flex">
                 See the work
               </Link>
             </div>
@@ -322,10 +325,10 @@ export default function HomePage() {
             </p>
           </Reveal>
 
-          {/* Row 1: Hover Septic — same query, three engines, all #1 (depth) */}
+          {/* Row 1: Hover Septic, two AI tools, three answers (depth) */}
           <Reveal className="mb-4">
             <div className="flex items-baseline justify-between flex-wrap gap-3 mb-4">
-              <p className="eyebrow">Depth: one client, three engines</p>
+              <p className="eyebrow">Depth: one client, two AI tools, three answers</p>
               <Link href="/case-studies/hover-septic" className="text-sm text-accent hover:underline">
                 See the Hover Septic case study
               </Link>
