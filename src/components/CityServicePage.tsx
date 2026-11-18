@@ -217,14 +217,13 @@ export default function CityServicePage({ slug }: Props) {
   const service = services.find((s) => s.slug === serviceKey)
   const city = cities.find((c) => c.slug === combo.citySlug)
   if (!service || !city) return null
+  const label = comboLabel(combo.service, service.title)
 
   const cityCopy = CITY_COPY[city.slug]
   const otherCombos = cityServiceCombos.filter((c) => c.citySlug === city.slug && c.slug !== slug)
-  const otherCities = cityServiceCombos.filter(
-    (c) => SERVICE_BY_COMBO_SLUG[c.service] === service.slug && c.citySlug !== city.slug
-  )
+  const otherCities = cityServiceCombos.filter((c) => c.service === combo.service && c.citySlug !== city.slug)
 
-  const title = `${service.title} in ${city.name}, ${city.state}`
+  const title = `${label.title} in ${city.name}, ${city.state}`
 
   const schemas: object[] = [
     {
@@ -238,7 +237,7 @@ export default function CityServicePage({ slug }: Props) {
         name: city.name,
         containedInPlace: { '@type': 'AdministrativeArea', name: city.parish },
       },
-      serviceType: service.title,
+      serviceType: label.title,
       url: `${site.url}/${slug}`,
       offers: {
         '@type': 'Offer',
@@ -270,7 +269,7 @@ export default function CityServicePage({ slug }: Props) {
           <div className="lg:col-span-7 space-y-10">
             <Reveal>
               <h2 className="text-display-md font-display text-text mb-6 text-balance">
-                Why hire Strykora for {service.title.toLowerCase()} in {city.name}?
+                Why hire Strykora for {label.phrase} in {city.name}?
               </h2>
               {cityCopy ? (
                 <>
@@ -281,7 +280,7 @@ export default function CityServicePage({ slug }: Props) {
                 </>
               ) : (
                 <p className="text-text-muted leading-relaxed mb-6">
-                  Strykora ships a faster, more local, more credible {service.title.toLowerCase()} answer for {city.name} buyers, owned outright by you. <span className="text-text">{service.priceRange}</span>
+                  Strykora ships a faster, more local, more credible {label.phrase} answer for {city.name} buyers, owned outright by you. <span className="text-text">{service.priceRange}</span>
                 </p>
               )}
               <ul className="space-y-3">
@@ -319,7 +318,7 @@ export default function CityServicePage({ slug }: Props) {
                   <dl className="space-y-2 text-sm">
                     <div className="flex justify-between"><dt className="text-text-dim">City</dt><dd className="text-text">{city.name}, {city.state}</dd></div>
                     <div className="flex justify-between"><dt className="text-text-dim">Parish</dt><dd className="text-text">{city.parish}</dd></div>
-                    <div className="flex justify-between"><dt className="text-text-dim">Service</dt><dd className="text-text">{service.title}</dd></div>
+                    <div className="flex justify-between"><dt className="text-text-dim">Service</dt><dd className="text-text">{label.title}</dd></div>
                     <div className="flex justify-between"><dt className="text-text-dim">Pricing</dt><dd className="text-text text-right">{service.priceRange}</dd></div>
                     <div className="flex justify-between"><dt className="text-text-dim">Ownership</dt><dd className="text-text">Yours</dd></div>
                   </dl>
@@ -332,7 +331,7 @@ export default function CityServicePage({ slug }: Props) {
                       {otherCombos.map((o) => (
                         <li key={o.slug}>
                           <Link href={`/${o.slug}`} className="text-sm text-text-muted hover:text-text transition-colors">
-                            {services.find((s) => s.slug === (SERVICE_BY_COMBO_SLUG[o.service] ?? o.service))?.title} in {o.cityName}
+                            {comboLabel(o.service, services.find((s) => s.slug === (SERVICE_BY_COMBO_SLUG[o.service] ?? o.service))?.title ?? '').title} in {o.cityName}
                           </Link>
                         </li>
                       ))}
@@ -349,7 +348,7 @@ export default function CityServicePage({ slug }: Props) {
       </section>
 
       {COMBO_DEEP_DIVE[slug] && (
-        <section className="section-padding border-t border-border" aria-label={`More about ${service.title.toLowerCase()} in ${city.name}`}>
+        <section className="section-padding border-t border-border" aria-label={`More about ${label.phrase} in ${city.name}`}>
           <div className="container-narrow space-y-12">
             {COMBO_DEEP_DIVE[slug].map((sec) => (
               <Reveal key={sec.heading}>
@@ -371,7 +370,7 @@ export default function CityServicePage({ slug }: Props) {
             <Reveal className="mb-10">
               <p className="eyebrow mb-3">FAQ</p>
               <h2 id="city-faq-heading" className="text-display-md font-display text-text text-balance">
-                {service.title} in {city.name}: common questions.
+                {label.title} in {city.name}: common questions.
               </h2>
             </Reveal>
             <div className="space-y-3">
@@ -398,7 +397,7 @@ export default function CityServicePage({ slug }: Props) {
           <div className="container-wide">
             <Reveal className="mb-10">
               <p className="eyebrow mb-3">Also serving</p>
-              <h2 className="text-display-md font-display text-text">{service.title} in other Louisiana cities.</h2>
+              <h2 className="text-display-md font-display text-text">{label.title} in other Louisiana cities.</h2>
             </Reveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {otherCities.map((o) => (
@@ -416,9 +415,20 @@ export default function CityServicePage({ slug }: Props) {
         </section>
       )}
 
-      <CTA heading={`Ready for ${service.title.toLowerCase()} that actually ranks in ${city.name}?`} />
+      <CTA heading={`Ready for ${label.phrase} that actually ranks in ${city.name}?`} />
     </>
   )
+}
+
+/**
+ * Digital-marketing combos reuse the SEO service's details, but need their OWN heading: without this both
+ * /digital-marketing-thibodaux-la and /seo-thibodaux-la said "Local SEO in Thibodaux, LA" (Dayne 2026-11-17).
+ */
+const COMBO_LABEL: Record<string, { title: string; phrase: string }> = {
+  'digital-marketing': { title: 'Digital Marketing Agency', phrase: 'digital marketing' },
+}
+function comboLabel(comboService: string, serviceTitle: string) {
+  return COMBO_LABEL[comboService] ?? { title: serviceTitle, phrase: serviceTitle.toLowerCase() }
 }
 
 export function buildMetadata(slug: string) {
@@ -428,7 +438,7 @@ export function buildMetadata(slug: string) {
   const service = services.find((s) => s.slug === serviceKey)
   const city = cities.find((c) => c.slug === combo.citySlug)
   if (!service || !city) return {}
-  const title = `${service.title} in ${city.name}, ${city.state}`
+  const title = `${comboLabel(combo.service, service.title).title} in ${city.name}, ${city.state}`
   const description =
     COMBO_META_DESCRIPTION[slug] ??
     `${service.title} in ${city.name}, ${city.state} for service businesses. ${service.short.slice(0, 100)}`
