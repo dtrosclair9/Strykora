@@ -68,7 +68,7 @@ const COMBO_DEEP_DIVE: Record<string, { heading: string; paragraphs: string[] }[
     {
       heading: 'What it costs.',
       paragraphs: [
-        'You can pay for each service separately. A website starts at $3,750, and you pay for it once. The local SEO plan starts at $297 a month and includes your Google Business Profile. Managing your Google Ads starts at $500 a month, plus what you spend on clicks. The SEO plan also includes the AI search audit and 30 days of work, which cost $1,997 if you buy them on their own.',
+        'You can pay for each service separately. A website starts at $3,750, and you pay for it once. The local SEO plan starts at $297 a month and includes your Google Business Profile. Managing your Google Ads starts at $500 a month, plus what you spend on clicks. The SEO plan also includes the AI search audit and 30 days of work, which cost $1,997 if you buy them on their own. Most projects come in above the starting prices, and you get a fixed quote before any work starts.',
         'People often start with the website and add SEO once it is live. If you need calls right away, you can run Google Ads for the first few months while your site moves up in search.',
       ],
     },
@@ -107,14 +107,16 @@ const COMBO_DEEP_DIVE: Record<string, { heading: string; paragraphs: string[] }[
 /** Combos whose page sells more than the base service get their own "what you get" list. */
 const COMBO_BULLETS: Record<string, string[]> = {
   'digital-marketing-thibodaux-la': [
-    'Strykora builds your website from scratch. The price starts at $3,750, and once you have paid for it, the site is yours.',
-    'Local SEO and Google Business Profile management, from $297 a month',
-    'Google Ads, if you need calls sooner, starting at $500 a month plus what you spend on the ads',
+    'A website built from scratch that you own outright',
+    'Local SEO and Google Business Profile management',
+    'Google Ads, if you need calls sooner',
     'Help getting your business recommended in answers from ChatGPT, Perplexity and Google\'s AI',
     'A monthly report in plain English showing where you rank in search, what changed and how many leads came in',
     'Month to month, with no 12-month commitment and no fee for leaving early',
   ],
 }
+/** Pages that state prices once, in "What it costs" and the cost FAQ, instead of in every box (Dayne 2026-11-17: trim). */
+const PRICE_ONCE = new Set(['digital-marketing-thibodaux-la'])
 /** These combos carry their own FAQs; the shared city FAQs are about local SEO and would duplicate the SEO page. */
 const SKIP_CITY_FAQS = new Set(['digital-marketing-thibodaux-la'])
 
@@ -325,7 +327,7 @@ export default function CityServicePage({ slug }: Props) {
                 <>
                   <p className="text-text-muted leading-relaxed mb-4">{cityCopy.marketContext}</p>
                   <p className="text-text-muted leading-relaxed mb-6">
-                    {cityCopy.buyerSnapshot} Strykora builds that website for you, and you own it outright. <span className="text-text">{service.priceRange}</span>
+                    {cityCopy.buyerSnapshot} Strykora builds that website for you, and you own it outright.{!PRICE_ONCE.has(slug) && <> <span className="text-text">{service.priceRange}</span></>}
                   </p>
                 </>
               ) : (
@@ -369,7 +371,7 @@ export default function CityServicePage({ slug }: Props) {
                     <div className="flex justify-between"><dt className="text-text-dim">City</dt><dd className="text-text">{city.name}, {city.state}</dd></div>
                     <div className="flex justify-between"><dt className="text-text-dim">Parish</dt><dd className="text-text">{city.parish}</dd></div>
                     <div className="flex justify-between"><dt className="text-text-dim">Service</dt><dd className="text-text">{label.title}</dd></div>
-                    <div className="flex justify-between"><dt className="text-text-dim">Pricing</dt><dd className="text-text text-right">{service.priceRange}</dd></div>
+                    {!PRICE_ONCE.has(slug) && <div className="flex justify-between"><dt className="text-text-dim">Pricing</dt><dd className="text-text text-right">{service.priceRange}</dd></div>}
                     <div className="flex justify-between"><dt className="text-text-dim">Ownership</dt><dd className="text-text">Yours</dd></div>
                   </dl>
                 </div>
