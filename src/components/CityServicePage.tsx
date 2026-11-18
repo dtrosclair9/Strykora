@@ -23,7 +23,7 @@ interface CityMarketCopy {
 const COMBO_HERO_DESCRIPTION: Record<string, string> = {
   'web-design-thibodaux-la': 'Thibodaux runs on word-of-mouth and proof of work. When a referral lands on your website, it has to look as legit as the recommendation. Strykora builds Thibodaux service businesses custom sites that match the work, load fast on a phone, and are owned outright by you.',
   'seo-thibodaux-la': 'Thibodaux is a smaller, denser market: fewer competitors, faster rankings, but the keyword volume per page is lower. Strykora wins by ranking you for every search a Lafourche Parish buyer might type, instead of fighting for one big keyword.',
-  'digital-marketing-thibodaux-la': 'Most Thibodaux service businesses rely on Facebook for their marketing. Strykora runs your whole digital footprint instead: website, Google, ads, AI search. One operator answers the phone, not an account rep.',
+  'digital-marketing-thibodaux-la': 'Strykora is a web design and marketing company in Thibodaux. Strykora can build your website, set up your Google Business Profile and handle your SEO and Google Ads. If you want to show up in answers from ChatGPT and Google, Strykora helps with that too.',
   'web-design-houma-la': 'Houma buyers respond to local proof: a Terrebonne address, recent project photos along the bayou, and a phone that gets answered. Strykora builds Houma service businesses sites that load fast in the field and put the local proof above the fold.',
   'seo-houma-la': 'Houma\'s SEO market is mid-competitive: several established shops with decent rankings, most stuck on slow WordPress sites with thin content. Strykora wins by being faster, more local, and set up so Google\'s AI answer can pull your services and credentials directly.',
   'web-design-baton-rouge-la': 'Baton Rouge buyers expect a polished website. A 2018 WordPress site with a stock-photo hero does not convert in this market the way it might in a smaller town. Strykora builds Baton Rouge service businesses custom sites that match what state-capital buyers expect.',
@@ -57,6 +57,28 @@ const COMBO_META_DESCRIPTION: Record<string, string> = {
  * Only combos that need extra depth get an entry; everything else renders unchanged.
  */
 const COMBO_DEEP_DIVE: Record<string, { heading: string; paragraphs: string[] }[]> = {
+  'digital-marketing-thibodaux-la': [
+    {
+      heading: 'How Strykora handles digital marketing.',
+      paragraphs: [
+        'Strykora helps people find your business when they search for your service in Thibodaux. The work starts with your website because that is where your other marketing sends people, and once they get there, the site should help them decide to call.',
+        'Strykora builds your site with a page for each town you work in, fills out your Google Business Profile and keeps it up to date. If you need calls before your site moves up in search, Strykora can run Google Ads. Strykora does not manage Facebook or Instagram accounts, write blog posts just to have something up, or shoot photos or video.',
+      ],
+    },
+    {
+      heading: 'What it costs.',
+      paragraphs: [
+        'You can pay for each service separately. A website starts at $3,750, and you pay for it once. The local SEO plan starts at $297 a month and includes your Google Business Profile. Managing your Google Ads starts at $500 a month, plus what you spend on clicks. The SEO plan also includes the AI search audit and 30 days of work, which cost $1,997 if you buy them on their own.',
+        'People often start with the website and add SEO once it is live. If you need calls right away, you can run Google Ads for the first few months while your site moves up in search.',
+      ],
+    },
+    {
+      heading: 'Who you work with.',
+      paragraphs: [
+        'I am Dayne Trosclair, and I run Strykora from Ashton Drive in Thibodaux. Call (985) 714-9562 and you get me, and I do the work myself. The case studies link to websites I built for clients in Thibodaux, Raceland, Lockport and Gonzales.',
+      ],
+    },
+  ],
   'web-design-baton-rouge-la': [
     {
       heading: 'What web design costs in Baton Rouge.',
@@ -82,10 +104,38 @@ const COMBO_DEEP_DIVE: Record<string, { heading: string; paragraphs: string[] }[
   ],
 }
 
+/** Combos whose page sells more than the base service get their own "what you get" list. */
+const COMBO_BULLETS: Record<string, string[]> = {
+  'digital-marketing-thibodaux-la': [
+    'Strykora builds your website from scratch. The price starts at $3,750, and once you have paid for it, the site is yours.',
+    'Local SEO and Google Business Profile management, from $297 a month',
+    'Google Ads, if you need calls sooner, starting at $500 a month plus what you spend on the ads',
+    'Help getting your business recommended in answers from ChatGPT, Perplexity and Google\'s AI',
+    'A monthly report in plain English showing where you rank in search, what changed and how many leads came in',
+    'Month to month, with no 12-month commitment and no fee for leaving early',
+  ],
+}
+/** These combos carry their own FAQs; the shared city FAQs are about local SEO and would duplicate the SEO page. */
+const SKIP_CITY_FAQS = new Set(['digital-marketing-thibodaux-la'])
+
 /**
  * Per-combo FAQs shown ahead of the shared city FAQs and included in FAQPage schema.
  */
 const COMBO_EXTRA_FAQS: Record<string, { q: string; a: string }[]> = {
+  'digital-marketing-thibodaux-la': [
+    {
+      q: 'How much does a marketing agency cost in Thibodaux?',
+      a: 'A Strykora website starts at $3,750, and you pay for it once. The local SEO plan starts at $297 a month with no long-term contract. Managing your Google Ads is $500 a month, plus what you spend on the ads. You can start with one service and add others later.',
+    },
+    {
+      q: 'Do you manage Facebook or Instagram?',
+      a: 'No. Strykora works on your website and helps people find your business through Google search, your Google Business Profile, Google Ads and AI search when they are ready to hire.',
+    },
+    {
+      q: 'Do I have to sign a contract?',
+      a: 'No. SEO and Google Ads are month to month, and there is no fee if you stop. Your website is a one-time project, and it is yours when it is done.',
+    },
+  ],
   'web-design-baton-rouge-la': [
     {
       q: 'How much does web design cost in Baton Rouge?',
@@ -105,9 +155,9 @@ const COMBO_EXTRA_FAQS: Record<string, { q: string; a: string }[]> = {
 const CITY_COPY: Record<string, CityMarketCopy> = {
   'thibodaux-la': {
     marketContext:
-      'Thibodaux is the parish seat of Lafourche, home to Nicholls State, and the commercial center of Bayou Lafourche from the sugar mills to the South Lafourche oilfield service yards. Buyers here are split between the university crowd, sugar and ag operations, and the marine and oilfield service economy that runs Highway 1.',
+      'Thibodaux is the Lafourche Parish seat and home to Nicholls State. A lot of people along Bayou Lafourche do business in town, from folks at Nicholls, the sugar mills and local farms to people who work in marine and oilfield services along Highway 1, all the way down to the service yards in South Lafourche.',
     buyerSnapshot:
-      'Most Thibodaux buyers Google a brand name they got from a neighbor before they call. Your website is the credibility check that decides whether the call ever happens.',
+      'Most people looking for a service in Thibodaux get a business name from a neighbor and look it up on Google before they call. What they see on your website helps them decide whether to call.',
     faqs: [
       {
         q: 'How is Thibodaux different from Houma or Lafayette for local SEO?',
@@ -246,7 +296,7 @@ export default function CityServicePage({ slug }: Props) {
       },
     },
   ]
-  const pageFaqs = [...(COMBO_EXTRA_FAQS[slug] ?? []), ...(cityCopy?.faqs ?? [])]
+  const pageFaqs = [...(COMBO_EXTRA_FAQS[slug] ?? []), ...(SKIP_CITY_FAQS.has(slug) ? [] : cityCopy?.faqs ?? [])]
   if (pageFaqs.length > 0) {
     schemas.push(buildFaqSchema(pageFaqs))
   }
@@ -275,16 +325,16 @@ export default function CityServicePage({ slug }: Props) {
                 <>
                   <p className="text-text-muted leading-relaxed mb-4">{cityCopy.marketContext}</p>
                   <p className="text-text-muted leading-relaxed mb-6">
-                    {cityCopy.buyerSnapshot} Strykora ships a faster, more local, more credible answer, owned outright by you. <span className="text-text">{service.priceRange}</span>
+                    {cityCopy.buyerSnapshot} Strykora builds that website for you, and you own it outright. <span className="text-text">{service.priceRange}</span>
                   </p>
                 </>
               ) : (
                 <p className="text-text-muted leading-relaxed mb-6">
-                  Strykora ships a faster, more local, more credible {label.phrase} answer for {city.name} buyers, owned outright by you. <span className="text-text">{service.priceRange}</span>
+                  Strykora handles {label.phrase} for {city.name} businesses, and you own everything that gets built. <span className="text-text">{service.priceRange}</span>
                 </p>
               )}
               <ul className="space-y-3">
-                {service.bullets.map((b) => (
+                {(COMBO_BULLETS[slug] ?? service.bullets).map((b) => (
                   <li key={b} className="flex items-start gap-3 text-text-muted">
                     <svg className="w-5 h-5 text-accent shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -296,7 +346,7 @@ export default function CityServicePage({ slug }: Props) {
             </Reveal>
 
             <Reveal>
-              <h2 className="text-2xl md:text-3xl font-display text-text mb-4">Industries Strykora serves in {city.name}.</h2>
+              <h2 className="text-2xl md:text-3xl font-display text-text mb-4">Who Strykora works with in {city.name}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {industries.map((i) => (
                   <Link key={i.slug} href={`/industries/${i.slug}`} className="card group flex items-center justify-between text-sm">
@@ -370,7 +420,7 @@ export default function CityServicePage({ slug }: Props) {
             <Reveal className="mb-10">
               <p className="eyebrow mb-3">FAQ</p>
               <h2 id="city-faq-heading" className="text-display-md font-display text-text text-balance">
-                {label.title} in {city.name}: common questions.
+                Questions about {label.phrase} in {city.name}
               </h2>
             </Reveal>
             <div className="space-y-3">
@@ -397,7 +447,7 @@ export default function CityServicePage({ slug }: Props) {
           <div className="container-wide">
             <Reveal className="mb-10">
               <p className="eyebrow mb-3">Also serving</p>
-              <h2 className="text-display-md font-display text-text">{label.title} in other Louisiana cities.</h2>
+              <h2 className="text-display-md font-display text-text">Strykora also offers {label.phrase} in other parts of Louisiana</h2>
             </Reveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {otherCities.map((o) => (
@@ -415,7 +465,7 @@ export default function CityServicePage({ slug }: Props) {
         </section>
       )}
 
-      <CTA heading={`Ready for ${label.phrase} that actually ranks in ${city.name}?`} />
+      <CTA heading={`Need help with ${label.phrase} in ${city.name}?`} />
     </>
   )
 }

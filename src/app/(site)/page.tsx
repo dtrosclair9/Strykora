@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     q: 'How fast will you respond to my inquiry?',
-    a: `Strykora responds to every project inquiry within one business day. You will get a candid take on whether Strykora is the right fit and, if so, a fixed-price quote and timeline.`,
+    a: `Strykora responds to every project inquiry within one business day. You will hear whether Strykora can help and, if so, get a fixed-price quote and timeline.`,
   },
 ]
 
@@ -689,12 +689,12 @@ export default function HomePage() {
           <Reveal>
             <div className="relative gradient-border">
               <div className="grid-pattern p-12 md:p-20 text-center">
-                <p className="eyebrow mb-4 text-accent-light">Ready when you are</p>
+                <p className="eyebrow mb-4 text-accent-light">Get in touch</p>
                 <h2 id="cta-heading" className="text-display-md font-display text-text mb-6 text-balance max-w-3xl mx-auto">
                   Your competitor&apos;s site loads in a second.<br/>What does yours do?
                 </h2>
                 <p className="text-text-muted text-lg max-w-xl mx-auto mb-8">
-                  Tell me about your business in 60 seconds. I&apos;ll send back a candid take, including whether Strykora is even the right fit, plus a fixed-price quote within one business day. No sales call, no pressure.
+                  Take a minute to tell me about your business. Within one business day, I&apos;ll send you a fixed-price quote and tell you whether I think I can help. There&apos;s no sales call.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
                   <Link href="/contact" className="btn-conversion">

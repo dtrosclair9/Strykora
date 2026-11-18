@@ -9,7 +9,7 @@ interface CTAProps {
 
 export default function CTA({
   heading = `Stop renting a website you'll never own.`,
-  body = `Tell me about your business in 60 seconds. I'll send back a candid take, including whether Strykora is the right fit, and a fixed-price quote within one business day. No sales call, no pressure.`,
+  body = `Take a minute to tell me about your business. Within one business day, I'll send you a fixed-price quote and tell you whether I think I can help. There's no sales call.`,
 }: CTAProps) {
   return (
     <section className="section-padding" aria-label="Call to action">
@@ -17,7 +17,7 @@ export default function CTA({
         <Reveal>
           <div className="relative gradient-border">
             <div className="grid-pattern p-12 md:p-20 text-center">
-              <p className="eyebrow mb-4">Ready when you are</p>
+              <p className="eyebrow mb-4">Get in touch</p>
               <h2 className="text-display-md font-display text-text mb-6 text-balance max-w-3xl mx-auto">{heading}</h2>
               <p className="text-text-muted text-lg max-w-xl mx-auto mb-8">{body}</p>
               <div className="flex flex-wrap gap-3 justify-center">

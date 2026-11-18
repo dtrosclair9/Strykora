@@ -22,7 +22,7 @@ const contactFaqs = [
   },
   {
     q: 'Do you do free audits?',
-    a: 'The first reply to your form already includes a candid take on your current site and Google Business Profile. That part is free. A formal written audit with deliverables is a separate engagement.',
+    a: 'My first reply to your form includes what I see wrong with your current site and Google Business Profile, and that part is free. A full written audit is a separate project.',
   },
   {
     q: "I'm outside Louisiana. Will you still take the project?",
@@ -55,7 +55,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Tell me about your project."
-        description="A short note is all I need to send back a candid take, including whether Strykora is the right fit, plus a fixed-price quote. One business day, no sales call, no pressure."
+        description="Send a short note about your business. Within one business day, I will tell you whether I can help and send a fixed-price quote. There is no sales call."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/contact', label: 'Contact' },

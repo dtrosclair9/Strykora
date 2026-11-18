@@ -136,7 +136,7 @@ export const services = [
       'Plain-English monthly report: what ranked, what changed, how many leads came in',
       'Month-to-month. No 12-month lock-in. No early-termination fee.',
     ],
-    priceRange: 'Retainers from $297/month.',
+    priceRange: 'Ongoing work starts at $297 a month.',
     priority: 2,
   },
   {
