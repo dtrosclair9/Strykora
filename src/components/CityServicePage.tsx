@@ -66,9 +66,9 @@ const COMBO_DEEP_DIVE: Record<string, { heading: string; paragraphs: string[] }[
       ],
     },
     {
-      heading: 'What it costs.',
+      heading: 'How pricing works.',
       paragraphs: [
-        'You can pay for each service separately. A website starts at $3,750, and you pay for it once. The local SEO plan starts at $297 a month and includes your Google Business Profile. Managing your Google Ads starts at $500 a month, plus what you spend on clicks. The SEO plan also includes the AI search audit and 30 days of work, which cost $1,997 if you buy them on their own. Most projects come in above the starting prices, and you get a fixed quote before any work starts.',
+        'You can pay for each service separately. A website is paid for once. The local SEO plan is a flat monthly fee and includes your Google Business Profile and the AI search audit. Managing your Google Ads is a flat monthly fee, plus what you spend on clicks, which goes straight to Google. You get a fixed quote in writing before any work starts.',
         'People often start with the website and add SEO once it is live. If you need calls right away, you can run Google Ads for the first few months while your site moves up in search.',
       ],
     },
@@ -83,7 +83,7 @@ const COMBO_DEEP_DIVE: Record<string, { heading: string; paragraphs: string[] }[
     {
       heading: 'What web design costs in Baton Rouge.',
       paragraphs: [
-        'Strykora builds custom websites starting at $3,750, one time, and you own every file when it is done. Around Baton Rouge you will see quotes from a few hundred dollars for a template reskin up to five figures from the bigger downtown agencies. Most of that price gap has nothing to do with how the site looks. It comes down to what is underneath: page speed, schema markup, city pages, and whether anyone actually built the thing to rank.',
+        'Strykora builds custom websites for one fixed price, paid once, and you own every file when it is done. Around Baton Rouge you will see quotes from a few hundred dollars for a template reskin up to five figures from the bigger downtown agencies. Most of that price gap has nothing to do with how the site looks. It comes down to what is underneath: page speed, schema markup, city pages, and whether anyone actually built the thing to rank.',
         'Be careful with the monthly bundle deals where the website is "free" and you pay a couple hundred a month forever. Read the fine print on who owns the site. In most of those arrangements, cancel the payment and the website disappears with it.',
       ],
     },
@@ -116,7 +116,7 @@ const COMBO_BULLETS: Record<string, string[]> = {
   ],
 }
 COMBO_BULLETS['digital-marketing-baton-rouge-la'] = COMBO_BULLETS['digital-marketing-thibodaux-la']
-/** Pages that state prices once, in "What it costs" and the cost FAQ, instead of in every box (Dayne 2026-11-17: trim). */
+/** Pages that explain pricing once ("How pricing works" + the cost FAQ) instead of in every box. No dollar amounts anywhere on the site (Dayne 2026-11-19). */
 const PRICE_ONCE = new Set(['digital-marketing-thibodaux-la'])
 /** These combos carry their own FAQs; the shared city FAQs are about local SEO and would duplicate the SEO page. */
 const SKIP_CITY_FAQS = new Set(['digital-marketing-thibodaux-la', 'digital-marketing-baton-rouge-la'])
@@ -128,7 +128,7 @@ const COMBO_EXTRA_FAQS: Record<string, { q: string; a: string }[]> = {
   'digital-marketing-thibodaux-la': [
     {
       q: 'How much does a marketing agency cost in Thibodaux?',
-      a: 'A Strykora website starts at $3,750, and you pay for it once. The local SEO plan starts at $297 a month with no long-term contract. Managing your Google Ads is $500 a month, plus what you spend on the ads. You can start with one service and add others later.',
+      a: 'A Strykora website is one fixed price, paid once. The local SEO plan and Google Ads management are flat monthly fees with no long-term contract, and ad spend goes straight to Google. You can start with one service and add others later. Every quote comes in writing within one business day.',
     },
     {
       q: 'Do you manage Facebook or Instagram?',
@@ -156,7 +156,7 @@ const COMBO_EXTRA_FAQS: Record<string, { q: string; a: string }[]> = {
   'web-design-baton-rouge-la': [
     {
       q: 'How much does web design cost in Baton Rouge?',
-      a: 'Strykora custom builds start at $3,750 one time, including copywriting, SEO structure, schema markup, and mobile testing. The site is yours when it is done. Ongoing SEO is optional at $297 a month.',
+      a: 'A Strykora custom build is one fixed price, paid once, and includes copywriting, SEO structure, schema markup, and mobile testing. The site is yours when it is done. Ongoing SEO is optional, month to month.',
     },
     {
       q: 'Do you build WordPress sites?',

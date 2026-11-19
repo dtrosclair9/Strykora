@@ -80,13 +80,13 @@ const posts = [
       `4. **Real reviews on a consistent cadence.** Five reviews from 2022 will not cut it. Google looks for fresh signal.`,
       `**Local SEO for a small business in Louisiana: where to start.**`,
       `Start with the Google Business Profile, because it is free and it is the best hour you will spend on your marketing this year. Fill in every service you offer with a real description, add photos monthly, and answer every review. Then make sure your website has a page for each city you actually work in, written specifically about that city. Those two moves alone put most Louisiana small businesses ahead of their local competition.`,
-      `On budget: retainers in Louisiana run from a few hundred dollars a month to the $1,500-and-up contracts the bigger agencies write. Strykora's starts at $297 monthly and covers the Google Business Profile work, on-page SEO, and the AI search layer. Whatever you pay and whoever you hire, ask the provider to name the exact pages and rankings they are working toward. A vague monthly report is the red flag.`,
+      `On budget: retainers in Louisiana run from a few hundred dollars a month to the $1,500-and-up contracts the bigger agencies write. Strykora's plan is a flat monthly fee that covers the Google Business Profile work, on-page SEO, and the AI search layer. Whatever you pay and whoever you hire, ask the provider to name the exact pages and rankings they are working toward. A vague monthly report is the red flag.`,
       `If you are running a Louisiana small business and your current SEO is "we posted on Facebook this week," you are leaving real money on the table. Most of your competitors around here still have not done any of this, which is why a modest budget can still land you in the top three for the searches that actually bring in jobs.`,
     ],
     faqs: [
       {
         q: 'How much does local SEO cost for a small business in Louisiana?',
-        a: 'Strykora\'s retainer is $297 a month and covers Google Business Profile management, on-page work, and AI search optimization. Bigger agencies charge more, sometimes a lot more. At any price, the provider should be able to name the exact pages and rankings your money is going toward.',
+        a: 'Strykora\'s plan is a flat monthly fee with no long-term contract, covering Google Business Profile management, on-page work, and AI search optimization. Bigger agencies often charge a lot more. At any price, the provider should be able to name the exact pages and rankings your money is going toward.',
       },
       {
         q: 'Can I do local SEO myself?',
@@ -142,7 +142,7 @@ const posts = [
       `Wix puts your content inside its own template wrappers. Google still reads the text on your site, but most template sites never say plainly what the business does and where. The headings are slogans, the service pages are one paragraph, and every city you work in is crammed onto one page. Google and the AI tools that read your site end up with a generic business, not a specific Houma roofer.`,
       `**What to do about it.**`,
       `**First, figure out what you are actually losing.** Open Google Search Console on your current Wix site. If you see fewer than fifty impressions per month on commercial-intent keywords (your service in your city), the site is not earning its keep.`,
-      `**Second, decide between SEO retainer or rebuild.** If your site is well-built but under-optimized, a $297/month local SEO retainer can move the needle in sixty to 120 days. If your site is on Wix or a slow WordPress build, a rebuild on Next.js usually pays back faster than six months of SEO work on the broken foundation.`,
+      `**Second, decide between SEO retainer or rebuild.** If your site is well-built but under-optimized, a local SEO retainer can move the needle in sixty to 120 days. If your site is on Wix or a slow WordPress build, a rebuild on Next.js usually pays back faster than six months of SEO work on the broken foundation.`,
       `**Third, if you rebuild, demand the foundations.** A page for each service you want to rank for, headings that name the service and the town, a real sitemap.xml (a map of every page on your site), and business details marked up so search engines read them correctly (called schema). None of this is magic. It is the groundwork that lets good content rank.`,
       `Louisiana service businesses are still operating in a market where the SEO bar is low. The contractors and home service businesses ranking on page one for "[service] [city]" queries are not necessarily better operators. They are often just on faster, better-built websites with a page for each job they want. That gap can be closed.`,
     ],

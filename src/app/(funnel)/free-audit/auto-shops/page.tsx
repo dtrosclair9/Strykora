@@ -5,7 +5,7 @@ import FunnelAuditPage from '@/components/FunnelAuditPage'
 export const metadata: Metadata = {
   title: 'Free Homepage Rebuild for Auto Shops',
   description:
-    'Send your website and I\'ll rebuild your homepage for free so you can see it before you decide anything. Custom builds start at $3,750 and you own every file.',
+    'Send your website and I\'ll rebuild your homepage for free so you can see it before you decide anything. You own every file of the finished site.',
   alternates: { canonical: `${site.url}/free-audit` },
   robots: { index: false, follow: true },
 }

@@ -177,7 +177,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     faqs: [
       { q: "Why did Foret Construction leave Wix?", a: "Jacob was paying Wix a monthly fee for a templated, stock-photo site he could never own. The rebuild is custom code Foret owns outright, so there is no monthly Wix bill and nothing to lose if he ever changes providers." },
       { q: "What did the Foret rebuild include?", a: "A custom site, nine city landing pages aimed at roof replacement searches across South Louisiana, his FORTIFIED, GAF and Owens Corning credentials moved to the top of the page, a rebuilt Google Business Profile, and an ongoing monthly Local SEO retainer." },
-      { q: "What would a roofing site like Foret's cost?", a: "Strykora's custom builds start at $3,750. Every project gets a fixed quote after a short scoping conversation, and the number depends mostly on how many service and city pages the business needs." },
+      { q: "What would a roofing site like Foret's cost?", a: "Every Strykora build gets one fixed price, in writing, after a short scoping conversation. For a roofer, the number depends mostly on how many service and city pages the business needs." },
     ],
   },
   'elite-custom-automotive': {
@@ -196,7 +196,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     faqs: [
       { q: "Why does Elite's site have two separate paths?", a: "Elite does two kinds of work for two kinds of customers: performance builds like lift kits and suspension, and everyday auto repair. Giving each its own path keeps a lift-kit buyer and someone with a check-engine light from wading through each other's pages." },
       { q: "Does Colin own the Elite website?", a: "Yes. Elite was paying a web provider monthly rent with no path to ownership. The rebuild is custom code Colin owns outright, with no monthly platform fee." },
-      { q: "What would a shop site like Elite's cost?", a: "Strykora's custom builds start at $3,750, with a fixed quote after a short scoping conversation. Brand pages, city pages and booking tools are what move the price, so the quote lists each one." },
+      { q: "What would a shop site like Elite's cost?", a: "Every Strykora build gets one fixed price, in writing, after a short scoping conversation. For a shop like Elite, brand pages, city pages and booking tools are what move the price, so the quote lists each one." },
     ],
   },
   'all-out-window-tint': {
@@ -215,7 +215,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     faqs: [
       { q: "How does one website handle two All Out locations?", a: "Each location has its own landing pages and its own contact form. Gonzales inquiries go to Reed and Baton Rouge inquiries go to Dax, so neither owner has to sort the other's leads." },
       { q: "How quickly did the Baton Rouge location show up in search?", a: "Two months after launch, the brand new Baton Rouge location ranked #3 in Google's AI search results for \"tint baton rouge\", a market All Out had not ranked in before. AI results change over time, so we re-check them monthly." },
-      { q: "What would a two-location site like this cost?", a: "Strykora's custom builds start at $3,750, with a fixed quote after a short scoping conversation. A second location adds its own pages, form routing and Business Profile work, and the quote spells that out." },
+      { q: "What would a two-location site like this cost?", a: "Every Strykora build gets one fixed price, in writing, after a short scoping conversation. A second location adds its own pages, form routing and Business Profile work, and the quote spells that out." },
     ],
   },
   'hover-septic': {
@@ -232,7 +232,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     faqs: [
       { q: "Where did Hover Septic start?", a: "With no website and no Google Business Profile, only a Facebook page. Every install lead came from word of mouth, so a customer who searched for Hover mid-decision found nothing." },
       { q: "What changed for Hover Septic's business?", a: "The site ranked #1 organic for \"septic installs Thibodaux LA\", the search that brings in the high-ticket work. That let Trey drop low-ticket pump-out jobs and focus on multi-thousand-dollar installs." },
-      { q: "What would a first website like Hover's cost?", a: "Strykora's custom builds start at $3,750, with a fixed quote after a short scoping conversation. A first site also needs a Google Business Profile set up from scratch, and the quote covers that." },
+      { q: "What would a first website like Hover's cost?", a: "Every Strykora build gets one fixed price, in writing, after a short scoping conversation. A first site also needs a Google Business Profile set up from scratch, and the quote covers that." },
     ],
   },
   'acadia-pools': {
@@ -251,7 +251,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     faqs: [
       { q: "Where did Acadia Pools start?", a: "Matt Glover had a strong local reputation for custom gunite pools but no website at all. Leads came from word of mouth, and a buyer searching \"pool builder Thibodaux\" mid-decision could not find him." },
       { q: "How does Perplexity know to recommend Acadia?", a: "Its answer quotes Acadia's own page wording, \"custom gunite pool and spa builder\", and the phone number from the site. Clear, specific copy about what the business does and where is what an AI answer can pull from. AI answers change over time, so we re-check them monthly." },
-      { q: "What would a pool builder site like Acadia's cost?", a: "Strykora's custom builds start at $3,750, with a fixed quote after a short scoping conversation. Acadia's site has six service pages, and the page count is the biggest driver of the price." },
+      { q: "What would a pool builder site like Acadia's cost?", a: "Every Strykora build gets one fixed price, in writing, after a short scoping conversation. Acadia's site has six service pages, and the page count is the biggest driver of the price." },
     ],
   },
 }

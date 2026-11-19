@@ -81,7 +81,7 @@ function replyHtml(firstName: string, business: string) {
       <p style="${p}">Your request for <strong>${esc(business)}</strong> just landed. I'm Dayne, I run Strykora out of Thibodaux, and I build these myself.</p>
       <p style="${p}">Here's what happens next. I pull up what you sent and look at it the way a customer on a phone would. If anything is missing or looks out of date, I'll email you to check it before I build, because a page built on wrong information is worse than no page. Once the details are confirmed, I rebuild your homepage and send you a private link <strong>within three business days</strong>.</p>
       <p style="${p}">When it lands, open it on your phone and try to hire yourself. Can you find the work you do? See a job you finished? Get to the phone number without hunting for it? That's the test that matters.</p>
-      <p style="${p}">It costs nothing and there's nothing to sign. If you want the rest of the site after seeing it, custom builds start at $3,750, a $500 deposit starts it, and every file is yours once it's paid for.</p>
+      <p style="${p}">It costs nothing and there's nothing to sign. If you want the rest of the site after seeing it, you get a fixed price in writing first, a deposit starts it, and every file is yours once it's paid for.</p>
       <p style="${p}">Reply to this email and it comes straight to me. If you'd rather talk, I'm at <a href="tel:${site.phoneRaw}" style="color:#2257d6;text-decoration:none">${site.phoneDisplay}</a>, but I won't call you out of the blue.</p>
       <p style="${p};margin-bottom:0">Dayne<br><span style="color:#6b7485">Strykora · strykora.com</span></p>
     </td></tr>

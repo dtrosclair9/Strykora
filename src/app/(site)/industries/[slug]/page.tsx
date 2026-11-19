@@ -88,7 +88,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'What does a Louisiana roofer site cost?',
-        a: 'Custom roofer websites start at $3,750 one-time, depending on the number of city pages and storm damage sub-pages. Local SEO retainers start at $297/month.',
+        a: 'A roofer site is quoted by the number of city pages and storm-damage pages it needs, and you pay for it once. Local SEO is a flat monthly fee with no long-term contract. You get a fixed quote in writing before any work starts.',
       },
     ],
   },
@@ -199,7 +199,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'What does an auto shop site cost?',
-        a: 'Auto shop sites start at $3,750 one-time. SEO retainers from $297/month. Google Ads management from $500/month plus ad spend.',
+        a: 'An auto shop site is quoted by the services and brands it covers, and you pay for it once. SEO and Google Ads management are flat monthly fees, and ad spend goes straight to Google. Every quote is fixed and in writing before work starts.',
       },
     ],
   },

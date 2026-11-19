@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: 'What does the full site cost?',
-    a: 'Custom builds start at $3,750. The exact number depends on how many pages you need, and you get a written scope with a fixed total before you pay anything. A $500 deposit starts the build and the balance is due when you have seen the finished site and approved it.',
+    a: 'It depends on how many pages you need. You get a written scope with a fixed total before you pay anything. A deposit starts the build and the balance is due when you have seen the finished site and approved it.',
   },
   {
     q: 'What if I do not like the finished site?',
@@ -97,9 +97,8 @@ export default function FunnelAuditPage({ config }: { config: FunnelConfig }) {
               ))}
             </ul>
             <p className="text-sm text-text-muted border-l-2 border-accent pl-4">
-              Straight about the money: if you want the rest of the site, custom builds start at{' '}
-              <strong className="text-text">$3,750</strong>, a $500 deposit starts it, and every file is yours once it is
-              paid for. The rebuilt homepage costs nothing either way.
+              Straight about the money: if you want the rest of the site, you get a fixed price in writing first, a deposit
+              starts it, and every file is yours once it is paid for. The rebuilt homepage costs nothing either way.
             </p>
           </Reveal>
 

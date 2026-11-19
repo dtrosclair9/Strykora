@@ -41,7 +41,7 @@ const pillars = [
 
 const comparisonRows = [
   { label: 'Build time', them: '2–3 months', us: 'About 1 week once it starts' },
-  { label: 'Pricing', them: 'Custom quote, hidden until the sales call', us: 'Published on the site, fixed up front' },
+  { label: 'Pricing', them: 'Open-ended hourly billing', us: 'One fixed price, in writing, before you pay' },
   { label: 'Who owns the site', them: 'The agency does. Try leaving.', us: 'You do. Day one. Take it with you anywhere.' },
   { label: 'Contract length', them: '12-month minimum, auto-renew', us: 'Month-to-month, cancel any time' },
   { label: 'Who you actually talk to', them: 'An account manager, then a junior, then a ticket queue', us: 'Dayne. The person building your site.' },
@@ -80,7 +80,7 @@ const faqs = [
   },
   {
     q: 'How much does a Strykora website cost?',
-    a: `Custom websites start at $3,750 one-time, depending on scope and number of pages. Local SEO retainers start at $297/month. Google Ads management starts at $500/month plus your ad spend. Every quote is a fixed price up front, no hourly billing.`,
+    a: `It depends on what you need. A website is quoted by the number of pages and how much custom work it takes, and you pay for it once. Local SEO and Google Ads management are flat monthly fees with no long-term contract. Every quote is a fixed price in writing before any work starts, with no hourly billing. Send the form or call and you will have a number within one business day.`,
   },
   {
     q: 'Why custom-built instead of Wix, Squarespace, or WordPress?',
@@ -88,7 +88,7 @@ const faqs = [
   },
   {
     q: 'Do you do SEO without redesigning the site?',
-    a: `Yes. Local SEO retainers start at $297/month and work on whatever platform you are on. That said, if your current site is on Wix or a slow WordPress build, a rebuild usually moves the needle further than six months of SEO on the broken foundation.`,
+    a: `Yes. The local SEO plan works on whatever platform you are on. That said, if your current site is on Wix or a slow WordPress build, a rebuild usually moves the needle further than six months of SEO on the broken foundation.`,
   },
   {
     q: 'What cities and markets do you serve?',
@@ -153,7 +153,7 @@ export default function HomePage() {
 
             <p className="text-lg md:text-xl text-text-muted max-w-2xl text-balance leading-relaxed">
               Stop renting a templated website you&apos;ll never own. Strykora builds you a fast, custom site
-              starting at $3,750 that you own outright, then does the local SEO that gets it found in Google,
+              that you own outright, then does the local SEO that gets it found in Google,
               in the map results, and in AI answers like ChatGPT.
             </p>
 

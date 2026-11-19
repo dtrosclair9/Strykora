@@ -44,7 +44,6 @@ export const localBusinessSchema = {
   email: site.email,
   image: `${site.url}/images/og-image.jpg`,
   logo: `${site.url}/images/strykora-schema-logo.png`,
-  priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.address.street,

@@ -84,7 +84,7 @@ const SERVICE_PAGE_COPY: Record<string, {
     ],
     faqs: [
       { q: 'How long does a Strykora website take to build?', a: 'Most builds go live in about a week from when we start. You work directly with the person building your site, so there is no agency runaround.' },
-      { q: 'How much does a custom website cost?', a: 'Custom websites start at $3,750 one-time, depending on how many pages and how much custom work. Every quote is a fixed price up front. No hourly billing, no surprise invoices.' },
+      { q: 'How much does a custom website cost?', a: 'It depends on how many pages you need and how much custom work goes into them. You pay once, and every quote is a fixed price in writing before work starts. No hourly billing, no surprise invoices. Send the form and you will have a number within one business day.' },
       { q: 'Will I really own everything?', a: 'Yes. When the site launches, Strykora hands you the source code, the domain, and every account (Google, hosting, analytics). If you ever leave, you take all of it with you. No rebuild needed.' },
       { q: 'Can you take over my existing site?', a: 'Sometimes. If it is already custom-built, often yes. If it is on Wix, Squarespace, GoDaddy, or a templated WordPress site, a rebuild is almost always faster and cheaper than trying to fix the old one. Strykora will tell you the honest answer on the first call.' },
       { q: 'Who hosts the site after launch?', a: 'Strykora handles the hosting setup and walks you through the domain switch from your current registrar. Hosting is included for most small-business sites and runs about as cheap as it gets.' },
@@ -100,7 +100,7 @@ const SERVICE_PAGE_COPY: Record<string, {
       { step: '04', title: 'Monthly retainer', body: 'New content, new links, weekly Google Business Profile posts, and a plain-English report every month. You see every move in a shared dashboard.' },
     ],
     faqs: [
-      { q: 'How much does Strykora SEO cost?', a: 'Local SEO retainers start at $297 a month with no long-term contract. Larger multi-city or multi-location operators get a custom quote.' },
+      { q: 'How much does Strykora SEO cost?', a: 'Local SEO is a flat monthly fee with no long-term contract. The fee depends on how many cities and locations you need covered, and you get it in writing before anything starts.' },
       { q: 'How long until I see rankings move?', a: 'Expect real movement in 60 to 120 days for a new site. Faster for sites that already have some history with Google. Slower in brutally competitive markets like Baton Rouge legal or New Orleans plumbing.' },
       { q: 'Does this work if my site is on Wix, Squarespace, or WordPress?', a: 'Yes. The SEO retainer works on whatever platform your site is on. But if your current site is slow or hard to update, Strykora will tell you up front when a rebuild would beat six months of SEO on a broken foundation.' },
       { q: 'What is included in the monthly retainer?', a: 'Two new content pages per month, on-page updates, Google Business Profile posts and photos, cleaning up your business listings across the web, building links from other Louisiana sites, and a monthly report with rankings, traffic, and leads.' },
@@ -133,7 +133,7 @@ const SERVICE_PAGE_COPY: Record<string, {
     ],
     faqs: [
       { q: 'How much should I budget for Google Ads?', a: 'For most South Louisiana service businesses, a $1,500 to $3,000-per-month ad budget covers one high-value service in one or two cities. Strykora will tell you up front if your budget is too low for the searches you want to win.' },
-      { q: 'How is management billed?', a: 'Management starts at $500 a month plus your ad spend. The management fee covers the setup, the weekly tune-ups, the landing page, and the reporting. Your ad spend goes directly to Google on your credit card, with no markup.' },
+      { q: 'How is management billed?', a: 'A flat monthly management fee, quoted up front, plus your ad spend. The management fee covers the setup, the weekly tune-ups, the landing page, and the reporting. Your ad spend goes directly to Google on your credit card, with no markup.' },
       { q: 'Will I own the account?', a: 'Yes. Strykora builds and runs the account under your billing. If you ever leave, the account, the campaigns, and the history all stay with you.' },
       { q: 'Do you build the landing page too?', a: 'Yes. The landing page is built in-house on the same custom-built setup as your main website, with tracking that shows which clicks turn into phone calls or form fills.' },
       { q: 'How long until ads start producing leads?', a: 'Leads usually start in week one. The first two weeks are learning and tuning. Expect the cost per lead to stabilize and trend down in weeks three and four.' },
@@ -152,7 +152,7 @@ const SERVICE_PAGE_COPY: Record<string, {
       { q: 'How is this different from your regular SEO?', a: 'Regular SEO gets you ranked in the blue links and the map results below them. AI Search Optimization gets you named in the AI answer that now sits above both. The two overlap, and Strykora bundles AI Search Optimization into the monthly Local SEO retainer at no extra cost. The standalone audit is for businesses who already have someone else doing their regular SEO and just want help showing up in AI answers.' },
       { q: 'Why does this matter right now?', a: 'More people now ask an AI who to call. For searches like "roofer near me," Google still mostly shows the map results, so the Business Profile matters most there. AI answers show up most on question searches, like how much a new roof costs or whether gunite beats fiberglass. Being the business those answers cite puts you in front of buyers before they ever search for a company.' },
       { q: 'How do you know it worked?', a: 'Every month Strykora asks the AI assistants the same questions your customers ask, takes screenshots, and shows you when the AI named you. Hover Septic, a Strykora client, is the #1 recommendation across ChatGPT and Perplexity for "septic installs Thibodaux LA" right now. The screenshots are on the homepage.' },
-      { q: 'How much is the standalone audit?', a: 'A fixed $1,997 for the written audit plus 30 days of optimization. Includes the report across four AI engines, the rewrites on your key pages, the list of local sites and directories you are missing from, the Google Business Profile services rebuild, and a 30-day re-check to confirm it worked. New Strykora Local SEO clients get all of this bundled into the $297-a-month retainer at no extra cost.' },
+      { q: 'How much is the standalone audit?', a: 'One fixed price, quoted up front, for the written audit plus 30 days of optimization. Includes the report across four AI engines, the rewrites on your key pages, the list of local sites and directories you are missing from, the Google Business Profile services rebuild, and a 30-day re-check to confirm it worked. New Strykora Local SEO clients get all of this included in their plan at no extra cost.' },
       { q: 'Will the AI keep naming me after the 30 days end?', a: 'The rewritten pages and the Business Profile rebuild keep working. The AI tools change how they answer, new competitors show up, and reviews age, so it needs ongoing attention, which is why the monthly Local SEO retainer covers it. Standalone-audit clients are welcome to re-run the sprint every quarter.' },
     ],
   },
@@ -233,7 +233,7 @@ export default async function ServicePage({ params }: Params) {
           <aside className="lg:col-span-5">
             <Reveal>
               <div className="card p-6 lg:sticky lg:top-28">
-                <p className="eyebrow mb-3">Pricing</p>
+                <p className="eyebrow mb-3">How it&apos;s priced</p>
                 <p className="font-display text-2xl text-text mb-2">{service.priceRange}</p>
                 <p className="text-text-muted text-sm leading-relaxed mb-6">
                   Fixed price up front. No hourly billing. No 12-month contract. No monthly platform tax stacked on top.

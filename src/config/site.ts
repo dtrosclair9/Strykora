@@ -118,7 +118,7 @@ export const services = [
       'Built so Google understands what you do and ranks you for it',
       'Owned outright by you. Leave Strykora any time, take the site with you',
     ],
-    priceRange: 'Starting at $3,750, depending on scope.',
+    priceRange: 'One fixed price, quoted in writing after a short scoping call.',
     priority: 1,
   },
   {
@@ -136,7 +136,7 @@ export const services = [
       'Plain-English monthly report: what ranked, what changed, how many leads came in',
       'Month-to-month. No 12-month lock-in. No early-termination fee.',
     ],
-    priceRange: 'Ongoing work starts at $297 a month.',
+    priceRange: 'Month to month, with no long-term contract.',
     priority: 2,
   },
   {
@@ -170,7 +170,7 @@ export const services = [
       'Ongoing list of words to block so your budget skips the wrong searches',
       'Account in your name. No hostage situation if you walk away',
     ],
-    priceRange: 'Management from $500/month, plus your ad spend.',
+    priceRange: 'A flat management fee quoted up front. Your ad spend goes straight to Google.',
     priority: 4,
   },
   {
@@ -188,7 +188,7 @@ export const services = [
       'Your Google Business Profile services list rebuilt so the AI map results name you',
       'Monthly report: which AI assistants named you, for which searches, and what changed since last month',
     ],
-    priceRange: 'Bundled into the Local SEO retainer, or a standalone audit and 30-day sprint for $1,997.',
+    priceRange: 'Included in the Local SEO plan, or as a standalone audit and 30-day sprint.',
     priority: 5,
     featured: true,
   },
