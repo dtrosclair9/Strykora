@@ -50,16 +50,16 @@ const SERVICE_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
   },
 }
 
-const SERVICE_RELATED_POSTS: Record<string, { slug: string; title: string }[]> = {
+const SERVICE_RELATED_POSTS: Record<string, { slug: string; title: string; blurb: string }[]> = {
   'web-design': [
-    { slug: 'why-your-wix-site-isnt-ranking-louisiana', title: 'Why Your Wix Site Isn\'t Ranking (And What to Do About It)' },
+    { slug: 'why-your-wix-site-isnt-ranking-louisiana', title: 'Why Your Wix Site Isn\'t Ranking (And What to Do About It)', blurb: 'Why a slow, generic Wix site loses close calls in Google, and three fixes.' },
   ],
   'seo': [
-    { slug: 'why-seo-matters-for-small-businesses-louisiana', title: 'Why SEO Matters for Small Businesses in Louisiana' },
+    { slug: 'why-seo-matters-for-small-businesses-louisiana', title: 'Why SEO Matters for Small Businesses in Louisiana', blurb: 'What actually moves local rankings for a Louisiana service business.' },
   ],
   'ai-search-optimization': [
-    { slug: 'why-chatgpt-recommends-your-competitor-louisiana', title: 'Why ChatGPT Recommends Your Competitor Instead of You' },
-    { slug: 'google-may-2026-ai-search-update-louisiana-businesses', title: 'Google\'s May 2026 AI Search Update: What Louisiana Service Businesses Need to Know' },
+    { slug: 'why-chatgpt-recommends-your-competitor-louisiana', title: 'Why ChatGPT Recommends Your Competitor Instead of You', blurb: 'How AI assistants pick which local business to name, and what it takes to be one of them.' },
+    { slug: 'google-may-2026-ai-search-update-louisiana-businesses', title: 'Google\'s May 2026 AI Search Update: What Louisiana Service Businesses Need to Know', blurb: 'What Google\'s May 2026 core update did and did not change, and what to do about AI search.' },
   ],
 }
 
@@ -320,7 +320,7 @@ export default async function ServicePage({ params }: Params) {
                 <Reveal key={p.slug}>
                   <Link href={`/blog/${p.slug}`} className="card-feature group block h-full">
                     <h3 className="text-lg font-display text-text mb-2">{p.title}</h3>
-                    <p className="text-sm text-text-muted leading-relaxed">Read the post</p>
+                    <p className="text-sm text-text-muted leading-relaxed">{p.blurb}</p>
                   </Link>
                 </Reveal>
               ))}

@@ -533,6 +533,7 @@ export default function CityServicePage({ slug }: Props) {
             <Reveal className="mb-10">
               <p className="eyebrow mb-3">Also serving</p>
               <h2 className="text-display-md font-display text-text">Strykora also offers {label.phrase} in other parts of Louisiana</h2>
+              <p className="mt-4 text-text-muted max-w-2xl">Strykora works with businesses across South Louisiana. Pick a city to see what changes for {label.phrase} there.</p>
             </Reveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {otherCities.map((o) => (
