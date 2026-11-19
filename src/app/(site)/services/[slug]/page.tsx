@@ -17,7 +17,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params
   const service = services.find((s) => s.slug === slug)
   if (!service) return {}
-  const title = `${service.title} in Louisiana`
+  // Search-phrase titles (~50-60 chars with the template); the H1 stays "<Service> in Louisiana".
+  const SEO_TITLES: Record<string, string> = {
+    'web-design': 'Custom Website Design in Louisiana You Own',
+    seo: 'Local SEO Services for Louisiana Businesses',
+    'google-business-profile': 'Google Business Profile Management in Louisiana',
+    'google-ads': 'Google Ads Management for Louisiana Businesses',
+    'ai-search-optimization': 'AI Search Optimization for Louisiana Businesses',
+  }
+  const title = SEO_TITLES[service.slug] ?? `${service.title} in Louisiana`
   const description = service.metaDescription
   return {
     title,

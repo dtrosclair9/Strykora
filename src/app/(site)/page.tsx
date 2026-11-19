@@ -40,7 +40,7 @@ const pillars = [
 ]
 
 const comparisonRows = [
-  { label: 'Time to launch', them: '2–3 months', us: 'About 1 week' },
+  { label: 'Build time', them: '2–3 months', us: 'About 1 week once it starts' },
   { label: 'Pricing', them: 'Custom quote, hidden until the sales call', us: 'Published on the site, fixed up front' },
   { label: 'Who owns the site', them: 'The agency does. Try leaving.', us: 'You do. Day one. Take it with you anywhere.' },
   { label: 'Contract length', them: '12-month minimum, auto-renew', us: 'Month-to-month, cancel any time' },

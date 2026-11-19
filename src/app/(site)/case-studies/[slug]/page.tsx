@@ -6,7 +6,7 @@ import { caseStudies, site } from '@/config/site'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import CTA from '@/components/CTA'
-import { Schema } from '@/components/Schema'
+import { Schema, faqSchema } from '@/components/Schema'
 
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }))
@@ -160,7 +160,7 @@ const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string 
   },
 }
 
-const caseDetails: Record<string, { challenge: string; approach: string[]; result: string; coverAlt: string }> = {
+const caseDetails: Record<string, { challenge: string; approach: string[]; result: string; coverAlt: string; faqs: { q: string; a: string }[] }> = {
   'foret-construction': {
     challenge:
       'Jacob Foret\'s FORTIFIED-certified roofing operation had a Wix site with decent SEO foundations and working contact popups, but it was templated, leaned on stock photography, and charged Foret a monthly Wix rental fee with no path to ownership. The Google Business Profile had only a couple of photos, no posts, and no service descriptions. Invisible to the local pack and to AI Overviews. The bones of an SEO program were there; the foundation was not built to scale.',
@@ -174,6 +174,11 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     ],
     result: 'Foret now owns the new site outright, no more monthly Wix bill, with nine city landing pages targeting roof replacement searches across South Louisiana. The site is fast, set up for both Google and AI search, and the credentials buyers actually care about are surfaced where they look.',
     coverAlt: 'Aerial photo of a completed shingle roof replacement by Foret Construction in Raceland, Louisiana.',
+    faqs: [
+      { q: "Why did Foret Construction leave Wix?", a: "Jacob was paying Wix a monthly fee for a templated, stock-photo site he could never own. The rebuild is custom code Foret owns outright, so there is no monthly Wix bill and nothing to lose if he ever changes providers." },
+      { q: "What did the Foret rebuild include?", a: "A custom site, nine city landing pages aimed at roof replacement searches across South Louisiana, his FORTIFIED, GAF and Owens Corning credentials moved to the top of the page, a rebuilt Google Business Profile, and an ongoing monthly Local SEO retainer." },
+      { q: "What would a roofing site like Foret's cost?", a: "Strykora's custom builds start at $3,750. Every project gets a fixed quote after a short scoping conversation, and the number depends mostly on how many service and city pages the business needs." },
+    ],
   },
   'elite-custom-automotive': {
     challenge:
@@ -188,6 +193,11 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     ],
     result: 'Elite now ranks top 3 in its niche in Lockport, Louisiana, the local pack position that actually drives booked work. Colin owns the code outright. No more monthly rental fee. Two pipelines (performance and repair) running on one site without the messages stepping on each other.',
     coverAlt: 'Lifted red GMC built by Elite Custom Automotive, photographed outside their Lockport shop.',
+    faqs: [
+      { q: "Why does Elite's site have two separate paths?", a: "Elite does two kinds of work for two kinds of customers: performance builds like lift kits and suspension, and everyday auto repair. Giving each its own path keeps a lift-kit buyer and someone with a check-engine light from wading through each other's pages." },
+      { q: "Does Colin own the Elite website?", a: "Yes. Elite was paying a web provider monthly rent with no path to ownership. The rebuild is custom code Colin owns outright, with no monthly platform fee." },
+      { q: "What would a shop site like Elite's cost?", a: "Strykora's custom builds start at $3,750, with a fixed quote after a short scoping conversation. Brand pages, city pages and booking tools are what move the price, so the quote lists each one." },
+    ],
   },
   'all-out-window-tint': {
     challenge:
@@ -202,6 +212,11 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     ],
     result: 'Two months after launch, the Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge", a market All Out was not ranking in at all before launch. Each location owns its own lead pipeline. Gonzales bookings hit Gonzales. Baton Rouge bookings hit Baton Rouge. The franchising page surfaces new partner inquiries Reed and Dax can vet without ever rebuilding the site.',
     coverAlt: 'Orange Corvette with the doors up, photographed inside the All Out Window Tint shop.',
+    faqs: [
+      { q: "How does one website handle two All Out locations?", a: "Each location has its own landing pages and its own contact form. Gonzales inquiries go to Reed and Baton Rouge inquiries go to Dax, so neither owner has to sort the other's leads." },
+      { q: "How quickly did the Baton Rouge location show up in search?", a: "Two months after launch, the brand new Baton Rouge location ranked #3 in Google's AI search results for \"tint baton rouge\", a market All Out had not ranked in before. AI results change over time, so we re-check them monthly." },
+      { q: "What would a two-location site like this cost?", a: "Strykora's custom builds start at $3,750, with a fixed quote after a short scoping conversation. A second location adds its own pages, form routing and Business Profile work, and the quote spells that out." },
+    ],
   },
   'hover-septic': {
     challenge:
@@ -214,6 +229,11 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     ],
     result: 'Hover Septic ranks #1 organic for "septic installs in Thibodaux LA", the exact keyword that pays the bills. The impact was so profound that Trey was able to drop low-ticket pumpout work entirely and focus on multi-thousand-dollar installs. The site rewrote the business model.',
     coverAlt: 'Screenshot of hoverseptic.com, the Strykora-built website for Hover Septic in Thibodaux, Louisiana.',
+    faqs: [
+      { q: "Where did Hover Septic start?", a: "With no website and no Google Business Profile, only a Facebook page. Every install lead came from word of mouth, so a customer who searched for Hover mid-decision found nothing." },
+      { q: "What changed for Hover Septic's business?", a: "The site ranked #1 organic for \"septic installs Thibodaux LA\", the search that brings in the high-ticket work. That let Trey drop low-ticket pump-out jobs and focus on multi-thousand-dollar installs." },
+      { q: "What would a first website like Hover's cost?", a: "Strykora's custom builds start at $3,750, with a fixed quote after a short scoping conversation. A first site also needs a Google Business Profile set up from scratch, and the quote covers that." },
+    ],
   },
   'acadia-pools': {
     challenge:
@@ -228,6 +248,11 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
     ],
     result: 'When a real customer asks Perplexity for a pool builder in Thibodaux, Acadia Pools is the first name in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity pulls Matt\'s phone number (985) 413-2954 and the "custom gunite pool and spa builder" wording directly from the page copy Strykora built. The AI started naming Acadia within months of launch.',
     coverAlt: 'Completed inground pool and patio built by Acadia Pools in Thibodaux, Louisiana.',
+    faqs: [
+      { q: "Where did Acadia Pools start?", a: "Matt Glover had a strong local reputation for custom gunite pools but no website at all. Leads came from word of mouth, and a buyer searching \"pool builder Thibodaux\" mid-decision could not find him." },
+      { q: "How does Perplexity know to recommend Acadia?", a: "Its answer quotes Acadia's own page wording, \"custom gunite pool and spa builder\", and the phone number from the site. Clear, specific copy about what the business does and where is what an AI answer can pull from. AI answers change over time, so we re-check them monthly." },
+      { q: "What would a pool builder site like Acadia's cost?", a: "Strykora's custom builds start at $3,750, with a fixed quote after a short scoping conversation. Acadia's site has six service pages, and the page count is the biggest driver of the price." },
+    ],
   },
 }
 
@@ -422,6 +447,33 @@ export default async function CaseStudyPage({ params }: Params) {
           </div>
         </section>
       )}
+
+      {details?.faqs?.length ? (
+        <section className="section-padding border-t border-border">
+          <Schema data={faqSchema(details.faqs)} />
+          <div className="container-wide max-w-3xl">
+            <Reveal className="mb-8">
+              <p className="eyebrow mb-3">Questions</p>
+              <h2 className="text-display-md font-display text-text">Common questions about the {c.client} project.</h2>
+            </Reveal>
+            <div className="space-y-3">
+              {details.faqs.map((f) => (
+                <Reveal key={f.q}>
+                  <details className="card group">
+                    <summary className="font-medium text-text cursor-pointer flex items-start justify-between gap-4 list-none">
+                      <h3 className="font-medium text-base">{f.q}</h3>
+                      <svg className="w-5 h-5 text-text-dim group-open:rotate-45 transition-transform shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
+                      </svg>
+                    </summary>
+                    <p className="mt-4 text-text-muted leading-relaxed">{f.a}</p>
+                  </details>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section-padding border-t border-border bg-bg-elevated">
         <div className="container-wide">
