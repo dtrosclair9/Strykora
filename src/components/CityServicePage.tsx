@@ -1,9 +1,12 @@
 import Link from 'next/link'
 import { services, cities, cityServiceCombos, site, industries, SERVICE_BY_COMBO_SLUG, ogImage } from '@/config/site'
 import PageHero from './PageHero'
-import Reveal from './Reveal'
+import ProjectActions from './ProjectActions'
+import Section from './Section'
+import FAQAccordion from './FAQAccordion'
 import CTA from './CTA'
 import { Schema, faqSchema as buildFaqSchema } from './Schema'
+import '@/app/(site)/interiors.css'
 
 interface Props {
   slug: string
@@ -350,6 +353,7 @@ export default function CityServicePage({ slug }: Props) {
   const label = comboLabel(combo.service, service.title)
 
   const cityCopy = CITY_COPY[city.slug]
+  const deepDive = COMBO_DEEP_DIVE[slug]
   const otherCombos = cityServiceCombos.filter((c) => c.citySlug === city.slug && c.slug !== slug)
   const otherCities = cityServiceCombos.filter((c) => c.service === combo.service && c.citySlug !== city.slug)
 
@@ -399,156 +403,112 @@ export default function CityServicePage({ slug }: Props) {
         ]}
       />
 
-      <section className="section-padding">
-        <div className="container-wide grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-7 space-y-10">
-            <Reveal>
-              <h2 className="text-display-md font-display text-text mb-6 text-balance">
-                Why hire Strykora for {label.phrase} in {city.name}?
-              </h2>
-              {cityCopy ? (
-                <>
-                  <p className="text-text-muted leading-relaxed mb-4">{cityCopy.marketContext}</p>
-                  <p className="text-text-muted leading-relaxed mb-6">
-                    {cityCopy.buyerSnapshot} {LEAD_IN[combo.service] ?? LEAD_IN['web-design']}{!PRICE_ONCE.has(slug) && <> <span className="text-text">{service.priceRange}</span></>}
-                  </p>
-                </>
-              ) : (
-                <p className="text-text-muted leading-relaxed mb-6">
-                  Strykora handles {label.phrase} for {city.name} businesses, and you own everything that gets built. <span className="text-text">{service.priceRange}</span>
+      <section className="ledger-section city-market" aria-labelledby="city-market-heading">
+        <div className="site-container">
+          <div className="city-market-copy">
+            <h2 id="city-market-heading" className="interior-title">
+              Why hire Strykora for {label.phrase} in {city.name}?
+            </h2>
+            {cityCopy ? (
+              <>
+                <p className="interior-copy">{cityCopy.marketContext}</p>
+                <p className="city-buyer-note">
+                  {cityCopy.buyerSnapshot} {LEAD_IN[combo.service] ?? LEAD_IN['web-design']}{!PRICE_ONCE.has(slug) && <> <span>{service.priceRange}</span></>}
                 </p>
-              )}
-              <ul className="space-y-3">
-                {(COMBO_BULLETS[slug] ?? service.bullets).map((b) => (
-                  <li key={b} className="flex items-start gap-3 text-text-muted">
-                    <svg className="w-5 h-5 text-accent shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="leading-relaxed">{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-
-            <Reveal>
-              <h2 className="text-2xl md:text-3xl font-display text-text mb-4">Who Strykora works with in {city.name}</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {industries.map((i) => (
-                  <Link key={i.slug} href={`/industries/${i.slug}`} className="card group flex items-center justify-between text-sm">
-                    <span className="text-text">{i.title}</span>
-                    <svg className="w-4 h-4 text-text-dim group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                ))}
-              </div>
-            </Reveal>
+              </>
+            ) : (
+              <p className="interior-copy">
+                Strykora handles {label.phrase} for {city.name} businesses, and you own everything that gets built. <span>{service.priceRange}</span>
+              </p>
+            )}
+            <ul className="interior-ruled-list" role="list">
+              {(COMBO_BULLETS[slug] ?? service.bullets).map((bullet) => <li key={bullet}>{bullet}</li>)}
+            </ul>
           </div>
 
-          <aside className="lg:col-span-5">
-            <Reveal>
-              <div className="card p-6 lg:sticky lg:top-28 space-y-6">
-                <div>
-                  <p className="eyebrow mb-3">Local snapshot</p>
-                  <dl className="space-y-2 text-sm">
-                    <div className="flex justify-between"><dt className="text-text-dim">City</dt><dd className="text-text">{city.name}, {city.state}</dd></div>
-                    <div className="flex justify-between"><dt className="text-text-dim">Parish</dt><dd className="text-text">{city.parish}</dd></div>
-                    <div className="flex justify-between"><dt className="text-text-dim">Service</dt><dd className="text-text">{label.title}</dd></div>
-                    {!PRICE_ONCE.has(slug) && <div className="flex justify-between"><dt className="text-text-dim">Pricing</dt><dd className="text-text text-right">{service.priceRange}</dd></div>}
-                    <div className="flex justify-between"><dt className="text-text-dim">Ownership</dt><dd className="text-text">Yours</dd></div>
-                  </dl>
-                </div>
+          <aside className="city-snapshot surface-dark" aria-labelledby="city-snapshot-label">
+            <p id="city-snapshot-label" className="eyebrow">Local snapshot</p>
+            <dl>
+              <div className="city-snapshot-place"><dt>City</dt><dd>{city.name}, {city.state}</dd></div>
+              <div><dt>Parish</dt><dd>{city.parish}</dd></div>
+              <div><dt>Service</dt><dd>{label.title}</dd></div>
+              {!PRICE_ONCE.has(slug) && <div><dt>Pricing</dt><dd>{service.priceRange}</dd></div>}
+              <div><dt>Ownership</dt><dd>Yours</dd></div>
+            </dl>
 
-                {otherCombos.length > 0 && (
-                  <div>
-                    <p className="eyebrow mb-3">Other services in {city.name}</p>
-                    <ul className="space-y-2">
-                      {otherCombos.map((o) => (
-                        <li key={o.slug}>
-                          <Link href={`/${o.slug}`} className="text-sm text-text-muted hover:text-text transition-colors">
-                            {comboLabel(o.service, services.find((s) => s.slug === (SERVICE_BY_COMBO_SLUG[o.service] ?? o.service))?.title ?? '').title} in {o.cityName}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                <Link href="/contact" className="btn-primary w-full justify-center">Start a project</Link>
-                <a href={`tel:${site.phoneRaw}`} className="btn-secondary w-full justify-center">Call {site.phoneDisplay}</a>
+            {otherCombos.length > 0 && (
+              <div className="city-snapshot-services">
+                <p className="eyebrow">Other services in {city.name}</p>
+                <ul className="interior-directory">
+                  {otherCombos.map((other) => (
+                    <li key={other.slug}>
+                      <Link href={`/${other.slug}`} className="text-link">
+                        {comboLabel(other.service, services.find((s) => s.slug === (SERVICE_BY_COMBO_SLUG[other.service] ?? other.service))?.title ?? '').title} in {other.cityName}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </Reveal>
+            )}
+
+            <ProjectActions />
           </aside>
+
+          <section className="city-industries" aria-labelledby="city-industries-heading">
+            <h2 id="city-industries-heading" className="interior-title">Who Strykora works with in {city.name}</h2>
+            <ul className="interior-directory city-directory">
+              {industries.map((industry) => (
+                <li key={industry.slug}>
+                  <Link href={`/industries/${industry.slug}`} className="text-link">{industry.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
       </section>
 
-      {COMBO_DEEP_DIVE[slug] && (
-        <section className="section-padding border-t border-border" aria-label={`More about ${label.phrase} in ${city.name}`}>
-          <div className="container-narrow space-y-12">
-            {COMBO_DEEP_DIVE[slug].map((sec) => (
-              <Reveal key={sec.heading}>
-                <h2 className="text-2xl md:text-3xl font-display text-text mb-4 text-balance">{sec.heading}</h2>
-                <div className="space-y-4">
-                  {sec.paragraphs.map((p) => (
-                    <p key={p.slice(0, 32)} className="text-text-muted leading-relaxed">{p}</p>
-                  ))}
+      {deepDive && (
+        <section className="ledger-section city-market-notes interior-rule" aria-label={`More about ${label.phrase} in ${city.name}`}>
+          <div className="site-container">
+            {deepDive.map((note) => (
+              <section key={note.heading}>
+                <h2 className="interior-title">{note.heading}</h2>
+                <div className="interior-copy">
+                  {note.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                 </div>
-              </Reveal>
+              </section>
             ))}
           </div>
         </section>
       )}
 
       {pageFaqs.length > 0 && (
-        <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="city-faq-heading">
-          <div className="container-narrow">
-            <Reveal className="mb-10">
-              <p className="eyebrow mb-3">FAQ</p>
-              <h2 id="city-faq-heading" className="text-display-md font-display text-text text-balance">
-                Questions about {label.phrase} in {city.name}
-              </h2>
-            </Reveal>
-            <div className="space-y-3">
-              {pageFaqs.map((f) => (
-                <Reveal key={f.q}>
-                  <details className="card group">
-                    <summary className="font-medium text-text cursor-pointer flex items-start justify-between gap-4 list-none">
-                      <span>{f.q}</span>
-                      <svg className="w-5 h-5 text-text-dim group-open:rotate-45 transition-transform shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
-                      </svg>
-                    </summary>
-                    <p className="mt-4 text-text-muted leading-relaxed">{f.a}</p>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Section
+          id="city-faq"
+          className="interior-faq interior-wash interior-rail"
+          eyebrow="FAQ"
+          heading={`Questions about ${label.phrase} in ${city.name}`}
+        >
+          <FAQAccordion items={pageFaqs} />
+        </Section>
       )}
 
       {otherCities.length > 0 && (
-        <section className="section-padding border-t border-border">
-          <div className="container-wide">
-            <Reveal className="mb-10">
-              <p className="eyebrow mb-3">Also serving</p>
-              <h2 className="text-display-md font-display text-text">Strykora also offers {label.phrase} in other parts of Louisiana</h2>
-              <p className="mt-4 text-text-muted max-w-2xl">Strykora works with businesses across South Louisiana. Pick a city to see what changes for {label.phrase} there.</p>
-            </Reveal>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {otherCities.map((o) => (
-                <Reveal key={o.slug}>
-                  <Link href={`/${o.slug}`} className="card group flex items-center justify-between">
-                    <span className="text-text">{o.cityName}, LA</span>
-                    <svg className="w-4 h-4 text-text-dim group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Section
+          id="other-cities"
+          className="city-coverage interior-rule"
+          eyebrow="Also serving"
+          heading={`Strykora also offers ${label.phrase} in other parts of Louisiana`}
+          description={`Strykora works with businesses across South Louisiana. Pick a city to see what changes for ${label.phrase} there.`}
+        >
+          <ul className="interior-directory city-directory">
+            {otherCities.map((other) => (
+              <li key={other.slug}>
+                <Link href={`/${other.slug}`} className="text-link">{other.cityName}, LA</Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
       )}
 
       <CTA heading={`Need help with ${label.phrase} in ${city.name}?`} />

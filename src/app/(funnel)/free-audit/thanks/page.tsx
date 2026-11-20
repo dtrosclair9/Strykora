@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { site } from '@/config/site'
-import Reveal from '@/components/Reveal'
+import FunnelNextSteps from '@/components/FunnelNextSteps'
 
 export const metadata: Metadata = {
   title: 'Audit request received',
@@ -30,37 +29,14 @@ const steps = [
 
 export default function AuditThanksPage() {
   return (
-    <section className="relative pt-32 md:pt-40 pb-24 border-b border-border overflow-hidden">
-      <div className="absolute inset-0 grid-pattern opacity-40 mask-fade-bottom" aria-hidden="true" />
-      <div className="relative container-wide max-w-3xl">
-        <Reveal as="div" stagger className="space-y-5">
-          <p className="eyebrow">Request received</p>
-          <h1 className="text-display-lg font-display text-text text-balance leading-[1.02]">
-            Got it. Your audit is on the way.
-          </h1>
-          <p className="text-lg md:text-xl text-text-muted leading-relaxed">
-            Thanks for sending it. Here is exactly what happens from here.
-          </p>
-        </Reveal>
-
-        <ol className="mt-12 space-y-4">
-          {steps.map((s) => (
-            <li key={s.n}>
-              <Reveal className="card p-6 flex gap-5">
-                <span className="font-mono text-accent text-sm pt-1 shrink-0" aria-hidden="true">{s.n}</span>
-                <div>
-                  <h2 className="text-lg font-display text-text mb-2">{s.title}</h2>
-                  <p className="text-text-muted text-sm leading-relaxed">{s.body}</p>
-                </div>
-              </Reveal>
-            </li>
-          ))}
-        </ol>
-
-        <Reveal className="mt-12 flex flex-wrap gap-3">
-          <a href={`tel:${site.phoneRaw}`} className="btn-primary">Call {site.phoneDisplay}</a>
-          <Link href="/case-studies" className="btn-secondary">See the case studies</Link>
-        </Reveal>
+    <section className="funnel-receipt" aria-labelledby="audit-thanks-title">
+      <div className="site-container funnel-receipt-layout">
+        <div className="funnel-receipt-intro">
+          <p className="eyebrow hero-eyebrow">Request received</p>
+          <h1 id="audit-thanks-title" className="ledger-hero-title">Got it. Your audit is on the way.</h1>
+          <p className="funnel-lede">Thanks for sending it. Here is exactly what happens from here.</p>
+        </div>
+        <FunnelNextSteps steps={steps} />
       </div>
     </section>
   )

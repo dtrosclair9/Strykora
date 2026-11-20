@@ -1,9 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useId, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-
-type FormState = 'idle' | 'loading' | 'error'
 
 /**
  * Two-field opt-in for the 9 Questions guide.
@@ -15,12 +13,17 @@ type FormState = 'idle' | 'loading' | 'error'
  */
 export default function HvcoForm({ niche = 'general' }: { niche?: string }) {
   const router = useRouter()
-  const [status, setStatus] = useState<FormState>('idle')
+  const formId = useId()
+  const submitting = useRef(false)
+  const [isSending, setIsSending] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setStatus('loading')
+    if (submitting.current) return
+
+    submitting.current = true
+    setIsSending(true)
     setErrorMessage('')
 
     const form = e.currentTarget
@@ -53,67 +56,60 @@ export default function HvcoForm({ niche = 'general' }: { niche?: string }) {
       }
       const json = await res.json().catch(() => null)
       setErrorMessage(json?.error ?? 'Something went wrong. Please try again, or call instead.')
-      setStatus('error')
     } catch {
       setErrorMessage('Network error. Please check your connection and try again.')
-      setStatus('error')
     }
+
+    submitting.current = false
+    setIsSending(false)
   }
 
-  const inputClass =
-    'w-full bg-bg border border-border rounded-md px-4 py-3 text-sm text-text placeholder:text-text-dim focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition'
-
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-4" aria-describedby="hvco-form-note">
+    <form onSubmit={handleSubmit} className="funnel-form" aria-describedby={`${formId}-note`}>
       <div>
-        <label htmlFor="hvco-email" className="block text-sm font-medium text-text mb-2">
-          Your email <span className="text-accent" aria-hidden="true">*</span>
+        <label htmlFor={`${formId}-email`}>
+          Your email <span className="funnel-required" aria-hidden="true">*</span>
         </label>
         <input
-          id="hvco-email"
+          id={`${formId}-email`}
           name="email"
           type="email"
           required
           autoComplete="email"
-          className={inputClass}
           placeholder="you@business.com"
         />
       </div>
 
       <div>
-        <label htmlFor="hvco-website" className="block text-sm font-medium text-text mb-2">
-          Your website <span className="text-accent" aria-hidden="true">*</span>
+        <label htmlFor={`${formId}-website`}>
+          Your website <span className="funnel-required" aria-hidden="true">*</span>
         </label>
         <input
-          id="hvco-website"
+          id={`${formId}-website`}
           name="website"
           type="text"
           required
           inputMode="url"
           autoComplete="url"
-          className={inputClass}
+          aria-describedby={`${formId}-website-hint`}
           placeholder="yourbusiness.com"
         />
-        <p className="mt-2 text-xs text-text-dim">
+        <p id={`${formId}-website-hint`} className="funnel-form-hint">
           So I know what trade you are in. If you do not have one, send whichever page you do have.
         </p>
       </div>
 
-      {status === 'error' && (
-        <p role="alert" className="text-sm text-red-400 bg-red-950/40 border border-red-900 rounded-md px-4 py-3">
-          {errorMessage}
-        </p>
-      )}
+      <div className="funnel-form-error" role="alert">{errorMessage}</div>
 
       <button
         type="submit"
-        disabled={status === 'loading'}
-        className="w-full btn-primary justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+        disabled={isSending}
+        className="btn-conversion"
       >
-        {status === 'loading' ? 'Sending...' : 'Send me the 9 questions'}
+        {isSending ? 'Sending...' : 'Send me the 9 questions'}
       </button>
 
-      <p id="hvco-form-note" className="text-xs text-text-dim leading-relaxed text-center">
+      <p id={`${formId}-note`} className="funnel-form-hint">
         Arrives in about a minute. Yours to keep.
       </p>
     </form>

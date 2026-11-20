@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { services, site } from '@/config/site'
 import PageHero from '@/components/PageHero'
-import Reveal from '@/components/Reveal'
+import Section from '@/components/Section'
 import CTA from '@/components/CTA'
 import { Schema } from '@/components/Schema'
+import '../interiors.css'
 
 export const metadata: Metadata = {
   title: 'Web Design, SEO, Google Ads & AI Search — Louisiana',
@@ -26,6 +27,9 @@ const itemListSchema = {
 }
 
 export default function ServicesPage() {
+  const featured = services.find((service) => 'featured' in service && service.featured)
+  const core = services.filter((service) => !('featured' in service && service.featured))
+
   return (
     <>
       <Schema data={itemListSchema} />
@@ -33,151 +37,116 @@ export default function ServicesPage() {
         eyebrow="Services"
         title="Web design, SEO and Google Ads for Louisiana businesses."
         description="Four services. Web design leads, SEO compounds on top of it, Google Business Profile grabs the map results, ads fill the gap while SEO is still building."
-        bgImage="/images/hero-services-index.jpg"
-        bgImageAlt="Glowing translucent service cards stacking upward in deep navy space, each card brighter than the one below, representing how Strykora's four services build on each other."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/services', label: 'Services' },
         ]}
       />
 
-      <section className="section-padding">
-        <div className="container-wide">
-          <Reveal className="max-w-3xl mb-12">
-            <p className="eyebrow mb-4">The stack</p>
-            <h2 className="text-display-md font-display text-text text-balance mb-5">
-              Four core services. One sequence. Plus a fifth nobody else sells.
-            </h2>
-            <p className="text-text-muted text-lg leading-relaxed">
-              A pretty site that nobody finds is a brochure. A #1 ranking for a slow, ugly site sends traffic to the wrong impression. The four core services below are the order Strykora runs in production. The fifth, AI Search Optimization, is the moat: getting your business cited inside the ChatGPT, Perplexity, and Google AI Overview answers your future customers already trust.
-            </p>
-          </Reveal>
+      <Section
+        id="service-stack"
+        className="interior-split-intro"
+        eyebrow="The stack"
+        heading="Four core services. One sequence. Plus a fifth nobody else sells."
+        description="A pretty site that nobody finds is a brochure. A #1 ranking for a slow, ugly site sends traffic to the wrong impression. The four core services below are the order Strykora runs in production. The fifth, AI Search Optimization, is the moat: getting your business cited inside the ChatGPT, Perplexity, and Google AI Overview answers your future customers already trust."
+      >
+        {featured && (
+          <article className="services-feature">
+            <Link href={`/services/${featured.slug}`} className="interior-linked">
+              <div className="services-feature-intro surface-dark">
+                <div>
+                  <p className="eyebrow">The Louisiana moat</p>
+                  <h2>{featured.title}</h2>
+                </div>
+                <div className="interior-copy">
+                  {featured.long.split(/ (?=Strykora audits)/).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                </div>
+              </div>
+              <div className="services-feature-details interior-copy">
+                <ul className="services-index-deliverables" role="list">
+                  {featured.bullets.slice(0, 3).map((bullet) => <li key={bullet}>{bullet}</li>)}
+                </ul>
+                <p className="interior-note">{featured.priceRange}</p>
+                <span className="interior-link-label">See the playbook</span>
+              </div>
+            </Link>
+          </article>
+        )}
 
-          {(() => {
-            const ai = services.find((s) => 'featured' in s && s.featured)
-            if (!ai) return null
-            return (
-              <Reveal className="mb-8">
-                <Link href={`/services/${ai.slug}`} className="block group relative overflow-hidden rounded-2xl border border-border bg-bg-elevated p-8 md:p-10 hover:border-accent/50 transition-colors">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    <div className="lg:col-span-8">
-                      <p className="eyebrow mb-4">The Louisiana moat</p>
-                      <h2 className="text-2xl md:text-3xl font-display text-text mb-3 text-balance">{ai.title}</h2>
-                      <p className="text-text-muted leading-relaxed mb-5">{ai.long}</p>
-                      <ul className="space-y-2 mb-4">
-                        {ai.bullets.slice(0, 3).map((b) => (
-                          <li key={b} className="flex items-start gap-2.5 text-sm text-text-muted">
-                            <svg className="w-4 h-4 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                      <p className="text-sm text-text-dim font-mono">{ai.priceRange}</p>
-                    </div>
-                    <div className="lg:col-span-4 lg:text-right">
-                      <span className="inline-flex items-center gap-1 text-sm text-accent font-medium group-hover:gap-2 transition-all">
-                        See the playbook
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </Reveal>
-            )
-          })()}
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            {services.filter((s) => !('featured' in s && s.featured)).map((s) => (
-              <Reveal key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="card-feature group block h-full p-8">
-                  <p className="text-xs text-text-dim mb-3">{s.eyebrow}</p>
-                  <h2 className="text-2xl md:text-3xl font-display text-text mb-3 text-balance">{s.title}</h2>
-                  <p className="text-text-muted leading-relaxed mb-5">{s.long}</p>
-                  <ul className="space-y-2 mb-6">
-                    {s.bullets.slice(0, 3).map((b) => (
-                      <li key={b} className="flex items-start gap-2.5 text-sm text-text-muted">
-                        <svg className="w-4 h-4 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {b}
-                      </li>
-                    ))}
+        <ol className="services-index-list" role="list">
+          {core.map((service) => (
+            <li key={service.slug}>
+              <Link href={`/services/${service.slug}`} className="services-index-link interior-linked">
+                <div>
+                  <p className="eyebrow">{service.eyebrow}</p>
+                  <h2>{service.title}</h2>
+                </div>
+                <div className="interior-copy">
+                  <p>{service.long}</p>
+                  <ul className="services-index-deliverables" role="list">
+                    {service.bullets.slice(0, 3).map((bullet) => <li key={bullet}>{bullet}</li>)}
                   </ul>
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="text-sm text-text-dim font-mono">{s.priceRange}</span>
-                    <span className="inline-flex items-center gap-1 text-sm text-accent font-medium group-hover:gap-2 transition-all">
-                      See {s.title.toLowerCase()}
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+                  <p className="interior-note">{service.priceRange}</p>
+                  <span className="interior-link-label">See {service.title.toLowerCase()}</span>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </Section>
 
-      <section className="section-padding bg-bg-elevated border-y border-border">
-        <div className="container-wide">
-          <Reveal className="max-w-3xl mb-12">
-            <p className="eyebrow mb-4">Where to start</p>
-            <h2 className="text-display-md font-display text-text text-balance">
-              Not sure which one you need first?
-            </h2>
-            <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              The honest answer depends on what's already broken. Pick the line that sounds like you, and that's the service to lead with.
-            </p>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {[
-              {
-                situation: 'My site looks dated, slow, or is on Wix or Squarespace.',
-                lead: 'Web Design first.',
-                why: 'A new site fixes the speed, search rankings, and lead-tracking before you spend a dollar on SEO. Otherwise you are paying for traffic that lands on a site that scares it away.',
-                href: '/services/web-design',
-              },
-              {
-                situation: 'My site is fine. I just do not show up on Google in my city.',
-                lead: 'Local SEO first.',
-                why: 'Page updates, your Google Business Profile, and monthly content compound for six to twelve months. The ranking work outlives any ad budget you stop paying.',
-                href: '/services/seo',
-              },
-              {
-                situation: 'I need leads this month, not next year.',
-                lead: 'Google Ads first.',
-                why: 'Paid search buys you the top of page one today. Strykora runs the ads with a landing page that tracks which clicks turn into actual phone calls, so you see your real cost per lead.',
-                href: '/services/google-ads',
-              },
-              {
-                situation: 'My Google Business Profile is empty or stuck with my last agency.',
-                lead: 'Google Business Profile first.',
-                why: 'The map results drive more calls than the regular Google results for most service businesses. Strykora rebuilds the profile, keeps the reviews coming, and lines it up with the rest of your site.',
-                href: '/services/google-business-profile',
-              },
-              {
-                situation: 'My SEO is fine but ChatGPT and Google\'s AI answer never name me.',
-                lead: 'AI Search Optimization first.',
-                why: 'AI tools recommend businesses from what they can read about you: your pages, your Business Profile, your reviews, and other sites that mention you. Strykora finds where you are missing and fixes those places first.',
-                href: '/services/ai-search-optimization',
-              },
-            ].map((item) => (
-              <Reveal key={item.situation}>
-                <Link href={item.href} className="card-feature group block h-full p-7">
-                  <p className="text-text font-display text-lg mb-3 leading-snug">{item.situation}</p>
-                  <p className="text-accent font-medium mb-3">{item.lead}</p>
-                  <p className="text-text-muted text-sm leading-relaxed">{item.why}</p>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section
+        id="service-start"
+        className="service-start interior-wash interior-rail"
+        eyebrow="Where to start"
+        heading="Not sure which one you need first?"
+        description="The honest answer depends on what's already broken. Pick the line that sounds like you, and that's the service to lead with."
+      >
+        <ul className="service-start-list" role="list">
+          {[
+            {
+              situation: 'My site looks dated, slow, or is on Wix or Squarespace.',
+              lead: 'Web Design first.',
+              why: 'A new site fixes the speed, search rankings, and lead-tracking before you spend a dollar on SEO. Otherwise you are paying for traffic that lands on a site that scares it away.',
+              href: '/services/web-design',
+            },
+            {
+              situation: 'My site is fine. I just do not show up on Google in my city.',
+              lead: 'Local SEO first.',
+              why: 'Page updates, your Google Business Profile, and monthly content compound for six to twelve months. The ranking work outlives any ad budget you stop paying.',
+              href: '/services/seo',
+            },
+            {
+              situation: 'I need leads this month, not next year.',
+              lead: 'Google Ads first.',
+              why: 'Paid search buys you the top of page one today. Strykora runs the ads with a landing page that tracks which clicks turn into actual phone calls, so you see your real cost per lead.',
+              href: '/services/google-ads',
+            },
+            {
+              situation: 'My Google Business Profile is empty or stuck with my last agency.',
+              lead: 'Google Business Profile first.',
+              why: 'The map results drive more calls than the regular Google results for most service businesses. Strykora rebuilds the profile, keeps the reviews coming, and lines it up with the rest of your site.',
+              href: '/services/google-business-profile',
+            },
+            {
+              situation: 'My SEO is fine but ChatGPT and Google\'s AI answer never name me.',
+              lead: 'AI Search Optimization first.',
+              why: 'AI tools recommend businesses from what they can read about you: your pages, your Business Profile, your reviews, and other sites that mention you. Strykora finds where you are missing and fixes those places first.',
+              href: '/services/ai-search-optimization',
+            },
+          ].map((item) => (
+            <li key={item.situation}>
+              <Link href={item.href} className="service-start-link interior-linked">
+                <p className="service-start-situation">{item.situation}</p>
+                <div>
+                  <p className="interior-link-label">{item.lead}</p>
+                  <p className="interior-copy">{item.why}</p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
       <CTA />
     </>

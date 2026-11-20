@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import { site } from '@/config/site'
 import PageHero from '@/components/PageHero'
-import Reveal from '@/components/Reveal'
+import FAQAccordion from '@/components/FAQAccordion'
+import Section from '@/components/Section'
 import CTA from '@/components/CTA'
 import ReviewsSection from '@/components/ReviewsSection'
 import { Schema, personSchema, faqSchema as buildFaqSchema } from '@/components/Schema'
+import '../editorial.css'
+
+const portraitPreload = '/images/dayne-headshot-400.avif'
+const portraitSrcSet = `${portraitPreload} 400w, /images/dayne-headshot-640.avif 640w, /images/dayne-headshot-800.avif 800w`
+const portraitSizes = '(min-width: 1170px) 400px, (min-width: 1024px) 34.24vw, (min-width: 448px) 400px, calc(100vw - 48px)'
 
 export const metadata: Metadata = {
   title: 'About Dayne Trosclair, Louisiana Web Designer',
@@ -38,6 +43,15 @@ const aboutFaqs = [
 export default function AboutPage() {
   return (
     <>
+      <link
+        rel="preload"
+        as="image"
+        type="image/avif"
+        href={portraitPreload}
+        imageSrcSet={portraitSrcSet}
+        imageSizes={portraitSizes}
+        fetchPriority="high"
+      />
       <Schema data={[aboutPageSchema, personSchema, buildFaqSchema(aboutFaqs)]} />
       <PageHero
         eyebrow="About"
@@ -49,120 +63,87 @@ export default function AboutPage() {
         ]}
       />
 
-      <section className="section-padding">
-        <div className="container-wide grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <Reveal className="lg:col-span-5">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-bg-elevated">
-              <Image
-                src="/images/dayne-headshot.jpg"
-                alt={`${site.owner}, founder of ${site.name}, in ${site.address.city}, Louisiana`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                priority
-              />
-              <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-bg via-bg/70 to-transparent">
-                <p className="font-display text-lg text-text">{site.owner}</p>
-                <p className="text-sm text-text-muted">Founder · {site.address.city}, {site.address.state}</p>
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="lg:col-span-7 space-y-6 text-lg text-text-muted leading-relaxed">
-            <Reveal as="p">
-              I&apos;m from {site.address.city}. I&apos;ve worked next to Louisiana service business owners my whole life, so I know how they think and what their customers actually search for.
-            </Reveal>
-            <Reveal as="p">
-              Most agencies sell you a sales rep, then hand the real work to a junior. You never talk to whoever built your site. Every text change after launch becomes a two-week ticket.
-            </Reveal>
-            <Reveal as="p">
-              {site.name} is built differently. I take a small number of Louisiana clients each year, build every
-              site by hand, and handle the SEO myself. No account managers, no offshore subcontractors,
-              no Wix templates with your logo on them.
-            </Reveal>
-            <Reveal as="p">
-              The stack {site.name} builds on is the same one high-end agencies in San Francisco and New
-              York use. I run it from {site.address.city} and price it for Louisiana service businesses. You
-              get a real custom build for a small business budget, and you own the code outright.
-            </Reveal>
-            <Reveal as="p" className="text-text">
-              You call, I answer. You text a change, it ships the same day. You decide to leave, you take the
-              code, the domain, the analytics, and the GBP with you. That&apos;s the trade. No lock-in, no
-              account managers, no nonsense. If that&apos;s the kind of partner you want, we&apos;ll work well together.
-            </Reveal>
-          </div>
+      <div className="ledger-section site-container about-profile">
+        <figure className="about-portrait">
+          <picture>
+            <source type="image/avif" srcSet={portraitSrcSet} sizes={portraitSizes} />
+            {/* eslint-disable-next-line @next/next/no-img-element -- Static variants avoid a first-visit image transform. */}
+            <img
+              src="/images/dayne-headshot-800.webp"
+              alt={`${site.owner}, founder of ${site.name}, in ${site.address.city}, Louisiana`}
+              width={400}
+              height={531}
+              fetchPriority="high"
+            />
+          </picture>
+          <figcaption>
+            <p><strong>{site.owner}</strong></p>
+            <p>Founder · {site.address.city}, {site.address.state}</p>
+          </figcaption>
+        </figure>
+        <div className="about-story editorial-copy">
+          <p>
+            I&apos;m from {site.address.city}. I&apos;ve worked next to Louisiana service business owners my whole life, so I know how they think and what their customers actually search for.
+          </p>
+          <p>
+            Most agencies sell you a sales rep, then hand the real work to a junior. You never talk to whoever built your site. Every text change after launch becomes a two-week ticket.
+          </p>
+          <p>
+            {site.name} is built differently. I take a small number of Louisiana clients each year, build every
+            site by hand, and handle the SEO myself. No account managers, no offshore subcontractors,
+            no Wix templates with your logo on them.
+          </p>
+          <p>
+            The stack {site.name} builds on is the same one high-end agencies in San Francisco and New
+            York use. I run it from {site.address.city} and price it for Louisiana service businesses. You
+            get a real custom build for a small business budget, and you own the code outright.
+          </p>
+          <p className="about-pull">
+            You call, I answer. You text a change, it ships the same day. You decide to leave, you take the
+            code, the domain, the analytics, and the GBP with you. That&apos;s the trade. No lock-in, no
+            account managers, no nonsense. If that&apos;s the kind of partner you want, we&apos;ll work well together.
+          </p>
         </div>
-      </section>
+      </div>
 
-      <section className="section-padding border-t border-border bg-bg-elevated">
-        <div className="container-wide grid grid-cols-1 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+      <div className="about-facts">
+        <dl className="site-container">
           {[
             { label: 'Owned by', value: 'You' },
             { label: 'Based in', value: `${site.address.city}, ${site.address.state}` },
             { label: 'Rooted in', value: 'Louisiana' },
             { label: 'Footprint', value: 'One operator' },
-          ].map((s) => (
-            <Reveal key={s.label} className="bg-bg-elevated p-8 text-center">
-              <p className="text-[10px] uppercase tracking-[0.18em] text-text-dim">{s.label}</p>
-              <p className="font-display text-xl text-text mt-2">{s.value}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-padding">
-        <div className="container-narrow text-center">
-          <Reveal>
-            <p className="eyebrow mb-4">Recent wins</p>
-            <h2 className="text-display-md font-display text-text mb-6 text-balance">
-              Real Louisiana businesses, real rankings.
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border mt-10">
-              <div className="bg-bg-elevated p-6">
-                <p className="font-display text-2xl gradient-text">#1 Organic</p>
-                <p className="text-sm text-text-muted mt-2">Hover Septic, Thibodaux LA<br /><span className="text-text-dim">&quot;septic installs Thibodaux LA&quot;</span></p>
-              </div>
-              <div className="bg-bg-elevated p-6">
-                <p className="font-display text-2xl gradient-text">#3 AI Search</p>
-                <p className="text-sm text-text-muted mt-2">All Out Window Tint, Baton Rouge<br /><span className="text-text-dim">&quot;tint baton rouge&quot;, 2 months post-launch</span></p>
-              </div>
-              <div className="bg-bg-elevated p-6">
-                <p className="font-display text-2xl gradient-text">9 City Pages</p>
-                <p className="text-sm text-text-muted mt-2">Foret Construction<br /><span className="text-text-dim">FORTIFIED roofer, South LA</span></p>
-              </div>
+          ].map(({ label, value }) => (
+            <div key={label}>
+              <dt className="eyebrow">{label}</dt>
+              <dd>{value}</dd>
             </div>
-          </Reveal>
-        </div>
-      </section>
+          ))}
+        </dl>
+      </div>
 
-      {/* Two reviews plus a link: the full list lives on /reviews, and repeating it here made the two pages 91% identical (audit 2026-11-18). */}
+      <Section id="about-wins" eyebrow="Recent wins" heading="Real Louisiana businesses, real rankings." className="about-wins">
+        <dl className="about-results">
+          <div>
+            <dt>#1 Organic</dt>
+            <dd>Hover Septic, Thibodaux LA<br />&quot;septic installs Thibodaux LA&quot;</dd>
+          </div>
+          <div>
+            <dt>#3 AI Search</dt>
+            <dd>All Out Window Tint, Baton Rouge<br />&quot;tint baton rouge&quot;, 2 months post-launch</dd>
+          </div>
+          <div>
+            <dt>9 City Pages</dt>
+            <dd>Foret Construction<br />FORTIFIED roofer, South LA</dd>
+          </div>
+        </dl>
+      </Section>
+
       <ReviewsSection limit={2} featuredOnly heading="What clients say about working with Strykora." eyebrow="Reviews" showSeeAllLink />
 
-      <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="about-faq-heading">
-        <div className="container-narrow">
-          <Reveal className="mb-10">
-            <p className="eyebrow mb-3">FAQ</p>
-            <h2 id="about-faq-heading" className="text-display-md font-display text-text text-balance">
-              About Strykora.
-            </h2>
-          </Reveal>
-          <div className="space-y-3">
-            {aboutFaqs.map((f) => (
-              <Reveal key={f.q}>
-                <details className="card group">
-                  <summary className="font-medium text-text cursor-pointer flex items-start justify-between gap-4 list-none">
-                    <span>{f.q}</span>
-                    <svg className="w-5 h-5 text-text-dim group-open:rotate-45 transition-transform shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
-                    </svg>
-                  </summary>
-                  <p className="mt-4 text-text-muted leading-relaxed">{f.a}</p>
-                </details>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section id="about-faq" eyebrow="FAQ" heading="About Strykora." className="editorial-faq">
+        <FAQAccordion items={aboutFaqs} />
+      </Section>
 
       <CTA />
     </>

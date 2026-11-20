@@ -1,13 +1,16 @@
 import type { Metadata } from 'next'
-import { Fragment } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
-import { services, industries, caseStudies, site, trustStrip, reviewStats } from '@/config/site'
-import HeroBackdrop from '@/components/HeroBackdrop'
-import Reveal from '@/components/Reveal'
+import Link from 'next/link'
+import CTA from '@/components/CTA'
+import FAQAccordion from '@/components/FAQAccordion'
+import ProjectActions from '@/components/ProjectActions'
+import Section from '@/components/Section'
 import Stars from '@/components/Stars'
-import ReviewsSection from '@/components/ReviewsSection'
+import ReviewQuote from '@/components/ReviewQuote'
 import { Schema, localBusinessSchema, websiteSchema, personSchema, faqSchema as buildFaqSchema } from '@/components/Schema'
+import { industries, reviews, reviewStats, services, site, trustStrip } from '@/config/site'
+import { citations, comparisonRows, faqs, featuredCase, home, pillars, processSteps } from '@/content/home'
+import './home.css'
 
 export const metadata: Metadata = {
   title: 'Web Design & SEO for Louisiana Businesses',
@@ -15,108 +18,6 @@ export const metadata: Metadata = {
     'Custom-built websites and local SEO for Louisiana service businesses. Built in Thibodaux, ranks on Google and inside ChatGPT, and you own the code outright.',
   alternates: { canonical: site.url },
 }
-
-const pillars = [
-  {
-    label: '01',
-    title: 'You own everything, day one',
-    body: 'The site, the code, the domain, the Google Business Profile, the analytics. No monthly platform tax. No agency holding your accounts hostage when you leave.',
-  },
-  {
-    label: '02',
-    title: 'You call, Dayne answers',
-    body: 'No account managers, no offshore handoffs, no tickets. The person building your site is the same person who responds within one business day.',
-  },
-  {
-    label: '03',
-    title: 'Found in Google AND in ChatGPT',
-    body: 'Strykora ranks you on Google, in Google AI Overviews, and inside the ChatGPT, Perplexity, and Gemini answers your future customers are already starting to trust.',
-  },
-  {
-    label: '04',
-    title: 'Real numbers, not vibes',
-    body: 'Fixed-price quotes up front. No 12-month contracts. Monthly reports show tracked rankings, booked leads, and what changed. If it isn\'t working, you see it.',
-  },
-]
-
-const comparisonRows = [
-  { label: 'Build time', them: '2–3 months', us: 'About 1 week once it starts' },
-  { label: 'Pricing', them: 'Open-ended hourly billing', us: 'One fixed price, in writing, before you pay' },
-  { label: 'Who owns the site', them: 'The agency does. Try leaving.', us: 'You do. Day one. Take it with you anywhere.' },
-  { label: 'Contract length', them: '12-month minimum, auto-renew', us: 'Month-to-month, cancel any time' },
-  { label: 'Who you actually talk to', them: 'An account manager, then a junior, then a ticket queue', us: 'Dayne. The person building your site.' },
-  { label: 'AI search optimization', them: 'Add-on, if they offer it at all', us: 'Standard on every build' },
-  { label: 'Response time', them: '3–14 days for a text change', us: 'One business day. Often same day.' },
-  { label: 'Monthly reporting', them: 'A PDF of impressions and "engagement"', us: 'Tracked rankings, AI mentions of your business, and booked leads' },
-]
-
-const processSteps = [
-  {
-    n: '01',
-    title: 'Discovery',
-    body: 'Strykora pins down your services, cities, and the highest-ticket keywords worth ranking for. One call, written brief, no fluff.',
-  },
-  {
-    n: '02',
-    title: 'Build',
-    body: 'Custom-built site, mobile-first, schema-rich, deployed to a preview URL within days for your sign-off.',
-  },
-  {
-    n: '03',
-    title: 'Rank',
-    body: 'On-page SEO, Google Business Profile optimization, and technical foundations all live before launch.',
-  },
-  {
-    n: '04',
-    title: 'Grow',
-    body: 'Monthly SEO retainer or pay-as-you-go ads. Transparent reporting, no long-term lock-in.',
-  },
-]
-
-const faqs = [
-  {
-    q: 'How long does a custom website take to build?',
-    a: `Most Strykora websites go live about a week after the build starts. The stack is dialed in and you work directly with the builder, so there are no agency handoffs, offshore queues, or design committees slowing the project down.`,
-  },
-  {
-    q: 'How much does a Strykora website cost?',
-    a: `It depends on what you need. A website is quoted by the number of pages and how much custom work it takes, and you pay for it once. Local SEO and Google Ads management are flat monthly fees with no long-term contract. Every quote is a fixed price in writing before any work starts, with no hourly billing. Send the form or call and you will have a number within one business day.`,
-  },
-  {
-    q: 'Why custom-built instead of Wix, Squarespace, or WordPress?',
-    a: `Custom-built sites (Strykora uses Next.js, a popular professional framework) load faster, stay fast as you add pages, and come with the behind-the-scenes code Google reads to understand who you are. Page builders and templated WordPress sites add bloat that slows the site down and hurts your search rankings. You also own everything outright, so you can leave Strykora at any time without rebuilding from scratch.`,
-  },
-  {
-    q: 'Do you do SEO without redesigning the site?',
-    a: `Yes. The local SEO plan works on whatever platform you are on. That said, if your current site is on Wix or a slow WordPress build, a rebuild usually moves the needle further than six months of SEO on the broken foundation.`,
-  },
-  {
-    q: 'What cities and markets do you serve?',
-    a: `Strykora is built in ${site.address.city}, Louisiana and serves the whole state. The strongest markets are Thibodaux, Houma, Baton Rouge, New Orleans, and Lafayette, but Strykora ships sites for clients anywhere in Louisiana.`,
-  },
-  {
-    q: 'Do you work with clients outside Louisiana?',
-    a: `Strykora is built around the Louisiana market: the buyers, the search behavior, the seasonal cycles, and the map-results dynamics. That depth is the wedge for the case study work. But web design, Google Ads, and AI search optimization are location-agnostic, so out-of-state inquiries are welcome. Just ask.`,
-  },
-  {
-    q: 'Do you offer content writing, social media, or photography?',
-    a: `No. Strykora is web design and SEO only. For copywriting, social media management, or photo and video, Strykora refers to Louisiana freelancers who specialize. Honest scope keeps quality high.`,
-  },
-  {
-    q: 'How are you different from a generic marketing agency?',
-    a: `Generic agencies are wide and shallow: content, social, ads, design, branding, all average. Strykora is narrow and deep: custom web design and local SEO, done by the person who builds your site. No account manager, no template, no platform tax.`,
-  },
-  {
-    q: 'How do you measure success?',
-    a: `Booked leads, phone calls, form submissions, and tracked ranking positions for the keywords that pay your bills. Every retainer client gets a monthly report that shows what changed, what ranked, and what to do next.`,
-  },
-  {
-    q: 'How fast will you respond to my inquiry?',
-    a: `Strykora responds to every project inquiry within one business day. You will hear whether Strykora can help and, if so, get a fixed-price quote and timeline.`,
-  },
-]
-
-const featuredCase = caseStudies.find((c) => 'featured' in c && c.featured) ?? caseStudies[0]
 
 const howToSchema = {
   '@context': 'https://schema.org',
@@ -132,586 +33,287 @@ const howToSchema = {
   })),
 }
 
+const ratingLabel = `${reviewStats.averageRating.toFixed(1)} · ${reviewStats.reviewCount} Google reviews`
+const featuredReviews = reviews.filter((review) => 'featured' in review && review.featured).slice(0, 3)
+const featuredServices = services.filter((service) => 'featured' in service && service.featured)
+const coreServices = services.filter((service) => !('featured' in service && service.featured))
+
+function HomeHero() {
+  return (
+    <>
+      <section className="ledger-hero" aria-labelledby="home-title">
+        <div className="site-container">
+          <div className="ledger-hero-content">
+            <p className="eyebrow hero-eyebrow">{home.hero.eyebrow}</p>
+            <h1 id="home-title" className="ledger-hero-title">{home.hero.firstLine} {home.hero.secondLine}</h1>
+            <p className="ledger-hero-description">{home.hero.body}</p>
+            <ProjectActions projectLabel={home.cta.projectLink} phoneLabel={home.cta.phoneLink}>
+              <Link href="/case-studies" className="text-link" prefetch={false}>{home.hero.workLink}</Link>
+            </ProjectActions>
+            <a
+              className="home-hero-rating"
+              href={site.gbp.profile}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="home-hero-stars" aria-hidden="true">★★★★★</span>
+              <span>{ratingLabel}</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <div className="home-trust">
+        <dl className="site-container">
+          {trustStrip.map(({ label, value }) => (
+            <div key={label}>
+              <dt className="eyebrow">{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </>
+  )
+}
+
+function Services() {
+  return (
+    <Section
+      id="services" className="home-services"
+      eyebrow={home.services.eyebrow}
+      heading={<>{home.services.firstLine}<br />{' '}{home.services.secondLine}</>}
+      description={home.services.body}
+    >
+      <div className="home-service-list">
+        {[...featuredServices, ...coreServices].map((service) => {
+          const featured = 'featured' in service && service.featured
+          return (
+            <article key={service.slug} className={featured ? 'home-service-feature surface-dark' : 'home-service'}>
+              <Link href={`/services/${service.slug}`} prefetch={false} className="home-service-link">
+                <p className="eyebrow">{featured ? home.services.featuredEyebrow : service.eyebrow}</p>
+                <h3>{service.title}</h3>
+                <div className="home-service-copy">
+                  <p>{service.short}</p>
+                  <p className="home-note">{service.priceRange}</p>
+                  {featured && <span className="home-inline-label">{home.services.featuredLink}</span>}
+                </div>
+              </Link>
+            </article>
+          )
+        })}
+      </div>
+    </Section>
+  )
+}
+
+function Industries() {
+  return (
+    <Section id="industries" className="home-industries" eyebrow={home.industries.eyebrow} heading={home.industries.heading} description={home.industries.body}>
+      <div className="home-industry-list">
+        {industries.map(({ slug, title, short }) => (
+          <article className="home-industry" key={slug}>
+            <Link href={`/industries/${slug}`} className="home-industry-link" prefetch={false}>
+              <h3>{title}</h3>
+              <p>{short}</p>
+              <span className="home-inline-label">{home.industries.link}</span>
+            </Link>
+          </article>
+        ))}
+      </div>
+    </Section>
+  )
+}
+
+function Proof() {
+  return (
+    <Section id="proof" eyebrow={home.proof.eyebrow} heading={home.proof.heading} description={home.proof.body} className="home-proof surface-dark">
+      <div className="home-evidence">
+        {[{ label: home.proof.depth, items: citations.slice(0, 3) }, { label: home.proof.breadth, items: citations.slice(3) }].map((group, index) => (
+          <div className="home-evidence-group" key={group.label}>
+            <div className="home-evidence-head">
+              <p className="eyebrow">{group.label}</p>
+              {index === 0 && <Link href="/case-studies/hover-septic" prefetch={false} className="text-link">{home.proof.depthLink}</Link>}
+            </div>
+            <div className={`home-evidence-items home-evidence-items-${group.items.length}`}>
+              {group.items.map(({ src, alt, label, lead, quote, follow, href }) => (
+                <figure className="home-citation" key={src}>
+                  <a href={src} target="_blank" rel="noopener" className="receipt-link" aria-label={`${alt} Open full screenshot in a new tab`}>
+                    <div className="home-citation-image">
+                      <Image
+                        src={src}
+                        alt={alt}
+                        fill
+                        sizes={`(min-width: 1360px) ${group.items.length === 3 ? 411 : 302}px, (min-width: 1024px) ${group.items.length === 3 ? 29 : 22}vw, (min-width: 834px) 150px, (min-width: 489px) 23vw, 112px`}
+                      />
+                    </div>
+                    <span aria-hidden="true" className="receipt-link-preview">↗</span>
+                  </a>
+                  <figcaption>
+                    <p className="eyebrow">{label}</p>
+                    <p>{lead}<strong>{quote}</strong>{follow}</p>
+                    {href && <Link href={href} prefetch={false} className="text-link">{home.proof.caseLink}</Link>}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <Link href="/services/ai-search-optimization" prefetch={false} className="text-link home-section-link">{home.proof.link}</Link>
+    </Section>
+  )
+}
+
+function FeaturedCase() {
+  return (
+    <Section id="case" className="home-work" eyebrow={home.caseStudy.eyebrow} heading={home.caseStudy.heading} description={
+      `${featuredCase.client} · ${featuredCase.industry} · ${featuredCase.city}`
+    }>
+      <article className="home-case">
+        <div className="home-case-image">
+          <Image
+            src={featuredCase.cover}
+            alt={`Cover image for the ${featuredCase.client} Strykora case study in ${featuredCase.city}.`}
+            fill
+            sizes="(min-width: 1400px) 740px, (min-width: 1024px) 53vw, calc(100vw - 8.4vw)"
+          />
+        </div>
+        <div className="home-case-copy">
+          <h3>{featuredCase.headline}</h3>
+          <p>{featuredCase.blurb}</p>
+          <Link href={`/case-studies/${featuredCase.slug}`} prefetch={false} className="btn-conversion">{home.caseStudy.link}</Link>
+        </div>
+        <dl className="home-case-metrics">
+          {featuredCase.metrics.map(({ label, value }) => (
+            <div key={label}>
+              <dt className="eyebrow">{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </article>
+      <Link href="/case-studies" className="text-link home-section-link" prefetch={false}>{home.caseStudy.allLink}</Link>
+    </Section>
+  )
+}
+
+function Reviews() {
+  return (
+    <Section id="reviews" className="home-reviews" eyebrow="Reviews" heading={home.reviews.heading} description={ratingLabel}>
+      <a className="text-link home-reviews-google" href={site.gbp.profile} target="_blank" rel="noopener noreferrer">View on Google</a>
+      <div className="home-reviews-list">
+        {featuredReviews.map((review) => (
+          <figure key={review.author}>
+            <Stars rating={review.rating} size="sm" />
+            <ReviewQuote body={review.body} />
+            <figcaption>
+              <p><strong>{review.author}</strong></p>
+              {review.business && <p>{review.business}</p>}
+              <time dateTime={review.date}>
+                {new Date(review.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })}
+              </time>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div className="action-row home-section-link">
+        <Link href="/reviews" className="text-link" prefetch={false}>See all reviews</Link>
+        <a href={site.gbp.leaveReview} className="text-link" target="_blank" rel="noopener noreferrer">Leave a Google review</a>
+      </div>
+    </Section>
+  )
+}
+
+function Pillars() {
+  return (
+    <Section id="why" className="home-why" eyebrow={home.why.eyebrow} heading={home.why.heading}>
+      <div className="home-pillars">
+        {pillars.map((pillar, index) => (
+          <article key={pillar.label}>
+            <p className="eyebrow">{pillar.label}</p>
+            <h3>{pillar.title}</h3>
+            <p>{pillar.body}</p>
+            {index === 1 && (
+              <div className="home-founder">
+                <Image src="/images/dayne-headshot.jpg" alt={site.owner} width={64} height={64} sizes="64px" />
+                <div>
+                  <p><strong>{site.owner}</strong></p>
+                  <p>{home.why.founder}</p>
+                </div>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </Section>
+  )
+}
+
+function Comparison() {
+  return (
+    <Section id="comparison" className="home-comparison" eyebrow={home.comparison.eyebrow} heading={home.comparison.heading} description={home.comparison.body}>
+      <table className="home-comparison-table" aria-labelledby="comparison-heading">
+        <thead>
+          <tr>
+            <th scope="col">{home.comparison.feature}</th>
+            <th scope="col">{home.comparison.agency}</th>
+            <th scope="col">{site.name}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {comparisonRows.map(({ label, them, us }) => (
+            <tr key={label}>
+              <th scope="row">{label}</th>
+              <td>{them}</td>
+              <td>{us}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </Section>
+  )
+}
+
+function Process() {
+  return (
+    <Section id="process" className="home-process" eyebrow={home.process.eyebrow} heading={home.process.heading}>
+      <ol className="home-steps" role="list">
+        {processSteps.map(({ n, title, body }) => (
+          <li key={n}>
+            <span className="home-step-number" aria-hidden="true">{n}</span>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </li>
+        ))}
+      </ol>
+    </Section>
+  )
+}
+
 export default function HomePage() {
   return (
     <>
       <Schema data={[localBusinessSchema, websiteSchema, personSchema, buildFaqSchema(faqs), howToSchema]} />
-
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="hero-static" aria-label="Hero">
-        <HeroBackdrop />
-
-        <div className="hero-static__content container-wide w-full">
-          <div className="hero-static__copy space-y-6">
-            <p className="eyebrow">
-              {site.address.city}, {site.address.state} · Web design + SEO
-            </p>
-
-            <h1 className="text-display-lg font-display text-text text-balance leading-[1.02]">
-              Louisiana web design, built so <span className="gradient-text">Google sends people to&nbsp;it.</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-text-muted max-w-2xl text-balance leading-relaxed">
-              Stop renting a templated website you&apos;ll never own. Strykora builds you a fast, custom site
-              that you own outright, then does the local SEO that gets it found in Google,
-              in the map results, and in AI answers like ChatGPT.
-            </p>
-
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link href="/contact" className="btn-conversion">
-                Start a project
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </Link>
-
-              <a href={`tel:${site.phoneRaw}`} className="btn-secondary">
-                Call {site.phoneDisplay}
-              </a>
-
-              <Link href="/case-studies" className="btn-secondary hidden sm:inline-flex">
-                See the work
-              </Link>
-            </div>
-
-            <a
-              href={site.gbp.profile}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-2 text-sm text-text-muted hover:text-text transition-colors group"
-              aria-label={`Strykora has ${reviewStats.reviewCount} Google reviews with a ${reviewStats.averageRating} star average`}
-            >
-              <Stars rating={Math.round(reviewStats.averageRating)} size="sm" />
-              <span>
-                {reviewStats.averageRating.toFixed(1)} · {reviewStats.reviewCount} Google reviews
-              </span>
-            </a>
-          </div>
-
-          <div className="hero-static__trust">
-            {trustStrip.map((t) => (
-              <div key={t.label}>
-                <p className="text-[10px] uppercase tracking-[0.18em] text-text-dim">
-                  {t.label}
-                </p>
-                <p className="mt-1 text-sm md:text-base font-medium text-text">
-                  {t.value}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SERVICES ─────────────────────────────────────────────────── */}
-      <section className="section-padding relative" aria-labelledby="services-heading">
-        <div className="container-wide">
-          <Reveal className="max-w-2xl mb-16">
-            <p className="eyebrow mb-4">What we do</p>
-            <h2 id="services-heading" className="text-display-md font-display text-text text-balance">
-              Web design first.<br /> SEO that stacks on top.
-            </h2>
-            <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Four core services, plus a fifth nobody else in Louisiana sells: AI Search Optimization. Every price is on the table up front, no 12-month contracts. Strykora does not do content writing, social media, or photography. Those get referred out. Sticking to what we are great at keeps the work sharp.
-            </p>
-          </Reveal>
-
-          {/* Featured: AI Search Optimization (the moat) */}
-          {(() => {
-            const ai = services.find((s) => 'featured' in s && s.featured)
-            if (!ai) return null
-            return (
-              <Reveal className="mb-8">
-                <Link href={`/services/${ai.slug}`} className="block group relative overflow-hidden rounded-2xl border border-border bg-bg-elevated p-8 md:p-10 hover:border-accent/50 transition-colors">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    <div className="lg:col-span-8">
-                      <p className="eyebrow mb-4">The Louisiana moat</p>
-                      <h3 className="text-2xl md:text-3xl font-display text-text mb-3 text-balance">{ai.title}</h3>
-                      <p className="text-text-muted leading-relaxed mb-4">{ai.short}</p>
-                      <p className="text-sm text-text-dim">{ai.priceRange}</p>
-                    </div>
-                    <div className="lg:col-span-4 lg:text-right">
-                      <span className="inline-flex items-center gap-1 text-sm text-accent font-medium group-hover:gap-2 transition-all">
-                        See the playbook
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </Reveal>
-            )
-          })()}
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {services.filter((s) => !('featured' in s && s.featured)).map((s) => (
-              <Reveal key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="card-feature block group h-full">
-                  <div className="flex items-start justify-between mb-4">
-                    <p className="text-xs text-text-dim">{s.eyebrow}</p>
-                    <span className="text-text-dim group-hover:text-accent transition-colors">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-display text-text mb-2">{s.title}</h3>
-                  <p className="text-text-muted leading-relaxed mb-3">{s.short}</p>
-                  <p className="text-sm text-text-dim">{s.priceRange}</p>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── INDUSTRIES ───────────────────────────────────────────────── */}
-      <section className="section-padding bg-bg-elevated border-y border-border" aria-labelledby="industries-heading">
-        <div className="container-wide">
-          <Reveal className="max-w-2xl mb-14">
-            <p className="eyebrow mb-4">Industries we serve</p>
-            <h2 id="industries-heading" className="text-display-md font-display text-text text-balance">
-              Built for Louisiana service and commercial businesses.
-            </h2>
-            <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Strykora is not a generic marketing agency. Strykora builds for the specific verticals where local search and AI Overviews actually decide who gets the call.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-            {industries.map((i) => (
-              <Reveal key={i.slug}>
-                <Link
-                  href={`/industries/${i.slug}`}
-                  className="card-feature group block h-full"
-                >
-                  <h3 className="text-xl font-display text-text mb-2">{i.title}</h3>
-                  <p className="text-sm text-text-muted leading-relaxed">{i.short}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm text-accent font-medium group-hover:gap-2 transition-all">
-                    See approach
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── REAL AI CITATIONS ────────────────────────────────────────── */}
-      <section className="section-padding bg-bg-elevated border-y border-border" aria-labelledby="ai-proof-heading">
-        <div className="container-wide">
-          <Reveal className="max-w-3xl mb-12">
-            <p className="eyebrow mb-4">Real AI search receipts</p>
-            <h2 id="ai-proof-heading" className="text-display-md font-display text-text text-balance">
-              Five clients. Multiple AI engines. Real screenshots.
-            </h2>
-            <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Most agencies talk about being &quot;ready for AI search.&quot; These are actual answers from ChatGPT and Perplexity, captured between June and October 2026, when real customers asked who to call. Strykora clients win across five different verticals.
-            </p>
-          </Reveal>
-
-          {/* Row 1: Hover Septic, two AI tools, three answers (depth) */}
-          <Reveal className="mb-4">
-            <div className="flex items-baseline justify-between flex-wrap gap-3 mb-4">
-              <p className="eyebrow">Depth: one client, two AI tools, three answers</p>
-              <Link href="/case-studies/hover-septic" className="text-sm text-accent hover:underline">
-                See the Hover Septic case study
-              </Link>
-            </div>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
-            <Reveal>
-              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
-                <div className="relative aspect-[1100/2136] bg-white">
-                  <Image
-                    src="/images/ai-citation-perplexity-hover.jpg"
-                    alt="Screenshot of Perplexity recommending Hover Septic Services as the strongest option for a septic installer in Thibodaux, Louisiana."
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <figcaption className="p-6 border-t border-border">
-                  <p className="text-xs text-accent mb-2">Perplexity · Hover Septic</p>
-                  <p className="text-sm text-text-muted leading-relaxed">
-                    Query: <span className="text-text">&quot;Recommend me the best septic system installer in Thibodaux LA.&quot;</span> Answer leads with Hover Septic.
-                  </p>
-                </figcaption>
-              </figure>
-            </Reveal>
-
-            <Reveal>
-              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
-                <div className="relative aspect-[1100/2136] bg-white">
-                  <Image
-                    src="/images/ai-citation-chatgpt-best-overall.jpg"
-                    alt="Screenshot of ChatGPT crowning Hover Septic Services as 'Best overall' for septic installation in Thibodaux, Louisiana."
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <figcaption className="p-6 border-t border-border">
-                  <p className="text-xs text-accent mb-2">ChatGPT · Hover Septic</p>
-                  <p className="text-sm text-text-muted leading-relaxed">
-                    Query: <span className="text-text">&quot;Recommend me the best septic installation service Thibodaux LA.&quot;</span> Answer crowns Hover Septic as &quot;Best overall.&quot;
-                  </p>
-                </figcaption>
-              </figure>
-            </Reveal>
-
-            <Reveal>
-              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
-                <div className="relative aspect-[1100/2136] bg-white">
-                  <Image
-                    src="/images/ai-citation-chatgpt-why-hover.jpg"
-                    alt="Screenshot of ChatGPT explaining why Hover Septic is the closest match for septic installation in Thibodaux."
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <figcaption className="p-6 border-t border-border">
-                  <p className="text-xs text-accent mb-2">ChatGPT follow-up · Hover</p>
-                  <p className="text-sm text-text-muted leading-relaxed">
-                    <span className="text-text">&quot;Why I&apos;d start with Hover.&quot;</span> The AI explains its own pick, citing the exact positioning Strykora built into the site.
-                  </p>
-                </figcaption>
-              </figure>
-            </Reveal>
-          </div>
-
-          {/* Row 2: Three more clients, three different verticals, three different cities (breadth) */}
-          <Reveal className="mb-4">
-            <p className="eyebrow">Breadth: four more clients, four verticals, four cities</p>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <Reveal>
-              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
-                <div className="relative aspect-[1100/2136] bg-white">
-                  <Image
-                    src="/images/ai-citation-chatgpt-foret-raceland.jpg"
-                    alt="Screenshot of ChatGPT naming Foret Construction and Roofing its top local pick for the best roofing company in Raceland, Louisiana."
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                </div>
-                <figcaption className="p-6 border-t border-border">
-                  <p className="text-xs text-accent mb-2">ChatGPT · Foret Construction &amp; Roofing</p>
-                  <p className="text-sm text-text-muted leading-relaxed">
-                    Query: <span className="text-text">&quot;Best roofing company in Raceland.&quot;</span> Answer: &quot;My top local pick would be Foret Construction &amp; Roofing LLC.&quot; Captured October 2026.
-                  </p>
-                  <Link href="/case-studies/foret-construction" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
-                    Read the case study
-                  </Link>
-                </figcaption>
-              </figure>
-            </Reveal>
-
-            <Reveal>
-              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
-                <div className="relative aspect-[1100/2136] bg-white">
-                  <Image
-                    src="/images/ai-citation-perplexity-elite.jpg"
-                    alt="Screenshot of Perplexity recommending Elite Custom Automotive as the best lift kit installer in Lockport, Louisiana."
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <figcaption className="p-6 border-t border-border">
-                  <p className="text-xs text-accent mb-2">Perplexity · Elite Custom Automotive</p>
-                  <p className="text-sm text-text-muted leading-relaxed">
-                    Query: <span className="text-text">&quot;Recommend me the best auto shop in Lockport that does lift kits.&quot;</span> Answer: &quot;The best match I found in Lockport is Elite Custom Automotive.&quot;
-                  </p>
-                  <Link href="/case-studies/elite-custom-automotive" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
-                    Read the case study
-                  </Link>
-                </figcaption>
-              </figure>
-            </Reveal>
-
-            <Reveal>
-              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
-                <div className="relative aspect-[1100/2136] bg-white">
-                  <Image
-                    src="/images/ai-citation-perplexity-acadia.jpg"
-                    alt="Screenshot of Perplexity recommending Acadia Pools as a strong local option for a pool builder in Thibodaux, Louisiana."
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <figcaption className="p-6 border-t border-border">
-                  <p className="text-xs text-accent mb-2">Perplexity · Acadia Pools</p>
-                  <p className="text-sm text-text-muted leading-relaxed">
-                    Query: <span className="text-text">&quot;Recommend me a pool builder in Thibodaux LA.&quot;</span> Answer leads with: &quot;A strong local option in Thibodaux is Acadia Pools.&quot;
-                  </p>
-                  <Link href="/case-studies/acadia-pools" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
-                    Read the case study
-                  </Link>
-                </figcaption>
-              </figure>
-            </Reveal>
-
-            <Reveal>
-              <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
-                <div className="relative aspect-[1100/2136] bg-white">
-                  <Image
-                    src="/images/ai-citation-chatgpt-allout.jpg"
-                    alt="Screenshot of ChatGPT naming All-Out Window Tint in its top picks for window tinting in Baton Rouge, Louisiana."
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <figcaption className="p-6 border-t border-border">
-                  <p className="text-xs text-accent mb-2">ChatGPT · All Out Window Tint</p>
-                  <p className="text-sm text-text-muted leading-relaxed">
-                    Query: <span className="text-text">&quot;Best window tinting shop in Baton Rouge.&quot;</span> ChatGPT&apos;s &quot;My pick&quot; list names All-Out Window Tint as &quot;a quality shop with more services.&quot;
-                  </p>
-                  <Link href="/case-studies/all-out-window-tint" className="mt-3 inline-flex items-center gap-1 text-xs text-accent font-medium hover:gap-2 transition-all">
-                    Read the case study
-                  </Link>
-                </figcaption>
-              </figure>
-            </Reveal>
-          </div>
-
-          <Reveal className="mt-12 text-center">
-            <Link href="/services/ai-search-optimization" className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:gap-2 transition-all">
-              See how Strykora ranks clients inside AI answers
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── FEATURED CASE STUDY ──────────────────────────────────────── */}
-      <section className="section-padding" aria-labelledby="case-heading">
-        <div className="container-wide">
-          <Reveal>
-            <p className="eyebrow mb-4">Recent work</p>
-            <h2 id="case-heading" className="text-display-md font-display text-text mb-14 text-balance">
-              The proof Strykora&apos;s AI search playbook actually works.
-            </h2>
-          </Reveal>
-
-          <Reveal className="card-feature overflow-hidden !p-0">
-            <div className="relative aspect-[21/9] overflow-hidden">
-              <Image
-                src={featuredCase.cover}
-                alt={`Cover image for the ${featuredCase.client} Strykora case study in ${featuredCase.city}.`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1280px) 100vw, 1280px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/60 to-transparent" />
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start p-8 md:p-12">
-              <div className="lg:col-span-7">
-                <p className="text-xs uppercase tracking-[0.18em] text-accent font-mono mb-3">
-                  {featuredCase.client} · {featuredCase.industry} · {featuredCase.city}
-                </p>
-                <h3 className="text-2xl md:text-3xl font-display text-text mb-4 text-balance">
-                  {featuredCase.headline}
-                </h3>
-                <p className="text-text-muted leading-relaxed mb-8">{featuredCase.blurb}</p>
-                <Link href={`/case-studies/${featuredCase.slug}`} className="btn-secondary text-sm">
-                  Read the full story
-                </Link>
-              </div>
-              <div className="lg:col-span-5 grid grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
-                {featuredCase.metrics.map((m) => (
-                  <div key={m.label} className="bg-bg p-5 text-center">
-                    <p className="font-display text-2xl md:text-3xl gradient-text">{m.value}</p>
-                    <p className="text-[10px] uppercase tracking-wider text-text-dim mt-1.5">{m.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal className="mt-8 text-center">
-            <Link href="/case-studies" className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:gap-2 transition-all">
-              See all case studies
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── REVIEWS ──────────────────────────────────────────────────── */}
-      <ReviewsSection
-        limit={3}
-        featuredOnly
-        heading="Real clients. Real reviews."
-        showSeeAllLink
+      <HomeHero />
+      <Services />
+      <Industries />
+      <Proof />
+      <FeaturedCase />
+      <Reviews />
+      <Pillars />
+      <Comparison />
+      <Process />
+      <Section id="faq" className="home-faq" eyebrow={home.faq.eyebrow} heading={home.faq.heading}>
+        <FAQAccordion items={faqs} />
+      </Section>
+      <CTA
+        eyebrow={home.cta.eyebrow}
+        heading={<>{home.cta.firstLine}<br />{home.cta.secondLine}</>}
+        body={home.cta.body}
+        projectLabel={home.cta.projectLink}
+        phoneLabel={home.cta.phoneLink}
+        showMark
       />
-
-      {/* ── WHY STRYKORA ─────────────────────────────────────────────── */}
-      <section className="section-padding bg-bg-elevated border-y border-border" aria-labelledby="why-heading">
-        <div className="container-wide">
-          <Reveal className="max-w-2xl mb-16">
-            <p className="eyebrow mb-4">Why {site.name}</p>
-            <h2 id="why-heading" className="text-display-md font-display text-text text-balance">
-              Everything your last agency told you didn&apos;t come standard.
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border border-border">
-            {pillars.map((p, i) => (
-              <Reveal key={p.label} className="bg-bg-elevated p-8 md:p-10">
-                <p className="font-mono text-xs text-accent">{p.label}</p>
-                <h3 className="text-xl font-display text-text mt-3 mb-2">{p.title}</h3>
-                <p className="text-text-muted leading-relaxed">{p.body}</p>
-                {i === 1 && (
-                  <div className="mt-6 flex items-center gap-3">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border border-border-light shrink-0">
-                      <Image src="/images/dayne-headshot.jpg" alt={site.owner} fill className="object-cover" sizes="48px" />
-                    </div>
-                    <div className="text-sm">
-                      <p className="text-text font-medium">{site.owner}</p>
-                      <p className="text-text-dim text-xs">Founder · {site.address.city}, {site.address.state}</p>
-                    </div>
-                  </div>
-                )}
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── COMPARISON TABLE ─────────────────────────────────────────── */}
-      <section className="section-padding" aria-labelledby="comparison-heading">
-        <div className="container-wide">
-          <Reveal className="max-w-2xl mb-12">
-            <p className="eyebrow mb-4">Strykora vs. the typical Louisiana agency</p>
-            <h2 id="comparison-heading" className="text-display-md font-display text-text text-balance">
-              The fine print everyone else hides.
-            </h2>
-            <p className="mt-5 text-text-muted text-lg leading-relaxed">
-              Built from real conversations with Louisiana business owners who switched to Strykora from somebody else.
-            </p>
-          </Reveal>
-
-          <Reveal>
-            <div className="card-feature overflow-hidden !p-0">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-border text-sm">
-                <div className="md:col-span-4 bg-bg-elevated p-5 font-mono text-xs uppercase tracking-[0.18em] text-text-dim">What you&apos;re comparing</div>
-                <div className="md:col-span-4 bg-bg-elevated p-5 font-mono text-xs uppercase tracking-[0.18em] text-text-dim">Typical agency</div>
-                <div className="md:col-span-4 bg-bg-elevated p-5 font-mono text-xs uppercase tracking-[0.18em] text-accent">Strykora</div>
-                {comparisonRows.map((row) => (
-                  <Fragment key={row.label}>
-                    <div className="md:col-span-4 bg-bg-elevated p-5 font-medium text-text">{row.label}</div>
-                    <div className="md:col-span-4 bg-bg-elevated p-5 text-text-muted">{row.them}</div>
-                    <div className="md:col-span-4 bg-bg-elevated p-5 text-text">{row.us}</div>
-                  </Fragment>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── PROCESS ──────────────────────────────────────────────────── */}
-      <section className="section-padding" aria-labelledby="process-heading">
-        <div className="container-wide">
-          <Reveal className="max-w-2xl mb-16">
-            <p className="eyebrow mb-4">How it works</p>
-            <h2 id="process-heading" className="text-display-md font-display text-text text-balance">
-              Four steps from kickoff to ranking.
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {processSteps.map((step) => (
-              <Reveal key={step.n}>
-                <div className="card h-full">
-                  <p className="font-mono text-xs text-accent mb-4">{step.n}</p>
-                  <h3 className="text-lg font-display text-text mb-2">{step.title}</h3>
-                  <p className="text-sm text-text-muted leading-relaxed">{step.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ──────────────────────────────────────────────────────── */}
-      <section className="section-padding bg-bg-elevated border-y border-border" aria-labelledby="faq-heading">
-        <div className="container-narrow">
-          <Reveal className="mb-12">
-            <p className="eyebrow mb-4">FAQ</p>
-            <h2 id="faq-heading" className="text-display-md font-display text-text text-balance">
-              Common questions, honest answers.
-            </h2>
-          </Reveal>
-
-          <div className="space-y-3">
-            {faqs.map((f) => (
-              <Reveal key={f.q}>
-                <details className="card group">
-                  <summary className="font-medium text-text cursor-pointer flex items-start justify-between gap-4 list-none">
-                    <span>{f.q}</span>
-                    <svg className="w-5 h-5 text-text-dim group-open:rotate-45 transition-transform shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
-                    </svg>
-                  </summary>
-                  <p className="mt-4 text-text-muted leading-relaxed">{f.a}</p>
-                </details>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA ──────────────────────────────────────────────────────── */}
-      <section className="section-padding" aria-labelledby="cta-heading">
-        <div className="container-wide">
-          <Reveal>
-            <div className="relative gradient-border">
-              <div className="grid-pattern p-12 md:p-20 text-center">
-                <p className="eyebrow mb-4 text-accent-light">Get in touch</p>
-                <h2 id="cta-heading" className="text-display-md font-display text-text mb-6 text-balance max-w-3xl mx-auto">
-                  Your competitor&apos;s site loads in a second.<br/>What does yours do?
-                </h2>
-                <p className="text-text-muted text-lg max-w-xl mx-auto mb-8">
-                  Take a minute to tell me about your business. Within one business day, I&apos;ll send you a fixed-price quote and tell you whether I think I can help. There&apos;s no sales call.
-                </p>
-                <div className="flex flex-wrap gap-3 justify-center">
-                  <Link href="/contact" className="btn-conversion">
-                    Start a project
-                  </Link>
-                  <a href={`tel:${site.phoneRaw}`} className="btn-secondary">
-                    Call {site.phoneDisplay}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </>
   )
 }

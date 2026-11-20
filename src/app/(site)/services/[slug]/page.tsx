@@ -3,9 +3,11 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { services, site, cities, comboSlugFor, ogImage } from '@/config/site'
 import PageHero from '@/components/PageHero'
-import Reveal from '@/components/Reveal'
+import Section from '@/components/Section'
+import FAQAccordion from '@/components/FAQAccordion'
 import CTA from '@/components/CTA'
 import { Schema, faqSchema as buildFaqSchema } from '@/components/Schema'
+import '../../interiors.css'
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
@@ -33,29 +35,6 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     alternates: { canonical: `${site.url}/services/${service.slug}` },
     openGraph: { title, description, url: `${site.url}/services/${service.slug}`, images: [ogImage] },
   }
-}
-
-const SERVICE_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
-  'web-design': {
-    src: '/images/hero-service-web-design.jpg',
-    alt: 'Abstract glowing code editor and UI components on glass, the kind of custom-built web design Strykora ships.',
-  },
-  'seo': {
-    src: '/images/hero-service-seo.jpg',
-    alt: 'Abstract glowing ascending line graph and upward arrow, representing local SEO ranking growth for Louisiana businesses.',
-  },
-  'google-business-profile': {
-    src: '/images/hero-service-gbp.jpg',
-    alt: 'Glowing 3D map pin over a digital city grid, representing Google Business Profile optimization for the local pack.',
-  },
-  'google-ads': {
-    src: '/images/hero-service-ads.jpg',
-    alt: 'Light streaks racing toward a target point in deep obsidian space, representing high-intent Google Ads traffic.',
-  },
-  'ai-search-optimization': {
-    src: '/images/hero-service-ai-search.jpg',
-    alt: 'Glowing electric blue glass quotation mark icon floating in deep navy space surrounded by a constellation of satellite nodes connected by geometric threads, representing AI search citation for Louisiana businesses inside ChatGPT and Perplexity answers.',
-  },
 }
 
 const SERVICE_RELATED_POSTS: Record<string, { slug: string; title: string; blurb: string }[]> = {
@@ -192,7 +171,7 @@ export default async function ServicePage({ params }: Params) {
     },
   }
 
-  const heroImg = SERVICE_HERO_IMAGE[service.slug]
+  const relatedPosts = SERVICE_RELATED_POSTS[service.slug]
 
   return (
     <>
@@ -202,8 +181,6 @@ export default async function ServicePage({ params }: Params) {
         title={`${service.title} in Louisiana`}
         description={service.short}
         actions
-        bgImage={heroImg?.src}
-        bgImageAlt={heroImg?.alt}
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/services', label: 'Services' },
@@ -211,150 +188,102 @@ export default async function ServicePage({ params }: Params) {
         ]}
       />
 
-      <section className="section-padding">
-        <div className="container-wide grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-7">
-            <Reveal>
-              <p className="text-text-muted text-lg leading-relaxed mb-10">{service.long}</p>
-              <h2 className="text-display-md font-display text-text mb-6 text-balance">What {midSentence(service.title)} from Strykora includes</h2>
-              <ul className="space-y-4">
-                {service.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-3 text-text-muted">
-                    <svg className="w-5 h-5 text-accent shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="leading-relaxed">{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
+      <section className="ledger-section service-specification" aria-labelledby="service-includes-heading">
+        <div className="site-container">
+          <div className="service-specification-body">
+            <p className="interior-lede">{service.long}</p>
+            <h2 id="service-includes-heading" className="interior-title">
+              What {midSentence(service.title)} from Strykora includes
+            </h2>
+            <ul className="interior-ruled-list" role="list">
+              {service.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+            </ul>
           </div>
 
-          <aside className="lg:col-span-5">
-            <Reveal>
-              <div className="card p-6 lg:sticky lg:top-28">
-                <p className="eyebrow mb-3">How it&apos;s priced</p>
-                <p className="font-display text-2xl text-text mb-2">{service.priceRange}</p>
-                <p className="text-text-muted text-sm leading-relaxed mb-6">
-                  Fixed price up front. No hourly billing. No 12-month contract. No monthly platform tax stacked on top.
-                </p>
+          <aside className="service-terms" aria-labelledby="service-terms-label">
+            <p id="service-terms-label" className="eyebrow">How it&apos;s priced</p>
+            <p className="service-terms-summary">{service.priceRange}</p>
+            <p className="interior-copy">
+              Fixed price up front. No hourly billing. No 12-month contract. No monthly platform tax stacked on top.
+            </p>
 
-                {availableCityLinks.length > 0 && (
-                  <>
-                    <p className="eyebrow mb-3">Cities</p>
-                    <ul className="space-y-2 mb-6">
-                      {availableCityLinks.map(({ city, combo }) => (
-                        <li key={city.slug}>
-                          <Link href={`/${combo}`} className="text-sm text-text-muted hover:text-text transition-colors flex items-center justify-between">
-                            <span>{city.name}, {city.state}</span>
-                            <svg className="w-3.5 h-3.5 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-
-                <Link href="/contact" className="btn-primary w-full justify-center">Start a project</Link>
+            {availableCityLinks.length > 0 && (
+              <div className="service-terms-cities">
+                <p className="eyebrow">Cities</p>
+                <ul className="interior-directory">
+                  {availableCityLinks.map(({ city, combo }) => (
+                    <li key={city.slug}>
+                      <Link href={`/${combo}`} className="text-link">{city.name}, {city.state}</Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </Reveal>
+            )}
+
+            <Link href="/contact" className="btn-conversion">Start a project</Link>
           </aside>
         </div>
       </section>
 
       {copy && (
-        <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="how-heading">
-          <div className="container-wide">
-            <Reveal className="mb-12 max-w-2xl">
-              <p className="eyebrow mb-3">How it works</p>
-              <h2 id="how-heading" className="text-display-md font-display text-text text-balance">
-                How Strykora delivers {service.title.toLowerCase()}.
-              </h2>
-            </Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <>
+          <Section
+            id="how"
+            className="service-process surface-dark"
+            eyebrow="How it works"
+            heading={`How Strykora delivers ${service.title.toLowerCase()}.`}
+          >
+            <ol className="service-process-list" role="list">
               {copy.howWeDoIt.map((step) => (
-                <Reveal key={step.step}>
-                  <div className="card h-full">
-                    <p className="font-mono text-xs text-accent mb-4">{step.step}</p>
-                    <h3 className="text-lg font-display text-text mb-2">{step.title}</h3>
-                    <p className="text-sm text-text-muted leading-relaxed">{step.body}</p>
+                <li key={step.step}>
+                  <span className="service-process-number" aria-hidden="true">{step.step}</span>
+                  <div>
+                    <h3>{step.title}</h3>
+                    <p>{step.body}</p>
                   </div>
-                </Reveal>
+                </li>
               ))}
-            </div>
-          </div>
-        </section>
+            </ol>
+          </Section>
+
+          <Section
+            id="service-faq"
+            className="interior-faq interior-wash interior-rail"
+            eyebrow="FAQ"
+            heading={`${service.title} questions, honest answers.`}
+          >
+            <FAQAccordion items={copy.faqs} />
+          </Section>
+        </>
       )}
 
-      {copy && (
-        <section className="section-padding" aria-labelledby="service-faq-heading">
-          <div className="container-narrow">
-            <Reveal className="mb-10">
-              <p className="eyebrow mb-3">FAQ</p>
-              <h2 id="service-faq-heading" className="text-display-md font-display text-text text-balance">
-                {service.title} questions, honest answers.
-              </h2>
-            </Reveal>
-            <div className="space-y-3">
-              {copy.faqs.map((f) => (
-                <Reveal key={f.q}>
-                  <details className="card group">
-                    <summary className="font-medium text-text cursor-pointer flex items-start justify-between gap-4 list-none">
-                      <span>{f.q}</span>
-                      <svg className="w-5 h-5 text-text-dim group-open:rotate-45 transition-transform shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
-                      </svg>
-                    </summary>
-                    <p className="mt-4 text-text-muted leading-relaxed">{f.a}</p>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {SERVICE_RELATED_POSTS[service.slug] && (
-        <section className="section-padding border-t border-border" aria-labelledby="reading-heading">
-          <div className="container-wide">
-            <Reveal className="mb-10">
-              <p className="eyebrow mb-3">From the blog</p>
-              <h2 id="reading-heading" className="text-display-md font-display text-text">Related reading.</h2>
-            </Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {SERVICE_RELATED_POSTS[service.slug].map((p) => (
-                <Reveal key={p.slug}>
-                  <Link href={`/blog/${p.slug}`} className="card-feature group block h-full">
-                    <h3 className="text-lg font-display text-text mb-2">{p.title}</h3>
-                    <p className="text-sm text-text-muted leading-relaxed">{p.blurb}</p>
-                  </Link>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="stack-heading">
-        <div className="container-wide">
-          <Reveal className="mb-12">
-            <p className="eyebrow mb-3">Stack it with</p>
-            <h2 id="stack-heading" className="text-display-md font-display text-text">Other services that compound.</h2>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {others.map((o) => (
-              <Reveal key={o.slug}>
-                <Link href={`/services/${o.slug}`} className="card-feature group block h-full">
-                  <h3 className="text-lg font-display text-text mb-2">{o.title}</h3>
-                  <p className="text-sm text-text-muted leading-relaxed">{o.short}</p>
+      {relatedPosts && (
+        <Section id="reading" className="interior-rail interior-rule" eyebrow="From the blog" heading="Related reading.">
+          <ul className="interior-link-list" role="list">
+            {relatedPosts.map((post) => (
+              <li key={post.slug}>
+                <Link href={`/blog/${post.slug}`} className="interior-linked">
+                  <h3>{post.title}</h3>
+                  <p>{post.blurb}</p>
                 </Link>
-              </Reveal>
+              </li>
             ))}
-          </div>
-        </div>
-      </section>
+          </ul>
+        </Section>
+      )}
+
+      <Section id="stack" className="interior-rail interior-rule" eyebrow="Stack it with" heading="Other services that compound.">
+        <ul className="interior-link-list" role="list">
+          {others.map((other) => (
+            <li key={other.slug}>
+              <Link href={`/services/${other.slug}`} className="interior-linked">
+                <h3>{other.title}</h3>
+                <p>{other.short}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
       <CTA />
     </>

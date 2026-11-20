@@ -1,0 +1,195 @@
+.site-header {
+  position: relative;
+  z-index: 10;
+  background: rgb(var(--white));
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header-inner {
+  --header-gutter: clamp(.5rem, calc(13.3vw - 40px), .875rem);
+  width: min(var(--content-width), calc(100% - 2 * var(--header-gutter)));
+  min-height: 80px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .25rem;
+}
+
+.site-header-logo { display: block; width: 19rem; min-width: 0; }
+.site-header-logo img { width: 100%; height: auto; }
+.site-nav-controls { flex: none; }
+
+.site-menu-toggle {
+  display: grid;
+  width: var(--target-size);
+  height: var(--target-size);
+  place-items: center;
+  color: var(--ink);
+}
+
+.site-menu-icon {
+  position: relative;
+  width: 1.25rem;
+  height: .75rem;
+}
+
+.site-menu-icon::before,
+.site-menu-icon::after {
+  position: absolute;
+  inset: 2px 0 auto;
+  border-top: 1px solid currentColor;
+  content: '';
+}
+
+.site-menu-icon::after { inset: auto 0 2px; }
+[aria-expanded='true'] > .site-menu-icon::before { inset: 50% 0 auto; rotate: 45deg; }
+[aria-expanded='true'] > .site-menu-icon::after { inset: 50% 0 auto; rotate: -45deg; }
+
+.site-nav {
+  display: none;
+  position: absolute;
+  inset: 100% 0 auto;
+  padding: .5rem var(--gutter) 1rem;
+  max-height: calc(100dvh - 81px);
+  overflow-y: auto;
+  border-bottom: 1px solid var(--rule);
+  background: rgb(var(--white));
+}
+
+.site-nav[data-open='true'] { display: block; }
+.site-nav-list > li { border-bottom: 1px solid var(--rule); }
+.site-nav-list > li:last-child { border: 0; padding-top: .75rem; }
+.site-nav-phone { min-height: 44px; padding: .625rem .875rem; white-space: nowrap; }
+
+.site-nav-link,
+.site-submenu a {
+  display: flex;
+  min-height: var(--target-size);
+  align-items: center;
+  font-size: .9375rem;
+  font-weight: 650;
+}
+
+.site-nav-link { width: 100%; justify-content: space-between; gap: .5rem; }
+
+.site-nav-link:hover,
+.site-nav-link[data-active='true'],
+.site-submenu a:hover { text-decoration: underline; text-underline-offset: .25em; }
+
+.site-chevron {
+  width: .4375rem;
+  height: .4375rem;
+  margin: -.2rem .125rem 0 0;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  rotate: 45deg;
+}
+[aria-expanded='true'] > .site-chevron { rotate: 225deg; margin-top: .2rem; }
+
+.site-submenu { padding: 0 0 .5rem 1rem; }
+.site-submenu a { display: block; align-content: center; padding: .5rem 0; }
+.site-submenu a span { color: var(--body-ink); font-size: var(--type-small); font-weight: 400; }
+
+.site-footer {
+  background: rgb(var(--deep-navy));
+  color: var(--ink);
+  border-top: 3px solid rgb(var(--rust));
+  font-size: var(--type-small);
+  line-height: var(--leading-copy);
+}
+
+.site-footer-inner { display: grid; gap: 2.5rem; padding-block: 3rem 2rem; }
+.site-footer-brand p { max-width: 32ch; }
+.site-footer-brand p + p { margin-top: .5rem; }
+.site-footer-logo { display: block; width: 11rem; margin-bottom: 1.25rem; }
+.site-footer-logo img { width: 100%; height: auto; }
+.site-footer-directory { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.site-footer-directory .eyebrow { font-family: var(--font-body), system-ui, sans-serif; }
+.site-footer-directory address { margin-top: .5rem; font-style: normal; }
+
+.site-footer a:not(.site-footer-logo) {
+  display: inline-flex;
+  min-height: var(--target-size);
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+
+.site-footer a:hover { text-decoration: underline; text-underline-offset: .25em; }
+.chamber-badge {
+  width: min(100%, 14rem);
+  margin-top: 1.25rem;
+  border-top: 2px solid rgb(var(--rust));
+  padding-top: .75rem;
+}
+.chamber-badge[data-ready='false'] { visibility: hidden; }
+.chamber-badge .eyebrow { margin-bottom: .75rem; }
+.chamber-badge-widget {
+  --ink: rgb(var(--navy));
+  --body-ink: rgb(var(--slate));
+  height: 8.5rem;
+  overflow: auto;
+  padding: .75rem;
+  background: rgb(var(--white));
+  color: var(--ink);
+}
+
+.site-footer-base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1.25rem;
+  padding-block: .75rem;
+  border-top: 1px solid var(--rule);
+  font-size: var(--type-small);
+}
+.site-footer-legal { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+
+@media (min-width: 640px) {
+  .site-header-inner { --header-gutter: var(--gutter); }
+  .site-header-logo { width: 23.5rem; }
+  .site-footer-directory { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .site-header-inner { --header-gutter: .625rem; min-height: 96px; gap: .75rem; }
+  .site-header-logo { width: auto; flex: none; }
+  .site-header-logo img { width: auto; height: 64px; }
+  .site-menu-toggle { display: none; }
+  .site-nav { display: block; position: static; max-height: none; overflow: visible; padding: 0; border: 0; }
+  .site-nav-list { display: flex; align-items: center; }
+  .site-nav-list > li { position: relative; border: 0; }
+  .site-nav-list > li:last-child { margin-left: .125rem; padding-top: 0; }
+  .site-nav-link { padding-inline: .25rem; white-space: nowrap; }
+  .site-nav-phone { padding-inline: .5rem; }
+  .site-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 19rem;
+    padding: .5rem;
+    border: 1px solid var(--rule);
+    background: rgb(var(--white));
+  }
+  .site-submenu a { padding-inline: .625rem; }
+  .site-footer-inner { grid-template-columns: minmax(0, .85fr) minmax(0, 1.65fr); gap: 3rem; }
+  .site-footer-logo { width: 13rem; }
+}
+
+@media (min-width: 1024px) and (max-width: 1151px) {
+  .site-header-inner { display: grid; justify-items: start; gap: .25rem; padding-block: .75rem .25rem; }
+  .site-nav-list { gap: 1rem; }
+}
+
+@media (min-width: 1280px) {
+  .site-header-inner { --header-gutter: clamp(1rem, 2.6vw, 3rem); }
+  .site-nav-list { gap: .25rem; }
+  .site-nav-link { padding-inline: .5rem; }
+  .site-nav-phone { padding-inline: .875rem; }
+}
+
+@media (min-width: 1360px) {
+  .site-nav-list { gap: clamp(.25rem, .9vw, .875rem); }
+  .site-nav-link { padding-inline: .625rem; }
+}

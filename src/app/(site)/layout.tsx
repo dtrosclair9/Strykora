@@ -1,14 +1,13 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import SmoothScroll from '@/components/SmoothScroll'
+import './chrome.css'
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <a href="#main" className="skip-link">Skip to main content</a>
-      <SmoothScroll />
       <Header />
-      <main id="main">{children}</main>
+      <main id="main" tabIndex={-1}>{children}</main>
       <Footer />
     </>
   )

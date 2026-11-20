@@ -1,27 +1,20 @@
 import type { Metadata } from 'next'
-import { Inter, Source_Serif_4, JetBrains_Mono } from 'next/font/google'
+import { League_Gothic, Libre_Franklin } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import MetaPixel from '@/components/MetaPixel'
 import { site } from '@/config/site'
 
-const inter = Inter({
+const headline = League_Gothic({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-headline',
   display: 'swap',
 })
 
-const display = Source_Serif_4({
+const body = Libre_Franklin({
   subsets: ['latin'],
-  weight: '600',
-  variable: '--font-display',
-  display: 'swap',
-})
-
-const mono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
+  variable: '--font-body',
   display: 'swap',
 })
 
@@ -88,8 +81,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${display.variable} ${mono.variable}`}>
-      {/* Chrome (Header/Footer/SmoothScroll) lives in the (site) and (funnel)
+    <html lang="en" className={`${headline.variable} ${body.variable}`}>
+      {/* Chrome (Header/Footer) lives in the (site) and (funnel)
           route-group layouts so ad landing pages can ship without nav or the
           street address. Only global concerns stay here. */}
       <body className="font-sans">

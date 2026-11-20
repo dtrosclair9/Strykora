@@ -2,28 +2,12 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { site } from '@/config/site'
 import PageHero from '@/components/PageHero'
-import Reveal from '@/components/Reveal'
+import FAQAccordion from '@/components/FAQAccordion'
+import Section from '@/components/Section'
 import CTA from '@/components/CTA'
 import { Schema, faqSchema as buildFaqSchema } from '@/components/Schema'
 
-const POST_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
-  'why-seo-matters-for-small-businesses-louisiana': {
-    src: '/images/hero-blog-seo.jpg',
-    alt: 'A small-town Louisiana service-business storefront at dusk with a glowing electric blue map-pin floating above it like a signal beacon, representing local SEO visibility.',
-  },
-  'google-may-2026-ai-search-update-louisiana-businesses': {
-    src: '/images/hero-blog-ai-update.jpg',
-    alt: 'A glowing electric blue answer bubble rising above a deep ocean of dim text fragments, particles streaming upward, representing the AI search answer that now sits above Google\'s regular results.',
-  },
-  'why-your-wix-site-isnt-ranking-louisiana': {
-    src: '/images/hero-blog-wix.jpg',
-    alt: 'A glowing wireframe website block disintegrating into electric blue and violet particles in deep navy space, representing a templated site falling apart.',
-  },
-  'why-chatgpt-recommends-your-competitor-louisiana': {
-    src: '/images/hero-service-ai-search.jpg',
-    alt: 'Glowing electric blue quotation mark surrounded by connected constellation nodes in deep navy space, representing a business being cited inside an AI search answer.',
-  },
-}
+import '../../editorial.css'
 
 const posts = [
   {
@@ -217,8 +201,6 @@ export default async function BlogPostPage({ params }: Params) {
         eyebrow={new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
         title={post.title}
         description={post.description}
-        bgImage={POST_HERO_IMAGE[post.slug]?.src}
-        bgImageAlt={POST_HERO_IMAGE[post.slug]?.alt}
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/blog', label: 'Blog' },
@@ -226,52 +208,26 @@ export default async function BlogPostPage({ params }: Params) {
         ]}
       />
 
-      <article className="section-padding">
-        <div className="container-narrow space-y-6 text-lg text-text-muted leading-relaxed">
-          {post.body.map((p, i) => {
-            const wholeBold = /^\*\*(.+)\*\*\.?$/.exec(p.trim())
-            if (wholeBold) {
-              return (
-                <Reveal key={i} as="h2" className="text-2xl md:text-3xl font-display text-text mt-4 mb-0 text-balance">
-                  {wholeBold[1].replace(/\.$/, '')}
-                </Reveal>
-              )
-            }
+      <article className="ledger-section site-container" aria-labelledby="page-title">
+        <div className="journal-prose">
+          {post.body.map((paragraph, index) => {
+            const heading = /^\*\*(.+)\*\*\.?$/.exec(paragraph.trim())
+            if (heading) return <h2 key={index}>{heading[1].replace(/\.$/, '')}</h2>
+
+            const parts = paragraph.split(/\*\*(.+?)\*\*/g)
             return (
-              <Reveal key={i} as="p">
-                <span dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.+?)\*\*/g, '<strong class="text-text">$1</strong>') }} />
-              </Reveal>
+              <p key={index}>
+                {parts.map((part, i) => i % 2 === 0 ? part : <strong key={i}>{part}</strong>)}
+              </p>
             )
           })}
         </div>
       </article>
 
       {post.faqs.length > 0 && (
-        <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="post-faq-heading">
-          <div className="container-narrow">
-            <Reveal className="mb-10">
-              <p className="eyebrow mb-3">FAQ</p>
-              <h2 id="post-faq-heading" className="text-display-md font-display text-text text-balance">
-                Common questions.
-              </h2>
-            </Reveal>
-            <div className="space-y-3">
-              {post.faqs.map((f) => (
-                <Reveal key={f.q}>
-                  <details className="card group">
-                    <summary className="font-medium text-text cursor-pointer flex items-start justify-between gap-4 list-none">
-                      <span>{f.q}</span>
-                      <svg className="w-5 h-5 text-text-dim group-open:rotate-45 transition-transform shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
-                      </svg>
-                    </summary>
-                    <p className="mt-4 text-text-muted leading-relaxed">{f.a}</p>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Section id="post-faq" eyebrow="FAQ" heading="Common questions." className="editorial-faq journal-faq">
+          <FAQAccordion items={post.faqs} />
+        </Section>
       )}
 
       <CTA />

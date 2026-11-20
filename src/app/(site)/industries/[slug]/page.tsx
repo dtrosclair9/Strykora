@@ -1,11 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { industries, services, caseStudies, site, ogImage } from '@/config/site'
 import PageHero from '@/components/PageHero'
-import Reveal from '@/components/Reveal'
+import Section from '@/components/Section'
+import FAQAccordion from '@/components/FAQAccordion'
 import CTA from '@/components/CTA'
 import { Schema, faqSchema as buildFaqSchema } from '@/components/Schema'
+import '../../interiors.css'
 
 export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }))
@@ -31,10 +34,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 }
 
-const INDUSTRY_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
+const industryPhotos: Record<string, { src: string; alt: string }> = {
   'roofers-louisiana': {
     src: '/images/hero-industry-roofers.jpg',
-    alt: 'Aerial photo of a new architectural shingle roof installed by a Strykora roofing client in Raceland, Louisiana.',
+    alt: 'Architectural shingles on a roof installed by a Strykora client in Raceland, Louisiana.',
   },
   'contractors-louisiana': {
     src: '/images/hero-industry-contractors.jpg',
@@ -50,8 +53,15 @@ const INDUSTRY_HERO_IMAGE: Record<string, { src: string; alt: string }> = {
   },
   'commercial-louisiana': {
     src: '/images/hero-industry-commercial.jpg',
-    alt: 'Tugboat working the Intracoastal Waterway, photographed by Strykora marine client Melancon Marine in South Louisiana.',
+    alt: 'A Melancon Marine tugboat on the Intracoastal Waterway in South Louisiana.',
   },
+}
+
+const caseScreenshots: Record<string, { src: string; height: number }> = {
+  'foret-construction': { src: '/images/case-foret-screenshot.jpg', height: 915 },
+  'elite-custom-automotive': { src: '/images/case-elite-screenshot.jpg', height: 900 },
+  'all-out-window-tint': { src: '/images/case-allout-screenshot.jpg', height: 900 },
+  'hover-septic': { src: '/images/case-hover-screenshot.jpg', height: 915 },
 }
 
 const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: string[]; faqs: { q: string; a: string }[] }> = {
@@ -266,7 +276,7 @@ export default async function IndustryPage({ params }: Params) {
     url: `${site.url}/industries/${industry.slug}`,
   }
 
-  const heroImg = INDUSTRY_HERO_IMAGE[industry.slug]
+  const photo = industryPhotos[industry.slug]
 
   return (
     <>
@@ -275,8 +285,6 @@ export default async function IndustryPage({ params }: Params) {
         eyebrow={industry.title}
         title={industry.headline}
         description={industry.short}
-        bgImage={heroImg?.src}
-        bgImageAlt={heroImg?.alt}
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/industries', label: 'Industries' },
@@ -286,127 +294,103 @@ export default async function IndustryPage({ params }: Params) {
 
       {copy && (
         <>
-          <section className="section-padding">
-            <div className="container-narrow">
-              <Reveal>
-                <p className="text-lg md:text-xl text-text-muted leading-relaxed text-balance">{copy.intro}</p>
-              </Reveal>
+          <div className="ledger-section industry-introduction">
+            <div className="site-container industry-spread">
+              <p className="interior-lede">{copy.intro}</p>
+              {photo && (
+                <Image
+                  className="industry-photo"
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={1920}
+                  height={1080}
+                  sizes="(min-width: 1400px) 710px, (min-width: 1024px) 51vw, (min-width: 810px) 740px, 92vw"
+                />
+              )}
             </div>
-          </section>
+          </div>
 
-          <section className="section-padding border-t border-border bg-bg-elevated">
-            <div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-12">
-              <Reveal>
-                <p className="eyebrow mb-4">What&apos;s broken</p>
-                <h2 className="text-2xl md:text-3xl font-display text-text mb-6 text-balance">Common pain points.</h2>
-                <ul className="space-y-3">
-                  {copy.pain.map((p) => (
-                    <li key={p} className="flex items-start gap-3 text-text-muted">
-                      <svg className="w-5 h-5 text-text-dim shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                      <span className="leading-relaxed">{p}</span>
-                    </li>
-                  ))}
+          <div className="industry-comparison interior-wash">
+            <div className="site-container">
+              <section aria-labelledby="industry-pain-heading">
+                <p className="eyebrow">What&apos;s broken</p>
+                <h2 id="industry-pain-heading" className="interior-title">Common pain points.</h2>
+                <ul className="interior-ruled-list" role="list">
+                  {copy.pain.map((point) => <li key={point}>{point}</li>)}
                 </ul>
-              </Reveal>
-              <Reveal>
-                <p className="eyebrow mb-4">What we ship</p>
-                <h2 className="text-2xl md:text-3xl font-display text-text mb-6 text-balance">What you actually get.</h2>
-                <ul className="space-y-3">
-                  {copy.outcomes.map((o) => (
-                    <li key={o} className="flex items-start gap-3 text-text-muted">
-                      <svg className="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="leading-relaxed">{o}</span>
-                    </li>
-                  ))}
+              </section>
+              <section aria-labelledby="industry-outcomes-heading" className="industry-outcomes">
+                <p className="eyebrow">What we ship</p>
+                <h2 id="industry-outcomes-heading" className="interior-title">What you actually get.</h2>
+                <ul className="interior-ruled-list" role="list">
+                  {copy.outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}
                 </ul>
-              </Reveal>
+              </section>
             </div>
-          </section>
+          </div>
         </>
       )}
 
       {relatedCases.length > 0 && (
-        <section className="section-padding">
-          <div className="container-wide">
-            <Reveal className="mb-10">
-              <p className="eyebrow mb-3">Proof</p>
-              <h2 className="text-display-md font-display text-text text-balance">A client doing this work.</h2>
-            </Reveal>
-            <div className="grid grid-cols-1 gap-5">
-              {relatedCases.map((c) => (
-                <Reveal key={c.slug}>
-                  <Link href={`/case-studies/${c.slug}`} className="card-feature group block p-8">
-                    <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-3">
-                      {c.client} · {c.industry} · {c.city}
-                    </p>
-                    <h3 className="text-2xl font-display text-text mb-3 text-balance">{c.headline}</h3>
-                    <p className="text-text-muted leading-relaxed mb-6">{c.blurb}</p>
-                    <span className="inline-flex items-center gap-1 text-sm text-accent font-medium group-hover:gap-2 transition-all">
-                      Read case study
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
+        <Section id="industry-proof" className="industry-proof" eyebrow="Proof" heading="A client doing this work.">
+          <div className="industry-proof-list">
+            {relatedCases.map((study) => {
+              const screenshot = caseScreenshots[study.slug]
+              return (
+                <article key={study.slug}>
+                  <Link href={`/case-studies/${study.slug}`} className="industry-proof-link interior-linked">
+                    {screenshot && (
+                      <Image
+                        className="industry-proof-image"
+                        src={screenshot.src}
+                        alt={`${study.client} website homepage.`}
+                        width={1600}
+                        height={screenshot.height}
+                        sizes="(min-width: 1400px) 690px, (min-width: 1024px) 50vw, (min-width: 810px) 740px, 92vw"
+                      />
+                    )}
+                    <div>
+                      <p className="eyebrow">{study.client} · {study.industry} · {study.city}</p>
+                      <h3>{study.headline}</h3>
+                      <p className="interior-copy">{study.blurb}</p>
+                      <span className="interior-link-label">Read case study</span>
+                    </div>
                   </Link>
-                </Reveal>
-              ))}
-            </div>
+                </article>
+              )
+            })}
           </div>
-        </section>
+        </Section>
       )}
 
       {copy && (
-        <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="industry-faq-heading">
-          <div className="container-narrow">
-            <Reveal className="mb-10">
-              <p className="eyebrow mb-3">FAQ</p>
-              <h2 id="industry-faq-heading" className="text-display-md font-display text-text text-balance">
-                {industry.title} in Louisiana: common questions.
-              </h2>
-            </Reveal>
-            <div className="space-y-3">
-              {copy.faqs.map((f) => (
-                <Reveal key={f.q}>
-                  <details className="card group">
-                    <summary className="font-medium text-text cursor-pointer flex items-start justify-between gap-4 list-none">
-                      <span>{f.q}</span>
-                      <svg className="w-5 h-5 text-text-dim group-open:rotate-45 transition-transform shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
-                      </svg>
-                    </summary>
-                    <p className="mt-4 text-text-muted leading-relaxed">{f.a}</p>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Section
+          id="industry-faq"
+          className="interior-faq interior-wash interior-rail"
+          eyebrow="FAQ"
+          heading={`${industry.title} in Louisiana: common questions.`}
+        >
+          <FAQAccordion items={copy.faqs} />
+        </Section>
       )}
 
-      <section className="section-padding border-t border-border" aria-labelledby="industry-services-heading">
-        <div className="container-wide">
-          <Reveal className="mb-10">
-            <p className="eyebrow mb-3">Services</p>
-            <h2 id="industry-services-heading" className="text-display-md font-display text-text">
-              How Strykora builds for {industry.title.toLowerCase()}.
-            </h2>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {services.map((s) => (
-              <Reveal key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="card-feature h-full block">
-                  <h3 className="text-lg font-display text-text mb-2">{s.title}</h3>
-                  <p className="text-sm text-text-muted leading-relaxed">{s.short}</p>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section
+        id="industry-services"
+        className="interior-rule interior-rail"
+        eyebrow="Services"
+        heading={`How Strykora builds for ${industry.title.toLowerCase()}.`}
+      >
+        <ul className="interior-link-list" role="list">
+          {services.map((service) => (
+            <li key={service.slug}>
+              <Link href={`/services/${service.slug}`} className="interior-linked">
+                <h3>{service.title}</h3>
+                <p>{service.short}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
       <CTA heading={`Ready to outrank the ${industry.slug.startsWith('commercial') ? 'other commercial businesses' : `other ${industry.title.toLowerCase()}`} in your city?`} />
     </>

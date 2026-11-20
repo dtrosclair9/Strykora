@@ -1,9 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-
-type FormState = 'idle' | 'loading' | 'error'
 
 /**
  * Posts to /api/lead, which sends the branded instant reply to the lead and a
@@ -12,12 +10,16 @@ type FormState = 'idle' | 'loading' | 'error'
  */
 export default function AuditForm({ niche = 'general' }: { niche?: string }) {
   const router = useRouter()
-  const [status, setStatus] = useState<FormState>('idle')
+  const submitting = useRef(false)
+  const [isSending, setIsSending] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setStatus('loading')
+    if (submitting.current) return
+
+    submitting.current = true
+    setIsSending(true)
     setErrorMessage('')
 
     const form = e.currentTarget
@@ -52,28 +54,19 @@ export default function AuditForm({ niche = 'general' }: { niche?: string }) {
       }
       const json = await res.json().catch(() => null)
       setErrorMessage(json?.error ?? 'Something went wrong. Please try again, or call instead.')
-      setStatus('error')
     } catch {
       setErrorMessage('Network error. Please check your connection and try again.')
-      setStatus('error')
     }
+
+    submitting.current = false
+    setIsSending(false)
   }
 
-  const inputClass =
-    'w-full bg-bg border border-border rounded-md px-4 py-3 text-sm text-text placeholder:text-text-dim focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition'
-
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-4" aria-describedby="audit-form-note">
+    <form onSubmit={handleSubmit} className="funnel-form funnel-audit-form" aria-describedby="audit-form-note">
       <div>
-        <label htmlFor="audit-name" className="block text-sm font-medium text-text mb-2">
-          Your name <span className="text-accent" aria-hidden="true">*</span>
-        </label>
-        <input id="audit-name" name="name" type="text" required autoComplete="name" className={inputClass} placeholder="First and last" />
-      </div>
-
-      <div>
-        <label htmlFor="audit-website" className="block text-sm font-medium text-text mb-2">
-          Your website <span className="text-accent" aria-hidden="true">*</span>
+        <label htmlFor="audit-website">
+          Your website <span className="funnel-required" aria-hidden="true">*</span>
         </label>
         <input
           id="audit-website"
@@ -82,51 +75,55 @@ export default function AuditForm({ niche = 'general' }: { niche?: string }) {
           required
           inputMode="url"
           autoComplete="url"
-          className={inputClass}
+          aria-describedby="audit-website-hint"
           placeholder="yourbusiness.com, or your Facebook or Google page"
         />
-        <p className="mt-2 text-xs text-text-dim">
-          This is what gets rebuilt. If you do not have a website, send whichever page you do have.
-        </p>
       </div>
+      <p id="audit-website-hint" className="funnel-form-hint funnel-audit-website-hint">
+        This is what gets rebuilt. If you do not have a website, send whichever page you do have.
+      </p>
 
-      <div>
-        <label htmlFor="audit-email" className="block text-sm font-medium text-text mb-2">
-          Email <span className="text-accent" aria-hidden="true">*</span>
-        </label>
-        <input id="audit-email" name="email" type="email" required autoComplete="email" className={inputClass} placeholder="you@business.com" />
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="funnel-form-pair">
         <div>
-          <label htmlFor="audit-business" className="block text-sm font-medium text-text mb-2">
+          <label htmlFor="audit-name">
+            Your name <span className="funnel-required" aria-hidden="true">*</span>
+          </label>
+          <input id="audit-name" name="name" type="text" required autoComplete="name" placeholder="First and last" />
+        </div>
+        <div>
+          <label htmlFor="audit-email">
+            Email <span className="funnel-required" aria-hidden="true">*</span>
+          </label>
+          <input id="audit-email" name="email" type="email" required autoComplete="email" placeholder="you@business.com" />
+        </div>
+      </div>
+
+      <div className="funnel-form-pair">
+        <div>
+          <label htmlFor="audit-business">
             Business name
           </label>
-          <input id="audit-business" name="business" type="text" autoComplete="organization" className={inputClass} placeholder="What's on the truck" />
+          <input id="audit-business" name="business" type="text" autoComplete="organization" placeholder="What's on the truck" />
         </div>
         <div>
-          <label htmlFor="audit-phone" className="block text-sm font-medium text-text mb-2">
-            Phone <span className="text-accent" aria-hidden="true">*</span>
+          <label htmlFor="audit-phone">
+            Phone <span className="funnel-required" aria-hidden="true">*</span>
           </label>
-          <input id="audit-phone" name="phone" type="tel" required autoComplete="tel" className={inputClass} placeholder="For the walkthrough" />
+          <input id="audit-phone" name="phone" type="tel" required autoComplete="tel" placeholder="For the walkthrough" />
         </div>
       </div>
 
-      {status === 'error' && (
-        <p role="alert" className="text-sm text-red-400 bg-red-950/40 border border-red-900 rounded-md px-4 py-3">
-          {errorMessage}
-        </p>
-      )}
+      <div className="funnel-form-error" role="alert">{errorMessage}</div>
 
       <button
         type="submit"
-        disabled={status === 'loading'}
-        className="w-full btn-primary justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+        disabled={isSending}
+        className="btn-conversion"
       >
-        {status === 'loading' ? 'Sending...' : 'Rebuild my homepage'}
+        {isSending ? 'Sending...' : 'Rebuild my homepage'}
       </button>
 
-      <p id="audit-form-note" className="text-xs text-text-dim leading-relaxed text-center">
+      <p id="audit-form-note" className="funnel-form-hint">
         No card. Your rebuilt homepage arrives on a private link within three business days of the details being
         confirmed, and it is yours to keep either way.
       </p>

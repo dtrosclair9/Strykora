@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { site } from '@/config/site'
-import Reveal from '@/components/Reveal'
+import FunnelNextSteps from '@/components/FunnelNextSteps'
 
 export const metadata: Metadata = {
   title: 'Your copy of the 9 questions',
@@ -30,54 +29,19 @@ const steps = [
 
 export default function NineQuestionsThanksPage() {
   return (
-    <section className="relative pt-32 md:pt-40 pb-24 border-b border-border overflow-hidden">
-      <div className="absolute inset-0 grid-pattern opacity-40 mask-fade-bottom" aria-hidden="true" />
-      <div className="relative container-wide max-w-3xl">
-        <Reveal as="div" stagger className="space-y-5">
-          <p className="eyebrow">Ready</p>
-          <h1 className="text-display-lg font-display text-text text-balance leading-[1.02]">
-            Got it. Here are the 9 questions.
-          </h1>
-          <p className="text-lg md:text-xl text-text-muted leading-relaxed">
-            Open it now, or keep the copy that is on its way to your inbox.
-          </p>
-        </Reveal>
-
-        {/*
-          The guide is served here directly, not gated behind email delivery.
-          The page promises it in a minute, and a lead who gave their address and
-          got nothing is the exact failure this whole funnel exists to avoid.
-        */}
-        <Reveal className="mt-9">
-          <a
-            href="/9-questions-strykora.pdf"
-            className="btn-primary"
-            target="_blank"
-            rel="noopener"
-            download
-          >
+    <section className="funnel-receipt funnel-download" aria-labelledby="guide-thanks-title">
+      <div className="funnel-download-intro">
+        <div className="site-container funnel-receipt-intro">
+          <p className="eyebrow hero-eyebrow">Ready</p>
+          <h1 id="guide-thanks-title" className="ledger-hero-title">Got it. Here are the 9 questions.</h1>
+          <p className="funnel-lede">Open it now, or keep the copy that is on its way to your inbox.</p>
+          <a href="/9-questions-strykora.pdf" className="btn-conversion" target="_blank" rel="noopener" download>
             Download the 9 questions (PDF)
           </a>
-        </Reveal>
-
-        <ol className="mt-12 space-y-4">
-          {steps.map((s) => (
-            <li key={s.n}>
-              <Reveal className="card p-6 flex gap-5">
-                <span className="font-mono text-accent text-sm pt-1 shrink-0" aria-hidden="true">{s.n}</span>
-                <div>
-                  <h2 className="text-lg font-display text-text mb-2">{s.title}</h2>
-                  <p className="text-text-muted text-sm leading-relaxed">{s.body}</p>
-                </div>
-              </Reveal>
-            </li>
-          ))}
-        </ol>
-
-        <Reveal className="mt-12 flex flex-wrap gap-3">
-          <a href={`tel:${site.phoneRaw}`} className="btn-primary">Call {site.phoneDisplay}</a>
-          <Link href="/case-studies" className="btn-secondary">See the case studies</Link>
-        </Reveal>
+        </div>
+      </div>
+      <div className="site-container funnel-download-followup">
+        <FunnelNextSteps steps={steps} />
       </div>
     </section>
   )

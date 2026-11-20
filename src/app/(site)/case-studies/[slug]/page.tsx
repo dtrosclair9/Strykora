@@ -4,9 +4,11 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { caseStudies, site } from '@/config/site'
 import PageHero from '@/components/PageHero'
-import Reveal from '@/components/Reveal'
+import CaseMetrics from '@/components/CaseMetrics'
+import Section from '@/components/Section'
 import CTA from '@/components/CTA'
 import { Schema, faqSchema } from '@/components/Schema'
+import '../../editorial.css'
 
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }))
@@ -132,7 +134,7 @@ const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: Cita
   },
 }
 
-const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string }> = {
+const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string; coverShowsLiveSite?: boolean }> = {
   'foret-construction': {
     url: 'https://www.foretconstruction.co',
     screenshot: '/images/case-foret-screenshot.jpg',
@@ -152,6 +154,7 @@ const LIVE_SITES: Record<string, { url: string; screenshot: string; alt: string 
     url: 'https://www.hoverseptic.com',
     screenshot: '/images/case-hover-screenshot.jpg',
     alt: 'Screenshot of hoverseptic.com, the live Strykora-built site for Hover Septic in Thibodaux, Louisiana.',
+    coverShowsLiveSite: true,
   },
   'acadia-pools': {
     url: 'https://www.acadiapools.com',
@@ -261,6 +264,8 @@ export default async function CaseStudyPage({ params }: Params) {
   const c = caseStudies.find((cs) => cs.slug === slug)
   if (!c) notFound()
   const details = caseDetails[c.slug]
+  const citations = AI_CITATIONS[c.slug]
+  const liveSite = LIVE_SITES[c.slug]
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -295,205 +300,139 @@ export default async function CaseStudyPage({ params }: Params) {
         ]}
       />
 
-      <section className="pt-8 md:pt-12">
-        <div className="container-wide">
-          <Reveal className="relative aspect-[21/9] rounded-2xl overflow-hidden border border-border mb-12">
+      <div className={liveSite?.coverShowsLiveSite ? 'case-summary case-summary-metrics site-container' : 'case-summary site-container'}>
+        {!liveSite?.coverShowsLiveSite && (
+          <div className="case-cover">
             <Image
               src={c.cover}
               alt={details?.coverAlt ?? `${c.client} project cover image`}
               fill
-              className="object-cover"
-              sizes="(max-width: 1280px) 100vw, 1280px"
+              sizes="(min-width: 1400px) 910px, (min-width: 1024px) 66vw, 92vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-bg/20 to-transparent" />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section-padding pt-0">
-        <div className="container-wide">
-          <Reveal className="grid grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border max-w-3xl mb-16">
-            {c.metrics.map((m) => (
-              <div key={m.label} className="bg-bg-elevated p-6 text-center">
-                <p className="font-display text-3xl md:text-4xl gradient-text">{m.value}</p>
-                <p className="text-[10px] uppercase tracking-wider text-text-dim mt-2">{m.label}</p>
-              </div>
-            ))}
-          </Reveal>
-
-          {details && (
-            <div className="container-narrow !px-0 space-y-14">
-              <Reveal>
-                <p className="eyebrow mb-3">Section 01</p>
-                <h2 className="text-2xl md:text-3xl font-display text-text mb-4">The challenge</h2>
-                <p className="text-lg text-text-muted leading-relaxed">{details.challenge}</p>
-              </Reveal>
-
-              <Reveal>
-                <p className="eyebrow mb-3">Section 02</p>
-                <h2 className="text-2xl md:text-3xl font-display text-text mb-4">The approach</h2>
-                <ul className="space-y-3 mt-4">
-                  {details.approach.map((a) => (
-                    <li key={a} className="flex items-start gap-3 text-text-muted">
-                      <svg className="w-5 h-5 text-accent shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="leading-relaxed">{a}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-
-              <Reveal>
-                <p className="eyebrow mb-3">Section 03</p>
-                <h2 className="text-2xl md:text-3xl font-display text-text mb-4">The result</h2>
-                <p className="text-lg text-text-muted leading-relaxed">{details.result}</p>
-              </Reveal>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {AI_CITATIONS[c.slug] && (
-        <section className="section-padding border-t border-border bg-bg-elevated" aria-labelledby="ai-citation-heading">
-          <div className="container-wide">
-            <Reveal className="mb-10 max-w-3xl">
-              <p className="eyebrow mb-3">AI search receipts</p>
-              <h2 id="ai-citation-heading" className="text-display-md font-display text-text text-balance">
-                {AI_CITATIONS[c.slug].heading}
-              </h2>
-              <p className="mt-4 text-text-muted text-lg leading-relaxed">
-                {AI_CITATIONS[c.slug].intro}
-              </p>
-            </Reveal>
-            <div className={`grid grid-cols-1 gap-5 ${
-              AI_CITATIONS[c.slug].shots.length >= 3 ? 'md:grid-cols-3' :
-              AI_CITATIONS[c.slug].shots.length === 2 ? 'md:grid-cols-2' :
-              'max-w-md'
-            }`}>
-              {AI_CITATIONS[c.slug].shots.map((shot) => (
-                <Reveal key={shot.src}>
-                  <figure className="card-feature !p-0 overflow-hidden h-full flex flex-col">
-                    <div className="relative aspect-[1100/2136] bg-white">
-                      <Image
-                        src={shot.src}
-                        alt={shot.alt}
-                        fill
-                        className="object-cover object-top"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                    </div>
-                    <figcaption className="p-6 border-t border-border">
-                      <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">{shot.engine}</p>
-                      <p className="text-sm text-text-muted leading-relaxed mb-2">
-                        <span className="text-text-dim">Query:</span> {shot.caption}
-                      </p>
-                      <p className="text-sm text-text leading-relaxed">{shot.highlight}</p>
-                    </figcaption>
-                  </figure>
-                </Reveal>
-              ))}
-            </div>
-            <Reveal className="mt-10 text-center">
-              <Link href="/services/ai-search-optimization" className="inline-flex items-center gap-1 text-sm text-accent font-medium hover:gap-2 transition-all">
-                See how Strykora ranks clients inside AI answers
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
-            </Reveal>
           </div>
-        </section>
+        )}
+        <CaseMetrics metrics={c.metrics} />
+      </div>
+
+      {details && (
+        <div className="site-container case-narrative">
+          <section aria-labelledby="challenge-heading">
+            <header>
+              <p className="eyebrow">Section 01</p>
+              <h2 id="challenge-heading">The challenge</h2>
+            </header>
+            <p>{details.challenge}</p>
+          </section>
+          <section aria-labelledby="approach-heading">
+            <header>
+              <p className="eyebrow">Section 02</p>
+              <h2 id="approach-heading">The approach</h2>
+            </header>
+            <ul role="list">
+              {details.approach.map((item) => <li key={item}>{item}</li>)}
+            </ul>
+          </section>
+          <section className="case-result" aria-labelledby="result-heading">
+            <header>
+              <p className="eyebrow">Section 03</p>
+              <h2 id="result-heading">The result</h2>
+            </header>
+            <p>{details.result}</p>
+          </section>
+        </div>
       )}
 
-      {LIVE_SITES[c.slug] && (
-        <section className="section-padding border-t border-border" aria-labelledby="live-site-heading">
-          <div className="container-wide">
-            <Reveal className="mb-8 max-w-2xl">
-              <p className="eyebrow mb-3">Live site</p>
-              <h2 id="live-site-heading" className="text-display-md font-display text-text text-balance">
-                See the live build.
-              </h2>
-              <p className="mt-4 text-text-muted leading-relaxed">
-                Want to see what Strykora actually ships? This is the live {c.client} site right now.
-              </p>
-            </Reveal>
-            <Reveal>
-              <a
-                href={LIVE_SITES[c.slug].url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block relative aspect-[16/9] rounded-2xl overflow-hidden border border-border hover:border-border-light transition-colors"
-              >
-                <Image
-                  src={LIVE_SITES[c.slug].screenshot}
-                  alt={LIVE_SITES[c.slug].alt}
-                  fill
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
-                  sizes="(max-width: 1280px) 100vw, 1280px"
-                />
-                <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-bg via-bg/70 to-transparent flex items-center justify-between">
-                  <p className="font-mono text-sm text-text">{LIVE_SITES[c.slug].url.replace(/^https?:\/\//, '')}</p>
-                  <span className="text-sm text-accent font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Visit site
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </div>
-              </a>
-            </Reveal>
+      {citations && (
+        <Section
+          id="ai-citation"
+          eyebrow="AI search receipts"
+          heading={citations.heading}
+          description={citations.intro}
+          className="case-evidence surface-dark"
+        >
+          <div className={citations.shots.length === 1 ? 'case-citations case-citations-single' : 'case-citations'}>
+            {citations.shots.map((shot) => (
+              <figure key={shot.src}>
+                <a href={shot.src} target="_blank" rel="noopener" className="receipt-link" aria-label={`${shot.alt} Open full screenshot in a new tab`}>
+                  <div className="case-citation-image">
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt}
+                      fill
+                      sizes={citations.shots.length === 1
+                        ? '(min-width: 1024px) 288px, (min-width: 640px) 208px, (min-width: 390px) 342px, calc(100vw - 48px)'
+                        : '(min-width: 1400px) 408px, (min-width: 1024px) 30vw, (min-width: 640px) 208px, (min-width: 390px) 342px, calc(100vw - 48px)'}
+                    />
+                  </div>
+                  <span aria-hidden="true" className="receipt-link-preview">↗</span>
+                </a>
+                <figcaption>
+                  <p className="eyebrow">{shot.engine}</p>
+                  <p>Query: {shot.caption}</p>
+                  <p>{shot.highlight}</p>
+                </figcaption>
+              </figure>
+            ))}
           </div>
-        </section>
+          <Link href="/services/ai-search-optimization" className="text-link editorial-follow">
+            See how Strykora ranks clients inside AI answers
+          </Link>
+        </Section>
+      )}
+
+      {liveSite && (
+        <Section
+          id="live-site"
+          eyebrow="Live site"
+          heading="See the live build."
+          description={`Want to see what Strykora actually ships? This is the live ${c.client} site right now.`}
+          className="case-live"
+        >
+          <a href={liveSite.url} target="_blank" rel="noopener noreferrer" className="case-live-link">
+            <div className="case-live-image">
+              <Image
+                src={liveSite.screenshot}
+                alt={liveSite.alt}
+                fill
+                sizes="(min-width: 1400px) 780px, (min-width: 1024px) 55vw, 92vw"
+              />
+            </div>
+            <div className="case-live-label">
+              <p>{liveSite.url.replace(/^https?:\/\//, '')}</p>
+              <span className="text-link">Visit site</span>
+            </div>
+          </a>
+        </Section>
       )}
 
       {details?.faqs?.length ? (
-        <section className="section-padding border-t border-border">
+        <Section id="case-faq" eyebrow="Questions" heading={`Common questions about the ${c.client} project.`} className="editorial-faq">
           <Schema data={faqSchema(details.faqs)} />
-          <div className="container-wide max-w-3xl">
-            <Reveal className="mb-8">
-              <p className="eyebrow mb-3">Questions</p>
-              <h2 className="text-display-md font-display text-text">Common questions about the {c.client} project.</h2>
-            </Reveal>
-            <div className="space-y-3">
-              {details.faqs.map((f) => (
-                <Reveal key={f.q}>
-                  <details className="card group">
-                    <summary className="font-medium text-text cursor-pointer flex items-start justify-between gap-4 list-none">
-                      <h3 className="font-medium text-base">{f.q}</h3>
-                      <svg className="w-5 h-5 text-text-dim group-open:rotate-45 transition-transform shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
-                      </svg>
-                    </summary>
-                    <p className="mt-4 text-text-muted leading-relaxed">{f.a}</p>
-                  </details>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
-
-      <section className="section-padding border-t border-border bg-bg-elevated">
-        <div className="container-wide">
-          <Reveal className="mb-10">
-            <p className="eyebrow mb-3">Other work</p>
-            <h2 className="text-display-md font-display text-text">More Strykora builds.</h2>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {caseStudies.filter((cs) => cs.slug !== c.slug).map((cs) => (
-              <Reveal key={cs.slug}>
-                <Link href={`/case-studies/${cs.slug}`} className="card-feature group block p-6">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-accent font-mono mb-2">{cs.client}</p>
-                  <h3 className="text-lg font-display text-text mb-2">{cs.headline}</h3>
-                  <p className="text-sm text-text-muted">{cs.industry} · {cs.city}</p>
-                </Link>
-              </Reveal>
+          <div className="case-questions">
+            {details.faqs.map(({ q, a }) => (
+              <div key={q}>
+                <h3>{q}</h3>
+                <p>{a}</p>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
+        </Section>
+      ) : null}
+
+      <Section id="other-work" eyebrow="Other work" heading="More Strykora builds." className="case-related">
+        <ul role="list">
+          {caseStudies.filter((cs) => cs.slug !== c.slug).map((cs) => (
+            <li key={cs.slug}>
+              <Link href={`/case-studies/${cs.slug}`}>
+                <p className="eyebrow">{cs.client}</p>
+                <h3>{cs.headline}</h3>
+                <p>{cs.industry} · {cs.city}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
       <CTA />
     </>
