@@ -15,7 +15,7 @@ import './home.css'
 export const metadata: Metadata = {
   title: 'Web Design & SEO for Louisiana Businesses',
   description:
-    'Custom-built websites and local SEO for Louisiana service businesses. Built in Thibodaux, ranks on Google and inside ChatGPT, and you own the code outright.',
+    'Custom-built websites and local SEO for Louisiana service businesses, built in Thibodaux. You own the site and work directly with the person who builds it.',
   alternates: { canonical: site.url },
 }
 
