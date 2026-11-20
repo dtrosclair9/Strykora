@@ -26,7 +26,7 @@ const SERVICE_TERMS: Record<string, string> = {
 const SERVICE_CTA: Record<string, { heading: string; body: string }> = {
   'web-design': {
     heading: 'Ready for a website you own?',
-    body: "Send your current site, or tell me you don't have one yet, and which jobs you want it to bring in. You'll have a fixed-price quote within one business day.",
+    body: "Send your current site, or tell me you don't have one yet, and which jobs you want it to bring in. I'll get back to you within one business day to talk it through.",
   },
   seo: {
     heading: 'Want to show up for the jobs you want?',
@@ -96,7 +96,7 @@ const SERVICE_PAGE_COPY: Record<string, {
     ],
     faqs: [
       { q: 'How long does a Strykora website take to build?', a: 'Most builds go live in about a week from when we start. You work directly with the person building your site, so there is no agency runaround.' },
-      { q: 'How much does a custom website cost?', a: 'It depends on how many pages you need and how much custom work goes into them. You pay once, and every quote is a fixed price in writing before work starts. No hourly billing, no surprise invoices. Send the form and you will have a number within one business day.' },
+      { q: 'How much does a custom website cost?', a: 'It depends on how many pages you need and how much custom work goes into them. You pay once, and every quote is a fixed price in writing before work starts. No hourly billing, no surprise invoices. Send the form and I will get back to you within one business day. Most quotes start with a short call about where your site stands now.' },
       { q: 'Will I really own everything?', a: 'Yes. When the site launches, Strykora hands you the source code, the domain, and every account (Google, hosting, analytics). If you ever leave, you take all of it with you. No rebuild needed.' },
       { q: 'Can you take over my existing site?', a: 'Sometimes. If it is already custom-built, often yes. If it is on Wix, Squarespace, GoDaddy, or a templated WordPress site, a rebuild is almost always faster and cheaper than trying to fix the old one. Strykora will tell you the honest answer on the first call.' },
       { q: 'Who hosts the site after launch?', a: 'Strykora handles the hosting setup and walks you through the domain switch from your current registrar. Hosting is included for most small-business sites and runs about as cheap as it gets.' },

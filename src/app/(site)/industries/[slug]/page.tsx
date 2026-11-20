@@ -256,11 +256,11 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
 const INDUSTRY_CTA: Record<string, { heading: string; body: string }> = {
   'roofers-louisiana': {
     heading: 'Which roofing jobs do you want more of?',
-    body: "Tell me the work you want (replacements, FORTIFIED roofs, storm repair) and the towns you cover. Within one business day you'll get a fixed-price quote for the site.",
+    body: "Tell me the work you want (replacements, FORTIFIED roofs, storm repair) and the towns you cover. I'll get back to you within one business day to talk through where you stand online.",
   },
   'contractors-louisiana': {
     heading: 'What should your site show a buyer?',
-    body: "Send me your current site or your Facebook page and the jobs you want more of. I'll reply within one business day with what the site needs and a fixed price for it.",
+    body: "Send me your current site or your Facebook page and the jobs you want more of. I'll reply within one business day, look at what you have now, and tell you what the site needs.",
   },
   'home-services-louisiana': {
     heading: 'Which towns do you take calls in?',
@@ -268,7 +268,7 @@ const INDUSTRY_CTA: Record<string, { heading: string; body: string }> = {
   },
   'auto-shops-louisiana': {
     heading: 'How should customers reach each side of the shop?',
-    body: "Tell me what you do in the bays, the brands you install and how you book work today. I'll reply within one business day with a fixed-price quote.",
+    body: "Tell me what you do in the bays, the brands you install and how you book work today. I'll get back to you within one business day.",
   },
   'commercial-louisiana': {
     heading: 'What does a buyer need to see before a bid?',

@@ -73,7 +73,7 @@ const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: Cita
   },
   'elite-custom-automotive': {
     heading: 'Perplexity named Elite twice in one answer.',
-    intro: 'When a real customer asked Perplexity for the best lift kit installer in Lockport, the answer named Elite Custom Automotive twice in the same response — once as the best match, once as the practical pick.',
+    intro: 'Asked for the best lift kit installer in Lockport, Perplexity named Elite Custom Automotive twice in the same answer: once as the best match and once as the practical pick.',
     shots: [
       {
         src: '/images/ai-citation-perplexity-elite.jpg',
@@ -86,7 +86,7 @@ const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: Cita
   },
   'all-out-window-tint': {
     heading: 'ChatGPT lists All Out in its top picks for Baton Rouge.',
-    intro: 'When a real customer asked ChatGPT for the best window tinting shop in Baton Rouge, All-Out Window Tint made the "My pick" list as the quality option with broader services. Captured roughly two months after the Baton Rouge location launched from scratch.',
+    intro: 'Asked for the best window tinting shop in Baton Rouge, ChatGPT put All-Out Window Tint on its "My pick" list as the quality option with broader services. Captured roughly two months after the Baton Rouge location launched from scratch.',
     shots: [
       {
         src: '/images/ai-citation-chatgpt-allout.jpg',
@@ -99,7 +99,7 @@ const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: Cita
   },
   'acadia-pools': {
     heading: 'Perplexity names Acadia Pools first when asked for a Thibodaux pool builder.',
-    intro: 'When a real customer asked Perplexity for a pool builder in Thibodaux, Acadia Pools was the first option named in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity even extracted Matt Glover\'s phone number directly into the answer text.',
+    intro: 'Asked for a pool builder in Thibodaux, Perplexity named Acadia Pools as the first option in its answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity even extracted Matt Glover\'s phone number directly into the answer text.',
     shots: [
       {
         src: '/images/ai-citation-perplexity-acadia.jpg',
@@ -240,7 +240,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Page copy that answers what pool buyers ask (cost, timeline, gunite vs fiberglass) in plain sentences AI tools can quote, aimed at Thibodaux pool builder searches',
       'Trust signals surfaced where buyers look: insured, People\'s Choice Award, free quotes',
     ],
-    result: 'When a real customer asks Perplexity for a pool builder in Thibodaux, Acadia Pools is the first name in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity pulls Matt\'s phone number (985) 413-2954 and the "custom gunite pool and spa builder" wording directly from the page copy Strykora built. The AI started naming Acadia within months of launch.',
+    result: 'When Perplexity is asked for a pool builder in Thibodaux, Acadia Pools is the first name in the answer, ahead of Backyard Makeover and Coastal Pool Company. Perplexity pulls Matt\'s phone number (985) 413-2954 and the "custom gunite pool and spa builder" wording directly from the page copy Strykora built. The AI started naming Acadia within months of launch.',
     coverAlt: 'Completed inground pool and patio built by Acadia Pools in Thibodaux, Louisiana.',
     faqs: [
       { q: "Where did Acadia Pools start?", a: "Matt Glover had a strong local reputation for custom gunite pools but no website at all. Leads came from word of mouth, and a buyer searching \"pool builder Thibodaux\" mid-decision could not find him." },
@@ -304,6 +304,7 @@ export default async function CaseStudyPage({ params }: Params) {
           </div>
         )}
         <CaseMetrics metrics={c.metrics} />
+        <p className="source-note">Where the numbers come from: Local Falcon map-ranking scans, searches on Google, and what clients reported. Rankings move over time.</p>
       </div>
 
       {details && (
@@ -427,7 +428,7 @@ export default async function CaseStudyPage({ params }: Params) {
 
       <CTA
         heading="Run a business like this one?"
-        body="Tell me what you do, where you work, and how customers reach you today. Within one business day you'll get a fixed-price quote, or I'll tell you if it's not something I can help with."
+        body="Tell me what you do, where you work, and how customers reach you today. I'll get back to you within one business day, and if it's not something I can help with, I'll say so."
       />
     </>
   )

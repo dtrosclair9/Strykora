@@ -49,7 +49,7 @@ export default function ReviewsPage() {
 
       <CTA
         heading="Ready to talk about your project?"
-        body="If one of these reviews sounds like what you are after, tell me about your business. There is no sales call. You get a reply from me within one business day."
+        body="If one of these reviews sounds like what you are after, tell me about your business. You'll get a reply from me within one business day."
       />
     </>
   )

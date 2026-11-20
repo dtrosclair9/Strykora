@@ -366,7 +366,7 @@ const CITY_COPY: Record<string, CityMarketCopy> = {
 /** Closing line per service type, with the city in it, so city pages don't share one close. */
 const CITY_CTA_BODY: Record<string, (city: string) => string> = {
   'web-design': (city) =>
-    `Tell me about your business in ${city} and the work you want the site to bring in. Within one business day you'll get a fixed-price quote. There's no sales call.`,
+    `Tell me about your business in ${city} and the work you want the site to bring in. I'll get back to you within one business day.`,
   seo: (city) =>
     `Tell me which jobs you want more of in ${city}. I'll reply within one business day with what the local SEO plan would cover for you.`,
   default: (city) =>

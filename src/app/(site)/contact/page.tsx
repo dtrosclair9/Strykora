@@ -9,7 +9,7 @@ import '../editorial.css'
 
 export const metadata: Metadata = {
   title: 'Contact: Start a Louisiana Web Design or SEO Project',
-  description: `Start a web design or local SEO project with ${site.name} in ${site.address.city}, LA. Dayne replies personally within one business day with a fixed-price quote. No sales call.`,
+  description: `Start a web design or local SEO project with ${site.name} in ${site.address.city}, LA. Dayne replies personally within one business day and looks at where you stand online before quoting.`,
   alternates: { canonical: `${site.url}/contact` },
 }
 
@@ -57,7 +57,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Tell me about your project."
-        description="Send a short note about your business. Within one business day, I will tell you whether I can help and send a fixed-price quote. There is no sales call."
+        description="Send a short note about your business. I'll get back to you within one business day, usually sooner. Most of the time that means a short call so I can look at where you stand online before I quote anything."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/contact', label: 'Contact' },
@@ -89,14 +89,14 @@ export default function ContactPage() {
             <p className="eyebrow">What happens next</p>
             <ol role="list">
               <li>1. You send the form.</li>
-              <li>2. I read it, pull up your current site and Google Business Profile, and write back within one business day.</li>
+              <li>2. I pull up your current site and Google Business Profile and get back to you within one business day, usually to set up a short call.</li>
               <li>3. If we&apos;re a fit, I send a fixed-price quote, a one-page scope, and a launch date. No pressure, no auto-billing.</li>
             </ol>
           </div>
           <div>
             <p className="eyebrow">What I won&apos;t do</p>
             <ul role="list">
-              <li><strong>No sales call.</strong> Email first. If you want a call after, we book one.</li>
+              <li><strong>No pushy sales call.</strong> The first call is about where your business stands online. If Strykora is not the right fit, you will hear that on the call.</li>
               <li><strong>No auto-billing</strong> for design work. One fixed price, half up front, half at launch.</li>
               <li><strong>No long contracts</strong> on the SEO retainer. Month to month, cancel anytime.</li>
               <li><strong>No reselling</strong> Wix, Squarespace, GoDaddy, or any other page-builder service. Strykora builds it custom or it does not take the job.</li>

@@ -177,6 +177,7 @@ function FeaturedCase() {
             </div>
           ))}
         </dl>
+        <p className="source-note">Where the numbers come from: Local Falcon map-ranking scans, searches on Google, and what clients reported. Rankings move over time.</p>
       </article>
       <Link href="/case-studies" className="text-link home-section-link" prefetch={false}>{home.caseStudy.allLink}</Link>
     </Section>

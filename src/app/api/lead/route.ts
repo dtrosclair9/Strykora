@@ -107,7 +107,7 @@ function guideHtml(guideUrl: string) {
       <p style="${p}">Here they are:</p>
       <p style="${p}"><a href="${guideUrl}" style="color:#2257d6">9 Questions To Ask A Web Company Before You Pay Them A Dollar</a></p>
       <p style="${p}">If you only do one, do number 4. Email whoever runs your website right now and ask for the login, in writing. What comes back, and how fast, tells you most of it.</p>
-      <p style="${p}">In a couple of days I'll send you the five things I see on contractors' websites that quietly cost them calls. Number two is on almost every one I open.</p>
+      <p style="${p}">If any answer worries you, reply to this email with your website address and I'll take a look.</p>
       <p style="${p};margin-bottom:0">Dayne<br><span style="color:#6b7485">Strykora · Thibodaux, Louisiana · ${site.phoneDisplay}</span></p>
     </td></tr>
   </table></body></html>`

@@ -22,8 +22,8 @@ const steps = [
   },
   {
     n: '3',
-    title: 'I will send a couple more notes, then leave you alone',
-    body: 'One on the five things that quietly cost contractors calls, and one with the exact email to send if it turns out you do not own your site. Then that is it. The unsubscribe works.',
+    title: 'If an answer worries you, ask me',
+    body: 'Reply to the email with your website address and I will take a look. There is no pressure either way.',
   },
 ]
 

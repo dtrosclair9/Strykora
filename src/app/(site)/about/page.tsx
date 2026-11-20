@@ -137,6 +137,7 @@ export default function AboutPage() {
             <dd>Foret Construction<br />Raceland, Houma and Thibodaux</dd>
           </div>
         </dl>
+        <p className="source-note">Where the numbers come from: Local Falcon map-ranking scans, searches on Google, and what clients reported. Rankings move over time.</p>
       </Section>
 
       <ReviewsSection limit={2} featuredOnly heading="What clients say about working with Strykora." eyebrow="Reviews" showSeeAllLink />

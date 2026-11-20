@@ -232,7 +232,7 @@ export default async function BlogPostPage({ params }: Params) {
 
       <CTA
         heading="Want help with your own site?"
-        body="Send me your website and tell me what is not working. I'll reply within one business day with what I would do about it, and a fixed-price quote if it is work Strykora does."
+        body="Send me your website and tell me what is not working. I'll reply within one business day with what I would do about it."
       />
     </>
   )

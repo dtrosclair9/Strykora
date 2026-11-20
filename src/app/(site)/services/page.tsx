@@ -150,7 +150,7 @@ export default function ServicesPage() {
 
       <CTA
         heading="Not sure where to start?"
-        body="Send me your website and tell me what you need most right now. I'll tell you which service makes sense first, and send a fixed-price quote for it."
+        body="Send me your website and tell me what you need most right now. I'll tell you which service makes sense first."
       />
     </>
   )

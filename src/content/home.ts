@@ -25,7 +25,7 @@ export const home = {
   proof: {
     eyebrow: 'AI search results',
     heading: 'ChatGPT and Perplexity naming Strykora clients.',
-    body: 'These are real answers from ChatGPT and Perplexity, captured between June and October 2026, to the kind of question a customer types in: who is the best roofer in Raceland, who does lift kits in Lockport. Each one names a business Strykora built a site for. AI answers change from one run to the next, so read these as snapshots of what came up, not guarantees.',
+    body: 'These are real answers from ChatGPT and Perplexity, captured between June and October 2026, to the kind of question a customer types in: who is the best roofer in Raceland, who does lift kits in Lockport. Each one names a business Strykora built a site for, and Dayne ran each search and took each screenshot. AI answers change from one run to the next, so read these as snapshots of what came up, not guarantees.',
     depth: 'Hover Septic: three answers from two AI tools',
     depthLink: 'See the Hover Septic case study',
     breadth: 'Four more clients in four other towns',
@@ -65,7 +65,7 @@ export const home = {
     eyebrow: 'Get in touch',
     firstLine: 'Tell me about your business.',
     secondLine: 'I\'ll tell you if I can help.',
-    body: 'Send the form or call. Within one business day you get a fixed-price quote, or a plain answer if Strykora is not the right fit. There is no sales call.',
+    body: 'Send the form or call. I\'ll get back to you within one business day, usually with a short call to see where you stand online, and then a fixed-price quote in writing.',
     projectLink: 'Start a project',
     phoneLink: `Call ${site.phoneDisplay}`,
   },
@@ -135,7 +135,7 @@ export const faqs = [
   },
   {
     q: 'How much does a Strykora website cost?',
-    a: `It depends on what you need. A website is quoted by the number of pages and how much custom work it takes, and you pay for it once. Local SEO and Google Ads management are flat monthly fees with no long-term contract. Every quote is a fixed price in writing before any work starts, with no hourly billing. Send the form or call and you will have a number within one business day.`,
+    a: `It depends on what you need. A website is quoted by the number of pages and how much custom work it takes, and you pay for it once. Local SEO and Google Ads management are flat monthly fees with no long-term contract. Every quote is a fixed price in writing before any work starts, with no hourly billing. Most quotes start with a short call so I can see where your business stands online.`,
   },
   {
     q: 'Why custom-built instead of Wix, Squarespace, or WordPress?',
@@ -167,7 +167,7 @@ export const faqs = [
   },
   {
     q: 'How fast will you respond to my inquiry?',
-    a: `Strykora responds to every project inquiry within one business day. You will hear whether Strykora can help and, if so, get a fixed-price quote and timeline.`,
+    a: `Within one business day, usually sooner. The first step is normally a short call to look at your website, your Google listing and where you rank. After that you get a fixed-price quote and a timeline in writing.`,
   },
 ]
 

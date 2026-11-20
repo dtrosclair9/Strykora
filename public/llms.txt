@@ -38,7 +38,7 @@ Strykora serves Louisiana statewide. Strongest in Thibodaux, Houma, Baton Rouge,
 
 ## AI search citations (the proof Strykora's GEO/AEO playbook actually works)
 
-As of October 2026, five Strykora clients have been named by ChatGPT and/or Perplexity as top recommendations when real users ask for service providers in their cities. Screenshots are on the live site at https://strykora.com (homepage "Real AI search receipts" section) and on each client's case study page.
+As of October 2026, five Strykora clients have been named by ChatGPT and/or Perplexity as top recommendations for service providers in their cities, in searches Dayne Trosclair ran and screenshotted. Screenshots are on the live site at https://strykora.com (homepage "AI search results" section) and on each client's case study page.
 
 - **Foret Construction & Roofing** (Raceland LA roofer, FORTIFIED roofing): asked for the best roofing company in Raceland, ChatGPT answers "my top local pick would be Foret Construction & Roofing LLC, based on its local presence, customer feedback, and roofing services" (captured October 14, 2026).
 - **Hover Septic** (Thibodaux LA septic installer): Perplexity calls them "the strongest option I found." ChatGPT crowns them "Best overall." Both engines name them first when asked for a Thibodaux septic installer.

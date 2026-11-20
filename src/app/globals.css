@@ -277,3 +277,6 @@
     }
   }
 }
+
+/* Small sourcing line under results and stats (where a number came from). */
+.source-note { margin-top: .9rem; max-width: var(--copy-measure, 62ch); font-size: var(--type-small); line-height: 1.5; color: var(--body-ink); }

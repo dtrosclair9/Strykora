@@ -339,7 +339,7 @@ export const caseStudies = [
     industry: 'Pool Builder',
     city: 'Thibodaux, LA',
     headline: 'Thibodaux gunite pool builder gets named first by Perplexity',
-    blurb: 'Matt Glover\'s custom gunite pool operation needed a website that matched the craft. Strykora built a custom site at acadiapools.com, rebuilt the Google Business Profile, and rewrote the page copy so each service is described plainly. Two months later, when a real customer asks Perplexity for a pool builder in Thibodaux, Acadia Pools is the first option named in the answer.',
+    blurb: 'Matt Glover\'s custom gunite pool operation needed a website that matched the craft. Strykora built a custom site at acadiapools.com, rebuilt the Google Business Profile, and rewrote the page copy so each service is described plainly. Two months later, when Perplexity is asked for a pool builder in Thibodaux, Acadia Pools is the first option named in the answer.',
     metrics: [
       { label: 'Perplexity rank', value: '#1' },
       { label: 'Service lines', value: '6' },
