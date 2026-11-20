@@ -34,7 +34,7 @@ export default function IndustriesPage() {
       <PageHero
         eyebrow="Industries"
         title="Web design and SEO for Louisiana service and commercial businesses."
-        description="Generic agencies sell the same package to a roofer, a SaaS startup, and a law firm. Strykora picks lanes and goes deep. These are the verticals Strykora knows cold, and where the case studies prove the model works."
+        description="Strykora works with a short list of Louisiana trades and commercial operators. Each page below explains what a website in that trade needs, and links to related client work where there is some."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/industries', label: 'Industries' },
@@ -46,7 +46,7 @@ export default function IndustriesPage() {
           <div className="industry-spread">
             <div className="ledger-section-heading">
               <p className="eyebrow">Why these five</p>
-              <h2 id="industry-index-heading">Picked on purpose. Each one earned a slot.</h2>
+              <h2 id="industry-index-heading">Five trades Strykora builds for.</h2>
               <p className="ledger-section-intro">
                 The lanes below share three things: a high-ticket transaction (so a small lift in rank pays for the whole site), a buyer who searches before they call, and a competitive set Strykora has already beaten in production. Every vertical on this page has a live, ranking Strykora build behind it, not a deck slide.
               </p>
@@ -83,14 +83,14 @@ export default function IndustriesPage() {
         className="interior-wash interior-rail"
         eyebrow="Discipline"
         heading="What Strykora will not take on."
-        description="Saying no is the whole reason the case studies work. A vertical only earns a slot once the playbook is repeatable, the buyer journey is understood, and the schema and content patterns are dialed in. Until then, the answer is no, and a referral."
+        description="Some businesses need a specialist Strykora is not. If yours is one of them, you will hear that on the first call, along with a referral to someone who fits better."
       >
         <dl className="industry-discipline-list">
           {[
-            { title: 'Restaurants and retail', body: 'Foot-traffic businesses ranked by visual social and review velocity. Different game.' },
-            { title: 'Medical and legal', body: 'Regulated copy, HIPAA, compliance review cycles. Specialist territory.' },
-            { title: 'National e-commerce', body: 'Shopify experts and paid-media shops already crush this. Not the Strykora edge.' },
-            { title: 'Guaranteed-ranking SEO', body: 'No reputable SEO operator promises specific Google rankings. Strykora reports what changed, not what is promised.' },
+            { title: 'Restaurants and retail', body: 'They win customers through foot traffic, social media and review volume, which is different work from what Strykora does.' },
+            { title: 'Medical and legal', body: 'Medical and legal sites need regulated copy, HIPAA handling and compliance review. That calls for a specialist.' },
+            { title: 'National e-commerce', body: 'Selling products nationwide is a job for Shopify and paid-media specialists.' },
+            { title: 'Guaranteed-ranking SEO', body: 'Nobody can honestly promise a specific Google ranking, and Strykora will not. The monthly report shows what actually changed.' },
           ].map(({ title, body }) => (
             <div key={title}>
               <dt>{title}</dt>
@@ -100,7 +100,10 @@ export default function IndustriesPage() {
         </dl>
       </Section>
 
-      <CTA />
+      <CTA
+        heading="Don't see your trade here?"
+        body="These five pages cover most of the work, not all of it. Tell me what you do and where you do it, and within one business day I'll tell you whether Strykora is a good fit."
+      />
     </>
   )
 }

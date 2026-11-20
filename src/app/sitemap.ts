@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Real last-edit dates only. Pages without a trustworthy date leave lastModified out
   // (a sitemap that stamps every URL with the build time teaches Google to ignore it).
   const blogPostUpdated: [string, string][] = [
-    ['why-chatgpt-recommends-your-competitor-louisiana', '2026-11-18'],
+    ['why-chatgpt-recommends-your-competitor-louisiana', '2026-11-20'],
     ['why-seo-matters-for-small-businesses-louisiana', '2026-11-18'],
     ['google-may-2026-ai-search-update-louisiana-businesses', '2026-11-18'],
     ['why-your-wix-site-isnt-ranking-louisiana', '2026-11-18'],

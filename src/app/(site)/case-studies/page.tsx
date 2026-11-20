@@ -75,7 +75,10 @@ export default function CaseStudiesPage() {
         ))}
       </section>
 
-      <CTA />
+      <CTA
+        heading="Want a project like these?"
+        body="Tell me about your business and which of these projects is closest to it. That tells me a lot about what you need before I put a price on it."
+      />
     </>
   )
 }

@@ -45,7 +45,7 @@ interface CitationShot {
 
 const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: CitationShot[] }> = {
   'hover-septic': {
-    heading: 'ChatGPT and Perplexity both recommend Hover by name.',
+    heading: 'ChatGPT and Perplexity both named Hover Septic.',
     intro: 'When we asked ChatGPT and Perplexity for the best septic installer in Thibodaux, both put Hover Septic first. These screenshots were captured in June 2026. AI answers change over time, so we re-check them every month.',
     shots: [
       {
@@ -59,7 +59,7 @@ const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: Cita
         src: '/images/ai-citation-chatgpt-best-overall.jpg',
         engine: 'ChatGPT',
         caption: '"Recommend me the best septic installation service Thibodaux LA."',
-        highlight: 'Answer crowns Hover Septic Services as "Best overall."',
+        highlight: 'ChatGPT calls Hover Septic Services "Best overall."',
         alt: 'Screenshot of ChatGPT crowning Hover Septic Services as Best overall for septic installation in Thibodaux, Louisiana.',
       },
       {
@@ -72,7 +72,7 @@ const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: Cita
     ],
   },
   'elite-custom-automotive': {
-    heading: 'Perplexity recommends Elite by name. Twice.',
+    heading: 'Perplexity named Elite in two separate answers.',
     intro: 'When a real customer asked Perplexity for the best lift kit installer in Lockport, the answer named Elite Custom Automotive twice in the same response — once as the best match, once as the practical pick.',
     shots: [
       {
@@ -160,28 +160,28 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Jacob Foret\'s FORTIFIED-certified roofing operation had a Wix site with decent SEO foundations and working contact popups, but it was templated, leaned on stock photography, and charged Foret a monthly Wix rental fee with no path to ownership. The Google Business Profile had only a couple of photos, no posts, and no service descriptions. Invisible to the local pack and to AI Overviews. The bones of an SEO program were there; the foundation was not built to scale.',
     approach: [
       'Wix site retired. Rebuilt as a custom site Foret owns outright, no more monthly Wix bill',
-      'Nine city landing pages targeting "roof replacement [city] la" searches across South Louisiana',
+      'Nine service pages, including FORTIFIED roof and new home construction pages for Raceland, Houma and Thibodaux',
       'FORTIFIED, GAF, and Owens Corning credentials moved above the fold where storm-season buyers actually look',
       'Every service and city page written to answer what storm-season buyers ask, in plain sentences Google\'s AI answer and ChatGPT can quote',
       'Google Business Profile fully rebuilt with photos, weekly posts, and a services list that matches the site',
       'Monthly Local SEO retainer to keep the rankings growing',
     ],
-    result: 'Foret now owns the new site outright, no more monthly Wix bill, with nine city landing pages targeting roof replacement searches across South Louisiana. The site is fast, set up for both Google and AI search, and the credentials buyers actually care about are surfaced where they look.',
+    result: 'Foret now owns the new site outright, no more monthly Wix bill, with nine service pages covering Raceland, Houma and Thibodaux. The site is fast, set up for both Google and AI search, and the credentials buyers actually care about are surfaced where they look.',
     coverAlt: 'Aerial photo of a completed shingle roof replacement by Foret Construction in Raceland, Louisiana.',
     faqs: [
       { q: "Why did Foret Construction leave Wix?", a: "Jacob was paying Wix a monthly fee for a templated, stock-photo site he could never own. The rebuild is custom code Foret owns outright, so there is no monthly Wix bill and nothing to lose if he ever changes providers." },
-      { q: "What did the Foret rebuild include?", a: "A custom site, nine city landing pages aimed at roof replacement searches across South Louisiana, his FORTIFIED, GAF and Owens Corning credentials moved to the top of the page, a rebuilt Google Business Profile, and an ongoing monthly Local SEO retainer." },
+      { q: "What did the Foret rebuild include?", a: "A custom site, nine service pages across Raceland, Houma and Thibodaux, his FORTIFIED, GAF and Owens Corning credentials moved to the top of the page, a rebuilt Google Business Profile, and an ongoing monthly Local SEO retainer." },
       { q: "What would a roofing site like Foret's cost?", a: "Every Strykora build gets one fixed price, in writing, after a short scoping conversation. For a roofer, the number depends mostly on how many service and city pages the business needs." },
     ],
   },
   'elite-custom-automotive': {
     challenge:
-      'Colin Richard had built Elite Custom Automotive into a real shop in Lockport, but the website didn\'t show it. The old site was templated, stock-photo heavy, and looked like every other low-budget auto shop site on the SERP. Colin was also paying monthly rental fees to the web provider with no path to ownership. The Google Business Profile had zero photos, zero posts, and no service descriptions. Invisible to the local pack.',
+      'Colin Richard had built Elite Custom Automotive into a real shop in Lockport, but the website didn\'t show it. The old site was templated, stock-photo heavy, and looked like every other low-budget auto shop site in the search results. Colin was also paying monthly rental fees to the web provider with no path to ownership. The Google Business Profile had zero photos, zero posts, and no service descriptions. Invisible to the local pack.',
     approach: [
       'Custom rebuild from scratch with a badass 3D hero treatment that finally showcases Elite\'s actual brand',
       'Two distinct conversion paths: performance builds (BDS lift kits, Cognito suspension) on one path, day-to-day auto repair on the other',
       'Brand pages for the suspension installers (BDS, Cognito) so buyers searching by manufacturer find Elite first',
-      'Nine city pages targeting "[city] auto repair" across South Louisiana',
+      'Nine service pages: lift kits, engine and transmission work, and custom wheels and tires in Lockport, Houma and Thibodaux',
       'Google Business Profile fully built out: photos, posts, service descriptions, all aligned to the on-site copy',
       'Lead form that pings Colin\'s phone instead of sitting in a never-checked inbox',
     ],
@@ -201,7 +201,7 @@ const caseDetails: Record<string, { challenge: string; approach: string[]; resul
       'Dual-location architecture with per-location landing pages and contact forms (Gonzales routes to Reed, Baton Rouge routes to Dax)',
       'Dedicated franchising page targeting future partners, a marketing angle the old rental site could not accommodate',
       'Full Google Business Profile takeover for both locations, including building the Baton Rouge profile from scratch',
-      'Both the site and the Business Profile set up so ChatGPT and Google\'s AI answer can recommend All Out by name',
+      'The site and both Business Profiles describe each shop\'s services and town the same way, which is what ChatGPT and Google\'s AI answer read',
       'Live at all-outwindowtint.com (yes, with the hyphen)',
     ],
     result: 'Two months after launch, the Baton Rouge location ranks #3 in Google AI search results for "tint baton rouge", a market All Out was not ranking in at all before launch. Each location owns its own lead pipeline. Gonzales bookings hit Gonzales. Baton Rouge bookings hit Baton Rouge. The franchising page surfaces new partner inquiries Reed and Dax can vet without ever rebuilding the site.',
@@ -425,7 +425,10 @@ export default async function CaseStudyPage({ params }: Params) {
         </ul>
       </Section>
 
-      <CTA />
+      <CTA
+        heading="Run a business like this one?"
+        body="Tell me what you do, where you work, and how customers reach you today. Within one business day you'll get a fixed-price quote, or I'll tell you if it's not something I can help with."
+      />
     </>
   )
 }

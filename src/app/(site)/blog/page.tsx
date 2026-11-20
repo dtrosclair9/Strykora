@@ -27,7 +27,7 @@ const posts = [
   {
     slug: 'google-may-2026-ai-search-update-louisiana-businesses',
     title: 'Google\'s May 2026 AI Search Update: What Louisiana Service Businesses Need to Know',
-    excerpt: 'The May 21, 2026 core update reshaped how local search works. The plain-English version for Louisiana service businesses.',
+    excerpt: 'Google ran a core update from May 21 to June 2, 2026. What it did and did not change, and what a Louisiana service business should check if traffic dropped.',
     date: '2026-05-21',
   },
   {

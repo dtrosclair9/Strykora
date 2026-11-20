@@ -15,13 +15,13 @@ const posts = [
     title: 'Why ChatGPT Recommends Your Competitor Instead of You',
     description: 'Ask ChatGPT for a contractor and it hands back a name or two. How those picks get made, and what it takes for a Louisiana business to be one of them.',
     date: '2026-09-06',
-    updated: '2026-11-18',
+    updated: '2026-11-20',
     body: [
       `We keep a screenshot from earlier this year: someone asks ChatGPT for a septic installer in Thibodaux, and it names our client Hover Septic first, explains why, and links the site. There was no results page and no map pack. The AI picked one business and the customer called it.`,
       `Those answers are not random. AI assistants pick businesses in a predictable way, which means a business can position itself to be the one that gets picked. This post explains how the picking works and where most Louisiana businesses fall out of the running.`,
       `**Where ChatGPT gets its answers.**`,
       `ChatGPT, Perplexity, and Google's AI Mode do not keep a private directory of Louisiana businesses. When someone asks for a recommendation, they run live searches, read the pages that come back, and summarize what they find. If those pages describe your business clearly, you are the one that gets named.`,
-      `A Whitespark study of local AI answers found that for local questions, about 86 percent of what the AI cites comes from sources you control: your website, your Google Business Profile, and your social profiles. The rest comes from third-party places like Yelp, Reddit, and local directories. You cannot control what Reddit says about you, but that first group is all stuff you can fix this month.`,
+      `A Yext study of 6.8 million AI citations across ChatGPT, Gemini and Perplexity (October 2025) found that about 86 percent came from sources a business manages or can strongly influence, mostly its own website and its listings, like the Google Business Profile. Reviews and social media were a much smaller share, and the rest came from places like Reddit and news sites. You cannot control what Reddit says about you, but your website and your listings are things you can fix this month.`,
       `**The four reasons the AI skips you.**`,
       `1. **Your site never answers a question.** AI engines quote pages that ask and answer questions in plain sentences. If your website is five photos and a phone number, there is nothing for the machine to quote.`,
       `2. **Your pages never say who, what, and where in plain words.** A homepage that opens with "Quality you can trust" tells a machine nothing. One that opens with "We replace roofs in Houma and Thibodaux" tells it exactly when to name you. AI tools read the visible page, so the words on it do the work.`,
@@ -230,7 +230,10 @@ export default async function BlogPostPage({ params }: Params) {
         </Section>
       )}
 
-      <CTA />
+      <CTA
+        heading="Want help with your own site?"
+        body="Send me your website and tell me what is not working. I'll reply within one business day with what I would do about it, and a fixed-price quote if it is work Strykora does."
+      />
     </>
   )
 }

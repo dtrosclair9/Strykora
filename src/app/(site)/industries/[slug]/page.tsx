@@ -67,7 +67,7 @@ const caseScreenshots: Record<string, { src: string; height: number }> = {
 const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: string[]; faqs: { q: string; a: string }[] }> = {
   'roofers-louisiana': {
     intro:
-      'Louisiana roofing buyers don\'t care about your fonts. They care that your phone is at the top of the search result when their roof is leaking. Strykora roofer sites are built to win the high-ticket "roof replacement [city]" search and convert it into a booked estimate.',
+      'When a roof is leaking, the homeowner calls whoever shows up first with a phone number. Strykora roofer sites are built to rank for "roof replacement [city]" in the towns you work and turn that search into a booked estimate.',
     pain: [
       'Your Wix or Squarespace site loads slowly, and Google ranks the faster competitor above you.',
       'You rank for your brand name only, but new customers search by service, not by company name.',
@@ -75,22 +75,22 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
     ],
     outcomes: [
       'A dedicated roof replacement and storm damage page in every city you serve.',
-      'Your credentials (FORTIFIED, GAF, manufacturer certifications, insurance carriers) surfaced where buyers look.',
+      'Your credentials (FORTIFIED, GAF and other manufacturer certifications, your verified license and insurance) shown where buyers look.',
       'Google Business Profile optimized for the local pack on "[city] roofer" searches.',
-      'The behind-the-scenes code AI search engines look for, so Google\'s AI answer and ChatGPT name your business when buyers ask for a Louisiana roofer.',
+      'Service and city pages that answer what homeowners ask before they call: what a replacement involves, how long it takes, and which towns you cover.',
     ],
     faqs: [
       {
         q: 'Do you work with roofing companies outside Louisiana?',
-        a: 'Strykora is built around South Louisiana roofing: storm seasons, FORTIFIED certifications, the insurance-carrier dynamics. That depth is the wedge for the case study work. Roofers in similar storm markets (Mississippi Gulf Coast, Alabama, East Texas) are welcome to inquire. Just ask.',
+        a: 'Strykora is built around South Louisiana roofing: storm seasons, FORTIFIED roofs, and the state rules on what a contractor is allowed to advertise. Roofers in similar storm markets (Mississippi Gulf Coast, Alabama, East Texas) are welcome to ask.',
       },
       {
         q: 'How long until I see leads?',
-        a: 'Google Ads drive leads in the first week of launch. SEO compounds; expect meaningful organic lift in 60 to 120 days for a new site, faster for a rebuild on existing domain authority.',
+        a: 'Google Ads can start bringing in calls soon after a campaign goes live, depending on your budget and the competition. SEO is slower: expect meaningful organic lift in 60 to 120 days for a new site, sooner for a rebuild on a domain that already ranks.',
       },
       {
         q: 'Do you handle the Google Business Profile build-out too?',
-        a: 'Yes. GBP optimization is bundled into the local SEO retainer. Weekly posts, photo uploads, review request automation, and the Services entries tuned for AI Overview citation are all included.',
+        a: 'Yes. GBP optimization is bundled into the local SEO retainer. Weekly posts, photo uploads, review request automation, and Services entries written the way homeowners search are all included.',
       },
       {
         q: 'Can you build during hurricane season?',
@@ -104,7 +104,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
   },
   'contractors-louisiana': {
     intro:
-      'General contractor, paving, fencing, dirt work, demo. Louisiana service contractors all face the same problem: customers can\'t tell you apart from the next guy in the SERP. Strykora builds sites that name what you actually do, where you do it, and why a buyer should call you over the truck pulling up across the street.',
+      'General contractors, paving, fencing, dirt work and demolition crews have the same problem online: in the search results they all look alike. Strykora builds sites that name the exact work you do and the towns you do it in, with photos of real jobs, so a buyer has a reason to call you.',
     pain: [
       'Your site says "services" instead of the specific job you\'re hired for.',
       'You have no city-specific pages, so Google has no reason to show you in Houma or Baton Rouge.',
@@ -127,21 +127,21 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'How do you handle insurance, bonding, and license info?',
-        a: 'Every Strykora contractor site has a dedicated trust block surfacing your Louisiana state license number, insurance and bonding, and any specialty certifications. Search-visible and screen-reader accessible.',
+        a: 'They go in a trust block near the top of the site: your Louisiana license number, insurance and bonding, and any specialty certifications. Strykora checks the license on the state board\'s lookup and words it exactly the way it is issued.',
       },
       {
         q: 'What if I do residential and commercial work?',
-        a: 'Strykora splits the buyer journeys into separate paths. Residential prospects land on residential service pages and convert via quick-quote forms. Commercial prospects land on commercial pages and convert via project-detail forms or direct phone.',
+        a: 'They get separate pages. Homeowners land on residential service pages with a short quote form. Commercial buyers land on commercial pages with a form for project details, or they call.',
       },
       {
         q: 'How long does a Louisiana contractor site take to build?',
-        a: 'Most builds go live about a week after the build starts. The stack is dialed in and you work directly with the builder, no agency handoffs.',
+        a: 'Most builds go live about a week after the build starts. You deal directly with the person building it the whole time.',
       },
     ],
   },
   'home-services-louisiana': {
     intro:
-      'Window tint, lawn care, pressure washing, pest control, mobile detailing. Home services live and die by "near me" searches and the local pack. Strykora builds the website and the Google Business Profile to win both.',
+      'Window tint, lawn care, pressure washing, pest control and mobile detailing get most of their new customers from "near me" searches and Google\'s map results. Strykora builds the website and the Google Business Profile with both in mind.',
     pain: [
       'You depend on Facebook for leads, and one algorithm change empties the pipeline.',
       'Your site has one page with all services jammed into a list.',
@@ -149,8 +149,8 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
     ],
     outcomes: [
       'One page per service per city. Each ranks independently in local search.',
-      'Reviews surfaced in the hero, not buried in the footer.',
-      'Your Google Business Profile and your site lined up so Google\'s AI answer can recommend you in the map results.',
+      'Reviews shown near the top of the page, where people decide whether to call.',
+      'Your Google Business Profile and your site saying the same thing about your services, hours and service area.',
       'Per-location lead routing if you run multiple shops.',
     ],
     faqs: [
@@ -164,7 +164,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'How do I get reviews surfaced on the site?',
-        a: 'Every Strykora home-service site has a reviews block in the hero or just below, pulling from your Google Business Profile. New reviews appear on the site within minutes of being posted, with no manual updates.',
+        a: 'Strykora puts your Google reviews in a block near the top of the page, where a buyer sees them before deciding to call, with a link to the full list on Google.',
       },
       {
         q: 'What about seasonal services?',
@@ -172,13 +172,13 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'How fast can I be ranking?',
-        a: 'Google Ads drive leads in week one. SEO compounds; for home services in smaller Louisiana markets expect top-3 local pack visibility within 60 to 120 days.',
+        a: 'Google Ads can bring in calls soon after a campaign starts. Map rankings take longer: in smaller Louisiana markets, expect them to start moving within 60 to 120 days.',
       },
     ],
   },
   'auto-shops-louisiana': {
     intro:
-      'Lift kits, custom builds, mechanical, detailing, tint. Auto shops have wildly different buyer journeys but the same SEO problem: the SERP for "[city] auto repair" is owned by Yelp and four mediocre WordPress sites. Strykora builds a site that beats them on speed, content depth, and conversion paths.',
+      'Lift kits, custom builds, mechanical, detailing and tint each bring in a different customer, but they share one search problem: the results for "[city] auto repair" are usually Yelp and a few slow WordPress sites. Strykora builds a shop site that loads faster, explains each service on its own page, and makes calling or asking for a quote easy.',
     pain: [
       'Your shop does five things. Your site sells one.',
       'Customers can\'t tell what brands you install (BDS, Cognito, KMC, etc.).',
@@ -197,15 +197,15 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'Can buyers search by the brands I install?',
-        a: 'Yes. Every Strykora auto shop site has brand-specific pages (BDS, Cognito, KMC, Method, Fox, etc.) so buyers searching by brand name find your shop.',
+        a: 'Yes. Strykora can give the brands you install (BDS, Cognito, KMC, Method, Fox and so on) their own pages, so a buyer searching by brand name finds your shop.',
       },
       {
         q: 'Do you handle scheduling integrations?',
-        a: 'Strykora wires the lead form into your phone via SMS notifications. For full appointment scheduling, Strykora partners with Mitchell1, Tekmetric, or Shop-Ware integrations on request.',
+        a: 'Strykora sends form leads to your phone by text. If you already book appointments in shop software, ask on the first call and Strykora will look at linking the site to it.',
       },
       {
         q: 'How fast can a Louisiana auto shop rank?',
-        a: 'Google Ads drive leads from launch. SEO for "[city] auto repair" typically takes 90 to 180 days for a meaningful lift, faster for niche queries like "[city] lift kit installer".',
+        a: 'Google Ads can bring in calls soon after launch. SEO for "[city] auto repair" typically takes 90 to 180 days for a meaningful lift, faster for niche queries like "[city] lift kit installer".',
       },
       {
         q: 'What does an auto shop site cost?',
@@ -215,7 +215,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
   },
   'commercial-louisiana': {
     intro:
-      'Louisiana marine operators, oil and gas service companies, and industrial contractors sell to procurement teams that vet vendors hard. Your website is the first credential check before anyone calls. Most operator sites in this market are stuck on early-2010s WordPress builds with broken contact forms, and it costs them when bid season starts.',
+      'Louisiana marine operators, oil and gas service companies, and industrial contractors sell to procurement teams that vet vendors hard. Your website is the first credential check before anyone calls. A lot of operator sites in this market have not been touched in years, and that shows when a buyer checks you out before a bid.',
     pain: [
       'Your site is a brochure that hasn\'t been updated since the last admin clicked through.',
       'Procurement buyers can\'t quickly verify your fleet, vessel specs, SIRE/CDI/ISO credentials, or insurance carriers.',
@@ -225,7 +225,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       'A site that names every service line clearly: towing, transport, offshore support, vessel ops, industrial services.',
       'Fleet and equipment pages with specs and credentials surfaced for procurement review.',
       'A recruiting-ready careers section with role-specific landing pages for mariners, deckhands, and operators.',
-      'The behind-the-scenes code AI search engines look for, so ChatGPT can pull your services and credentials directly when a procurement person searches.',
+      'Clear pages for each service line and credential, so a buyer searching Google or asking ChatGPT finds the facts about you in your own words.',
     ],
     faqs: [
       {
@@ -238,7 +238,7 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
       },
       {
         q: 'How does your work differ from a generic agency build for B2B?',
-        a: 'Most agencies treat a marine operator or oilfield service company like a local home service business. Strykora treats the procurement journey separately from the recruiting journey, and builds both into the site with distinct conversion paths.',
+        a: 'A marine operator or oilfield service company sells to procurement teams and hires crew, and those are two different visitors. Strykora builds a separate path for each: service and credential pages with a bid request form for buyers, and a careers section with an application for crew.',
       },
       {
         q: 'Can you handle multi-location operators with separate billing entities?',
@@ -262,6 +262,7 @@ export default async function IndustryPage({ params }: Params) {
     if (industry.slug === 'roofers-louisiana') return c.slug === 'foret-construction'
     if (industry.slug === 'auto-shops-louisiana') return c.slug === 'elite-custom-automotive'
     if (industry.slug === 'home-services-louisiana') return c.slug === 'all-out-window-tint' || c.slug === 'hover-septic'
+    if (industry.slug === 'contractors-louisiana') return c.slug === 'foret-construction' || c.slug === 'acadia-pools'
     return false
   })
 
@@ -332,7 +333,7 @@ export default async function IndustryPage({ params }: Params) {
       )}
 
       {relatedCases.length > 0 && (
-        <Section id="industry-proof" className="industry-proof" eyebrow="Proof" heading="A client doing this work.">
+        <Section id="industry-proof" className="industry-proof" eyebrow="Proof" heading={relatedCases.length > 1 ? "Clients doing this work." : "A client doing this work."}>
           <div className="industry-proof-list">
             {relatedCases.map((study) => {
               const screenshot = caseScreenshots[study.slug]
@@ -385,14 +386,16 @@ export default async function IndustryPage({ params }: Params) {
             <li key={service.slug}>
               <Link href={`/services/${service.slug}`} className="interior-linked">
                 <h3>{service.title}</h3>
-                <p>{service.short}</p>
+                <p>{service.eyebrow}</p>
               </Link>
             </li>
           ))}
         </ul>
       </Section>
 
-      <CTA heading={`Ready to outrank the ${industry.slug.startsWith('commercial') ? 'other commercial businesses' : `other ${industry.title.toLowerCase()}`} in your city?`} />
+      <CTA heading={`Ready to outrank the ${industry.slug.startsWith('commercial') ? 'other commercial businesses' : `other ${industry.title.toLowerCase()}`} in your city?`}
+        body="Send me your website and the jobs you want more of. Within one business day I'll come back with a fixed-price quote, or let you know if I'm not the right fit."
+      />
     </>
   )
 }

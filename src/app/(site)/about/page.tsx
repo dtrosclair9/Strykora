@@ -14,7 +14,7 @@ const portraitSizes = '(min-width: 1170px) 400px, (min-width: 1024px) 34.24vw, (
 
 export const metadata: Metadata = {
   title: 'About Dayne Trosclair, Louisiana Web Designer',
-  description: `${site.name} is built and run by ${site.owner} out of ${site.address.city}, Louisiana. One operator, every site built by hand, every client kept on a first-name basis.`,
+  description: `${site.name} is ${site.owner}, a web designer in ${site.address.city}, Louisiana who builds every client site and runs the local SEO personally.`,
   alternates: { canonical: `${site.url}/about` },
 }
 
@@ -28,7 +28,7 @@ const aboutPageSchema = {
 const aboutFaqs = [
   {
     q: `Who actually builds Strykora websites?`,
-    a: `${site.owner} builds every Strykora website by hand, from the first commit to the last deploy. No subcontractors, no offshore teams, no junior developers handed the project after the sales call.`,
+    a: `${site.owner} builds every Strykora website, from the first line of code to launch day. The project is never passed to a subcontractor or a junior developer after the sales call.`,
   },
   {
     q: `Does Strykora take clients outside Louisiana?`,
@@ -36,7 +36,7 @@ const aboutFaqs = [
   },
   {
     q: `What is Strykora's tech setup and why does it matter?`,
-    a: `Strykora builds on Next.js, the same professional framework agencies in San Francisco and New York charge five and six figures for. It loads fast on a phone, comes with the search-engine code Google reads, and stays fast as your site grows. You do not need to know any of this; the short version is your site is built the right way, run from Thibodaux at Louisiana prices.`,
+    a: `Strykora builds on Next.js, the same professional framework agencies in San Francisco and New York charge five and six figures for. It loads fast on a phone, comes with the search-engine code Google reads, and stays fast as your site grows. You do not need to know any of this. The short version: the site is fast, Google can read it, and you are paying Louisiana prices for it.`,
   },
 ]
 
@@ -55,8 +55,8 @@ export default function AboutPage() {
       <Schema data={[aboutPageSchema, personSchema, buildFaqSchema(aboutFaqs)]} />
       <PageHero
         eyebrow="About"
-        title="One operator. South Louisiana. No layers."
-        description={`I'm ${site.owner}. I build every ${site.name} website by hand and run the SEO myself, out of ${site.address.city}.`}
+        title={`I build websites and run local SEO from ${site.address.city}.`}
+        description={`I'm ${site.owner}. Every ${site.name} website is one I built, and I run the SEO on it myself.`}
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/about', label: 'About' },
@@ -86,22 +86,22 @@ export default function AboutPage() {
             I&apos;m from {site.address.city}. I&apos;ve worked next to Louisiana service business owners my whole life, so I know how they think and what their customers actually search for.
           </p>
           <p>
-            Most agencies sell you a sales rep, then hand the real work to a junior. You never talk to whoever built your site. Every text change after launch becomes a two-week ticket.
+            At most agencies, the person who sells you the site is not the person who builds it. After launch, every small change turns into a ticket that takes a week or two.
           </p>
           <p>
-            {site.name} is built differently. I take a small number of Louisiana clients each year, build every
-            site by hand, and handle the SEO myself. No account managers, no offshore subcontractors,
-            no Wix templates with your logo on them.
+            I keep the client list small, a handful of Louisiana businesses a year, so I can build every site and
+            run the SEO myself. Nothing goes to a subcontractor, and nobody gets a Wix template with their logo
+            dropped in.
           </p>
           <p>
-            The stack {site.name} builds on is the same one high-end agencies in San Francisco and New
-            York use. I run it from {site.address.city} and price it for Louisiana service businesses. You
-            get a real custom build for a small business budget, and you own the code outright.
+            I build on Next.js, the same framework a lot of big-city agencies use, and price the work for
+            Louisiana service businesses. You get a custom build on a small business budget, and you own the
+            code outright.
           </p>
           <p className="about-pull">
-            You call, I answer. You text a change, it ships the same day. You decide to leave, you take the
-            code, the domain, the analytics, and the GBP with you. That&apos;s the trade. No lock-in, no
-            account managers, no nonsense. If that&apos;s the kind of partner you want, we&apos;ll work well together.
+            You can call me directly, and when you send a change you hear back within one business day. If
+            you ever leave, the code, the domain, the analytics and your Google Business Profile go with you.
+            If that&apos;s how you&apos;d like to work, we&apos;ll get along fine.
           </p>
         </div>
       </div>
@@ -122,7 +122,7 @@ export default function AboutPage() {
         </dl>
       </div>
 
-      <Section id="about-wins" eyebrow="Recent wins" heading="Real Louisiana businesses, real rankings." className="about-wins">
+      <Section id="about-wins" eyebrow="Recent wins" heading="Recent results for Louisiana clients." className="about-wins">
         <dl className="about-results">
           <div>
             <dt>#1 Organic</dt>
@@ -133,8 +133,8 @@ export default function AboutPage() {
             <dd>All Out Window Tint, Baton Rouge<br />&quot;tint baton rouge&quot;, 2 months post-launch</dd>
           </div>
           <div>
-            <dt>9 City Pages</dt>
-            <dd>Foret Construction<br />FORTIFIED roofer, South LA</dd>
+            <dt>9 Service Pages</dt>
+            <dd>Foret Construction<br />Raceland, Houma and Thibodaux</dd>
           </div>
         </dl>
       </Section>
@@ -145,7 +145,10 @@ export default function AboutPage() {
         <FAQAccordion items={aboutFaqs} />
       </Section>
 
-      <CTA />
+      <CTA
+        heading="Talk to Dayne."
+        body="Tell me what your business does and what you want the website to do for it. I read every message myself and reply within one business day."
+      />
     </>
   )
 }

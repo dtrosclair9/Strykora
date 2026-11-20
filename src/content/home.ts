@@ -9,46 +9,46 @@ export const home = {
     workLink: 'See the work',
   },
   services: {
-    eyebrow: 'What we do',
-    firstLine: 'Web design first.',
-    secondLine: 'SEO that stacks on top.',
-    body: 'Four core services, plus a fifth nobody else in Louisiana sells: AI Search Optimization. Every quote is a fixed price in writing before any work starts, with no 12-month contracts. Strykora does not do content writing, social media, or photography. Those get referred out. Sticking to what we are great at keeps the work sharp.',
-    featuredEyebrow: 'The Louisiana moat',
-    featuredLink: 'See the playbook',
+    eyebrow: 'Services',
+    firstLine: 'Websites first, then the',
+    secondLine: 'local SEO that gets them found.',
+    body: 'Strykora builds websites, runs local SEO, manages Google Business Profiles and Google Ads, and checks how your business comes up in AI answers. Every quote is a fixed price in writing before any work starts, and there are no 12-month contracts. Strykora does not do content writing, social media, or photography. If you need those, I can point you to people who do.',
+    featuredEyebrow: 'AI search',
+    featuredLink: 'How AI search optimization works',
   },
   industries: {
     eyebrow: 'Industries we serve',
     heading: 'Built for Louisiana service and commercial businesses.',
-    body: 'Strykora is not a generic marketing agency. Strykora builds for the specific verticals where local search and AI Overviews actually decide who gets the call.',
+    body: 'Most of the work is for trades: roofers, contractors, home service companies, auto shops, and commercial operators. In those businesses a lot of calls go to whoever shows up first in Google\'s map results.',
     link: 'See approach',
   },
   proof: {
-    eyebrow: 'Real AI search receipts',
-    heading: 'Five clients. Multiple AI engines. Real screenshots.',
-    body: 'Most agencies talk about being "ready for AI search." These are actual answers from ChatGPT and Perplexity, captured between June and October 2026, when real customers asked who to call. Strykora clients win across five different verticals.',
-    depth: 'Depth: one client, two AI tools, three answers',
+    eyebrow: 'AI search results',
+    heading: 'ChatGPT and Perplexity naming Strykora clients.',
+    body: 'These are real answers from ChatGPT and Perplexity, captured between June and October 2026, to the kind of question a customer types in: who is the best roofer in Raceland, who does lift kits in Lockport. Each one names a business Strykora built a site for. AI answers change from one run to the next, so read these as snapshots of what came up, not guarantees.',
+    depth: 'Hover Septic: three answers from two AI tools',
     depthLink: 'See the Hover Septic case study',
-    breadth: 'Breadth: four more clients, four verticals, four cities',
+    breadth: 'Four more clients in four other towns',
     caseLink: 'Read the case study',
-    link: 'See how Strykora ranks clients inside AI answers',
+    link: 'Read about AI search optimization',
   },
   caseStudy: {
     eyebrow: 'Recent work',
-    heading: 'The proof Strykora\'s AI search playbook actually works.',
+    heading: 'A recent project, start to finish.',
     link: 'Read the full story',
     allLink: 'See all case studies',
   },
   reviews: {
-    heading: 'Real clients. Real reviews.',
+    heading: 'What clients said on Google.',
   },
   why: {
     eyebrow: `Why ${site.name}`,
-    heading: 'Everything your last agency told you didn\'t come standard.',
+    heading: 'How Strykora works with you.',
     founder: `Founder · ${site.address.city}, ${site.address.state}`,
   },
   comparison: {
     eyebrow: 'Strykora vs. the typical Louisiana agency',
-    heading: 'The fine print everyone else hides.',
+    heading: 'How Strykora compares to a typical agency.',
     body: 'Built from real conversations with Louisiana business owners who switched to Strykora from somebody else.',
     feature: 'What you\'re comparing',
     agency: 'Typical agency',
@@ -59,13 +59,13 @@ export const home = {
   },
   faq: {
     eyebrow: 'FAQ',
-    heading: 'Common questions, honest answers.',
+    heading: 'Questions people ask before hiring Strykora.',
   },
   cta: {
     eyebrow: 'Get in touch',
-    firstLine: 'Your competitor\'s site loads in a second.',
-    secondLine: 'What does yours do?',
-    body: 'Take a minute to tell me about your business. Within one business day, I\'ll send you a fixed-price quote and tell you whether I think I can help. There\'s no sales call.',
+    firstLine: 'Tell me about your business.',
+    secondLine: 'I\'ll tell you if I can help.',
+    body: 'Send the form or call. Within one business day you get a fixed-price quote, or a plain answer if Strykora is not the right fit. There is no sales call.',
     projectLink: 'Start a project',
     phoneLink: `Call ${site.phoneDisplay}`,
   },
@@ -74,34 +74,34 @@ export const home = {
 export const pillars = [
   {
     label: '01',
-    title: 'You own everything, day one',
-    body: 'The site, the code, the domain, the Google Business Profile, the analytics. No monthly platform tax. No agency holding your accounts hostage when you leave.',
+    title: 'You own the site',
+    body: 'The site, the code, the domain, the Google Business Profile and the analytics are yours. You are not renting it month to month like a Wix or Squarespace site, and if you ever leave, all of it goes with you.',
   },
   {
     label: '02',
     title: 'You call, Dayne answers',
-    body: 'No account managers, no offshore handoffs, no tickets. The person building your site is the same person who responds within one business day.',
+    body: 'There is no account manager in between. The person building your site is the one who answers the phone and replies to your emails, within one business day.',
   },
   {
     label: '03',
-    title: 'Found in Google AND in ChatGPT',
-    body: 'Strykora ranks you on Google, in Google AI Overviews, and inside the ChatGPT, Perplexity, and Gemini answers your future customers are already starting to trust.',
+    title: 'Google first, then the AI answers',
+    body: 'The work goes into what Google and the AI tools read about you: your service pages, your Business Profile, and the other sites that mention you. Each month Strykora checks whether ChatGPT, Perplexity and Google\'s AI answer bring you up.',
   },
   {
     label: '04',
-    title: 'Real numbers, not vibes',
-    body: 'Fixed-price quotes up front. No 12-month contracts. Monthly reports show tracked rankings, booked leads, and what changed. If it isn\'t working, you see it.',
+    title: 'Reports you can check',
+    body: 'Quotes are a fixed price up front and there is no 12-month contract. The monthly report lists the searches Strykora tracks for you, where you rank for each one, the leads that came in, and what changed that month.',
   },
 ]
 
 export const comparisonRows = [
   { label: 'Build time', them: '2–3 months', us: 'About 1 week once it starts' },
   { label: 'Pricing', them: 'Open-ended hourly billing', us: 'One fixed price, in writing, before you pay' },
-  { label: 'Who owns the site', them: 'The agency does. Try leaving.', us: 'You do. Day one. Take it with you anywhere.' },
+  { label: 'Who owns the site', them: 'Often the agency or the platform', us: 'You do, and you can take it anywhere' },
   { label: 'Contract length', them: '12-month minimum, auto-renew', us: 'Month-to-month, cancel any time' },
-  { label: 'Who you actually talk to', them: 'An account manager, then a junior, then a ticket queue', us: 'Dayne. The person building your site.' },
-  { label: 'AI search optimization', them: 'Add-on, if they offer it at all', us: 'Standard on every build' },
-  { label: 'Response time', them: '3–14 days for a text change', us: 'One business day. Often same day.' },
+  { label: 'Who you actually talk to', them: 'An account manager or a support ticket', us: 'Dayne, the person building your site' },
+  { label: 'AI search optimization', them: 'Add-on, if they offer it at all', us: 'Checked in every local SEO plan' },
+  { label: 'Response time', them: '3–14 days for a text change', us: 'Within one business day' },
   { label: 'Monthly reporting', them: 'A PDF of impressions and "engagement"', us: 'Tracked rankings, AI mentions of your business, and booked leads' },
 ]
 
@@ -109,29 +109,29 @@ export const processSteps = [
   {
     n: '01',
     title: 'Discovery',
-    body: 'Strykora pins down your services, cities, and the highest-ticket keywords worth ranking for. One call, written brief, no fluff.',
+    body: 'Strykora pins down your services, the towns you work, and the jobs worth ranking for. That takes one call, and you get it back as a written brief.',
   },
   {
     n: '02',
     title: 'Build',
-    body: 'Custom-built site, mobile-first, schema-rich, deployed to a preview URL within days for your sign-off.',
+    body: 'Strykora builds the site and puts it on a private preview link, so you can look it over on your phone and sign off before it goes live.',
   },
   {
     n: '03',
     title: 'Rank',
-    body: 'On-page SEO, Google Business Profile optimization, and technical foundations all live before launch.',
+    body: 'Page titles, service pages, the Business Profile and the technical setup are finished before launch, so the site starts out ready to rank.',
   },
   {
     n: '04',
     title: 'Grow',
-    body: 'Monthly SEO retainer or pay-as-you-go ads. Transparent reporting, no long-term lock-in.',
+    body: 'After launch you can add a monthly local SEO plan, Google Ads, or both. Either one is month to month.',
   },
 ]
 
 export const faqs = [
   {
     q: 'How long does a custom website take to build?',
-    a: `Most Strykora websites go live about a week after the build starts. The stack is dialed in and you work directly with the builder, so there are no agency handoffs, offshore queues, or design committees slowing the project down.`,
+    a: `Most Strykora websites go live about a week after the build starts. You work directly with the person building it, so nothing sits waiting on a handoff between departments.`,
   },
   {
     q: 'How much does a Strykora website cost?',
@@ -143,7 +143,7 @@ export const faqs = [
   },
   {
     q: 'Do you do SEO without redesigning the site?',
-    a: `Yes. The local SEO plan works on whatever platform you are on. That said, if your current site is on Wix or a slow WordPress build, a rebuild usually moves the needle further than six months of SEO on the broken foundation.`,
+    a: `Yes. The local SEO plan works on whatever platform you are on. That said, if your current site is on Wix or a slow WordPress build, a rebuild usually does more for your rankings than six months of SEO on the old site.`,
   },
   {
     q: 'What cities and markets do you serve?',
@@ -151,19 +151,19 @@ export const faqs = [
   },
   {
     q: 'Do you work with clients outside Louisiana?',
-    a: `Strykora is built around the Louisiana market: the buyers, the search behavior, the seasonal cycles, and the map-results dynamics. That depth is the wedge for the case study work. But web design, Google Ads, and AI search optimization are location-agnostic, so out-of-state inquiries are welcome. Just ask.`,
+    a: `Strykora is built around Louisiana buyers and how they search, and every case study is a Louisiana business. Web design, Google Ads and AI search optimization work anywhere, though, so out-of-state inquiries are welcome.`,
   },
   {
     q: 'Do you offer content writing, social media, or photography?',
-    a: `No. Strykora is web design and SEO only. For copywriting, social media management, or photo and video, Strykora refers to Louisiana freelancers who specialize. Honest scope keeps quality high.`,
+    a: `No. Strykora is web design and SEO only. For copywriting, social media management, or photo and video, Strykora refers you to Louisiana freelancers who specialize in it.`,
   },
   {
     q: 'How are you different from a generic marketing agency?',
-    a: `Generic agencies are wide and shallow: content, social, ads, design, branding, all average. Strykora is narrow and deep: custom web design and local SEO, done by the person who builds your site. No account manager, no template, no platform tax.`,
+    a: `A lot of agencies sell everything from social media to branding. Strykora sticks to custom web design and local SEO, and the person who builds your site is the one you deal with the whole way through.`,
   },
   {
     q: 'How do you measure success?',
-    a: `Booked leads, phone calls, form submissions, and tracked ranking positions for the keywords that pay your bills. Every retainer client gets a monthly report that shows what changed, what ranked, and what to do next.`,
+    a: `Booked leads, phone calls, form submissions, and tracked rankings for the searches that bring in your best jobs. Every retainer client gets a monthly report that shows what changed, what ranked, and what to do next.`,
   },
   {
     q: 'How fast will you respond to my inquiry?',
@@ -194,11 +194,11 @@ export const citations: readonly HomeCitation[] = [
   },
   {
     src: '/images/ai-citation-chatgpt-best-overall.jpg',
-    alt: 'Screenshot of ChatGPT crowning Hover Septic Services as \'Best overall\' for septic installation in Thibodaux, Louisiana.',
+    alt: 'Screenshot of ChatGPT naming Hover Septic Services as \'Best overall\' for septic installation in Thibodaux, Louisiana.',
     label: 'ChatGPT · Hover Septic',
     lead: 'Query: ',
     quote: '"Recommend me the best septic installation service Thibodaux LA."',
-    follow: ' Answer crowns Hover Septic as "Best overall."',
+    follow: ' ChatGPT calls Hover Septic "Best overall."',
   },
   {
     src: '/images/ai-citation-chatgpt-why-hover.jpg',
@@ -206,7 +206,7 @@ export const citations: readonly HomeCitation[] = [
     label: 'ChatGPT follow-up · Hover',
     lead: '',
     quote: '"Why I\'d start with Hover."',
-    follow: ' The AI explains its own pick, citing the exact positioning Strykora built into the site.',
+    follow: ' Asked why, ChatGPT explains its pick using what Hover\'s website says about the business.',
   },
   {
     src: '/images/ai-citation-chatgpt-foret-raceland.jpg',

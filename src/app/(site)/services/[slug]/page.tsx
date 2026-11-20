@@ -13,6 +13,30 @@ export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
 }
 
+/** Closing band per service, so no two service pages end on the same pitch. */
+const SERVICE_CTA: Record<string, { heading: string; body: string }> = {
+  'web-design': {
+    heading: 'Ready for a website you own?',
+    body: "Send your current site, or tell me you don't have one yet, and which jobs you want it to bring in. You'll have a fixed-price quote within one business day.",
+  },
+  seo: {
+    heading: 'Want to show up for the jobs you want?',
+    body: 'Tell me the searches you want to be found for and the towns you work. I will reply within one business day with what the monthly plan would cover.',
+  },
+  'google-business-profile': {
+    heading: 'Want help with your Business Profile?',
+    body: "Send me a link to your Google Business Profile and tell me where you'd like it to show up. You'll hear back within one business day.",
+  },
+  'google-ads': {
+    heading: 'Thinking about Google Ads?',
+    body: "Tell me what you sell, where, and roughly what you'd like to spend a month. I'll reply within one business day and tell you whether ads make sense at that budget.",
+  },
+  'ai-search-optimization': {
+    heading: 'Want to know what the AI tools say about you?',
+    body: 'Tell me your business, your main service and your town. Within one business day I will reply with how the audit or the 30-day sprint would work for you, at a fixed price.',
+  },
+}
+
 type Params = { params: Promise<{ slug: string }> }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
@@ -84,7 +108,7 @@ const SERVICE_PAGE_COPY: Record<string, {
       { q: 'Does this work if my site is on Wix, Squarespace, or WordPress?', a: 'Yes. The SEO retainer works on whatever platform your site is on. But if your current site is slow or hard to update, Strykora will tell you up front when a rebuild would beat six months of SEO on a broken foundation.' },
       { q: 'What is included in the monthly retainer?', a: 'Two new content pages per month, on-page updates, Google Business Profile posts and photos, cleaning up your business listings across the web, building links from other Louisiana sites, and a monthly report with rankings, traffic, and leads.' },
       { q: 'Do you build backlinks?', a: 'Yes, the honest way. Strykora gets your business listed on directories that matter, partners with adjacent Louisiana businesses, and earns mentions on real websites. No private blog networks, no link farms.' },
-      { q: 'How do you measure success?', a: 'Booked leads. Phone calls. Form submissions. Plus tracked ranking positions for the keywords that pay your bills. Vanity rankings on keywords no one searches for do not count.' },
+      { q: 'How do you measure success?', a: 'By the leads that come in: phone calls and form submissions. The report also tracks where you rank for the searches that bring in real jobs. A ranking for a phrase nobody searches does not count for much.' },
       { q: 'Can I cancel anytime?', a: 'Yes. No long-term contracts. Strykora retainers are month-to-month.' },
     ],
   },
@@ -115,14 +139,14 @@ const SERVICE_PAGE_COPY: Record<string, {
       { q: 'How is management billed?', a: 'A flat monthly management fee, quoted up front, plus your ad spend. The management fee covers the setup, the weekly tune-ups, the landing page, and the reporting. Your ad spend goes directly to Google on your credit card, with no markup.' },
       { q: 'Will I own the account?', a: 'Yes. Strykora builds and runs the account under your billing. If you ever leave, the account, the campaigns, and the history all stay with you.' },
       { q: 'Do you build the landing page too?', a: 'Yes. The landing page is built in-house on the same custom-built setup as your main website, with tracking that shows which clicks turn into phone calls or form fills.' },
-      { q: 'How long until ads start producing leads?', a: 'Leads usually start in week one. The first two weeks are learning and tuning. Expect the cost per lead to stabilize and trend down in weeks three and four.' },
-      { q: 'Can I run ads without SEO?', a: 'Yes, but they work best together. Ads cover the gap while SEO is still building. SEO carries the load once it ranks. Stacking both compounds the results.' },
+      { q: 'How long until ads start producing leads?', a: 'Calls can start soon after the campaign goes live, depending on your budget and the competition. The first two weeks are mostly learning and tuning, and the cost per lead usually settles down after that.' },
+      { q: 'Can I run ads without SEO?', a: 'Yes, but they work best together. Ads bring in calls while SEO is still building, and once the site ranks, SEO does more of the work and the ad budget can come down.' },
     ],
   },
   'ai-search-optimization': {
     howWeDoIt: [
       { step: '01', title: 'Where do you show up now?', body: 'Strykora asks ChatGPT, Perplexity, Gemini, and Google\'s AI answer the same questions your future customers ask. You get a plain-English report of where you appear, where you do not, and what the AI is recommending instead. No guessing.' },
-      { step: '02', title: 'Rewrite the site so AI can quote it', body: 'Strykora rewrites your key service pages to answer the exact questions buyers ask, in plain sentences an AI can quote: what you do, where, what it costs to think about, how long it takes. AI tools read the visible page, so that is where the work goes.' },
+      { step: '02', title: 'Rewrite the pages in plain answers', body: 'Strykora rewrites your key service pages to answer the exact questions buyers ask, in plain sentences an AI can quote: what you do, where, what it costs to think about, how long it takes. AI tools read the visible page, so that is where the work goes.' },
       { step: '03', title: 'Rebuild the Google profile to match', body: 'Strykora rebuilds your Google Business Profile services list so it lines up with the on-site copy. Google\'s AI answer pulls from your Business Profile, so the two have to tell the same story.' },
       { step: '04', title: 'Monthly proof', body: 'Every month you get a report showing which AI assistants named you, for which searches, and what changed since last month. If the AI stops citing you, we see it before you do.' },
     ],
@@ -272,20 +296,20 @@ export default async function ServicePage({ params }: Params) {
         </Section>
       )}
 
-      <Section id="stack" className="interior-rail interior-rule" eyebrow="Stack it with" heading="Other services that compound.">
+      <Section id="stack" className="interior-rail interior-rule" eyebrow="Related services" heading="Services that work well with this one.">
         <ul className="interior-link-list" role="list">
           {others.map((other) => (
             <li key={other.slug}>
               <Link href={`/services/${other.slug}`} className="interior-linked">
                 <h3>{other.title}</h3>
-                <p>{other.short}</p>
+                <p>{other.eyebrow}</p>
               </Link>
             </li>
           ))}
         </ul>
       </Section>
 
-      <CTA />
+      <CTA {...SERVICE_CTA[service.slug]} />
     </>
   )
 }

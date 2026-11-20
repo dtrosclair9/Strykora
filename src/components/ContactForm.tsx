@@ -21,6 +21,7 @@ const serviceOptions = [
   'Local SEO',
   'Google Business Profile',
   'Google Ads',
+  'AI Search Optimization',
   'Multiple / Not sure yet',
 ]
 

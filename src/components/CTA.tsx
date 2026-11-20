@@ -4,8 +4,9 @@ import ProjectActions from './ProjectActions'
 import Section from './Section'
 
 interface CTAProps {
-  heading?: ReactNode
-  body?: string
+  /** Every page writes its own close. A shared default ended up word-for-word on 36 pages. */
+  heading: ReactNode
+  body: string
   eyebrow?: string
   projectLabel?: string
   phoneLabel?: string
@@ -13,8 +14,8 @@ interface CTAProps {
 }
 
 export default function CTA({
-  heading = `Stop renting a website you'll never own.`,
-  body = `Take a minute to tell me about your business. Within one business day, I'll send you a fixed-price quote and tell you whether I think I can help. There's no sales call.`,
+  heading,
+  body,
   eyebrow = 'Get in touch',
   projectLabel,
   phoneLabel,

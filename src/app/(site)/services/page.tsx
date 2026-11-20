@@ -36,7 +36,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Web design, SEO and Google Ads for Louisiana businesses."
-        description="Four services. Web design leads, SEO compounds on top of it, Google Business Profile grabs the map results, ads fill the gap while SEO is still building."
+        description="Strykora builds websites and runs local SEO, Google Business Profiles, Google Ads and AI search optimization for Louisiana businesses. Most clients start with the website and add the rest from there."
         breadcrumbs={[
           { href: '/', label: 'Home' },
           { href: '/services', label: 'Services' },
@@ -46,16 +46,16 @@ export default function ServicesPage() {
       <Section
         id="service-stack"
         className="interior-split-intro"
-        eyebrow="The stack"
-        heading="Four core services. One sequence. Plus a fifth nobody else sells."
-        description="A pretty site that nobody finds is a brochure. A #1 ranking for a slow, ugly site sends traffic to the wrong impression. The four core services below are the order Strykora runs in production. The fifth, AI Search Optimization, is the moat: getting your business cited inside the ChatGPT, Perplexity, and Google AI Overview answers your future customers already trust."
+        eyebrow="How the services fit"
+        heading="Five services, usually done in this order."
+        description="A good-looking site nobody finds does not bring in work, and ranking a slow site just sends people to a bad first impression. That is why the four core services below run in this order. The fifth, AI search optimization, checks whether ChatGPT, Perplexity and Google's AI answer name your business, and fixes what they read about you."
       >
         {featured && (
           <article className="services-feature">
             <Link href={`/services/${featured.slug}`} className="interior-linked">
               <div className="services-feature-intro surface-dark">
                 <div>
-                  <p className="eyebrow">The Louisiana moat</p>
+                  <p className="eyebrow">AI search</p>
                   <h2>{featured.title}</h2>
                 </div>
                 <div className="interior-copy">
@@ -67,7 +67,7 @@ export default function ServicesPage() {
                   {featured.bullets.slice(0, 3).map((bullet) => <li key={bullet}>{bullet}</li>)}
                 </ul>
                 <p className="interior-note">{featured.priceRange}</p>
-                <span className="interior-link-label">See the playbook</span>
+                <span className="interior-link-label">How it works</span>
               </div>
             </Link>
           </article>
@@ -100,7 +100,7 @@ export default function ServicesPage() {
         className="service-start interior-wash interior-rail"
         eyebrow="Where to start"
         heading="Not sure which one you need first?"
-        description="The honest answer depends on what's already broken. Pick the line that sounds like you, and that's the service to lead with."
+        description="It depends on what is already broken. Find the line that sounds like your business and start there."
       >
         <ul className="service-start-list" role="list">
           {[
@@ -113,13 +113,13 @@ export default function ServicesPage() {
             {
               situation: 'My site is fine. I just do not show up on Google in my city.',
               lead: 'Local SEO first.',
-              why: 'Page updates, your Google Business Profile, and monthly content compound for six to twelve months. The ranking work outlives any ad budget you stop paying.',
+              why: 'Page updates, your Google Business Profile and monthly content build on each other over six to twelve months. Unlike ads, the rankings do not switch off when you stop paying.',
               href: '/services/seo',
             },
             {
               situation: 'I need leads this month, not next year.',
               lead: 'Google Ads first.',
-              why: 'Paid search buys you the top of page one today. Strykora runs the ads with a landing page that tracks which clicks turn into actual phone calls, so you see your real cost per lead.',
+              why: 'Search ads can put you at the top of the page as soon as the campaign is live. Strykora runs the ads with a landing page that tracks which clicks turn into actual phone calls, so you see your real cost per lead.',
               href: '/services/google-ads',
             },
             {
@@ -148,7 +148,10 @@ export default function ServicesPage() {
         </ul>
       </Section>
 
-      <CTA />
+      <CTA
+        heading="Not sure where to start?"
+        body="Send me your website and tell me what you need most right now. I'll tell you which service makes sense first, and send a fixed-price quote for it."
+      />
     </>
   )
 }

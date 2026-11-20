@@ -24,17 +24,17 @@ interface CityMarketCopy {
  * Fallback (if a combo is missing here) is the generic service.short.
  */
 const COMBO_HERO_DESCRIPTION: Record<string, string> = {
-  'web-design-thibodaux-la': 'Thibodaux runs on word-of-mouth and proof of work. When a referral lands on your website, it has to look as legit as the recommendation. Strykora builds Thibodaux service businesses custom sites that match the work, load fast on a phone, and are owned outright by you.',
-  'seo-thibodaux-la': 'Thibodaux is a smaller, denser market: fewer competitors, faster rankings, but the keyword volume per page is lower. Strykora wins by ranking you for every search a Lafourche Parish buyer might type, instead of fighting for one big keyword.',
+  'web-design-thibodaux-la': 'Most work in Thibodaux starts with a referral, and the person who got it looks you up before calling. Strykora is based here and built the websites for Acadia Pools and Hover Septic. Yours gets built the same way: custom, fast on a phone, and owned outright by you.',
+  'seo-thibodaux-la': 'Thibodaux is a smaller market, with fewer competitors and less search volume per keyword. So instead of chasing one big keyword, Strykora ranks you for each service and town a Lafourche Parish buyer might type. Hover Septic, a Thibodaux client, ranks #1 for "septic installs Thibodaux LA" this way.',
   'digital-marketing-thibodaux-la': 'Strykora is a web design and marketing company in Thibodaux. Strykora can build your website, set up your Google Business Profile and handle your SEO and Google Ads. If you want to show up in answers from ChatGPT and Google, Strykora helps with that too.',
-  'web-design-houma-la': 'Houma buyers respond to local proof: a Terrebonne address, recent project photos along the bayou, and a phone that gets answered. Strykora builds Houma service businesses sites that load fast in the field and put the local proof above the fold.',
-  'seo-houma-la': 'Houma\'s SEO market is mid-competitive: several established shops with decent rankings, most stuck on slow WordPress sites with thin content. Strykora wins by being faster, more local, and set up so Google\'s AI answer can pull your services and credentials directly.',
-  'web-design-baton-rouge-la': 'Baton Rouge buyers expect a polished website. A 2018 WordPress site with a stock-photo hero does not convert in this market the way it might in a smaller town. Strykora builds Baton Rouge service businesses custom sites that match what state-capital buyers expect.',
-  'seo-baton-rouge-la': 'Baton Rouge is a competitive SEO market with deep keyword volume and established competitors who have been at it for years. Strykora targets the long-tail city + service + niche combinations the bigger agencies overlook, plus the AI search angle most of them are still ignoring.',
-  'digital-marketing-baton-rouge-la': 'Baton Rouge buyers run their decisions through more options before calling. Strykora runs your full digital stack (website, SEO, Google Business Profile, ads, AI search) tuned for a market where both polish and proof matter.',
-  'web-design-new-orleans-la': 'New Orleans buyers compare more options before they call. Reviews, photos, and recent work matter more here than in any other Louisiana market. Strykora builds New Orleans service businesses sites that surface the proof above the fold instead of burying it in a portfolio page.',
-  'web-design-lafayette-la': 'Lafayette buyers are loyal to local brands and skeptical of out-of-region operators. Strykora builds Lafayette service businesses custom sites that name Lafayette Parish, mention the Acadiana oilfield cycle, and show local proof. Built by a Louisiana operator who knows the geography.',
-  'seo-lafayette-la': 'Lafayette has less keyword volume than Baton Rouge but less competition too. Strykora wins niche city + service combinations fast across Acadiana (Lafayette, Crowley, Breaux Bridge) while the broader terms compound over six to twelve months.',
+  'web-design-houma-la': 'Strykora has already built Houma pages for three South Louisiana businesses: Foret Construction & Roofing, Elite Custom Automotive and Acadia Pools. A Houma site needs what those pages have: the work you do, the Terrebonne towns you cover, real job photos, and a phone number at the top.',
+  'seo-houma-la': 'Houma has plenty of established service businesses already ranking on Google. Strykora competes with them through a page for each service you offer in Houma, a Google Business Profile that matches it, and pages for the Terrebonne Parish towns you actually cover.',
+  'web-design-baton-rouge-la': 'Strykora built All Out Window Tint\'s website, which gives its Baton Rouge shop a location page and six service pages of its own and sends Baton Rouge inquiries straight to co-owner Dax. Baton Rouge has more competition than most Louisiana markets, so your site has to look finished and load fast on a phone.',
+  'seo-baton-rouge-la': 'Baton Rouge is a competitive SEO market, with plenty of search volume and competitors who have been at it for years. Strykora starts with the specific searches a newer site can win, like a service plus a part of town or a specialty, and builds out from there.',
+  'digital-marketing-baton-rouge-la': 'Strykora builds your website and runs your local SEO, Google Business Profile and Google Ads as one job, so the ads, the map listing and the site all say the same thing. In the Baton Rouge metro that already includes All Out Window Tint\'s Gonzales and Baton Rouge shops.',
+  'web-design-new-orleans-la': 'More service businesses compete for each search in the New Orleans area than anywhere else in Louisiana, so your reviews, recent jobs and the neighborhoods you serve need to sit near the top of the page. Strykora builds those sites from Thibodaux, about an hour away.',
+  'web-design-lafayette-la': 'A Lafayette website should read like it was written for Acadiana: the parish and towns you cover, photos of your own jobs, and a phone number that is easy to tap. Strykora builds custom sites from Thibodaux and writes each one about the market it serves.',
+  'seo-lafayette-la': 'Lafayette has less keyword volume than Baton Rouge but less competition too. Specific searches, like a service plus a smaller Acadiana town (Crowley, Breaux Bridge), tend to move first. The broader Lafayette terms take six to twelve months.',
 }
 
 /**
@@ -43,16 +43,16 @@ const COMBO_HERO_DESCRIPTION: Record<string, string> = {
  */
 const COMBO_META_DESCRIPTION: Record<string, string> = {
   'web-design-thibodaux-la': 'Web design in Thibodaux, LA for service businesses. Custom, fast, mobile-first sites you own outright, built to match the work and turn referrals into calls.',
-  'seo-thibodaux-la': "Local SEO in Thibodaux, LA. Rank across Lafourche Parish on Google and inside ChatGPT and Google's AI answer, in a smaller market where rankings come faster.",
+  'seo-thibodaux-la': 'Local SEO in Thibodaux, LA from a Thibodaux company. Service pages, Google Business Profile work and local links for Lafourche Parish businesses.',
   'digital-marketing-thibodaux-la': 'Digital marketing in Thibodaux, LA. Website, Google, ads, and AI search run by one Louisiana operator, not an account rep. Month-to-month, no lock-in.',
-  'web-design-houma-la': 'Web design in Houma, LA for service businesses. Fast, custom, mobile-first sites that put your Terrebonne Parish local proof above the fold and get calls.',
-  'seo-houma-la': "Local SEO in Houma, LA. Outrank the slow WordPress shops across Terrebonne Parish on Google and inside Google's AI answer, with faster, more local pages.",
-  'web-design-baton-rouge-la': 'Web design in Baton Rouge, LA for service businesses. Polished custom sites that convert state-capital buyers, load fast on a phone, and are owned by you.',
-  'seo-baton-rouge-la': 'Local SEO in Baton Rouge, LA. Win the long-tail city and service searches the big agencies overlook, plus the AI search angle most of them still ignore.',
-  'digital-marketing-baton-rouge-la': 'Digital marketing in Baton Rouge, LA. Website, SEO, Google Business Profile, ads, and AI search run as one stack for a market where polish and proof matter.',
+  'web-design-houma-la': 'Web design in Houma, LA. Custom, mobile-first sites for Terrebonne Parish businesses, from the company that built Houma pages for Foret, Elite and Acadia Pools.',
+  'seo-houma-la': 'Local SEO in Houma, LA. A page for each service you offer in Houma, a matching Google Business Profile, and pages for the Terrebonne Parish towns you cover.',
+  'web-design-baton-rouge-la': "Web design in Baton Rouge, LA. Custom sites you own, from the company that built All Out Window Tint's Baton Rouge location and service pages.",
+  'seo-baton-rouge-la': 'Local SEO in Baton Rouge, LA. Specific service and neighborhood searches first, a Google Business Profile that matches, and a plain monthly report.',
+  'digital-marketing-baton-rouge-la': 'Digital marketing in Baton Rouge, LA: your website, local SEO, Google Business Profile and Google Ads, run together by the person who builds the site.',
   'web-design-new-orleans-la': 'Web design in New Orleans, LA for service businesses. Custom sites that surface reviews, photos, and recent work above the fold so buyers call you first.',
   'web-design-lafayette-la': 'Web design in Lafayette, LA for service businesses. Custom Acadiana sites that name Lafayette Parish, show local proof, and are built by a Louisiana operator.',
-  'seo-lafayette-la': 'Local SEO in Lafayette, LA. Win niche city and service searches fast across Acadiana while broader terms compound, on Google and inside AI answers.',
+  'seo-lafayette-la': 'Local SEO in Lafayette, LA. Service pages, Google Business Profile work and local links for Acadiana businesses, with specific town searches moving first.',
 }
 
 /**
@@ -235,6 +235,27 @@ const WEB_DESIGN_CITY_FAQS: Record<string, { q: string; a: string }[]> = {
   ],
 }
 
+/**
+ * Real local work, checked against the live client sitemaps (2026-11-20). Only cities with
+ * published Strykora work get this section; Lafayette and New Orleans have none yet.
+ */
+const CITY_PROOF: Record<string, { client: string; href: string; text: string }[]> = {
+  'thibodaux-la': [
+    { client: 'Acadia Pools', href: '/case-studies/acadia-pools', text: 'A Thibodaux gunite pool builder. Its site has separate Thibodaux pages for pool construction, renovation, water features and outdoor living, plus pages for Houma and Raceland.' },
+    { client: 'Hover Septic', href: '/case-studies/hover-septic', text: 'A Thibodaux septic company that had no website and no Google Business Profile. Strykora built both, and Hover ranks #1 organic for "septic installs Thibodaux LA".' },
+    { client: 'Foret Construction & Roofing', href: '/case-studies/foret-construction', text: 'Based in Raceland, with Thibodaux pages for FORTIFIED roofs and new home construction.' },
+    { client: 'Elite Custom Automotive', href: '/case-studies/elite-custom-automotive', text: 'Based in Lockport, with Thibodaux pages for lift kits, engine and transmission work, and custom wheels and tires.' },
+  ],
+  'houma-la': [
+    { client: 'Foret Construction & Roofing', href: '/case-studies/foret-construction', text: 'Houma pages for FORTIFIED roofs and for new home construction, alongside its Raceland and Thibodaux pages.' },
+    { client: 'Elite Custom Automotive', href: '/case-studies/elite-custom-automotive', text: 'Houma pages for lift kits and suspension, engine and transmission work, and custom wheels and tires.' },
+    { client: 'Acadia Pools', href: '/case-studies/acadia-pools', text: 'A pool builder page for Houma on the Thibodaux pool company\'s site.' },
+  ],
+  'baton-rouge-la': [
+    { client: 'All Out Window Tint', href: '/case-studies/all-out-window-tint', text: 'One website for two shops. The Baton Rouge shop has its own location page and its own pages for automotive, residential, commercial and marine tint, paint protection film and vehicle wraps, and Baton Rouge inquiries go straight to co-owner Dax.' },
+  ],
+}
+
 const CITY_COPY: Record<string, CityMarketCopy> = {
   'thibodaux-la': {
     marketContext:
@@ -258,13 +279,13 @@ const CITY_COPY: Record<string, CityMarketCopy> = {
   },
   'houma-la': {
     marketContext:
-      'Houma is the seat of Terrebonne Parish and the marine, oilfield, and seafood capital of South Louisiana. The economy runs on oilfield service, marine logistics, fabrication, and the long shadow of every hurricane that has come up the bayou since Andrew. Buyers here are price-aware, brand-loyal, and Google for service businesses constantly during storm season.',
+      'Houma is the seat of Terrebonne Parish and a center for marine, oilfield and seafood work in South Louisiana. Oilfield service, marine logistics and fabrication drive a lot of the local economy, and every hurricane season changes what people search for.',
     buyerSnapshot:
-      'Houma buyers respond hardest to local proof: a Terrebonne address, a parish-specific service area, and recent project photos within their own bayou.',
+      'Houma buyers want to see that you are local: a Terrebonne address or service area, and recent job photos from around the parish.',
     faqs: [
       {
         q: 'How competitive is the Houma SEO market?',
-        a: 'Mid-competitive. Several established Houma service businesses rank decent on Google, but most are stuck on slow WordPress sites with thin content. A faster site with more useful pages and a properly set up Google Business Profile can overtake them. How long that takes depends on your trade and how far behind you start.',
+        a: 'Moderate. Several established Houma service businesses rank well on Google. A faster site with more useful pages and a well-kept Google Business Profile can compete with them. How long that takes depends on your trade and how far behind you start.',
       },
       {
         q: 'Do I need a separate Houma site or just a Houma page?',
@@ -308,27 +329,27 @@ const CITY_COPY: Record<string, CityMarketCopy> = {
     faqs: [
       {
         q: 'Can a Thibodaux-based agency rank a New Orleans business?',
-        a: 'Yes. SEO is location-agnostic on the agency side. Strykora ranks New Orleans businesses by building city-specific content for Orleans, Jefferson, and St. Tammany Parishes, optimizing your GBP for the Orleans market, and pursuing local link partnerships.',
+        a: 'Yes. Where the agency sits matters less than the work. For a New Orleans business, Strykora builds pages about the parishes you serve (Orleans, Jefferson or St. Tammany), sets up your Google Business Profile for the area, and goes after links from New Orleans sites.',
       },
       {
         q: 'How competitive is New Orleans for local service SEO?',
-        a: 'High. Established New Orleans service businesses have been investing in SEO for years. Strykora wins by being faster than them on a phone, set up so Google\'s AI answer can pull from your site, and having more depth (more pages, more FAQs, more New Orleans-specific content).',
+        a: 'High. Established New Orleans service businesses have been investing in SEO for years. The way in is a site that is faster on a phone, more useful pages about the neighborhoods and parishes you serve, and a steady flow of reviews.',
       },
       {
         q: 'How long until I see leads from New Orleans SEO?',
-        a: 'Plan for 120 to 240 days for meaningful organic lift in New Orleans. Pairing SEO with Google Ads is usually worth it here to fill the gap while SEO compounds.',
+        a: 'Plan for 120 to 240 days for meaningful organic lift in New Orleans. Pairing SEO with Google Ads is usually worth it here, so calls come in while the rankings build.',
       },
     ],
   },
   'lafayette-la': {
     marketContext:
-      'Lafayette is the heart of Acadiana and a service economy anchored by oilfield, healthcare, and agriculture. Buyers here are loyal to local brands and skeptical of out-of-region operators. The SERP is moderately competitive, with several established Acadiana agencies and a number of national lead-gen sites farming local queries.',
+      'Lafayette is the heart of Acadiana and a service economy anchored by oilfield, healthcare, and agriculture. The search results are moderately competitive, with several established Acadiana agencies and a number of national lead-gen sites farming local queries.',
     buyerSnapshot:
-      'Lafayette buyers want a Louisiana operator who understands the local economy. A site that names Lafayette Parish, mentions the oilfield cycle, and shows local proof converts better than a generic agency build.',
+      'A Lafayette site that names the parish and the towns you cover and shows your own jobs makes it clear you work in Acadiana.',
     faqs: [
       {
-        q: 'Do Lafayette buyers prefer Acadiana-based agencies?',
-        a: 'They do, but proof beats geography. Strykora is built in Thibodaux but ranks Lafayette businesses for the keywords that matter, with case studies that show the work.',
+        q: 'Does it matter that Strykora is in Thibodaux, not Lafayette?',
+        a: 'Less than you might think. What makes a Lafayette site work is what is on it: the parishes and towns you cover, your own job photos and your reviews. Strykora is about two hours away and runs most projects over calls and shared drafts.',
       },
       {
         q: 'How does Lafayette differ from Baton Rouge for SEO?',
@@ -340,6 +361,16 @@ const CITY_COPY: Record<string, CityMarketCopy> = {
       },
     ],
   },
+}
+
+/** Closing line per service type, with the city in it, so city pages don't share one close. */
+const CITY_CTA_BODY: Record<string, (city: string) => string> = {
+  'web-design': (city) =>
+    `Tell me about your business in ${city} and the work you want the site to bring in. Within one business day you'll get a fixed-price quote. There's no sales call.`,
+  seo: (city) =>
+    `Tell me which jobs you want more of in ${city}. I'll reply within one business day with what the local SEO plan would cover for you.`,
+  default: (city) =>
+    `Tell me what brings in work in ${city} now and what doesn't. I'll reply within one business day with where I would start.`,
 }
 
 export default function CityServicePage({ slug }: Props) {
@@ -364,7 +395,7 @@ export default function CityServicePage({ slug }: Props) {
       '@context': 'https://schema.org',
       '@type': 'Service',
       name: title,
-      description: service.long,
+      description: COMBO_HERO_DESCRIPTION[slug] ?? service.long,
       provider: { '@id': `${site.url}/#business` },
       areaServed: {
         '@type': 'City',
@@ -467,6 +498,26 @@ export default function CityServicePage({ slug }: Props) {
         </div>
       </section>
 
+      {CITY_PROOF[city.slug] && (
+        <section className="ledger-section city-market-notes interior-rule" aria-labelledby="city-proof-heading">
+          <div className="site-container">
+            <section>
+              <h2 id="city-proof-heading" className="interior-title">Strykora work near {city.name}</h2>
+              <div className="interior-copy">
+                <p>These are live sites Strykora built, with pages aimed at customers in and around {city.name}.</p>
+                <ul>
+                  {CITY_PROOF[city.slug].map((p) => (
+                    <li key={p.client}>
+                      <Link href={p.href} className="text-link">{p.client}</Link>: {p.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          </div>
+        </section>
+      )}
+
       {deepDive && (
         <section className="ledger-section city-market-notes interior-rule" aria-label={`More about ${label.phrase} in ${city.name}`}>
           <div className="site-container">
@@ -511,7 +562,7 @@ export default function CityServicePage({ slug }: Props) {
         </Section>
       )}
 
-      <CTA heading={`Need help with ${label.phrase} in ${city.name}?`} />
+      <CTA heading={`Need help with ${label.phrase} in ${city.name}?`} body={CITY_CTA_BODY[combo.service]?.(city.name) ?? CITY_CTA_BODY.default(city.name)} />
     </>
   )
 }
