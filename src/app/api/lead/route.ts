@@ -73,7 +73,7 @@ function replyHtml(firstName: string, business: string) {
   return `<!doctype html><html><body style="margin:0;padding:0;background:#f2f4f8">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f2f4f8;padding:24px 12px"><tr><td align="center">
   <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background:#ffffff;border-radius:10px;overflow:hidden">
-    <tr><td style="background:#0c1224;padding:20px 28px">
+    <tr><td style="background:#163449;padding:20px 28px">
       <span style="font:700 18px/1 Helvetica,Arial,sans-serif;letter-spacing:2px;color:#ffffff">STRYKORA</span>
     </td></tr>
     <tr><td style="padding:28px">
@@ -117,7 +117,7 @@ function notifyHtml(lead: Required<Pick<LeadPayload, 'name' | 'business' | 'phon
   const row = (k: string, v: string) =>
     `<tr><td style="padding:6px 12px 6px 0;font:600 12px Helvetica,Arial,sans-serif;color:#8a93a6;text-transform:uppercase;letter-spacing:.06em;vertical-align:top">${k}</td><td style="padding:6px 0;font:14px/1.5 Helvetica,Arial,sans-serif;color:#1c2230">${v}</td></tr>`
   return `<!doctype html><html><body style="margin:0;padding:16px;background:#ffffff">
-  <p style="font:700 16px Helvetica,Arial,sans-serif;color:#0c1224;margin:0 0 12px">Homepage rebuild request: ${esc(lead.business || lead.website)}</p>
+  <p style="font:700 16px Helvetica,Arial,sans-serif;color:#163449;margin:0 0 12px">Homepage rebuild request: ${esc(lead.business || lead.website)}</p>
   <table role="presentation" cellpadding="0" cellspacing="0">
     ${row('Name', esc(lead.name))}
     ${row('Business', lead.business ? esc(lead.business) : 'not given (check the site)')}

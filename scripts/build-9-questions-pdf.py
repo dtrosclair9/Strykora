@@ -25,32 +25,43 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "public" / "9-questions-strykora.pdf"
-LOGO = Path.home() / "Documents" / "Strykora-Brand" / "02-logo-kit" / "png" / "wordmark-black.png"
+KIT = Path.home() / "Documents" / "Strykora" / "brand" / "07-kingfisher" / "Strykora-Brand-Kit"
+LOGO = KIT / "02-Horizontal-Logo" / "png" / "strykora-horizontal-navy.png"  # 2999x576
+HEAD_FONT = KIT / "14-Brand-Guide" / "fonts" / "LeagueGothic-var.ttf"
 
-NAVY = colors.HexColor("#1C2B4A")
-ACCENT = colors.HexColor("#2563EB")
-INK = colors.HexColor("#1C2230")
-MUTED = colors.HexColor("#5A6578")
-RULE = colors.HexColor("#DCE2EC")
-WASH = colors.HexColor("#F4F6FA")
+# Bayou Standard palette (kingfisher rebrand, 2026-11)
+NAVY = colors.HexColor("#163449")
+ACCENT = colors.HexColor("#A85437")  # rust
+INK = colors.HexColor("#0B1F2A")
+MUTED = colors.HexColor("#465E6C")  # slate
+RULE = colors.HexColor("#D5DDE2")
+WASH = colors.HexColor("#F2F5F6")
 
 SERIF, SERIF_B = "Times-Roman", "Times-Bold"
+# Headlines: League Gothic, uppercase, like the site. Falls back to Helvetica-Bold if the kit is missing.
+HEAD = "Helvetica-Bold"
+if HEAD_FONT.exists():
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+    pdfmetrics.registerFont(TTFont("LeagueGothic", str(HEAD_FONT)))
+    HEAD = "LeagueGothic"
+HEAD_STYLES = {"cover_h", "qtitle", "h2"}
 SANS, SANS_B, SANS_I = "Helvetica", "Helvetica-Bold", "Helvetica-Oblique"
 
 S = {
     # 26pt keeps "9 Questions To Ask A Web Company" on one line at a 6.5in frame;
     # larger and it wraps, which turns the explicit break into a ragged third line.
-    "cover_h": ParagraphStyle("cover_h", fontName=SERIF_B, fontSize=26, leading=32,
+    "cover_h": ParagraphStyle("cover_h", fontName=HEAD, fontSize=40, leading=41,
                               textColor=NAVY, spaceAfter=14),
-    "cover_sub": ParagraphStyle("cover_sub", fontName=SERIF, fontSize=15, leading=21,
+    "cover_sub": ParagraphStyle("cover_sub", fontName=SANS, fontSize=13.5, leading=20,
                                 textColor=ACCENT, spaceAfter=28),
     "cover_by": ParagraphStyle("cover_by", fontName=SANS, fontSize=10.5, leading=16,
                                textColor=MUTED),
     "qnum": ParagraphStyle("qnum", fontName=SANS_B, fontSize=9.5, leading=12,
                            textColor=ACCENT, spaceAfter=5),
-    "qtitle": ParagraphStyle("qtitle", fontName=SERIF_B, fontSize=18, leading=23,
+    "qtitle": ParagraphStyle("qtitle", fontName=HEAD, fontSize=27, leading=28,
                              textColor=NAVY, spaceAfter=11),
-    "h2": ParagraphStyle("h2", fontName=SERIF_B, fontSize=15, leading=20,
+    "h2": ParagraphStyle("h2", fontName=HEAD, fontSize=21, leading=23,
                          textColor=NAVY, spaceBefore=6, spaceAfter=9),
     "body": ParagraphStyle("body", fontName=SANS, fontSize=10.5, leading=16.5,
                            textColor=INK, spaceAfter=10, alignment=TA_LEFT),
@@ -79,7 +90,15 @@ def box(flowables, bg=WASH, pad=13, rule=ACCENT):
     return t
 
 
+def _upper(text):
+    """Uppercase the words but leave tags (<br/>) and entities (&rsquo;) alone."""
+    import re
+    return "".join(t if t.startswith(("<", "&")) else t.upper() for t in re.split(r"(<[^>]+>|&[a-zA-Z#0-9]+;)", text))
+
+
 def p(text, style="body"):
+    if style in HEAD_STYLES and HEAD == "LeagueGothic":
+        text = _upper(text)
     return Paragraph(text, S[style])
 
 
@@ -181,7 +200,7 @@ def build():
 
     # ---- cover
     if LOGO.exists():
-        st += [Image(str(LOGO), width=1.9 * inch, height=1.9 * inch * 0.26,
+        st += [Image(str(LOGO), width=2.5 * inch, height=2.5 * inch * 576 / 2999,
                      kind="proportional"), Spacer(1, 40)]
     st += [
         p("9 Questions To Ask A Web Company<br/>Before You Pay Them A Dollar", "cover_h"),
@@ -213,10 +232,10 @@ def build():
         block += [
             Spacer(1, 4),
             box([p("A good answer sounds like", "label"), p(good, "quote")],
-                bg=colors.HexColor("#EFF5FF")),
+                bg=colors.HexColor("#EEF2F4"), rule=NAVY),
             Spacer(1, 9),
             box([p("A bad answer sounds like", "label"), p(bad, "quote")],
-                bg=colors.HexColor("#FBF2F2"), rule=colors.HexColor("#C0453C")),
+                bg=colors.HexColor("#F8F0EC"), rule=ACCENT),
         ]
         st += [KeepTogether(block[:3])] + block[3:]
         if i < len(QUESTIONS):
