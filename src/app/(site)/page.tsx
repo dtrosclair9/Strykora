@@ -19,20 +19,6 @@ export const metadata: Metadata = {
   alternates: { canonical: site.url },
 }
 
-const howToSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: 'How Strykora builds and ranks a Louisiana small business website',
-  description:
-    'The four-step Strykora process from discovery through ongoing SEO growth for a Louisiana service or commercial business.',
-  step: processSteps.map((s, i) => ({
-    '@type': 'HowToStep',
-    position: i + 1,
-    name: s.title,
-    text: s.body,
-  })),
-}
-
 const ratingLabel = `${reviewStats.averageRating.toFixed(1)} · ${reviewStats.reviewCount} Google reviews`
 const featuredReviews = reviews.filter((review) => 'featured' in review && review.featured).slice(0, 3)
 const featuredServices = services.filter((service) => 'featured' in service && service.featured)
@@ -293,7 +279,7 @@ function Process() {
 export default function HomePage() {
   return (
     <>
-      <Schema data={[localBusinessSchema, websiteSchema, personSchema, buildFaqSchema(faqs), howToSchema]} />
+      <Schema data={[localBusinessSchema, websiteSchema, personSchema, buildFaqSchema(faqs)]} />
       <HomeHero />
       <Services />
       <Industries />
