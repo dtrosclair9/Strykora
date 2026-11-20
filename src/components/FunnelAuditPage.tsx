@@ -31,7 +31,7 @@ const deliverables = [
   {
     label: '03',
     title: 'Built to be found',
-    body: 'Set up so Google and ChatGPT can read your pages and quote them: real structure, plain answers to the questions people ask, and the data those systems look for. You will see it in the page, not in a promise.',
+    body: 'The page says plainly what you do, the towns you cover and how to reach you, with answers to the questions customers ask before they call. Google and the AI tools read the same page a customer does.',
   },
 ]
 

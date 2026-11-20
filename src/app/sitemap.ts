@@ -48,8 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPostUpdated: [string, string][] = [
     ['why-chatgpt-recommends-your-competitor-louisiana', '2026-11-20'],
     ['why-seo-matters-for-small-businesses-louisiana', '2026-11-18'],
-    ['google-may-2026-ai-search-update-louisiana-businesses', '2026-11-18'],
-    ['why-your-wix-site-isnt-ranking-louisiana', '2026-11-18'],
+    ['google-may-2026-ai-search-update-louisiana-businesses', '2026-11-20'],
+    ['why-your-wix-site-isnt-ranking-louisiana', '2026-11-20'],
   ]
   const blogPosts: MetadataRoute.Sitemap = blogPostUpdated.map(([slug, updated]) => ({
     url: `${base}/blog/${slug}`,

@@ -13,6 +13,15 @@ export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
 }
 
+/** One plain line on terms per service (the old shared fragment line repeated on all five pages). */
+const SERVICE_TERMS: Record<string, string> = {
+  'web-design': 'Once the pages and forms are scoped, you get the price in writing. You pay for the build once, with no hourly billing.',
+  seo: 'The plan runs month to month. Your written scope lists the work and the searches Strykora tracks for you.',
+  'google-business-profile': 'Profile management comes with the monthly local SEO plan, so there is no separate bill for it.',
+  'google-ads': 'Management is quoted separately as a flat fee. You pay Google directly for ad spend, and Strykora adds no markup.',
+  'ai-search-optimization': 'You can get the audit and 30-day sprint on their own, or as part of the monthly local SEO plan.',
+}
+
 /** Closing band per service, so no two service pages end on the same pitch. */
 const SERVICE_CTA: Record<string, { heading: string; body: string }> = {
   'web-design': {
@@ -70,7 +79,7 @@ const SERVICE_RELATED_POSTS: Record<string, { slug: string; title: string; blurb
   ],
   'ai-search-optimization': [
     { slug: 'why-chatgpt-recommends-your-competitor-louisiana', title: 'Why ChatGPT Recommends Your Competitor Instead of You', blurb: 'How AI assistants pick which local business to name, and what it takes to be one of them.' },
-    { slug: 'google-may-2026-ai-search-update-louisiana-businesses', title: 'Google\'s May 2026 AI Search Update: What Louisiana Service Businesses Need to Know', blurb: 'What Google\'s May 2026 core update did and did not change, and what to do about AI search.' },
+    { slug: 'google-may-2026-ai-search-update-louisiana-businesses', title: 'Google\'s May 2026 Core Update: What Louisiana Service Businesses Should Check', blurb: 'What Google\'s May 2026 core update did and did not change, and what to do about AI search.' },
   ],
 }
 
@@ -151,7 +160,7 @@ const SERVICE_PAGE_COPY: Record<string, {
       { step: '04', title: 'Monthly proof', body: 'Every month you get a report showing which AI assistants named you, for which searches, and what changed since last month. If the AI stops citing you, we see it before you do.' },
     ],
     faqs: [
-      { q: 'What is AI Search Optimization in plain English?', a: 'It is the work of getting your business named inside the answers that ChatGPT, Perplexity, Google\'s AI answer, and Gemini give people who ask for a recommendation. The industry calls this Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Different names, same outcome: when a customer asks an AI assistant who they should call, the AI says your name.' },
+      { q: 'What is AI Search Optimization in plain English?', a: 'It is the work of getting your business named inside the answers that ChatGPT, Perplexity, Google\'s AI answer, and Gemini give people who ask for a recommendation. The industry calls this Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Strykora checks which businesses and sources come up when a customer asks about your service, fixes what those tools read about you, and reruns the same questions each month so you can see what changed. Nobody can guarantee an AI will name you, and answers vary from one run to the next.' },
       { q: 'How is this different from your regular SEO?', a: 'Regular SEO gets you ranked in the blue links and the map results below them. AI Search Optimization gets you named in the AI answer that now sits above both. The two overlap, and Strykora bundles AI Search Optimization into the monthly Local SEO retainer at no extra cost. The standalone audit is for businesses who already have someone else doing their regular SEO and just want help showing up in AI answers.' },
       { q: 'Why does this matter right now?', a: 'More people now ask an AI who to call. For searches like "roofer near me," Google still mostly shows the map results, so the Business Profile matters most there. AI answers show up most on question searches, like how much a new roof costs or whether gunite beats fiberglass. Being the business those answers cite puts you in front of buyers before they ever search for a company.' },
       { q: 'How do you know it worked?', a: 'Every month Strykora asks the AI assistants the same questions your customers ask, takes screenshots, and shows you when the AI named you. Hover Septic, a Strykora client, is the #1 recommendation across ChatGPT and Perplexity for "septic installs Thibodaux LA" right now. The screenshots are on the homepage.' },
@@ -228,7 +237,7 @@ export default async function ServicePage({ params }: Params) {
             <p id="service-terms-label" className="eyebrow">How it&apos;s priced</p>
             <p className="service-terms-summary">{service.priceRange}</p>
             <p className="interior-copy">
-              Fixed price up front. No hourly billing. No 12-month contract. No monthly platform tax stacked on top.
+              {SERVICE_TERMS[service.slug]}
             </p>
 
             {availableCityLinks.length > 0 && (

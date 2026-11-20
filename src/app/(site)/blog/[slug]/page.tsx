@@ -80,11 +80,11 @@ const posts = [
   },
   {
     slug: 'google-may-2026-ai-search-update-louisiana-businesses',
-    title: 'Google\'s May 2026 AI Search Update: What Louisiana Service Businesses Need to Know',
+    title: 'Google\'s May 2026 Core Update: What Louisiana Service Businesses Should Check',
     seoTitle: 'Google\'s May 2026 Core Update and AI Search, Explained',
     description: 'Google ran a core update from May 21 to June 2, 2026. What it did and did not change, and what Louisiana service businesses should actually do about AI search.',
     date: '2026-05-21',
-    updated: '2026-11-18',
+    updated: '2026-11-20',
     body: [
       `Google started a core update on May 21, 2026 and finished it about two weeks later, on June 2. It was the second core update of the year. Google did not say what it targeted, and it rarely does. What owners noticed was rankings moving around for two weeks and then settling.`,
       `So the honest answer to "what changed" is that nobody outside Google knows exactly. What we do know is the bigger trend the update sits inside, and that trend is worth understanding.`,
@@ -116,12 +116,12 @@ const posts = [
     seoTitle: 'Why Your Wix Site Isn\'t Ranking in Google',
     description: 'Why a slow, generic Wix site loses to faster competitors in Google, and three fixes for Louisiana service businesses, from Search Console checks to a rebuild.',
     date: '2026-04-22',
-    updated: '2026-11-18',
+    updated: '2026-11-20',
     body: [
       `The biggest myth in Louisiana small business marketing is that any website is better than no website. After auditing dozens of Wix and Squarespace sites for South Louisiana service businesses, a more accurate framing is this: a slow, generic site loses to the competitor whose site is fast and specific, even when you are the better operator. Here is why, and what to do.`,
       `**The technical problem.**`,
       `Wix loads a lot of JavaScript before your content appears. On a phone, many Wix sites take several seconds before the main content shows up. Google measures that as Largest Contentful Paint (LCP), and it counts 2.5 seconds or less as good. Speed is one of many ranking signals, so a slow site loses close calls to a faster competitor.`,
-      `For a Louisiana service business, this means your competitor with a stock-photo WordPress site is outranking you because their site loads a half-second faster. You can have better photos, better reviews, and more years in business, and still lose the click.`,
+      `For a Louisiana service business, a faster competitor can edge you out on a close search even when you have better photos, better reviews and more years in business. Speed alone will not explain every ranking, but it is one you can measure and fix.`,
       `**The structural problem.**`,
       `Wix puts your content inside its own template wrappers. Google still reads the text on your site, but most template sites never say plainly what the business does and where. The headings are slogans, the service pages are one paragraph, and every city you work in is crammed onto one page. Google and the AI tools that read your site end up with a generic business, not a specific Houma roofer.`,
       `**What to do about it.**`,
@@ -198,7 +198,7 @@ export default async function BlogPostPage({ params }: Params) {
     <>
       <Schema data={schemas} />
       <PageHero
-        eyebrow={new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        eyebrow={new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
         title={post.title}
         description={post.description}
         breadcrumbs={[

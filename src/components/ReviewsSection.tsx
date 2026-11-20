@@ -14,8 +14,8 @@ interface ReviewsSectionProps {
 
 export function ReviewList({ items, fullDate = false }: { items: readonly (typeof reviews)[number][]; fullDate?: boolean }) {
   const dateFormat: Intl.DateTimeFormatOptions = fullDate
-    ? { month: 'long', day: 'numeric', year: 'numeric' }
-    : { month: 'short', year: 'numeric' }
+    ? { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }
+    : { month: 'short', year: 'numeric', timeZone: 'UTC' }
 
   return (
     <div className="review-list">

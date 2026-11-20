@@ -107,7 +107,7 @@ export default function ServicesPage() {
             {
               situation: 'My site looks dated, slow, or is on Wix or Squarespace.',
               lead: 'Web Design first.',
-              why: 'A new site fixes the speed, search rankings, and lead-tracking before you spend a dollar on SEO. Otherwise you are paying for traffic that lands on a site that scares it away.',
+              why: 'A new site fixes the speed and the lead tracking, and gives SEO something solid to work on, before you spend a dollar on it. Otherwise you are paying for traffic that lands on a site that scares it away.',
               href: '/services/web-design',
             },
             {

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: false },
 }
 
-const updated = 'August 30, 2026'
+const updated = 'November 20, 2026'
 
 export default function PrivacyPage() {
   return (
@@ -43,10 +43,11 @@ export default function PrivacyPage() {
           <div className="editorial-copy">
             <ul>
               <li><strong>Formspree</strong>: handles contact form submissions; relays the email to {site.email}.</li>
-              <li><strong>Vercel</strong>: hosts the site; stores standard request logs.</li>
-              <li><strong>Google Fonts</strong>: serves the typography used across the site.</li>
-              <li><strong>Google Analytics / Search Console</strong> (if enabled): anonymized traffic and search performance data.</li>
-              <li><strong>Meta Pixel</strong> (Facebook and Instagram): records that a page was viewed and that an audit request was completed, so we can tell whether our Facebook ads are working. Meta may match that activity to your Facebook or Instagram account under its own privacy policy. You can limit this in your Facebook ad settings or with a browser tracker blocker; the site works either way.</li>
+              <li><strong>Resend</strong>: sends the emails for the free homepage rebuild and the 9-questions checklist (your confirmation, and the notice to {site.owner}).</li>
+              <li><strong>Vercel</strong>: hosts the site and stores standard request logs. Vercel Web Analytics and Speed Insights count page views and measure load speed without cookies.</li>
+              <li><strong>Google Search Console</strong>: reports how the site appears in Google search. It does not run on your device.</li>
+              <li><strong>Thibodaux Chamber of Commerce</strong>: the membership badge in the footer loads from the Chamber&apos;s directory service (ChamberMaster).</li>
+              <li><strong>Meta Pixel</strong> (Facebook and Instagram): records that a page was viewed and that a homepage rebuild or checklist request was completed, so we can tell whether our Facebook ads are working. Meta may match that activity to your Facebook or Instagram account under its own privacy policy. You can limit this in your Facebook ad settings or with a browser tracker blocker; the site works either way.</li>
             </ul>
           </div>
         </section>

@@ -31,7 +31,7 @@ const COMBO_HERO_DESCRIPTION: Record<string, string> = {
   'seo-houma-la': 'Houma has plenty of established service businesses already ranking on Google. Strykora competes with them through a page for each service you offer in Houma, a Google Business Profile that matches it, and pages for the Terrebonne Parish towns you actually cover.',
   'web-design-baton-rouge-la': 'Strykora built All Out Window Tint\'s website, which gives its Baton Rouge shop a location page and six service pages of its own and sends Baton Rouge inquiries straight to co-owner Dax. Baton Rouge has more competition than most Louisiana markets, so your site has to look finished and load fast on a phone.',
   'seo-baton-rouge-la': 'Baton Rouge is a competitive SEO market, with plenty of search volume and competitors who have been at it for years. Strykora starts with the specific searches a newer site can win, like a service plus a part of town or a specialty, and builds out from there.',
-  'digital-marketing-baton-rouge-la': 'Strykora builds your website and runs your local SEO, Google Business Profile and Google Ads as one job, so the ads, the map listing and the site all say the same thing. In the Baton Rouge metro that already includes All Out Window Tint\'s Gonzales and Baton Rouge shops.',
+  'digital-marketing-baton-rouge-la': 'Strykora builds websites and runs local SEO, Google Business Profiles and Google Ads for Baton Rouge businesses as one job, so the ads, the map listing and the site all say the same thing. For All Out Window Tint, Strykora built one site for two shops, rebuilt both Business Profiles, and sends each shop its own inquiries.',
   'web-design-new-orleans-la': 'More service businesses compete for each search in the New Orleans area than anywhere else in Louisiana, so your reviews, recent jobs and the neighborhoods you serve need to sit near the top of the page. Strykora builds those sites from Thibodaux, about an hour away.',
   'web-design-lafayette-la': 'A Lafayette website should read like it was written for Acadiana: the parish and towns you cover, photos of your own jobs, and a phone number that is easy to tap. Strykora builds custom sites from Thibodaux and writes each one about the market it serves.',
   'seo-lafayette-la': 'Lafayette has less keyword volume than Baton Rouge but less competition too. Specific searches, like a service plus a smaller Acadiana town (Crowley, Breaux Bridge), tend to move first. The broader Lafayette terms take six to twelve months.',
@@ -325,7 +325,7 @@ const CITY_COPY: Record<string, CityMarketCopy> = {
     marketContext:
       'New Orleans is the largest, oldest, and most competitive market in Louisiana. The economy spans tourism, port logistics, healthcare, construction, and a dense residential service market across Orleans, Jefferson, and St. Tammany Parishes. Local SEO here rewards aggressive review velocity, strong link building, and substantive content.',
     buyerSnapshot:
-      'New Orleans buyers vet you against more options. Reviews, photos, and recent work matter more here than in any other Louisiana market.',
+      'New Orleans buyers have more options to compare, so your reviews, recent job photos and the neighborhoods you serve need to be easy to find.',
     faqs: [
       {
         q: 'Can a Thibodaux-based agency rank a New Orleans business?',
@@ -505,10 +505,11 @@ export default function CityServicePage({ slug }: Props) {
               <h2 id="city-proof-heading" className="interior-title">Strykora work near {city.name}</h2>
               <div className="interior-copy">
                 <p>These are live sites Strykora built, with pages aimed at customers in and around {city.name}.</p>
-                <ul>
+                <ul className="city-proof-list">
                   {CITY_PROOF[city.slug].map((p) => (
                     <li key={p.client}>
-                      <Link href={p.href} className="text-link">{p.client}</Link>: {p.text}
+                      <Link href={p.href} className="text-link">{p.client}</Link>
+                      <p>{p.text}</p>
                     </li>
                   ))}
                 </ul>
@@ -585,7 +586,7 @@ function comboLabel(comboService: string, serviceTitle: string) {
 /** Sentence after the city's buyer snapshot, matched to what the page sells. */
 const LEAD_IN: Record<string, string> = {
   'web-design': 'Strykora builds that website for you, and you own it outright.',
-  seo: 'Strykora\'s job is to make sure your business is the one they find, in the map results and the listings below them.',
+  seo: 'Strykora works on your service pages, your Google Business Profile and the local sites that mention you, so you show up in the map results and the listings below them.',
   'digital-marketing': 'Strykora builds the website and runs the search work that sends people to it.',
 }
 

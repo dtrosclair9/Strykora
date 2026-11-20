@@ -26,14 +26,14 @@ const posts = [
   },
   {
     slug: 'google-may-2026-ai-search-update-louisiana-businesses',
-    title: 'Google\'s May 2026 AI Search Update: What Louisiana Service Businesses Need to Know',
+    title: 'Google\'s May 2026 Core Update: What Louisiana Service Businesses Should Check',
     excerpt: 'Google ran a core update from May 21 to June 2, 2026. What it did and did not change, and what a Louisiana service business should check if traffic dropped.',
     date: '2026-05-21',
   },
   {
     slug: 'why-your-wix-site-isnt-ranking-louisiana',
     title: 'Why Your Wix Site Isn\'t Ranking (And What to Do About It)',
-    excerpt: 'A slow Wix site can hurt your rankings more than having no site at all. The honest diagnosis and three fixes.',
+    excerpt: 'A Wix site can rank on Google. Here is how to tell whether yours is holding you back, and three fixes to try first.',
     date: '2026-04-22',
   },
 ]
@@ -59,7 +59,7 @@ export default function BlogPage() {
           <article key={post.slug}>
             <Link href={`/blog/${post.slug}`} className="journal-entry">
               <p className="eyebrow journal-date">
-                {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
               </p>
               <div>
                 <h2>{post.title}</h2>

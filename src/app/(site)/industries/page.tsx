@@ -48,7 +48,7 @@ export default function IndustriesPage() {
               <p className="eyebrow">Why these five</p>
               <h2 id="industry-index-heading">Five trades Strykora builds for.</h2>
               <p className="ledger-section-intro">
-                The lanes below share three things: a high-ticket transaction (so a small lift in rank pays for the whole site), a buyer who searches before they call, and a competitive set Strykora has already beaten in production. Every vertical on this page has a live, ranking Strykora build behind it, not a deck slide.
+                The trades below have two things in common: a high-ticket job, so a small move up in the rankings can pay for the whole site, and a buyer who searches before calling. The roofing, contractor, home service and auto shop pages each link to Strykora client work in that trade.
               </p>
             </div>
             <Image

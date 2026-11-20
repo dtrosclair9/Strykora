@@ -72,7 +72,7 @@ const AI_CITATIONS: Record<string, { heading: string; intro: string; shots: Cita
     ],
   },
   'elite-custom-automotive': {
-    heading: 'Perplexity named Elite in two separate answers.',
+    heading: 'Perplexity named Elite twice in one answer.',
     intro: 'When a real customer asked Perplexity for the best lift kit installer in Lockport, the answer named Elite Custom Automotive twice in the same response — once as the best match, once as the practical pick.',
     shots: [
       {
@@ -367,7 +367,7 @@ export default async function CaseStudyPage({ params }: Params) {
             ))}
           </div>
           <Link href="/services/ai-search-optimization" className="text-link editorial-follow">
-            See how Strykora ranks clients inside AI answers
+            How AI search optimization works
           </Link>
         </Section>
       )}

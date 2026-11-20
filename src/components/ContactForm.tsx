@@ -105,7 +105,7 @@ export default function ContactForm() {
     return (
       <div ref={feedback} tabIndex={-1} role="status" className="contact-feedback contact-confirmation">
         <p><strong>Message sent.</strong></p>
-        <p>I&apos;ll get back to you within 24 hours.</p>
+        <p>I&apos;ll get back to you within one business day.</p>
       </div>
     )
   }

@@ -252,6 +252,30 @@ const industryCopy: Record<string, { intro: string; pain: string[]; outcomes: st
   },
 }
 
+/** Closing band per trade, so the five industry pages don't end on one template line. */
+const INDUSTRY_CTA: Record<string, { heading: string; body: string }> = {
+  'roofers-louisiana': {
+    heading: 'Which roofing jobs do you want more of?',
+    body: "Tell me the work you want (replacements, FORTIFIED roofs, storm repair) and the towns you cover. Within one business day you'll get a fixed-price quote for the site.",
+  },
+  'contractors-louisiana': {
+    heading: 'What should your site show a buyer?',
+    body: "Send me your current site or your Facebook page and the jobs you want more of. I'll reply within one business day with what the site needs and a fixed price for it.",
+  },
+  'home-services-louisiana': {
+    heading: 'Which towns do you take calls in?',
+    body: "Tell me your service, the towns you cover and how customers reach you now. You'll hear back from me within one business day.",
+  },
+  'auto-shops-louisiana': {
+    heading: 'How should customers reach each side of the shop?',
+    body: "Tell me what you do in the bays, the brands you install and how you book work today. I'll reply within one business day with a fixed-price quote.",
+  },
+  'commercial-louisiana': {
+    heading: 'What does a buyer need to see before a bid?',
+    body: "Tell me your service lines, your fleet or equipment, and who should get bid requests and job applications. I'll reply within one business day, and I can work under an NDA.",
+  },
+}
+
 export default async function IndustryPage({ params }: Params) {
   const { slug } = await params
   const industry = industries.find((i) => i.slug === slug)
@@ -393,9 +417,7 @@ export default async function IndustryPage({ params }: Params) {
         </ul>
       </Section>
 
-      <CTA heading={`Ready to outrank the ${industry.slug.startsWith('commercial') ? 'other commercial businesses' : `other ${industry.title.toLowerCase()}`} in your city?`}
-        body="Send me your website and the jobs you want more of. Within one business day I'll come back with a fixed-price quote, or let you know if I'm not the right fit."
-      />
+      <CTA {...INDUSTRY_CTA[industry.slug]} />
     </>
   )
 }

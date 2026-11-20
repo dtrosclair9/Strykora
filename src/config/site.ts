@@ -202,7 +202,7 @@ export const industries = [
     title: 'Roofers',
     headline: 'Websites & SEO for Louisiana Roofers',
     short: 'Storm-season ready sites that rank for roof replacement in your city.',
-    metaDescription: "Websites and SEO for Louisiana roofers. Storm-season-ready sites that rank for roof replacement in your city and get you named in Google's AI answers.",
+    metaDescription: "Websites and SEO for Louisiana roofers. Storm-season-ready sites that rank for roof replacement in your city and show homeowners your verified credentials.",
     icon: 'roof',
     flagship: true,
   },
@@ -301,7 +301,7 @@ export const caseStudies = [
       { label: 'Live since', value: '2026' },
     ],
     cover: '/images/case-foret.jpg',
-    metaDescription: 'Foret Construction & Roofing was renting a Wix template. Strykora rebuilt it as a custom site with service pages for three towns and rebuilt its Google Business Profile.',
+    metaDescription: 'Foret Construction & Roofing was renting a Wix template. Strykora rebuilt it as a custom site with pages for three towns and redid its Google Business Profile.',
   },
   {
     slug: 'elite-custom-automotive',
