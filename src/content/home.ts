@@ -12,7 +12,7 @@ export const home = {
     eyebrow: 'Services',
     firstLine: 'Websites first, then the',
     secondLine: 'local SEO that gets them found.',
-    body: 'Strykora builds websites, runs local SEO, manages Google Business Profiles and Google Ads, and checks how your business comes up in AI answers. Every quote is a fixed price in writing before any work starts, and there are no 12-month contracts. Strykora does not do content writing, social media, or photography. If you need those, I can point you to people who do.',
+    body: 'Strykora builds websites, runs local SEO, manages Google Business Profiles and Google Ads, and checks how your business comes up in AI answers. Every quote is a fixed price in writing before any work starts, and there are no 12-month contracts. Strykora writes the content for every site it builds. It does not run social media or do photography, but I can point you to people who do.',
     featuredEyebrow: 'AI search',
     featuredLink: 'How AI search optimization works',
   },
@@ -154,8 +154,8 @@ export const faqs = [
     a: `Strykora is built around Louisiana buyers and how they search, and every case study is a Louisiana business. Web design, Google Ads and AI search optimization work anywhere, though, so out-of-state inquiries are welcome.`,
   },
   {
-    q: 'Do you offer content writing, social media, or photography?',
-    a: `No. Strykora is web design and SEO only. For copywriting, social media management, or photo and video, Strykora refers you to Louisiana freelancers who specialize in it.`,
+    q: 'Do you write the website content, or do I?',
+    a: `Strykora writes it. Every site comes with the content written for you, from the homepage to each service and city page, and you get drafts to approve before anything goes live. Strykora does not run social media accounts or do photo and video work, but can refer you to Louisiana freelancers who do.`,
   },
   {
     q: 'How are you different from a generic marketing agency?',
