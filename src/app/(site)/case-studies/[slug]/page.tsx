@@ -16,21 +16,12 @@ export function generateStaticParams() {
 
 type Params = { params: Promise<{ slug: string }> }
 
-/** Cut a blurb to 160 characters at the last full sentence, else the last whole word, so meta descriptions never end mid-word. */
-function trimDescription(text: string, max = 160): string {
-  if (text.length <= max) return text
-  const cut = text.slice(0, max)
-  const sentence = cut.lastIndexOf('. ')
-  if (sentence > 90) return cut.slice(0, sentence + 1)
-  return cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:]$/, '') + '.'
-}
-
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params
   const c = caseStudies.find((cs) => cs.slug === slug)
   if (!c) return {}
   const title = `${c.client}: ${c.industry} Case Study`
-  const description = trimDescription(c.blurb)
+  const description = c.metaDescription
   return {
     title,
     description,

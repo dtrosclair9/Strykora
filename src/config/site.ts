@@ -285,6 +285,7 @@ export const caseStudies = [
       { label: 'Per-job ticket', value: 'Multi-thousand' },
     ],
     cover: '/images/case-hover.jpg',
+    metaDescription: 'Hover Septic had no website or Google Business Profile. Strykora built both and ranked Hover #1 for septic installs in Thibodaux. ChatGPT now names it first.',
     featured: true,
   },
   {
@@ -300,6 +301,7 @@ export const caseStudies = [
       { label: 'Live since', value: '2026' },
     ],
     cover: '/images/case-foret.jpg',
+    metaDescription: 'Foret Construction & Roofing was renting a Wix template. Strykora rebuilt it as a custom site with nine city pages and rebuilt its Google Business Profile.',
   },
   {
     slug: 'elite-custom-automotive',
@@ -314,6 +316,7 @@ export const caseStudies = [
       { label: 'City landing pages', value: '9' },
     ],
     cover: '/images/case-elite.jpg',
+    metaDescription: "Elite's Lockport reputation didn't match its website. Strykora rebuilt it with a 3D hero, nine city pages, and a new Google Business Profile.",
   },
   {
     slug: 'all-out-window-tint',
@@ -328,6 +331,7 @@ export const caseStudies = [
       { label: 'Locations', value: '2' },
     ],
     cover: '/images/case-allout.jpg',
+    metaDescription: "Strykora rebuilt All Out Window Tint's website for its Gonzales and Baton Rouge shops, added a franchising page, and rebuilt both Google Business Profiles.",
   },
   {
     slug: 'acadia-pools',
@@ -342,6 +346,7 @@ export const caseStudies = [
       { label: 'Parish', value: 'Lafourche' },
     ],
     cover: '/images/case-acadia.jpg',
+    metaDescription: 'Strykora built Acadia Pools a custom site and rebuilt its Google Business Profile. Two months later, Perplexity named Acadia first for a Thibodaux pool builder.',
   },
 ] as const
 

@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { markLeadSubmitted } from '@/components/MetaPixel'
 
 /**
  * Posts to /api/lead, which sends the branded instant reply to the lead and a
@@ -49,6 +50,7 @@ export default function AuditForm({ niche = 'general' }: { niche?: string }) {
 
       if (res.ok) {
         form.reset()
+        markLeadSubmitted()
         router.push('/free-audit/thanks')
         return
       }

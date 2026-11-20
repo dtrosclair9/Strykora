@@ -2,6 +2,7 @@
 
 import { useId, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { markLeadSubmitted } from '@/components/MetaPixel'
 
 /**
  * Two-field opt-in for the 9 Questions guide.
@@ -51,6 +52,7 @@ export default function HvcoForm({ niche = 'general' }: { niche?: string }) {
 
       if (res.ok) {
         form.reset()
+        markLeadSubmitted()
         router.push('/9-questions/thanks')
         return
       }

@@ -82,11 +82,6 @@ export const websiteSchema = {
   url: site.url,
   name: site.name,
   publisher: { '@id': `${site.url}/#business` },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${site.url}/blog?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
 }
 
 export function breadcrumbSchema(items: { href: string; label: string }[]) {

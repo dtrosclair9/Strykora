@@ -3,8 +3,8 @@ import { site } from '@/config/site'
 import FunnelNextSteps from '@/components/FunnelNextSteps'
 
 export const metadata: Metadata = {
-  title: 'Audit request received',
-  description: `Your free website and AI-search audit request reached ${site.name}. Here is what happens next.`,
+  title: 'Homepage rebuild request received',
+  description: `Your free homepage rebuild request reached ${site.name}. Here is what happens next and when the private link arrives.`,
   alternates: { canonical: `${site.url}/free-audit/thanks` },
   robots: { index: false, follow: false },
 }
@@ -12,18 +12,18 @@ export const metadata: Metadata = {
 const steps = [
   {
     n: '1',
-    title: 'Dayne pulls up your site and your Google Business Profile',
-    body: 'On a phone, the way a customer would. Then checks whether Google, the AI answer at the top of Google, and ChatGPT name your business for your main service in your city.',
+    title: 'Dayne looks at what you sent',
+    body: 'On a phone, the way a customer would. If anything is missing or looks out of date, you get an email to check it before the build starts.',
   },
   {
     n: '2',
-    title: 'You get the audit by email within one business day',
-    body: 'Three fixes in plain English, and a fixed price if you want them done. If it is not in your inbox by then, check spam, then call and it gets resent.',
+    title: 'Your homepage arrives on a private link',
+    body: 'Within three business days of the details being confirmed. Open it on your phone. It is yours to keep either way. If the email does not show up, check spam, then call and it gets resent.',
   },
   {
     n: '3',
     title: 'You decide what happens next',
-    body: 'Read it, sit on it, or take the list somewhere else. If you want to talk it through, the number is below.',
+    body: 'Keep it, sit on it, or show it to somebody else. If you want to talk it through, the number is below.',
   },
 ]
 
@@ -33,7 +33,7 @@ export default function AuditThanksPage() {
       <div className="site-container funnel-receipt-layout">
         <div className="funnel-receipt-intro">
           <p className="eyebrow hero-eyebrow">Request received</p>
-          <h1 id="audit-thanks-title" className="ledger-hero-title">Got it. Your audit is on the way.</h1>
+          <h1 id="audit-thanks-title" className="ledger-hero-title">Got it. Your homepage is next.</h1>
           <p className="funnel-lede">Thanks for sending it. Here is exactly what happens from here.</p>
         </div>
         <FunnelNextSteps steps={steps} />

@@ -11,17 +11,37 @@ declare global {
   }
 }
 
-/** Paths that count as a lead. The thanks page is only reachable after a successful form post. */
+/** Paths where a Lead can fire. Opening one directly or refreshing it must NOT count, so a
+ * Lead also needs the one-time flag a form sets right after a successful submit. */
 const LEAD_PATHS = new Set(['/free-audit/thanks', '/9-questions/thanks'])
+const LEAD_FLAG = 'strykora-lead-submitted'
+
+/** Called by a funnel form after /api/lead succeeds, just before it routes to the thanks page. */
+export function markLeadSubmitted() {
+  try {
+    sessionStorage.setItem(LEAD_FLAG, '1')
+  } catch {
+    // Storage blocked (private mode): the Lead goes untracked rather than double-counted.
+  }
+}
+
+function consumeLeadFlag(): boolean {
+  try {
+    if (sessionStorage.getItem(LEAD_FLAG) !== '1') return false
+    sessionStorage.removeItem(LEAD_FLAG)
+    return true
+  } catch {
+    return false
+  }
+}
 
 const PIXEL_ID = site.metaPixelId
 
 /**
  * Meta Pixel base code. Fires PageView on first load and on every client-side
- * route change, and a Lead event on the audit thank-you page. The inline snippet
- * handles the hard-load case (including a direct hit on the thanks page); the
- * pathname effect handles in-app navigation and skips the initial mount so the
- * two never double-fire.
+ * route change. A Lead fires only on a thanks page AND only once per real form
+ * submit (the flag is consumed by whichever fires first: the pathname effect on
+ * in-app navigation, or the inline snippet if the pixel loads after the redirect).
  */
 export default function MetaPixel() {
   const pathname = usePathname()
@@ -34,7 +54,7 @@ export default function MetaPixel() {
     }
     if (!window.fbq) return
     window.fbq('track', 'PageView')
-    if (LEAD_PATHS.has(pathname)) window.fbq('track', 'Lead')
+    if (LEAD_PATHS.has(pathname) && consumeLeadFlag()) window.fbq('track', 'Lead')
   }, [pathname])
 
   if (!PIXEL_ID) return null
@@ -52,7 +72,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','${PIXEL_ID}');
 fbq('track','PageView');
-if(${leadPaths}.indexOf(window.location.pathname.replace(/\\/$/,''))!==-1){fbq('track','Lead');}
+try{if(${leadPaths}.indexOf(window.location.pathname.replace(/\\/$/,''))!==-1&&sessionStorage.getItem('${LEAD_FLAG}')==='1'){sessionStorage.removeItem('${LEAD_FLAG}');fbq('track','Lead');}}catch(e){}
         `}
       </Script>
       <noscript>
