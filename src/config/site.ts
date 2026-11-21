@@ -97,7 +97,7 @@ export const reviewStats = {
 // layout when a page sets its own openGraph, so every generateMetadata/metadata
 // that defines openGraph must spread this in explicitly or it renders imageless.
 export const ogImage = {
-  url: '/images/og-image.jpg',
+  url: '/images/og-image-marketing.jpg',
   width: 1200,
   height: 630,
   alt: site.name,

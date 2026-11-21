@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: site.description,
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/og-image-marketing.jpg',
         width: 1200,
         height: 630,
         alt: `${site.name} — Web Design & SEO in Louisiana`,
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${site.name} — Web Design & SEO in Louisiana`,
     description: site.description,
-    images: ['/images/og-image.jpg'],
+    images: ['/images/og-image-marketing.jpg'],
   },
   robots: {
     index: true,

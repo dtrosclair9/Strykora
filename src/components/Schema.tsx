@@ -42,7 +42,7 @@ export const localBusinessSchema = {
   url: site.url,
   telephone: site.phoneRaw,
   email: site.email,
-  image: `${site.url}/images/og-image.jpg`,
+  image: `${site.url}/images/og-image-marketing.jpg`,
   logo: `${site.url}/images/strykora-marketing-schema-logo.png`,
   address: {
     '@type': 'PostalAddress',

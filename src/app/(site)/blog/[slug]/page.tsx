@@ -164,7 +164,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       url: `${site.url}/blog/${post.slug}`,
       type: 'article',
       publishedTime: post.date,
-      images: ['/images/og-image.jpg'],
+      images: ['/images/og-image-marketing.jpg'],
     },
   }
 }
@@ -188,7 +188,7 @@ export default async function BlogPostPage({ params }: Params) {
       '@id': `${site.url}/blog/${post.slug}`,
     },
     url: `${site.url}/blog/${post.slug}`,
-    image: `${site.url}/images/og-image.jpg`,
+    image: `${site.url}/images/og-image-marketing.jpg`,
   }
 
   const schemas: object[] = [blogPostingSchema]
