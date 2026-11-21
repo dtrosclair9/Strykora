@@ -48,11 +48,11 @@ export default function Footer() {
           <div className="site-footer-brand">
             <Link href="/" className="site-footer-logo" prefetch={false}>
               <Image
-                src="/brand/strykora-marketing-search-stacked-color-on-dark.svg"
+                src="/brand/strykora-marketing-wordmark-white.svg"
                 alt="Strykora Marketing home"
-                width={2829}
-                height={2496}
-                sizes="(min-width: 1024px) 208px, 176px"
+                width={2830}
+                height={831}
+                sizes="(min-width: 1024px) 240px, 208px"
               />
             </Link>
             <p>{site.tagline}</p>

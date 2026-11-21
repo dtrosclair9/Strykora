@@ -102,7 +102,7 @@
 .site-footer-inner { display: grid; gap: 2.5rem; padding-block: 3rem 2rem; }
 .site-footer-brand p { max-width: 32ch; }
 .site-footer-brand p + p { margin-top: .5rem; }
-.site-footer-logo { display: block; width: 11rem; margin-bottom: 1.25rem; }
+.site-footer-logo { display: block; width: 13rem; margin-bottom: 1.25rem; }
 .site-footer-logo img { width: 100%; height: auto; }
 .site-footer-directory { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 .site-footer-directory .eyebrow { font-family: var(--font-body), system-ui, sans-serif; }
@@ -173,7 +173,7 @@
   }
   .site-submenu a { padding-inline: .625rem; }
   .site-footer-inner { grid-template-columns: minmax(0, .85fr) minmax(0, 1.65fr); gap: 3rem; }
-  .site-footer-logo { width: 13rem; }
+  .site-footer-logo { width: 15rem; }
 }
 
 @media (min-width: 1024px) and (max-width: 1151px) {
