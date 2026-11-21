@@ -16,8 +16,8 @@
   gap: .25rem;
 }
 
-.site-header-logo { display: block; width: 19rem; min-width: 0; }
-.site-header-logo img { width: 100%; height: auto; }
+.site-header-logo { display: block; flex: none; min-width: 0; }
+.site-header-logo img { width: auto; height: 56px; }
 .site-nav-controls { flex: none; }
 
 .site-menu-toggle {
@@ -148,14 +148,13 @@
 
 @media (min-width: 640px) {
   .site-header-inner { --header-gutter: var(--gutter); }
-  .site-header-logo { width: 23.5rem; }
+  .site-header-logo img { height: 64px; }
   .site-footer-directory { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 @media (min-width: 1024px) {
   .site-header-inner { --header-gutter: .625rem; min-height: 96px; gap: .75rem; }
-  .site-header-logo { width: auto; flex: none; }
-  .site-header-logo img { width: auto; height: 64px; }
+  .site-header-logo img { height: 72px; }
   .site-menu-toggle { display: none; }
   .site-nav { display: block; position: static; max-height: none; overflow: visible; padding: 0; border: 0; }
   .site-nav-list { display: flex; align-items: center; }

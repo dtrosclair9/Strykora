@@ -40,11 +40,11 @@ export default function Header() {
       <div className="site-header-inner">
         <Link href="/" className="site-header-logo" prefetch={false}>
           <Image
-            src="/brand/strykora-head-horizontal-navy.svg"
-            alt="Strykora home"
-            width={1516}
-            height={195}
-            sizes="(min-width: 1024px) 499px, (min-width: 640px) 376px, 304px"
+            src="/brand/strykora-marketing-head-horizontal-navy.svg"
+            alt="Strykora Marketing home"
+            width={2901}
+            height={559}
+            sizes="(min-width: 1024px) 374px, (min-width: 640px) 332px, 291px"
             loading="eager"
           />
         </Link>
