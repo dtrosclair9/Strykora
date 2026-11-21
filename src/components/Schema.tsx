@@ -43,7 +43,7 @@ export const localBusinessSchema = {
   telephone: site.phoneRaw,
   email: site.email,
   image: `${site.url}/images/og-image.jpg`,
-  logo: `${site.url}/images/strykora-schema-logo.png`,
+  logo: `${site.url}/images/strykora-marketing-schema-logo.png`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.address.street,

@@ -11,10 +11,10 @@ export default function FunnelLayout({ children }: { children: React.ReactNode }
         <div className="site-container funnel-header-inner">
           <Image
             className="funnel-logo"
-            src="/brand/strykora-horizontal-color.svg"
+            src="/brand/strykora-marketing-search-horizontal-color.svg"
             alt={site.name}
-            width={1322}
-            height={254}
+            width={2892}
+            height={830}
             sizes="(min-width: 1024px) 333px, (min-width: 640px) 250px, (min-width: 390px) 198px, 51vw"
             loading="eager"
           />

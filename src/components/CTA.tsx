@@ -27,10 +27,10 @@ export default function CTA({
       {showMark && (
         <Image
           className="closing-band-mark"
-          src="/brand/strykora-bird-color-on-dark.svg"
+          src="/brand/strykora-search-bird-color-on-dark.svg"
           alt=""
-          width={2185}
-          height={2053}
+          width={2828}
+          height={2712}
           sizes="(min-width: 1382px) 304px, (min-width: 1024px) 22vw, (min-width: 471px) 160px, (min-width: 353px) 34vw, 120px"
         />
       )}
